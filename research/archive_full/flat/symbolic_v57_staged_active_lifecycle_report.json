@@ -1,0 +1,379 @@
+{
+  "version": "v5.7-staged-active-concept-lifecycle",
+  "result": "PASS",
+  "checks": {
+    "four_intrinsically_strong_concepts_initially_staged": true,
+    "semantic_three_activated_by_historical_use": true,
+    "regular_unused_noise_remains_staged": true,
+    "queries_do_not_modify_story_evidence": true,
+    "staged_concept_excluded_from_normal_proof": true,
+    "staged_concept_visible_only_in_debug_candidate_mode": true,
+    "later_independent_use_promotes_staged_concept": true,
+    "promotion_does_not_insert_semantic_evidence": true,
+    "promoted_concept_now_participates_in_proof": true,
+    "query_without_matching_instance_adds_no_utility": true,
+    "query_without_matching_instance_adds_no_evidence": true,
+    "structural_counterevidence_challenges_even_used_active_concept": true,
+    "retired_concept_removed_from_active_proof": true,
+    "unrelated_active_r2_survives_and_proves": true,
+    "unrelated_active_r3_survives_and_proves": true,
+    "promoted_noise_survives_unrelated_attack": true,
+    "all_heads_remain_anonymous": true,
+    "lifecycle_history_preserved": true
+  },
+  "concepts": {
+    "R4": {
+      "version": 1,
+      "status": "ACTIVE",
+      "pattern": [
+        [
+          "N1",
+          [
+            "V0"
+          ]
+        ],
+        [
+          "N2",
+          [
+            "V0"
+          ]
+        ]
+      ],
+      "query_utility_stories": [
+        "later1",
+        "later2",
+        "later3"
+      ],
+      "intrinsic": {
+        "support_stories": 6,
+        "domains": 6,
+        "opportunities": 6,
+        "matches": 6,
+        "precision": 1.0,
+        "closure": 1.0,
+        "gain": 6
+      }
+    },
+    "R5": {
+      "version": 1,
+      "status": "RETIRED",
+      "pattern": [
+        [
+          "R1",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "W",
+          [
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "query_utility_stories": [
+        "s01",
+        "s02",
+        "s04",
+        "s05"
+      ],
+      "intrinsic": {
+        "support_stories": 6,
+        "domains": 4,
+        "opportunities": 14,
+        "matches": 6,
+        "precision": 0.42857142857142855,
+        "closure": 1.0,
+        "gain": 7
+      }
+    },
+    "R6": {
+      "version": 1,
+      "status": "ACTIVE",
+      "pattern": [
+        [
+          "R2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "W",
+          [
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "query_utility_stories": [
+        "s09",
+        "s10",
+        "s12",
+        "s13"
+      ],
+      "intrinsic": {
+        "support_stories": 6,
+        "domains": 4,
+        "opportunities": 7,
+        "matches": 6,
+        "precision": 0.8571428571428571,
+        "closure": 1.0,
+        "gain": 7
+      }
+    },
+    "R7": {
+      "version": 1,
+      "status": "ACTIVE",
+      "pattern": [
+        [
+          "R3",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "R3",
+          [
+            "V1",
+            "V0",
+            "V2"
+          ]
+        ]
+      ],
+      "query_utility_stories": [
+        "s17",
+        "s19",
+        "s20",
+        "s22"
+      ],
+      "intrinsic": {
+        "support_stories": 6,
+        "domains": 5,
+        "opportunities": 8,
+        "matches": 6,
+        "precision": 0.75,
+        "closure": 1.0,
+        "gain": 12
+      }
+    }
+  },
+  "initial_status": {
+    "R4": "STAGED",
+    "R5": "STAGED",
+    "R6": "STAGED",
+    "R7": "STAGED"
+  },
+  "after_historical_use": {
+    "R4": [
+      "STAGED",
+      0
+    ],
+    "R5": [
+      "ACTIVE",
+      4
+    ],
+    "R6": [
+      "ACTIVE",
+      4
+    ],
+    "R7": [
+      "ACTIVE",
+      4
+    ]
+  },
+  "lifecycle_events": [
+    [
+      "staged",
+      "R4",
+      6,
+      1.0,
+      6
+    ],
+    [
+      "staged",
+      "R5",
+      6,
+      0.8571428571428571,
+      7
+    ],
+    [
+      "staged",
+      "R6",
+      6,
+      0.8571428571428571,
+      7
+    ],
+    [
+      "staged",
+      "R7",
+      6,
+      0.75,
+      12
+    ],
+    [
+      "query_use",
+      "q01",
+      "R5",
+      "s01",
+      1
+    ],
+    [
+      "query_use",
+      "q02",
+      "R5",
+      "s02",
+      2
+    ],
+    [
+      "query_use",
+      "q03",
+      "R5",
+      "s04",
+      3
+    ],
+    [
+      "activated",
+      "R5",
+      1,
+      3
+    ],
+    [
+      "query_use",
+      "q04",
+      "R5",
+      "s05",
+      4
+    ],
+    [
+      "query_use",
+      "q05",
+      "R6",
+      "s09",
+      1
+    ],
+    [
+      "query_use",
+      "q06",
+      "R6",
+      "s10",
+      2
+    ],
+    [
+      "query_use",
+      "q07",
+      "R6",
+      "s12",
+      3
+    ],
+    [
+      "activated",
+      "R6",
+      1,
+      3
+    ],
+    [
+      "query_use",
+      "q08",
+      "R6",
+      "s13",
+      4
+    ],
+    [
+      "query_use",
+      "q09",
+      "R7",
+      "s17",
+      1
+    ],
+    [
+      "query_use",
+      "q10",
+      "R7",
+      "s19",
+      2
+    ],
+    [
+      "query_use",
+      "q11",
+      "R7",
+      "s20",
+      3
+    ],
+    [
+      "activated",
+      "R7",
+      1,
+      3
+    ],
+    [
+      "query_use",
+      "q12",
+      "R7",
+      "s22",
+      4
+    ],
+    [
+      "query_use",
+      "late-q1",
+      "R4",
+      "later1",
+      1
+    ],
+    [
+      "query_use",
+      "late-q2",
+      "R4",
+      "later2",
+      2
+    ],
+    [
+      "query_use",
+      "late-q3",
+      "R4",
+      "later3",
+      3
+    ],
+    [
+      "activated",
+      "R4",
+      1,
+      3
+    ],
+    [
+      "challenged",
+      "R5",
+      1,
+      "ACTIVE",
+      0.42857142857142855,
+      6
+    ],
+    [
+      "retired",
+      "R5",
+      1
+    ]
+  ],
+  "design": [
+    "Intrinsic structural evidence can create STAGED concepts without any query utility.",
+    "STAGED concepts are retained but excluded from ordinary proof inference.",
+    "Repeated use in independent query/proof neighborhoods promotes an already-supported STAGED concept to ACTIVE.",
+    "Query use is an access signal only: it never inserts semantic Events or Keys.",
+    "A query that does not touch an actual concept instance adds neither utility nor evidence.",
+    "Later structural counterevidence can challenge and retire an ACTIVE concept even if it was useful.",
+    "ACTIVE/RETIRED status controls proof participation; history is preserved."
+  ],
+  "caveats": [
+    "Promotion threshold MIN_QUERY_USE is hand-set.",
+    "v5.7 uses a conservative retire-on-structural-failure policy; automatic revision/specialization is not yet integrated here.",
+    "Concept search is still limited to connected ordered two-event motifs.",
+    "Query terms are symbolic proof-neighborhood terms, not raw natural-language query parsing.",
+    "The corpus remains synthetic symbolic experience rather than one monolithic raw-text run."
+  ]
+}

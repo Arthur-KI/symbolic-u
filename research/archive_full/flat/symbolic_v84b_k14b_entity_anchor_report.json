@@ -1,0 +1,114 @@
+{
+  "version": "v8.4b-K14b-raw-token-entity-anchor-induction",
+  "result": "PASS",
+  "dictionary_assumed": {
+    "provides": [
+      "raw token identity"
+    ],
+    "does_not_provide": [
+      "ENTITY label",
+      "PERSON/OBJECT or anonymous T-type",
+      "lemma",
+      "POS",
+      "case"
+    ]
+  },
+  "anchors": {
+    "buch": "BOOK",
+    "frau": "WOMAN",
+    "jungen": "BOY",
+    "ball": "BALL",
+    "kind": "CHILD",
+    "apfel": "APPLE",
+    "mann": "MAN",
+    "mädchen": "GIRL",
+    "töpfchen": "POT",
+    "spule": "SPOOL"
+  },
+  "token_types": {
+    "buch": "Q1",
+    "frau": "Q2",
+    "jungen": "Q2",
+    "ball": "Q1",
+    "kind": "Q2",
+    "apfel": "Q1",
+    "mann": "Q2",
+    "mädchen": "Q2",
+    "töpfchen": "Q1",
+    "spule": "Q1"
+  },
+  "anonymous_types": {
+    "owner_port_type": "Q2",
+    "theme_port_type": "Q1"
+  },
+  "frozen": {
+    "base": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BOOK",
+      "schenkt"
+    ],
+    "new_combination": [
+      "Z_GIVE",
+      "GIRL",
+      "BOY",
+      "BALL",
+      "schenkt"
+    ],
+    "sweet_style": [
+      "Z_GIVE",
+      "WOMAN",
+      "GIRL",
+      "POT",
+      "schenkte"
+    ],
+    "holle_style": [
+      "Z_GIVE",
+      "WOMAN",
+      "GIRL",
+      "SPOOL",
+      "gab"
+    ],
+    "unknown_entity": null
+  },
+  "boundaries": {
+    "cooccurrence_symmetry": {
+      "non_identifiable": true,
+      "resolved_by_discriminating_episode": true,
+      "finding": "If two raw tokens and two persistent world participants always co-occur in exactly the same episodes, their token↔participant mapping is permutation-symmetric. A discriminating episode is required."
+    },
+    "world_identity": {
+      "count_only_non_identifiable": true,
+      "finding": "If grounded episodes do not preserve participant identity across episodes, lexical anchor learning cannot establish that the same raw word refers to the same participant/class across uses."
+    }
+  },
+  "checks": {
+    "K14b_K14_base_green": true,
+    "K14b_dictionary_has_no_ENTITY_or_type_labels": true,
+    "K14b_repeated_text_world_alignment_learns_core_raw_anchors": true,
+    "K14b_anonymous_port_types_induced_from_relation_incidence": true,
+    "K14b_base_event_parses_from_learned_anchors": true,
+    "K14b_new_combination_generalizes": true,
+    "K14b_sweet_style_event_uses_learned_raw_anchors": true,
+    "K14b_holle_style_event_uses_learned_raw_anchors": true,
+    "K14b_unaligned_new_content_word_stays_UNKNOWN": true,
+    "K14b_perfectly_cooccurring_token_participant_pairs_are_non_identifiable": true,
+    "K14b_one_discriminating_episode_breaks_anchor_permutation_symmetry": true,
+    "K14b_without_persistent_world_participant_identity_anchor_learning_is_non_identifiable": true
+  },
+  "interpretation": [
+    "K14b removes dictionary-provided ENTITY and T-type labels in a controlled grounded curriculum. Raw content tokens become persistent lexical anchors through repeated discriminating text↔world participant co-occurrence.",
+    "Anonymous type classes are then induced from learned relation-port incidence, reusing the same structural principle as K4 rather than human PERSON/OBJECT names.",
+    "The learned anchors compose with K14 attachment and earlier morphology to parse new combinations and the tested Frau-Holle/Sweet-Porridge-style GIVE clauses.",
+    "A novel ungrounded word such as 'Hexe' remains UNKNOWN instead of being guessed as person-like from spelling or position.",
+    "Entity anchoring is therefore learnable when grounded episodes preserve persistent participant identity and contain discriminating co-occurrence. Persistent identity itself remains kernel-near."
+  ],
+  "caveats": [
+    "Training still supplies persistent world participant IDs in grounded episodes.",
+    "The alignment algorithm uses cross-episode co-occurrence, not unrestricted reference resolution.",
+    "Only lexical content anchors in a controlled vocabulary are tested.",
+    "Abstract/non-referential words and polysemy are not handled.",
+    "Clause boundaries remain fixed."
+  ]
+}

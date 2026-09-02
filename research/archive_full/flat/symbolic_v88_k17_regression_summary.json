@@ -1,0 +1,32 @@
+{
+  "K17": {
+    "pass": 21,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K17b": {
+    "pass": 8,
+    "fail": 0,
+    "returncode": 0
+  },
+  "fresh_regressions": [
+    {
+      "stage": "K16",
+      "returncode": 0,
+      "pass": 12,
+      "fail": 0
+    },
+    {
+      "stage": "K15",
+      "returncode": 0,
+      "pass": 14,
+      "fail": 0
+    },
+    {
+      "stage": "K14b",
+      "returncode": 0,
+      "pass": 12,
+      "fail": 0
+    }
+  ]
+}

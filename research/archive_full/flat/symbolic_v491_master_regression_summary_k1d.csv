@@ -1,0 +1,5 @@
+name,category,status,seconds,file
+NESTED_LEARNING_V46,learning,PASS,13.814,symbolic_v46_nested_on_demand.py
+AUTO_DEPENDENCY_V47,learning,PASS,12.524,symbolic_v47_automatic_dependency_discovery.py
+ABSTRACTION_INVENTION_V48,learning,PASS,28.283,symbolic_v48_abstraction_invention.py
+VERSIONED_REVISION_V49,learning,PASS,3.59,symbolic_v49_versioned_revision.py

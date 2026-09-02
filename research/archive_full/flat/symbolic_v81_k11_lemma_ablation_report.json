@@ -1,0 +1,46 @@
+{
+  "version": "v8.1-K11-standalone-lemma-ablation",
+  "result": "PASS",
+  "clusters": [
+    [
+      "gab",
+      "geben",
+      "gibt",
+      "schenken",
+      "schenkt",
+      "schenkte"
+    ],
+    [
+      "kam",
+      "kommen",
+      "kommt"
+    ]
+  ],
+  "checks": {
+    "K11_K10_base_report_green": true,
+    "K11_no_lemma_mapping_in_new_parser": true,
+    "K11_give_raw_forms_semantically_cluster": true,
+    "K11_return_raw_forms_semantically_cluster": true,
+    "K11_see_forms_with_no_stable_consequence_remain_unlearned": true,
+    "K11_sweet_schenkte_transfers": true,
+    "K11_holle_gab_transfers": true,
+    "K11_sweet_kommt_transfers": true,
+    "K11_unseen_gaebe_UNKNOWN": true,
+    "K11_denken_not_merged_by_suffix_similarity": true,
+    "K11_semantics_alone_cannot_tell_inflection_from_synonymy": true
+  },
+  "frozen": {
+    "sweet": "Event(head='Y1', args=('OLD_WOMAN', 'GIRL', 'POT'), evidence='sweet', form='schenkte')",
+    "holle": "Event(head='Y1', args=('FRAU_HOLLE', 'GOOD_DAUGHTER', 'SPOOL'), evidence='holle', form='gab')",
+    "home": "Event(head='Y2', args=('GIRL',), evidence='home', form='kommt')",
+    "unseen": "None"
+  },
+  "identifiability": {
+    "finding": "Semantic consequence+binder equivalence is enough for semantic reuse of raw forms but cannot determine whether equivalent forms are inflections of one lexeme or separate synonyms. That distinction requires additional morphology/distribution evidence if needed."
+  },
+  "caveats": [
+    "Case/article analysis is still fixed.",
+    "Mention extraction, reference binding, token order and Clause-U remain substrate.",
+    "Observed-form equivalence is learned; productive unseen morphology is not."
+  ]
+}

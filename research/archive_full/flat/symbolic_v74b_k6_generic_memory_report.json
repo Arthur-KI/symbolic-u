@@ -1,0 +1,144 @@
+{
+  "version": "v7.4b-K6-generic-memory-u",
+  "result": "PASS",
+  "checks": {
+    "K6b_four_persistent_relations_share_one_generic_memory_U": true,
+    "K6b_same_shape_P5_is_not_attached_to_memory_U": true,
+    "K6b_O1_boundary_blocks_old_and_starts_new": true,
+    "K6b_O2_transfer_blocks_old_owner_and_starts_new_owner": true,
+    "K6b_O3_exact_disappearance_blocks_persistence": true,
+    "K6b_O4_appearance_starts_persistence_interval": true,
+    "K6b_unrelated_operation_boundary_does_not_block": true,
+    "K6b_unknown_higher_O_can_block_exact_key_without_semantic_operation_name": true,
+    "K6b_same_boundary_does_not_block_unmentioned_key": true,
+    "K6b_same_arity_new_relation_does_not_auto_inherit_persistence": true,
+    "K6b_endpoint_only_observations_still_do_not_license_gap_persistence": true,
+    "K6b_Grimm_carry_stop_restart_sequence": true
+  },
+  "memory_u": {
+    "id": "M1",
+    "structure": "carry exact prior Key forward while no learned local operation boundary contains that exact Key in before_only without retaining it in after_only",
+    "attachments": {
+      "P1": {
+        "status": "ACTIVE",
+        "support": 3,
+        "conflict": 0
+      },
+      "P2": {
+        "status": "ACTIVE",
+        "support": 3,
+        "conflict": 0
+      },
+      "P3": {
+        "status": "ACTIVE",
+        "support": 3,
+        "conflict": 0
+      },
+      "P4": {
+        "status": "ACTIVE",
+        "support": 3,
+        "conflict": 0
+      },
+      "P5": {
+        "status": "REJECTED",
+        "support": 0,
+        "conflict": 3
+      }
+    }
+  },
+  "operation_boundary_tests": {
+    "replace": {
+      "old": [
+        0,
+        [
+          "BLOCKED_BY_O",
+          "O1",
+          "rep-O"
+        ]
+      ],
+      "new": [
+        1,
+        "M1"
+      ],
+      "op": "O1"
+    },
+    "transfer": {
+      "old": [
+        0,
+        [
+          "BLOCKED_BY_O",
+          "O2",
+          "tr-O"
+        ]
+      ],
+      "new": [
+        1,
+        "M1"
+      ],
+      "op": "O2"
+    },
+    "disappear": {
+      "old": [
+        0,
+        [
+          "BLOCKED_BY_O",
+          "O3",
+          "stop-O"
+        ]
+      ],
+      "op": "O3"
+    },
+    "appear": {
+      "new": [
+        1,
+        "M1"
+      ],
+      "op": "O4"
+    },
+    "unknown_higher_op": {
+      "killed": [
+        0,
+        [
+          "BLOCKED_BY_O",
+          "O77",
+          "m-O"
+        ]
+      ],
+      "survives": [
+        1,
+        "M1"
+      ],
+      "op": "O77"
+    }
+  },
+  "grimm": {
+    "before_stop": [
+      1,
+      "M1"
+    ],
+    "after_stop": [
+      0,
+      [
+        "BLOCKED_BY_O",
+        "O3",
+        "g-stop"
+      ]
+    ],
+    "after_restart": [
+      1,
+      "M1"
+    ]
+  },
+  "interpretation": [
+    "The four previously state-like anonymous P-relations can share one learned generic Memory-U; relation-specific training learns only whether that U attaches.",
+    "The memory layer does not need semantic STOP/TRANSFER/REPLACE operation labels. Any learned local O-boundary that explicitly removes an exact Key terminates its persistence interval.",
+    "This fixes the transfer case missed by the first K6 blocker: P3(ANNA,KEY) stops when an O2 component changes it to P3(BEN,KEY).",
+    "An unknown higher operation O77 can terminate a Key solely from its before/after Key membership, demonstrating that persistence termination can compose with future operation families.",
+    "A new same-arity relation receives no persistence merely by type/shape analogy; endpoint silence remains insufficient."
+  ],
+  "caveats": [
+    "Learning the generic Memory-U itself is induced from the repeated common structure of positively attached relations in this controlled audit; the attachment curriculum still uses explicit temporal truth supervision.",
+    "Exact Key membership in an O-boundary is fixed symbolic information from K5's before/after comparator.",
+    "The system does not yet learn probabilistic or duration-limited persistence modes; only exact carry-until-explicit-boundary is tested."
+  ]
+}

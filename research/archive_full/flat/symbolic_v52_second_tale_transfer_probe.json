@@ -1,0 +1,8 @@
+{
+  "source": "grimm_der_suesse_brei.txt",
+  "frozen_v52": true,
+  "facts": 0,
+  "targets_proved": 0,
+  "targets_n": 5,
+  "result": "TRANSFER_WEAK"
+}

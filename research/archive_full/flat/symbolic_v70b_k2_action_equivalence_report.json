@@ -1,0 +1,92 @@
+{
+  "version": "v7.0b-K2-action-equivalence-audit",
+  "result": "PASS",
+  "checks": {
+    "K2b_raw_second_lexeme_makes_implicit_action_ambiguous": true,
+    "K2b_reciprocal_START_STOP_substitution_is_parsed": true,
+    "K2b_reciprocal_substitution_learns_anonymous_action_equivalence": true,
+    "K2b_equivalent_lexical_actions_collapse_capability_ambiguity": true,
+    "K2b_implicit_surface_recovers_after_learned_equivalence": [
+      "LAMP",
+      "A4"
+    ],
+    "K2b_explicit_synonym_normalizes_to_same_action_class": true,
+    "K2b_same_entity_co_capability_alone_does_not_merge_actions": true,
+    "K2b_genuine_distinct_action_ambiguity_stays_UNKNOWN": true,
+    "K2b_one_way_substitution_is_insufficient": true,
+    "K2b_cross_target_cooccurrence_is_insufficient": true
+  },
+  "pair": {
+    "a": "A4",
+    "b": "A6",
+    "support": [
+      [
+        "e1",
+        "START",
+        "A4",
+        "A6",
+        true
+      ],
+      [
+        "e2",
+        "START",
+        "A6",
+        "A4",
+        true
+      ],
+      [
+        "e3",
+        "STOP",
+        "A4",
+        "A6",
+        true
+      ],
+      [
+        "e4",
+        "STOP",
+        "A6",
+        "A4",
+        true
+      ]
+    ],
+    "verified": true,
+    "canonical": "A4"
+  },
+  "before": {
+    "raw_capabilities": [
+      "A4",
+      "A6"
+    ],
+    "implicit_prediction": null
+  },
+  "after": {
+    "collapsed_classes": [
+      "A4"
+    ],
+    "implicit_prediction": "STOP",
+    "implicit_slots": [
+      "LAMP",
+      "A4"
+    ],
+    "explicit_synonym_slots": [
+      "LAMP",
+      "A6"
+    ],
+    "explicit_synonym_canonical": [
+      "LAMP",
+      "A4"
+    ]
+  },
+  "interpretation": [
+    "A one-lemma-one-A representation over-splits synonym-like lexical actions and can create false capability ambiguity.",
+    "This is repairable without a synonym dictionary by learning an anonymous action-equivalence U from reciprocal substitution across both START and STOP transitions.",
+    "After equivalence materialization, two lexical A-symbols may share one canonical action identity for capability reasoning.",
+    "Merely occurring on the same entity, one-way substitution, or cross-target co-occurrence is insufficient to merge action identities.",
+    "Thus lexical action identity can itself become a learned relation over anonymous actions rather than a fixed semantic head."
+  ],
+  "caveats": [
+    "The reciprocal START+STOP equivalence verifier is a hand-designed generic gate.",
+    "The synthetic synonym pair is controlled; unrestricted lexical sense induction remains harder.",
+    "Homonym splitting (one lemma with genuinely different senses) is not solved here."
+  ]
+}

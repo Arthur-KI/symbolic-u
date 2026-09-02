@@ -1,0 +1,191 @@
+{
+  "version": "v7.3-K5-state-operation-ablation",
+  "result": "PASS",
+  "checks": {
+    "frozen_K4_base_is_green": true,
+    "K5_operation_heads_are_anonymous_O_symbols": true,
+    "K5_four_distinct_snapshot_motifs_are_learned": true,
+    "K5_each_operation_requires_three_independent_supports": true,
+    "K5_frozen_new_relations_and_constants_transfer": true,
+    "K5_no_change_does_not_invent_operation": true,
+    "K5_unrelated_cross_relation_change_does_not_match_known_operation": true,
+    "K5_duplicate_evidence_cannot_activate_operation": true,
+    "K5_two_supports_are_still_staged": true,
+    "K5_anonymous_operation_programs_can_be_reused": true,
+    "K5_relation_names_are_not_needed_for_generic_operation_family": true,
+    "K5_time_order_removal_makes_appearance_and_disappearance_non_identifiable": true,
+    "K5_variable_identity_removal_collapses_replace_and_transfer": true,
+    "K5_Grimm_two_steh_transitions_choose_same_anonymous_operation": true,
+    "K5_Grimm_steh_can_activate_from_two_distinct_operation_evidences": true
+  },
+  "anonymous_operations": {
+    "O1": {
+      "signature": {
+        "records": [
+          [
+            "B0_ONLY",
+            "Q0",
+            [
+              "V0",
+              "V1"
+            ]
+          ],
+          [
+            "B1_ONLY",
+            "Q0",
+            [
+              "V0",
+              "V2"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "status": "ACTIVE"
+    },
+    "O2": {
+      "signature": {
+        "records": [
+          [
+            "B0_ONLY",
+            "Q0",
+            [
+              "V0",
+              "V1"
+            ]
+          ],
+          [
+            "B1_ONLY",
+            "Q0",
+            [
+              "V2",
+              "V1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "status": "ACTIVE"
+    },
+    "O3": {
+      "signature": {
+        "records": [
+          [
+            "B0_ONLY",
+            "Q0",
+            [
+              "V0",
+              "V1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "status": "ACTIVE"
+    },
+    "O4": {
+      "signature": {
+        "records": [
+          [
+            "B1_ONLY",
+            "Q0",
+            [
+              "V0",
+              "V1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "status": "ACTIVE"
+    }
+  },
+  "evaluator_only_mapping": {
+    "APPEAR": "O4",
+    "DISAPPEAR": "O3",
+    "REPLACE_SECOND": "O1",
+    "TRANSFER_FIRST": "O2"
+  },
+  "boundaries": {
+    "time_order": {
+      "collision": true,
+      "resolution_without_order": null,
+      "finding": "Without an ordered distinction between t0 and t1, a one-fact appearance and disappearance are the same unordered pair of snapshots. Direction is not identifiable."
+    },
+    "variable_identity": {
+      "replace_signature_without_identity": [
+        1,
+        1,
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ],
+      "transfer_signature_without_identity": [
+        1,
+        1,
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ],
+      "collision": true,
+      "resolution_without_identity": null,
+      "finding": "Without preserving equality of arguments across snapshots, replacing the second argument and transferring the first argument both reduce to one binary fact disappearing and one binary fact appearing."
+    }
+  },
+  "grimm": {
+    "process_relation": "P1",
+    "anonymous_kochen_action": "A2",
+    "operations": [
+      "O3",
+      "O3"
+    ],
+    "lexical_signature": [
+      "P1",
+      "O3"
+    ],
+    "support": [
+      [
+        "grimm-steh-1",
+        [
+          "P1",
+          "O3"
+        ]
+      ],
+      [
+        "grimm-steh-2",
+        [
+          "P1",
+          "O3"
+        ]
+      ]
+    ],
+    "active": true,
+    "old_evaluator_remove_process_family": "R25"
+  },
+  "search": {
+    "training_transitions": 12,
+    "unique_motifs": 4,
+    "pairwise_comparison_upper_bound": 66
+  },
+  "interpretation": [
+    "K5 removes the named state operations ADD, REMOVE, REPLACE, and TRANSFER from the learned operation layer.",
+    "The learner sees only ordered before/after snapshots and exact Key/argument identity, then invents anonymous O-families from recurring change motifs.",
+    "Generic appearance/disappearance operations transfer across anonymous relation heads because relation identity is parameterized rather than semantically named.",
+    "Replacement and transfer remain distinguishable only because variable equality across snapshots is preserved.",
+    "Two independent Grimm 'steh' consequences instantiate the same anonymous snapshot-operation family even though the learner has no REMOVE operation name.",
+    "A real kernel boundary is exposed: temporal order is necessary to distinguish appearance from disappearance; cross-time variable/key identity is necessary to distinguish replacement from transfer."
+  ],
+  "caveats": [
+    "K5 still relies on ordered snapshots and exact symbolic Key equality; those are intentionally tested as candidate kernel mechanisms rather than removed in the successful branch.",
+    "Computing snapshot membership is itself fixed symbolic machinery. K5 removes semantic operation labels, not the ability to compare two sets of Keys.",
+    "Only four recurring binary change motifs are covered in this PoC.",
+    "The operation lifecycle threshold of three independent examples is a hand-set prior.",
+    "The full raw-language front end is frozen from earlier curriculum stages; K5 isolates the state-operation layer."
+  ]
+}

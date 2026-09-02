@@ -1,0 +1,217 @@
+{
+  "version": "v7.8-K8-cross-story-binder-abstraction",
+  "result": "PASS",
+  "old_transfer_baseline": {
+    "frau_holle_to_sweet_porridge_overlap_recall": "0/2",
+    "false_commits": 0
+  },
+  "give": {
+    "lexical_heads": {
+      "geben": "E1",
+      "schenken": "E2"
+    },
+    "canonical_head": "E1",
+    "binders": {
+      "geben": {
+        "signature": [
+          [
+            "T4",
+            "NOM",
+            null,
+            true
+          ],
+          [
+            "T4",
+            "DAT",
+            null,
+            false
+          ],
+          [
+            "T5",
+            "ACC",
+            null,
+            false
+          ]
+        ],
+        "equivalent_fitting_programs": 8,
+        "anonymous_consequence": [
+          "P3",
+          "O2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ]
+      },
+      "schenken": {
+        "signature": [
+          [
+            "T4",
+            "NOM",
+            null,
+            true
+          ],
+          [
+            "T4",
+            "DAT",
+            null,
+            false
+          ],
+          [
+            "T5",
+            "ACC",
+            null,
+            false
+          ]
+        ],
+        "equivalent_fitting_programs": 8,
+        "anonymous_consequence": [
+          "P3",
+          "O2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ]
+      }
+    }
+  },
+  "return_home": {
+    "lexical_heads": {
+      "gehen_heim": "E11",
+      "kehren_heim": "E12",
+      "kommen_heim": "E13"
+    },
+    "canonical_head": "E11",
+    "binders": {
+      "gehen_heim": [
+        [
+          "T4",
+          "NOM",
+          null,
+          false
+        ]
+      ],
+      "kehren_heim": [
+        [
+          "T4",
+          "NOM",
+          null,
+          false
+        ]
+      ],
+      "kommen_heim": [
+        [
+          "T4",
+          "NOM",
+          null,
+          false
+        ]
+      ]
+    },
+    "anonymous_consequence": [
+      "P4",
+      "O4",
+      [
+        "V0",
+        "HOME"
+      ]
+    ]
+  },
+  "frozen_cross_story": {
+    "sweet_porridge": {
+      "give": "Event(head='E1', args=('OLD_WOMAN', 'GIRL', 'POT'), evidence='sweet-give', source_lexeme='schenken')",
+      "return_home": "Event(head='E11', args=('GIRL',), evidence='sweet-home', source_lexeme='kommen_heim')",
+      "overlap_recall": "2/2",
+      "online_learning": false
+    },
+    "frau_holle_regression": {
+      "give": "Event(head='E1', args=('FRAU_HOLLE', 'GOOD_DAUGHTER', 'SPOOL'), evidence='holle-give', source_lexeme='geben')",
+      "lazy_return_home": "Event(head='E11', args=('LAZY_DAUGHTER',), evidence='holle-home', source_lexeme='kommen_heim')"
+    }
+  },
+  "adversarial": [
+    {
+      "name": "give_dative_front",
+      "passed": true,
+      "event": "Event(head='E1', args=('ANNA', 'BOY', 'BOOK'), evidence='adv1', source_lexeme='schenken')"
+    },
+    {
+      "name": "give_theme_front",
+      "passed": true,
+      "event": "Event(head='E1', args=('ANNA', 'BOY', 'BOOK'), evidence='adv2', source_lexeme='geben')"
+    },
+    {
+      "name": "give_missing_recipient",
+      "passed": true,
+      "event": "None"
+    },
+    {
+      "name": "give_missing_theme",
+      "passed": true,
+      "event": "None"
+    },
+    {
+      "name": "non_give_verb",
+      "passed": true,
+      "event": "None"
+    },
+    {
+      "name": "bad_case_pattern",
+      "passed": true,
+      "event": "None"
+    },
+    {
+      "name": "two_dative_persons_stay_unknown",
+      "passed": true,
+      "event": "None"
+    },
+    {
+      "name": "return_no_heim",
+      "passed": true,
+      "event": "None"
+    },
+    {
+      "name": "return_wrong_verb",
+      "passed": true,
+      "event": "None"
+    }
+  ],
+  "identifiability": {
+    "casefree_full_varied_order_programs": 0,
+    "canonical_only_order_shortcut_programs": 1,
+    "finding": "Canonical SVO examples alone permit an order-based shortcut. Once dative-fronting and theme-fronting are included, order-only binding no longer fits; formal case/type evidence becomes necessary for a stable cross-order binder."
+  },
+  "checks": {
+    "K8_old_frozen_transfer_baseline_is_zero_of_two": true,
+    "K8_geben_binder_learned_from_varied_word_orders": true,
+    "K8_schenken_binder_learned_independently": true,
+    "K8_geben_and_schenken_binders_have_same_structure": true,
+    "K8_same_event_U_merges_geben_schenken_only_after_same_binder_and_consequence": true,
+    "K8_return_home_surface_families_merge_by_same_binder_and_location_consequence": true,
+    "K8_frozen_SweetPorridge_GIVE_transfers": true,
+    "K8_frozen_SweetPorridge_RETURN_HOME_transfers": true,
+    "K8_FrauHolle_actual_GIVE_works_with_generic_shared_subject_binder": true,
+    "K8_FrauHolle_lazy_return_home_works_with_generic_unary_binder": true,
+    "K8_adversarial_binder_suite_all_safe": true,
+    "K8_varied_case_curriculum_blocks_order_only_shortcut": true,
+    "K8_canonical_only_curriculum_would_allow_order_shortcut": true
+  },
+  "interpretation": [
+    "K8 replaces Frau-Holle-specific GIVE binders with a learned generic three-port program. The selected structure uses formal case plus anonymous T-types rather than story constants.",
+    "geben and schenken begin as separate lexical event heads. They are merged only because their independently learned binder topology and their anonymous P3/O2 transfer consequence are identical.",
+    "RETURN_HOME is similarly abstracted across gehen/kehren/kommen + heim via one subject binder and a shared anonymous P4/O4 consequence.",
+    "With the learned library frozen, the unchanged Sweet-Porridge clauses 'schenkte ihm ein Töpfchen' and 'kommt das Kind heim' now recover both previously overlapping target facts, improving strict cross-story overlap recall from 0/2 to 2/2.",
+    "The same generic binder also handles Frau Holle's coordinated '... sprach die Frau Holle und gab ihm auch die Spule wieder' when the frozen Clause-U supplies the inherited subject.",
+    "Varied word order is essential: canonical-only curricula admit an unsafe order shortcut, while dative/theme fronting forces the reusable binder to rely on structural morphology."
+  ],
+  "caveats": [
+    "The curriculum still supplies gold anonymous event-port tuples for binder learning; port semantics are learned by supervised structural alignment, not discovered from raw text alone.",
+    "Formal case analysis, anonymous T-types, frozen reference resolution, and shared-subject Clause-U remain substrate.",
+    "The SAME_EVENT criterion uses identical state consequences; verbs with similar but not identical temporal/pragmatic semantics may require additional distinguishing evidence.",
+    "Only GIVE and RETURN_HOME are generalized in this K8 PoC. The other Frau-Holle binders remain story-specific until similarly abstracted.",
+    "This is cross-story transfer after targeted generic curriculum, not zero-shot learning of unseen lexical items: schenken and kommen+heim were learned from simpler non-Grimm examples."
+  ]
+}

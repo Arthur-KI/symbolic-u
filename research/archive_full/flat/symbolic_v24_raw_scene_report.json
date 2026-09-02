@@ -1,0 +1,76 @@
+{
+  "reference": {
+    "ROLE_ONLY": {
+      "correct": 13,
+      "n": 15,
+      "wrong": 0,
+      "unknown": 2
+    },
+    "NAIVE_PRESENT": {
+      "correct": 13,
+      "n": 15,
+      "wrong": 0,
+      "unknown": 2
+    },
+    "RAW_SCENE_U": {
+      "correct": 15,
+      "n": 15,
+      "wrong": 0,
+      "unknown": 0
+    }
+  },
+  "events": [
+    {
+      "pos": 127,
+      "entity": "girl",
+      "location": "FOREST",
+      "source": "Kind hinaus in den Wald"
+    },
+    {
+      "pos": 156,
+      "entity": "old_woman",
+      "location": "FOREST",
+      "source": "begegnete ihm da eine alte Frau"
+    },
+    {
+      "pos": 223,
+      "entity": "pot",
+      "location": "FOREST",
+      "source": "schenkte ihm ein Töpfchen"
+    },
+    {
+      "pos": 396,
+      "entity": "girl",
+      "location": "HOME",
+      "source": "Das Mädchen brachte den Topf seiner Mutter heim"
+    },
+    {
+      "pos": 396,
+      "entity": "pot",
+      "location": "HOME",
+      "source": "Das Mädchen brachte den Topf seiner Mutter heim"
+    },
+    {
+      "pos": 558,
+      "entity": "girl",
+      "location": "AWAY_HOME",
+      "source": "das Mädchen ausgegangen"
+    },
+    {
+      "pos": 1052,
+      "entity": "girl",
+      "location": "HOME",
+      "source": "da kommt das Kind heim"
+    }
+  ],
+  "scene_checks": {
+    "passed": 11,
+    "n": 11
+  },
+  "caveats": [
+    "gold labels annotated",
+    "reference snippets anchored for evaluation",
+    "focal location supplied per probe",
+    "scene cue grammar is small symbolic prototype"
+  ]
+}

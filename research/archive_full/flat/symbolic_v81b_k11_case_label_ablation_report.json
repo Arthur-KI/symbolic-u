@@ -1,0 +1,84 @@
+{
+  "version": "v8.1b-K11b-case-label-ablation",
+  "result": "PASS",
+  "profiles": {
+    "C1": {
+      "type": "T4",
+      "markers": [
+        "INHERITED",
+        "das",
+        "der",
+        "die"
+      ],
+      "allow_inherited": true
+    },
+    "C2": {
+      "type": "T4",
+      "markers": [
+        "dem",
+        "ihm"
+      ],
+      "allow_inherited": false
+    },
+    "C3": {
+      "type": "T5",
+      "markers": [
+        "das",
+        "den",
+        "die",
+        "ein",
+        "einen"
+      ],
+      "allow_inherited": false
+    }
+  },
+  "checks": {
+    "K11b_K11_green": true,
+    "K11b_no_NOM_DAT_ACC_labels_in_new_layer": true,
+    "K11b_three_anonymous_role_marker_profiles_learned": true,
+    "K11b_sweet_raw_markers_bind_correctly": true,
+    "K11b_holle_raw_markers_bind_correctly": true,
+    "K11b_fronted_theme_binds_correctly_without_case_labels": true,
+    "K11b_das_person_subject_supported_by_type_plus_marker": true,
+    "K11b_two_recipient_marker_candidates_stay_UNKNOWN": true,
+    "K11b_unseen_marker_einem_is_not_guessed": true,
+    "K11b_coextensive_dem_ihm_do_not_reveal_morphological_class_identity": true
+  },
+  "frozen": {
+    "sweet": [
+      "OLD_WOMAN",
+      "GIRL",
+      "POT"
+    ],
+    "holle": [
+      "FRAU_HOLLE",
+      "GOOD_DAUGHTER",
+      "SPOOL"
+    ],
+    "front": [
+      "MAN",
+      "BOY",
+      "BALL"
+    ],
+    "subject_das": [
+      "GIRL",
+      "BOY",
+      "BOOK"
+    ],
+    "ambiguous": null,
+    "unseen_marker": null
+  },
+  "identifiability": {
+    "finding": "Raw markers can be learned as role evidence without NOM/DAT/ACC names. But if two markers such as dem and ihm have exactly the same observed role distribution, data alone does not identify whether they belong to one morphological case class or are merely coextensive surface cues."
+  },
+  "interpretation": [
+    "K11b removes semantic/formal case labels. The binder uses learned anonymous marker profiles over raw articles/pronouns plus anonymous T-types.",
+    "Case-like behavior is therefore learnable for observed forms, while unseen marker forms remain UNKNOWN.",
+    "Productive case morphology is not yet learned: the system knows observed marker-role compatibility, not a generative declension system."
+  ],
+  "caveats": [
+    "Raw determiner/pronoun token identity is still given.",
+    "Anonymous T-types remain available.",
+    "Reference resolution for ihm and inherited subject identity remain substrate."
+  ]
+}

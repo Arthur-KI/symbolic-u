@@ -1,0 +1,462 @@
+{
+  "version": "v6.1-generic-language-bridge-integration",
+  "result": "PASS",
+  "checks": {
+    "frozen_v60_backend_24_checks_remain_green": true,
+    "locality_bound_learned_from_non_grimm_development": true,
+    "bridge_B1_role_typed_es_speaker_not_object": true,
+    "bridge_B1_local_response_binds_pot": true,
+    "bridge_B1_reaches_existing_anonymous_root": true,
+    "bridge_B2_reporting_inversion_after_quote": true,
+    "bridge_B2_inversion_chain_reaches_root": true,
+    "bridge_B3_shared_subject_clause_u": true,
+    "bridge_B4_nearest_place_does_not_steal_action_subject": true,
+    "reference_ambiguity_remains_unknown_no_new_entity_invented": true,
+    "grimm_unique_child_entity_resolved": true,
+    "grimm_unique_mother_entity_resolved": true,
+    "grimm_quote_directives_classified": true,
+    "grimm_girl_pot_cook_command": true,
+    "grimm_mother_pot_cook_command": true,
+    "grimm_pot_cook_world_observation": true,
+    "grimm_girl_command_plus_local_execution_reaches_R5": true,
+    "grimm_mother_command_plus_local_execution_reaches_R5": true,
+    "grimm_old_false_W_kitchen_cook_removed": true,
+    "grimm_no_false_W_edge_cook": true,
+    "grimm_mother_not_merged_with_old_woman": true,
+    "remote_attack_still_contains_later_pot_cook": true,
+    "remote_attack_girl_command_still_recognized": true,
+    "remote_later_execution_does_not_validate_old_girl_command": true,
+    "nearest_noun_attack_correct_pot_world_action": true,
+    "nearest_noun_attack_no_kitchen_world_action": true,
+    "query_lookup_does_not_mutate_evidence_or_learning": true,
+    "no_grimm_exact_sentence_rules_in_bridge": true
+  },
+  "frozen_backend": {
+    "v60_checks_passed": 24,
+    "v60_checks_total": 24,
+    "directive_relation": "R1",
+    "root_concept": "R5",
+    "root_locality_bound": 1.25
+  },
+  "bridge_mechanisms": [
+    "Persistent mention/entity memory with descriptor re-description.",
+    "Role-typed pronoun Reference-U: speaker requires PERSON; command response prefers typed command target.",
+    "Reference resolution is non-generative: an ambiguous pronoun cannot create a new Entity as a fallback and remains UNKNOWN.",
+    "German reporting inversion after/before quotes.",
+    "Shared-subject Clause-U for coordinated reporting clauses.",
+    "Quoted command Surface-U feeds the frozen anonymous Event-U classifier.",
+    "Response occurrence and reference binding are separated: the action verb is evidence; the command target only constrains reference.",
+    "No cross-clause nearest-noun fallback for action subjects.",
+    "Concept-U temporal locality bound is learned from frozen non-Grimm development instances."
+  ],
+  "bridge_dev": {
+    "B1": {
+      "commands": [
+        {
+          "quote": "Topf koche.",
+          "speaker": "P1",
+          "speaker_sem": "P1",
+          "target": "POT",
+          "action": "COOK",
+          "time": 2
+        }
+      ],
+      "responses": [
+        {
+          "quote": "Topf koche.",
+          "W": [
+            "POT",
+            "COOK"
+          ],
+          "time": 2.5,
+          "fragment": " Danach kochte es."
+        }
+      ],
+      "unresolved": [],
+      "events": [
+        [
+          "R1",
+          [
+            "P1",
+            "POT",
+            "COOK"
+          ],
+          1.95
+        ],
+        [
+          "W",
+          [
+            "POT",
+            "COOK"
+          ],
+          2.5
+        ],
+        [
+          "R5",
+          [
+            "P1",
+            "POT",
+            "COOK"
+          ],
+          2.51
+        ]
+      ]
+    },
+    "B2": {
+      "commands": [
+        {
+          "quote": "Lampe leuchte,",
+          "speaker": "NAME:anna",
+          "speaker_sem": "anna",
+          "target": "LAMP",
+          "action": "LIGHT",
+          "time": 2
+        }
+      ],
+      "responses": [
+        {
+          "quote": "Lampe leuchte,",
+          "W": [
+            "LAMP",
+            "LIGHT"
+          ],
+          "time": 2.5,
+          "fragment": " sprach Anna. Danach leuchtete die Lampe."
+        }
+      ],
+      "unresolved": [],
+      "events": [
+        [
+          "R1",
+          [
+            "NAME:anna",
+            "LAMP",
+            "LIGHT"
+          ],
+          1.95
+        ],
+        [
+          "W",
+          [
+            "LAMP",
+            "LIGHT"
+          ],
+          2.5
+        ],
+        [
+          "R5",
+          [
+            "NAME:anna",
+            "LAMP",
+            "LIGHT"
+          ],
+          2.51
+        ]
+      ]
+    },
+    "B3": {
+      "commands": [
+        {
+          "quote": "Topf koche.",
+          "speaker": "P1",
+          "speaker_sem": "P1",
+          "target": "POT",
+          "action": "COOK",
+          "time": 2
+        }
+      ],
+      "responses": [
+        {
+          "quote": "Topf koche.",
+          "W": [
+            "POT",
+            "COOK"
+          ],
+          "time": 2.5,
+          "fragment": " Danach kochte es."
+        }
+      ],
+      "unresolved": [],
+      "events": [
+        [
+          "R1",
+          [
+            "P1",
+            "POT",
+            "COOK"
+          ],
+          1.95
+        ],
+        [
+          "W",
+          [
+            "POT",
+            "COOK"
+          ],
+          2.5
+        ],
+        [
+          "R5",
+          [
+            "P1",
+            "POT",
+            "COOK"
+          ],
+          2.51
+        ]
+      ]
+    },
+    "B4": {
+      "commands": [
+        {
+          "quote": "Tor öffne.",
+          "speaker": "NAME:ben",
+          "speaker_sem": "ben",
+          "target": "GATE",
+          "action": "OPEN",
+          "time": 2
+        }
+      ],
+      "responses": [
+        {
+          "quote": "Tor öffne.",
+          "W": [
+            "GATE",
+            "OPEN"
+          ],
+          "time": 2.5,
+          "fragment": " Danach öffnete das Tor. Die Küche war leer."
+        }
+      ],
+      "unresolved": [],
+      "events": [
+        [
+          "R1",
+          [
+            "NAME:ben",
+            "GATE",
+            "OPEN"
+          ],
+          1.95
+        ],
+        [
+          "W",
+          [
+            "GATE",
+            "OPEN"
+          ],
+          2.5
+        ],
+        [
+          "R5",
+          [
+            "NAME:ben",
+            "GATE",
+            "OPEN"
+          ],
+          2.51
+        ]
+      ]
+    }
+  },
+  "grimm": {
+    "raw_chars": 1207,
+    "entities": {
+      "P1": {
+        "types": [
+          "CHILD",
+          "FEMALE",
+          "PERSON"
+        ],
+        "gender": "N",
+        "semantic": null,
+        "mentions": 8
+      },
+      "P2": {
+        "types": [
+          "FEMALE",
+          "MOTHER",
+          "PERSON"
+        ],
+        "gender": "F",
+        "semantic": null,
+        "mentions": 5
+      },
+      "O1": {
+        "types": [
+          "ENTITY",
+          "PLACE"
+        ],
+        "gender": "N",
+        "semantic": "FOREST",
+        "mentions": 1
+      },
+      "P3": {
+        "types": [
+          "FEMALE",
+          "OLD",
+          "PERSON"
+        ],
+        "gender": "F",
+        "semantic": null,
+        "mentions": 1
+      },
+      "O2": {
+        "types": [
+          "ENTITY",
+          "OBJECT"
+        ],
+        "gender": "N",
+        "semantic": "POT",
+        "mentions": 13
+      },
+      "O3": {
+        "types": [
+          "ENTITY",
+          "OBJECT"
+        ],
+        "gender": "N",
+        "semantic": "PORRIDGE",
+        "mentions": 6
+      },
+      "O4": {
+        "types": [
+          "ENTITY",
+          "PLACE"
+        ],
+        "gender": "N",
+        "semantic": "EDGE",
+        "mentions": 2
+      },
+      "O5": {
+        "types": [
+          "ENTITY",
+          "PLACE"
+        ],
+        "gender": "N",
+        "semantic": "KITCHEN",
+        "mentions": 2
+      },
+      "O6": {
+        "types": [
+          "ENTITY",
+          "PLACE"
+        ],
+        "gender": "N",
+        "semantic": "HOUSE",
+        "mentions": 6
+      },
+      "O7": {
+        "types": [
+          "ENTITY",
+          "PLACE"
+        ],
+        "gender": "N",
+        "semantic": "STREET",
+        "mentions": 2
+      },
+      "O8": {
+        "types": [
+          "ENTITY",
+          "PLACE"
+        ],
+        "gender": "N",
+        "semantic": "CITY",
+        "mentions": 1
+      }
+    },
+    "girl_entity": "P1",
+    "mother_entity": "P2",
+    "commands": [
+      {
+        "quote": "Töpfchen koche,",
+        "speaker": "P1",
+        "speaker_sem": "P1",
+        "target": "POT",
+        "action": "COOK",
+        "time": 2
+      },
+      {
+        "quote": "Töpfchen koche,",
+        "speaker": "P2",
+        "speaker_sem": "P2",
+        "target": "POT",
+        "action": "COOK",
+        "time": 6
+      }
+    ],
+    "responses": [
+      {
+        "quote": "Töpfchen koche,",
+        "W": [
+          "POT",
+          "COOK"
+        ],
+        "time": 2.5,
+        "fragment": " so kochte es guten süßen\nHirsenbrei, und wenn es sagte "
+      },
+      {
+        "quote": "Töpfchen koche,",
+        "W": [
+          "POT",
+          "COOK"
+        ],
+        "time": 6.5,
+        "fragment": " da kocht\nes, und sie ißt sich satt; nun will sie daß das Töpfchen wieder\naufhören soll, aber sie weiß das Wort nicht. A"
+      }
+    ],
+    "r1_events": [
+      [
+        "P1",
+        "POT",
+        "COOK"
+      ],
+      [
+        "P2",
+        "POT",
+        "COOK"
+      ]
+    ],
+    "w_events": [
+      [
+        "POT",
+        "COOK"
+      ],
+      [
+        "POT",
+        "COOK"
+      ],
+      [
+        "PORRIDGE",
+        "COOK"
+      ]
+    ],
+    "root_events": [
+      [
+        "P1",
+        "POT",
+        "COOK"
+      ],
+      [
+        "P2",
+        "POT",
+        "COOK"
+      ]
+    ],
+    "false_W_kitchen_cook": false
+  },
+  "remote_attack": {
+    "later_pot_cook_exists": true,
+    "girl_command_count": 1,
+    "girl_root_count": 0
+  },
+  "caveats": [
+    "v6.1 is still a controlled symbolic language bridge, not general German NLP.",
+    "The bridge adds primitive lexical/descriptor knowledge and generic German morphology; it does not learn the lexicon from raw text.",
+    "Quoted directives are handled more strongly than arbitrary indirect speech.",
+    "Reference resolution uses role typing plus discourse recency; fully ambiguous compatible references remain an open problem.",
+    "The full Grimm probe now targets the command/execution abstraction R5; the story does not contain the X/Y structure required by the synthetic R8/R9 hierarchy.",
+    "The word 'steh' is deliberately left uninterpreted as a semantic STOP command; v6.1 does not claim to solve the magical stop formula.",
+    "Transactional v5.8-style revision is still not embedded into this language-bridge monolith."
+  ]
+}

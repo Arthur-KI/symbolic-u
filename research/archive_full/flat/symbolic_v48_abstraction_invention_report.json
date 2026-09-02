@@ -1,0 +1,169 @@
+{
+  "version": "v4.8-symbolic-abstraction-invention",
+  "result": "PASS",
+  "checks": {
+    "anonymous_relation_invented": true,
+    "signature_inferred_from_structural_hole": true,
+    "no_known_relation_vocabulary_used": true,
+    "anonymous_relation_full_training_support": true,
+    "anonymous_relation_frozen_generalizes": true,
+    "route_parent_generalizes": true,
+    "route_query_uses_anonymous_relation": true,
+    "second_domain_reuses_same_abstraction": true,
+    "second_domain_does_not_invent_R2": true,
+    "second_domain_unseen_query_generalizes": true,
+    "singleton_abstraction_rejected": true,
+    "failed_parent_does_not_commit_child": true
+  },
+  "invented_relation": {
+    "name": "R1",
+    "signature": [
+      "NUM",
+      "NUM",
+      "NUM"
+    ],
+    "hole_vars": [
+      "_NUM0",
+      "_NUM1",
+      "C"
+    ],
+    "support": 13,
+    "positive_n": 13,
+    "conflict": 0,
+    "frozen_passed": 28,
+    "frozen_n": 28,
+    "base_rule": "EQ(A1,A2) + ZERO(A0) -> R1(A0,A1,A2)",
+    "recursive_rule": "PRED(A0,_NUM1) + PRED(A2,_NUM0) + R1(_NUM1,A1,_NUM0) -> R1(A0,A1,A2)",
+    "certificate": {
+      "mode": "WELL_FOUNDED_DECREASE",
+      "measure": "A0",
+      "via": "PRED",
+      "base_anchor": "A0"
+    },
+    "seconds": 20.22332277199996,
+    "exposed_background": [
+      "ZERO",
+      "EQ",
+      "PRED",
+      "SUCC"
+    ]
+  },
+  "route_parent": {
+    "partial_rule": "EDGE_COST(_NODE0,Y,_NUM0) + PATH_COST(X,_NODE0,_NUM1) -> PATH_COST(X,Y,C)",
+    "completed_rule": "EDGE_COST(_NODE0,Y,_NUM0) + PATH_COST(X,_NODE0,_NUM1) + R1(_NUM0,_NUM1,C) -> PATH_COST(X,Y,C)",
+    "support": 32,
+    "conflict": 0,
+    "positive_n": 32,
+    "frozen_passed": 70,
+    "frozen_n": 70,
+    "query_good": "+1",
+    "query_wrong": "0"
+  },
+  "cross_domain_reuse": {
+    "domain": "inventory count merge",
+    "relation_reused": "R1",
+    "parent_rule": "LEFT_COUNT(I,_NUM0) + R1(_NUM0,_NUM1,C) + RIGHT_COUNT(I,_NUM1) -> TOTAL_COUNT(I,C)",
+    "frozen_passed": 10,
+    "frozen_n": 10,
+    "query_good": "+1",
+    "query_wrong": "0",
+    "total_anonymous_inventions": 1
+  },
+  "safety": {
+    "singleton": {
+      "rejected": true,
+      "reason": "too_few_positive_examples"
+    },
+    "poisoned_parent": {
+      "parent_rejected": true,
+      "persistent_anonymous_relations": []
+    }
+  },
+  "events": [
+    {
+      "event": "structural_prefilter_selected",
+      "target": "PATH_COST",
+      "surviving": 2,
+      "partial": "EDGE_COST(_NODE0,Y,_NUM0) + PATH_COST(X,_NODE0,_NUM1) -> PATH_COST(X,Y,C)",
+      "support": 32,
+      "conflict": 0
+    },
+    {
+      "event": "anonymous_signature_invented",
+      "relation": "R1",
+      "signature": [
+        "NUM",
+        "NUM",
+        "NUM"
+      ],
+      "from_ports": [
+        "_NUM0",
+        "_NUM1",
+        "C"
+      ]
+    },
+    {
+      "event": "anonymous_staged",
+      "relation": "R1",
+      "meta": {
+        "signature": [
+          "NUM",
+          "NUM",
+          "NUM"
+        ],
+        "hole_vars": [
+          "_NUM0",
+          "_NUM1",
+          "C"
+        ],
+        "support": 13,
+        "positive_n": 13,
+        "conflict": 0,
+        "frozen_passed": 28,
+        "frozen_n": 28,
+        "base_rule": "EQ(A1,A2) + ZERO(A0) -> R1(A0,A1,A2)",
+        "recursive_rule": "PRED(A0,_NUM1) + PRED(A2,_NUM0) + R1(_NUM1,A1,_NUM0) -> R1(A0,A1,A2)",
+        "certificate": {
+          "mode": "WELL_FOUNDED_DECREASE",
+          "measure": "A0",
+          "via": "PRED",
+          "base_anchor": "A0"
+        },
+        "seconds": 20.22332277199996,
+        "exposed_background": [
+          "ZERO",
+          "EQ",
+          "PRED",
+          "SUCC"
+        ]
+      }
+    },
+    {
+      "event": "anonymous_committed",
+      "relation": "R1"
+    },
+    {
+      "event": "parent_committed",
+      "target": "PATH_COST",
+      "dependency": "R1",
+      "rule": "EDGE_COST(_NODE0,Y,_NUM0) + PATH_COST(X,_NODE0,_NUM1) + R1(_NUM0,_NUM1,C) -> PATH_COST(X,Y,C)"
+    }
+  ],
+  "architecture": [
+    "No ADD/SUB/FOO candidate vocabulary is supplied to the abstraction hole.",
+    "The anonymous relation signature is inferred from missing head ports plus dangling hidden ports required by ordinary join/range invariants.",
+    "Anonymous-relation training examples are extracted from independent parent training witnesses; the later query is not evidence.",
+    "The anonymous relation is learned only from symbolic primitives ZERO/EQ/PRED/SUCC.",
+    "The relation must pass support/conflict and frozen tests before commit.",
+    "A later parent task searches existing anonymous relations by typed signature before inventing another relation.",
+    "Failed parents do not commit staged child abstractions."
+  ],
+  "caveats": [
+    "v4.8 currently invents only a single missing relation atom whose ports are already present in the partial parent U.",
+    "Anonymous relation learning in this benchmark is numeric; non-numeric invented relation learners are not implemented yet.",
+    "ZERO/EQ/PRED/SUCC and type/port/join/termination rules remain part of the fixed symbolic OS.",
+    "The route benchmark deliberately includes some zero-cost edges so the latent relation data identifies a well-founded zero base case.",
+    "Cross-domain reuse is tested on inventory count merging; it is a different semantic domain but uses the same numeric abstraction.",
+    "This is not unrestricted concept invention: it is typed symbolic abstraction under explicit structural and anti-memorization priors."
+  ]
+}

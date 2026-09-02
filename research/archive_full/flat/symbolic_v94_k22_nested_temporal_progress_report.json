@@ -1,0 +1,154 @@
+{
+  "version": "v9.4-K22-learned-progress-nested-temporal",
+  "result": "PASS",
+  "minimal_kernel_claim": {
+    "fixed": [
+      "raw SYMBOL identity",
+      "generic ORDER",
+      "persistent IDENTITY",
+      "KEY/U",
+      "VARIABLE/BIND",
+      "CONTEXT/PROVENANCE",
+      "explicit opposition + ternary truth",
+      "SEARCH/BACKWARD",
+      "RESOURCE/CYCLE control"
+    ],
+    "removed_as_named_arithmetic_prior": [
+      "ZERO label",
+      "SUCC relation name",
+      "PRED relation name"
+    ],
+    "derived_or_learned": [
+      "opaque progress/cover relation from ORDER observations",
+      "zero as unique minimum",
+      "predecessor as inverse progress",
+      "recursive ADD/MUL execution over learned progress",
+      "nested relative temporal composition",
+      "nested interval containment/duration",
+      "nested state-at-time and meeting"
+    ]
+  },
+  "progress": {
+    "fragments": 12,
+    "nodes": 2401,
+    "edges": 2400,
+    "zero_symbol": "Q_b72feb9043d3",
+    "complete": true
+  },
+  "nested_times": {
+    "A": {
+      "result": "TRes(state=1, contradiction=False, value='Q_7ead5825178f', trace=('ANCHOR:A-anchor',))",
+      "evaluator_index": 600
+    },
+    "B": {
+      "result": "TRes(state=1, contradiction=False, value='Q_df9cfd192d19', trace=('ANCHOR:A-anchor', 'UB', 'MUL->Q_7a35e94ea32f', 'ADD->Q_df9cfd192d19'))",
+      "evaluator_index": 720
+    },
+    "C": {
+      "result": "TRes(state=1, contradiction=False, value='Q_e975218121d9', trace=('ANCHOR:A-anchor', 'UB', 'MUL->Q_7a35e94ea32f', 'ADD->Q_df9cfd192d19', 'UC', 'MUL->Q_d7b4a6127b58', 'ADD_BACK->Q_e975218121d9'))",
+      "evaluator_index": 690
+    },
+    "D": {
+      "result": "TRes(state=1, contradiction=False, value='Q_461b180d1895', trace=('ANCHOR:A-anchor', 'UB', 'MUL->Q_7a35e94ea32f', 'ADD->Q_df9cfd192d19', 'UC', 'MUL->Q_d7b4a6127b58', 'ADD_BACK->Q_e975218121d9', 'UD', 'MUL->Q_62a91c120a2d', 'ADD->Q_461b180d1895'))",
+      "evaluator_index": 735
+    },
+    "X": {
+      "result": "TRes(state=1, contradiction=False, value='Q_a56b9f2fb602', trace=('ANCHOR:A-anchor', 'UB', 'MUL->Q_7a35e94ea32f', 'ADD->Q_df9cfd192d19', 'UX', 'MUL->Q_3123a1793383', 'ADD->Q_a56b9f2fb602'))",
+      "evaluator_index": 740
+    },
+    "E": {
+      "result": "TRes(state=1, contradiction=False, value='Q_a96c062a50d3', trace=('ANCHOR:A-anchor', 'UB', 'MUL->Q_7a35e94ea32f', 'ADD->Q_df9cfd192d19', 'UC', 'MUL->Q_d7b4a6127b58', 'ADD_BACK->Q_e975218121d9', 'UD', 'MUL->Q_62a91c120a2d', 'ADD->Q_461b180d1895', 'UE', 'MUL->Q_27fb7fa78c2f', 'ADD->Q_a96c062a50d3'))",
+      "evaluator_index": 2175
+    },
+    "F": {
+      "result": "TRes(state=1, contradiction=False, value='Q_ec643005edec', trace=('ANCHOR:A-anchor', 'UB', 'MUL->Q_7a35e94ea32f', 'ADD->Q_df9cfd192d19', 'UC', 'MUL->Q_d7b4a6127b58', 'ADD_BACK->Q_e975218121d9', 'UD', 'MUL->Q_62a91c120a2d', 'ADD->Q_461b180d1895', 'UE', 'MUL->Q_27fb7fa78c2f', 'ADD->Q_a96c062a50d3', 'UF', 'MUL->Q_7a35e94ea32f', 'ADD_BACK->Q_ec643005edec'))",
+      "evaluator_index": 2055
+    },
+    "GQ": {
+      "result": "TRes(state=1, contradiction=False, value='Q_1609b5a73923', trace=('ANCHOR:A-anchor', 'UB', 'MUL->Q_7a35e94ea32f', 'ADD->Q_df9cfd192d19', 'UC', 'MUL->Q_d7b4a6127b58', 'ADD_BACK->Q_e975218121d9', 'UD', 'MUL->Q_62a91c120a2d', 'ADD->Q_461b180d1895', 'UE', 'MUL->Q_27fb7fa78c2f', 'ADD->Q_a96c062a50d3', 'UF', 'MUL->Q_7a35e94ea32f', 'ADD_BACK->Q_ec643005edec', 'UGQ', 'MUL->Q_ee06cd084b94', 'ADD->Q_1609b5a73923'))",
+      "evaluator_index": 2235
+    }
+  },
+  "intervals": {
+    "B_during_inner": "TRes(state=1, contradiction=False, value='Q_df9cfd192d19', trace=('inside interval',))",
+    "X_during_inner": "TRes(state=-1, contradiction=False, value='Q_a56b9f2fb602', trace=('outside interval',))",
+    "inner_in_outer": "TRes(state=1, contradiction=False, value=None, trace=('inner contained',))",
+    "inner_duration": "TRes(state=1, contradiction=False, value='Q_62a91c120a2d', trace=('duration=45', 'expected=45'))",
+    "outer_duration": "TRes(state=1, contradiction=False, value='Q_c6a6514a7356', trace=('duration=1575', 'expected=1575'))"
+  },
+  "state": {
+    "wolf_at_B": "TRes(state=1, contradiction=False, value='Q_e975218121d9', trace=('latest O_ADD',))",
+    "wolf_at_X": "TRes(state=-1, contradiction=False, value='Q_461b180d1895', trace=('latest O_REMOVE',))",
+    "anna_at_B": "TRes(state=1, contradiction=False, value='Q_7ead5825178f', trace=('latest O_ADD',))",
+    "meet_at_B": "TRes(state=1, contradiction=False, value=None, trace=('both states +1',))",
+    "meet_at_X": "TRes(state=-1, contradiction=False, value=None, trace=('one state -1',))"
+  },
+  "ternary_nested": {
+    "unknown_inner_u_state": 0,
+    "unknown_inner": "TRes(state=0, contradiction=False, value=None, trace=('TIME(C) unknown',))",
+    "unknown_outer": "TRes(state=0, contradiction=False, value=None, trace=('TIME(D) unknown',))",
+    "rejected_inner_u_state": -1,
+    "rejected_inner_key": "TRes(state=0, contradiction=False, value=None, trace=('TIME(C) unknown',))",
+    "rejected_outer_key": "TRes(state=0, contradiction=False, value=None, trace=('TIME(D) unknown',))",
+    "contradictory_inner": "TRes(state=0, contradiction=True, value=None, trace=('B=Q_df9cfd192d19', 'B=Q_ebd520ec6869'))",
+    "contradictory_outer": "TRes(state=0, contradiction=True, value=None, trace=('B=Q_df9cfd192d19', 'B=Q_ebd520ec6869'))",
+    "cycle": "TRes(state=0, contradiction=False, value=None, trace=('TIME(A) unknown',))"
+  },
+  "backward_relevance": {
+    "disconnected_u": 5000,
+    "opened_disconnected": 0,
+    "query": "TRes(state=1, contradiction=False, value='Q_ee06cd084b94', trace=('ANCHOR:root', 'D1', 'MUL->Q_67e3eab20547', 'ADD->Q_67e3eab20547', 'D2', 'MUL->Q_67e3eab20547', 'ADD->Q_7a35e94ea32f', 'D3', 'MUL->Q_67e3eab20547', 'ADD->Q_ee06cd084b94'))"
+  },
+  "checks": {
+    "K22_progress_is_derived_from_generic_order_observations": true,
+    "K22_zero_is_derived_as_unique_minimum_not_named_N0": true,
+    "K22_learned_progress_supports_frozen_ADD_U": true,
+    "K22_learned_progress_supports_frozen_MUL_U": true,
+    "K22_nested_B_time_correct": true,
+    "K22_nested_C_before_B_time_correct": true,
+    "K22_nested_D_from_derived_C_correct": true,
+    "K22_nested_X_from_derived_B_correct": true,
+    "K22_deep_day_nested_E_correct": true,
+    "K22_nested_before_from_derived_E_correct": true,
+    "K22_deep_GQ_chain_correct": true,
+    "K22_B_is_during_nested_inner_interval": true,
+    "K22_X_is_outside_inner_interval": true,
+    "K22_inner_interval_is_contained_in_outer": true,
+    "K22_inner_duration_45_minutes": true,
+    "K22_outer_duration_1575_minutes": true,
+    "K22_wolf_state_true_at_nested_B": true,
+    "K22_wolf_state_false_at_nested_X": true,
+    "K22_anna_state_true_at_B": true,
+    "K22_nested_meeting_true_at_B": true,
+    "K22_nested_meeting_false_at_X": true,
+    "K22_unknown_middle_temporal_U_is_zero": true,
+    "K22_unknown_middle_dependency_propagates_outer_QUERY_zero": true,
+    "K22_rejected_middle_U_does_not_make_inner_KEY_minus1": true,
+    "K22_rejected_middle_dependency_propagates_outer_UNKNOWN_not_false": true,
+    "K22_inner_time_contradiction_is_zero_contradiction": true,
+    "K22_nested_outer_query_propagates_inner_contradiction": true,
+    "K22_temporal_cycle_terminates_as_UNKNOWN": true,
+    "K22_backward_nested_query_ignores_5000_disconnected_U": true,
+    "K22_without_order_progress_orientation_is_nonidentifiable": true,
+    "K22_without_learned_progress_recursive_ADD_cannot_execute": true,
+    "K22_queries_are_read_only": true
+  },
+  "interpretation": [
+    "K22 removes the named ZERO/SUCC/PRED ontology from the arithmetic layer. An anonymous immediate-progress relation is derived from generic ordered symbol observations, zero is the unique minimum, and predecessor is the inverse cover relation.",
+    "The previously learned recursive ADD and MUL structures operate unchanged up to symbol renaming on this learned progress graph.",
+    "Nested temporal information composes recursively: a queried event may depend on a relative offset from another derived event, which itself depends on another derived event, and the backward proof continues until it reaches an anchor.",
+    "Intervals are first-class compositions over derived event times. Event-during-interval, interval containment, and interval duration all reuse the same learned arithmetic/order substrate.",
+    "State-at-time and meeting queries can target derived times inside nested intervals. The latest applicable ADD/REMOVE state event is selected using learned progress order.",
+    "A pending temporal U in the middle of a nested chain leaves both its own time Key and dependent outer time Keys at 0. A rejected inner U also yields UNKNOWN downstream, not KEY -1.",
+    "An inner time contradiction propagates to dependent outer queries as KEY 0 with contradiction=True.",
+    "Cycle detection remains operationally necessary: a temporal dependency cycle without an anchor terminates as UNKNOWN.",
+    "The strongest remaining arithmetic structural prior is now generic ORDER itself plus the assumption that the tested numeric domain is a discrete chain whose immediate cover relation is useful for recursive progress."
+  ],
+  "caveats": [
+    "The ordered number-symbol observations are supplied as curriculum. K22 does not learn numerical order from perceptual set cardinality or natural-language numerals.",
+    "The domain is a finite discrete chain; dense/continuous numeric domains are not covered.",
+    "The previously learned ADD/MUL recursive rule shapes are frozen rather than relearned jointly with progress induction.",
+    "The evaluator retains a hidden index-to-opaque-symbol mapping only to construct examples and score expected values; solver operations never parse or use those indices.",
+    "Natural-language nested-clause parsing is not tested here; K22 tests nested symbolic temporal dependencies after the relevant event/reference U have been learned."
+  ]
+}

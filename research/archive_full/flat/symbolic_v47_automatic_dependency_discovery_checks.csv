@@ -1,0 +1,12 @@
+check,passed
+semantic_query_succeeds,True
+dependency_discovered_from_candidate_body,True
+child_committed_before_parent,True
+no_manual_dependency_metadata,True
+second_query_reuses_library,True
+wrong_route_cost_stays_unknown,True
+unavailable_dependency_rejected,True
+unused_staged_children_not_committed,True
+dependency_cost_penalizes_extra_dependencies,True
+poisoned_child_blocks_parent,True
+candidate_dependency_cycle_aborts,True

@@ -1,0 +1,37 @@
+{
+  "name": "symbolic-u",
+  "repository": "https://github.com/Arthur-KI/symbolic-u",
+  "maintainer": "Arthur-KI",
+  "version": "0.25.0",
+  "prepared": "2026-09-02",
+  "license": "Apache-2.0",
+  "neural_dependencies": [],
+  "vision_frontend": "OpenCV/Pillow classical sensor paths; no neural model",
+  "clean_runtime_tests": {
+    "passed": 15,
+    "failed": 0
+  },
+  "historical_smoke": {
+    "K18": "19/19",
+    "K22": "32/32",
+    "K23": "23/23"
+  },
+  "K24c_reproduction": "PASS",
+  "K25": {
+    "status": "PARTIAL_PASS_NEXT_BOTTLENECK_FOUND",
+    "checks": "12/12",
+    "blind_queries": 432,
+    "gate_correct": 150,
+    "gate_false_commits": 11,
+    "gate_unknown": 271,
+    "gate_conditional_accuracy": 0.9316770186335404,
+    "gate_mean_sensor_cost": 2.087962962962963
+  },
+  "repository_file_count": 612,
+  "full_archive_flat_file_count": 372,
+  "python_source_file_count": 170,
+  "vision_data": {
+    "train_png": 16,
+    "blind_png": 4
+  }
+}

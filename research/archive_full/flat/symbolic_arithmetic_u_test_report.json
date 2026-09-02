@@ -1,0 +1,320 @@
+{
+  "training": {
+    "n": 35,
+    "range": "0..10",
+    "examples": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        2
+      ],
+      [
+        3,
+        0,
+        3
+      ],
+      [
+        4,
+        0,
+        4
+      ],
+      [
+        5,
+        0,
+        5
+      ],
+      [
+        6,
+        0,
+        6
+      ],
+      [
+        7,
+        0,
+        7
+      ],
+      [
+        8,
+        0,
+        8
+      ],
+      [
+        9,
+        0,
+        9
+      ],
+      [
+        10,
+        0,
+        10
+      ],
+      [
+        6,
+        6,
+        0
+      ],
+      [
+        4,
+        4,
+        0
+      ],
+      [
+        7,
+        5,
+        2
+      ],
+      [
+        9,
+        6,
+        3
+      ],
+      [
+        3,
+        1,
+        2
+      ],
+      [
+        3,
+        2,
+        1
+      ],
+      [
+        8,
+        7,
+        1
+      ],
+      [
+        4,
+        1,
+        3
+      ],
+      [
+        7,
+        3,
+        4
+      ],
+      [
+        9,
+        2,
+        7
+      ],
+      [
+        10,
+        6,
+        4
+      ],
+      [
+        8,
+        5,
+        3
+      ],
+      [
+        5,
+        4,
+        1
+      ],
+      [
+        2,
+        2,
+        0
+      ],
+      [
+        3,
+        3,
+        0
+      ],
+      [
+        7,
+        7,
+        0
+      ],
+      [
+        7,
+        6,
+        1
+      ],
+      [
+        10,
+        5,
+        5
+      ],
+      [
+        6,
+        1,
+        5
+      ],
+      [
+        9,
+        5,
+        4
+      ],
+      [
+        9,
+        4,
+        5
+      ],
+      [
+        9,
+        9,
+        0
+      ],
+      [
+        4,
+        2,
+        2
+      ],
+      [
+        5,
+        5,
+        0
+      ]
+    ]
+  },
+  "candidate_programs": 36,
+  "best": {
+    "base": "Y0_ZX",
+    "recursion": "REC_dx0_dy1_PRED",
+    "support": 35,
+    "conflict": 0,
+    "unknown": 0,
+    "complexity": 3
+  },
+  "top6": [
+    {
+      "base": "Y0_ZX",
+      "recursion": "REC_dx0_dy1_PRED",
+      "score": 349.7,
+      "support": 35,
+      "conflict": 0,
+      "unknown": 0
+    },
+    {
+      "base": "Y0_ZX",
+      "recursion": "REC_dx1_dy1_SAME",
+      "score": 349.7,
+      "support": 35,
+      "conflict": 0,
+      "unknown": 0
+    },
+    {
+      "base": "XY_Z0",
+      "recursion": "REC_dx1_dy0_SUCC",
+      "score": 349.7,
+      "support": 35,
+      "conflict": 0,
+      "unknown": 0
+    },
+    {
+      "base": "Y0_ZX",
+      "recursion": "REC_dx1_dy0_SAME",
+      "score": 37.8,
+      "support": 11,
+      "conflict": 0,
+      "unknown": 24
+    },
+    {
+      "base": "Y0_ZX",
+      "recursion": "REC_dx1_dy0_PRED",
+      "score": 37.7,
+      "support": 11,
+      "conflict": 0,
+      "unknown": 24
+    },
+    {
+      "base": "Y0_ZX",
+      "recursion": "REC_dx1_dy0_SUCC",
+      "score": 37.7,
+      "support": 11,
+      "conflict": 0,
+      "unknown": 24
+    }
+  ],
+  "generalization": {
+    "LOOKUP": {
+      "passed": 0,
+      "n": 50,
+      "accuracy": 0.0,
+      "median_us": 0.2945
+    },
+    "LEARNED_U": {
+      "passed": 50,
+      "n": 50,
+      "accuracy": 1.0,
+      "median_us": 14.030999999999999
+    },
+    "SET": {
+      "passed": 50,
+      "n": 50,
+      "accuracy": 1.0,
+      "median_us": 11.072
+    },
+    "INTEGER": {
+      "passed": 50,
+      "n": 50,
+      "accuracy": 1.0,
+      "median_us": 0.232
+    }
+  },
+  "ablation_without_pred": {
+    "passed": 0,
+    "n": 50
+  },
+  "controlled_language": [
+    {
+      "text": "Von zwölf Äpfeln wurden fünf gegessen. Wie viele blieben übrig?",
+      "parsed": [
+        12,
+        5
+      ],
+      "gold": 7,
+      "got": 7,
+      "passed": true
+    },
+    {
+      "text": "Von 17 Kugeln wurden acht entfernt. Wie viele bleiben?",
+      "parsed": [
+        17,
+        8
+      ],
+      "gold": 9,
+      "got": 9,
+      "passed": true
+    },
+    {
+      "text": "Von dreiundzwanzig Steinen wurden sechs weggenommen. Wie viele bleiben?",
+      "parsed": [
+        23,
+        6
+      ],
+      "gold": 17,
+      "got": 17,
+      "passed": true
+    },
+    {
+      "text": "Von 20 Geißlein fraß der Wolf neun. Wie viele bleiben?",
+      "parsed": [
+        20,
+        9
+      ],
+      "gold": 11,
+      "got": 11,
+      "passed": true
+    }
+  ],
+  "caveats": [
+    "Learner searches a small predefined family of recursive U skeletons; it does not invent arbitrary programs.",
+    "PRED/SUCC number structure is provided as a symbolic prior.",
+    "Training uses only 0..10; unseen tests use larger number nodes in the same PRED graph.",
+    "Controlled German parser is intentionally tiny and separate from arithmetic."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "v8.4c-K14-corrected-adversarial-status",
+  "result": "PARTIAL_PASS_NEXT_BOTTLENECK_FOUND",
+  "controlled_main_checks": "15/15",
+  "learned_attachment": {
+    "direction": "LEFT",
+    "max_distance": 2
+  },
+  "adversarial_survivors": [],
+  "adversarial_attachment_survives": false,
+  "finding": [
+    "A learned local LEFT-window replaces the fixed immediate-preceding-token rule for simple and adjective-intervening noun phrases.",
+    "However, when a locally well-formed role-bearing adjunct such as 'dem Mann' co-occurs with the true event recipient 'dem Jungen', every pure local-window attachment hypothesis becomes ambiguous.",
+    "Therefore marker-to-mention attachment alone is insufficient. The next layer must learn event/clause-to-mention argument attachment, i.e. distinguish event arguments from adjunct/background mentions.",
+    "The original K14 15/15 harness did not include 'at least one attachment hypothesis survives the hard distractor curriculum' as a required check; this corrected audit records that gap explicitly."
+  ],
+  "implication": "Do not report K14 as fully solving mention attachment. Report it as removing fixed immediate adjacency while exposing argument-vs-adjunct attachment as the next bottleneck."
+}

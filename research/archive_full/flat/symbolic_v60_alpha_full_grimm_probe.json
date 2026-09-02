@@ -1,0 +1,51 @@
+{
+  "version": "v6.0-alpha-frozen-full-grimm-probe",
+  "source": "grimm_der_suesse_brei.txt",
+  "parser_or_lexicon_changes_after_freeze": false,
+  "raw_chars": 1207,
+  "parsed_surfaces": 0,
+  "r_events": 0,
+  "primitive_structural_events": 1,
+  "unresolved_surfaces": 0,
+  "highest_hierarchy_events": 0,
+  "targets": [
+    {
+      "rel": "R1",
+      "args": [
+        "girl",
+        "POT",
+        "COOK"
+      ],
+      "proved": false
+    },
+    {
+      "rel": "W",
+      "args": [
+        "POT",
+        "COOK"
+      ],
+      "proved": false
+    },
+    {
+      "rel": "R5",
+      "args": [
+        "girl",
+        "POT",
+        "COOK"
+      ],
+      "proved": false
+    },
+    {
+      "rel": "R9",
+      "args": [
+        "girl",
+        "POT",
+        "COOK",
+        "KITCHEN",
+        "FED"
+      ],
+      "proved": false
+    }
+  ],
+  "interpretation": "This is a hard frozen raw-text transfer probe; failure is evidence about the language bridge, not the hierarchy core."
+}

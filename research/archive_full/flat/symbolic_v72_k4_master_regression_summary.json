@@ -1,0 +1,134 @@
+{
+  "version": "v7.2-K4-master-regression-merged",
+  "result": "PASS",
+  "passed": 21,
+  "n": 21,
+  "tests": [
+    {
+      "name": "TERNARY_U_KEY",
+      "category": "core",
+      "status": "PASS",
+      "seconds": 0.62
+    },
+    {
+      "name": "TEMPORAL_STATE",
+      "category": "core",
+      "status": "PASS",
+      "seconds": 0.641
+    },
+    {
+      "name": "CORE_V1",
+      "category": "core",
+      "status": "PASS",
+      "seconds": 0.589
+    },
+    {
+      "name": "DICTIONARY_ONTOLOGY",
+      "category": "language",
+      "status": "PASS",
+      "seconds": 0.577
+    },
+    {
+      "name": "CONTROLLED_E2E_V12",
+      "category": "language",
+      "status": "PASS",
+      "seconds": 0.617
+    },
+    {
+      "name": "REFERENCE_U",
+      "category": "language",
+      "status": "PASS",
+      "seconds": 0.681
+    },
+    {
+      "name": "CLAUSE_U",
+      "category": "language",
+      "status": "PASS",
+      "seconds": 0.667
+    },
+    {
+      "name": "RAW_SWEET_PORRIDGE",
+      "category": "language",
+      "status": "PASS",
+      "seconds": 0.66
+    },
+    {
+      "name": "CLAIM_WORLD_CONTEXT",
+      "category": "language",
+      "status": "PASS",
+      "seconds": 0.739
+    },
+    {
+      "name": "QUOTE_BINDING",
+      "category": "language",
+      "status": "PASS",
+      "seconds": 0.669
+    },
+    {
+      "name": "SHARED_RECURSIVE_V39",
+      "category": "reasoning",
+      "status": "PASS",
+      "seconds": 0.668
+    },
+    {
+      "name": "MATH_OPT_V42",
+      "category": "reasoning",
+      "status": "PASS",
+      "seconds": 13.632
+    },
+    {
+      "name": "REC_SUB",
+      "category": "recursive_verifier",
+      "status": "PASS",
+      "seconds": 8.47
+    },
+    {
+      "name": "REC_MUL",
+      "category": "recursive_verifier",
+      "status": "PASS",
+      "seconds": 27.69
+    },
+    {
+      "name": "REC_PATH",
+      "category": "recursive_verifier",
+      "status": "PASS",
+      "seconds": 0.694
+    },
+    {
+      "name": "REC_PATH_COST",
+      "category": "recursive_verifier",
+      "status": "PASS",
+      "seconds": 4.564
+    },
+    {
+      "name": "ADAPTIVE_LIBRARY_V45",
+      "category": "learning",
+      "status": "PASS",
+      "seconds": 12.694
+    },
+    {
+      "name": "NESTED_LEARNING_V46",
+      "category": "learning",
+      "status": "PASS",
+      "seconds": 13.054
+    },
+    {
+      "name": "AUTO_DEPENDENCY_V47",
+      "category": "learning",
+      "status": "PASS",
+      "seconds": 12.488
+    },
+    {
+      "name": "ABSTRACTION_INVENTION_V48",
+      "category": "learning",
+      "status": "PASS",
+      "seconds": 28.041
+    },
+    {
+      "name": "VERSIONED_REVISION_V49",
+      "category": "learning",
+      "status": "PASS",
+      "seconds": 3.437
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "version": "v5.0b-reference-transfer-time-claim",
+  "result": "PASS",
+  "scope": "controlled synthetic German; not general NLP accuracy",
+  "checks": {
+    "B1_pronoun_sie_resolves_to_anna": true,
+    "B1_davon_resolves_item_type": true,
+    "B2_transfer_roles_actor_recipient": true,
+    "B3_chained_state_updates": true,
+    "B4_danach_temporal_order": true,
+    "B4_vorher_reorders_surface_events": true,
+    "B5_ambiguous_pronoun_stays_unknown": true,
+    "B6_claim_internal_reference_resolves": true,
+    "B6_claim_does_not_change_world_state": true,
+    "B7_coordination_creates_two_events": true,
+    "B7_coordination_state_correct": true,
+    "B8_ellipsis_actor_state_correct": true,
+    "numeric_u_reused_not_relearned": true,
+    "wrong_chain_answer_stays_unknown": true
+  },
+  "numeric_u": {
+    "version": "R1_v1",
+    "learn_attempts": {
+      "R1": 1
+    },
+    "base_rule": "EQ(X,Z) + ZERO(Y) -> R1(X,Y,Z)",
+    "recursive_rule": "PRED(Y,_NUM0) + R1(X,_NUM0,_NUM1) + SUCC(Z,_NUM1) -> R1(X,Y,Z)"
+  },
+  "chain": {
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "paul",
+        "item": "APPLE",
+        "count": "N3",
+        "context": "WORLD",
+        "surface_index": 2,
+        "time_rank": 2.0,
+        "source": "Sie gibt Paul drei davon."
+      },
+      {
+        "eid": "E2",
+        "kind": "TRANSFER",
+        "actor": "paul",
+        "recipient": "mia",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 4,
+        "time_rank": 2.5,
+        "source": "Paul gibt danach zwei Äpfel an Mia."
+      }
+    ],
+    "answers": {
+      "anna": "N4",
+      "paul": "N1",
+      "mia": "N2"
+    }
+  },
+  "before": {
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "paul",
+        "recipient": "mia",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 3,
+        "time_rank": 3.0,
+        "source": "Paul gibt zwei Äpfel an Mia."
+      },
+      {
+        "eid": "E2",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "paul",
+        "item": "APPLE",
+        "count": "N3",
+        "context": "WORLD",
+        "surface_index": 4,
+        "time_rank": 2.5,
+        "source": "Vorher gibt Anna Paul drei Äpfel."
+      }
+    ],
+    "temporal_keys": [
+      [
+        "E2",
+        "E1"
+      ]
+    ],
+    "answers": {
+      "paul": "N1",
+      "mia": "N2"
+    }
+  },
+  "ambiguity": {
+    "unresolved": [
+      {
+        "type": "REFERENCE",
+        "surface": "Sie",
+        "context": "WORLD",
+        "candidates": [
+          "anna",
+          "mia"
+        ],
+        "sentence_index": 1
+      }
+    ],
+    "answer": null
+  },
+  "claim": {
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "mia",
+        "item": "APPLE",
+        "count": "N3",
+        "context": "CLAIM:paul",
+        "surface_index": 1,
+        "time_rank": 1.0,
+        "source": "Sie gibt Mia drei davon."
+      }
+    ],
+    "world_answers": {
+      "anna": "N11"
+    }
+  },
+  "coordination": {
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "paul",
+        "item": "APPLE",
+        "count": "N3",
+        "context": "WORLD",
+        "surface_index": 3,
+        "time_rank": 3.0,
+        "source": "Anna gibt Paul drei Äpfel und Mia zwei."
+      },
+      {
+        "eid": "E2",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "mia",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 3,
+        "time_rank": 3.01,
+        "source": "Anna gibt Paul drei Äpfel und Mia zwei."
+      }
+    ],
+    "answers": {
+      "anna": "N5",
+      "paul": "N3",
+      "mia": "N2"
+    }
+  },
+  "ellipsis": {
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "paul",
+        "recipient": null,
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 1,
+        "time_rank": 1.0,
+        "source": "Paul gibt zwei davon weiter."
+      }
+    ],
+    "answer": "N3"
+  },
+  "architecture": [
+    "Pronouns are resolved by explicit symbolic gender/context constraints; ambiguous compatible antecedents remain unresolved.",
+    "Davon is a symbolic item-reference constraint resolved from context-local item salience.",
+    "Transfers are Event-U objects with actor, recipient, item, count, context, and explicit temporal rank.",
+    "Danach/vorher create symbolic temporal ordering independent of surface sentence order.",
+    "State progression applies the already learned anonymous numeric U R1; no Python addition/subtraction is used as the proof function.",
+    "Receiving uses R1 backwards: find NEW such that R1(NEW, RECEIVED, OLD).",
+    "CLAIM events remain outside WORLD state progression.",
+    "Coordination expands to two Event-U instances with shared actor/item.",
+    "Ellipsis 'weiter' preserves actor/item/count while leaving recipient unresolved."
+  ],
+  "caveats": [
+    "Pronoun morphology currently covers only feminine singular 'sie'.",
+    "Reference salience is a small symbolic context store, not a general discourse model.",
+    "Temporal language currently covers sentence order plus explicit danach/vorher; no interval algebra yet.",
+    "Transfers require explicit initial counts for both sender and known recipient; there is no closed-world assumption that an unseen recipient starts at zero.",
+    "Coordination handles one tested shared-actor/shared-item pattern.",
+    "Ellipsis supports an unknown recipient only when the query depends on the sender's remaining state.",
+    "This is still controlled German, not Grimm prose."
+  ]
+}

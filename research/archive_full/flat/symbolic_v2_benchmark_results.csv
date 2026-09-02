@@ -1,0 +1,43 @@
+name,category,source,expected,got,passed,candidates,micros,note
+alias gieng->ging,LEXICON,REAL_RAW,ging,ging,True,1,2.083,
+alias wußte->wusste,LEXICON,REAL_RAW,wusste,wusste,True,1,5.018,
+alias sollt->sollte,LEXICON,REAL_RAW,sollte,sollte,True,1,0.771,
+alias armuth->armut,LEXICON,REAL_RAW,armut,armut,True,1,0.52,
+alias noth->not,LEXICON,REAL_RAW,not,not,True,1,0.631,
+alias mußte->musste,LEXICON,REAL_RAW,musste,musste,True,1,0.871,
+alias daß->dass,LEXICON,REAL_RAW,dass,dass,True,1,0.631,
+alias ißt->isst,LEXICON,REAL_RAW,isst,isst,True,1,0.501,
+alias wollts->wollte_es,LEXICON,REAL_RAW,wollte_es,wollte_es,True,1,0.46,
+command occurrence 1: koche,TEXT_U,REAL_RAW,START_COOK,START_COOK,True,2,1.923,first two supply definition; later occurrences test transfer
+command occurrence 2: steh,TEXT_U,REAL_RAW,STOP_COOK,STOP_COOK,True,2,0.991,first two supply definition; later occurrences test transfer
+command occurrence 3: koche,TEXT_U,REAL_RAW,START_COOK,START_COOK,True,2,0.671,first two supply definition; later occurrences test transfer
+command occurrence 4: steh,TEXT_U,REAL_RAW,STOP_COOK,STOP_COOK,True,2,0.401,first two supply definition; later occurrences test transfer
+das Kind -> girl,REFERENCE,REAL_STRUCTURED,girl,girl,True,1,6.26,
+ihm -> girl,REFERENCE,REAL_STRUCTURED,girl,girl,True,1,3.846,
+plural sie -> group,REFERENCE,REAL_STRUCTURED,group,group,True,1,2.423,
+es + COOK -> pot,REFERENCE,REAL_STRUCTURED,pot,pot,True,1,3.115,
+den Topf -> pot,REFERENCE,REAL_STRUCTURED,pot,pot,True,1,2.033,
+sie while girl away -> mother,REFERENCE,REAL_STRUCTURED,mother,mother,True,1,3.125,
+die Schöne semantic epithet,REFERENCE,SYNTHETIC,a,a,True,1,3.586,
+die Häßliche semantic epithet,REFERENCE,SYNTHETIC,b,b,True,1,2.104,
+ambiguous epithet stays unknown,REFERENCE,SYNTHETIC,UNKNOWN,UNKNOWN,True,2,2.104,
+"Paul sieht Anna mit Ben. => ('SEE', 'paul', 'anna')",TEXT_U,SYNTHETIC,+1,+1,True,2,7.551,
+"Paul sieht Anna mit Ben. => ('SEE', 'paul', 'ben')",TEXT_U,SYNTHETIC,0,0,True,2,3.305,
+"Ben Anna sieht. => ('SEE', 'anna', 'ben')",TEXT_U,SYNTHETIC,0,0,True,2,2.494,
+"Ben marschiert ins Haus. => ('ENTER', 'ben', 'house')",TEXT_U,SYNTHETIC,+1,+1,True,1,2.393,
+"Anna beobachtet Ben. => ('SEE', 'anna', 'ben')",TEXT_U,SYNTHETIC,+1,+1,True,1,2.003,
+object-fronted ENTER resolves by schema,TEXT_U,SYNTHETIC,"ENTER(wolf,house)","ENTER(wolf,house)",True,2,4.186,1 independently valid binding(s)
+A wolf at t1,TIME,SYNTHETIC,+1,+1,True,1,5.238,
+A wolf at t3,TIME,SYNTHETIC,-1,-1,True,2,3.925,
+A red at t2,TIME,SYNTHETIC,0,0,True,0,1.823,
+A red at t3,TIME,SYNTHETIC,+1,+1,True,1,2.905,
+B wolf at red-entry t2,TIME,SYNTHETIC,+1,+1,True,1,2.214,
+A red meets wolf at t3,REASONING,SYNTHETIC,-1,-1,True,2,4.086,
+B red meets wolf at t2,REASONING,SYNTHETIC,+1,+1,True,2,3.164,
+"same symbols, separate stories",CONTEXT,SYNTHETIC,"A=-1,B=+1","A=-1,B=+1",True,2,3.585,
+raw 'ihm' antecedent,REFERENCE_RAW,REAL_RAW,girl,UNKNOWN,False,0,0.441,known capability gap; conservative UNKNOWN
+raw first plural 'sie' antecedent,REFERENCE_RAW,REAL_RAW,girl+mother,UNKNOWN,False,0,0.281,known capability gap; conservative UNKNOWN
+raw cooking 'es' antecedent,REFERENCE_RAW,REAL_RAW,pot,UNKNOWN,False,0,0.17,known capability gap; conservative UNKNOWN
+raw mother-scene 'sie' antecedent,REFERENCE_RAW,REAL_RAW,mother,UNKNOWN,False,0,0.14,known capability gap; conservative UNKNOWN
+raw Brei reaches Küche/Haus,TEXT_U_RAW,REAL_RAW,"FILLS(brei,kitchen/house)",UNKNOWN,False,0,0.14,known capability gap; conservative UNKNOWN
+raw Brei reaches Straße,TEXT_U_RAW,REAL_RAW,"FILLS(brei,street)",UNKNOWN,False,0,0.13,known capability gap; conservative UNKNOWN

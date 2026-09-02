@@ -1,0 +1,44 @@
+{
+  "K18": {
+    "pass": 19,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K18b": {
+    "pass": 11,
+    "fail": 0,
+    "returncode": 0
+  },
+  "fresh_regressions": [
+    {
+      "stage": "K17",
+      "returncode": 0,
+      "pass": 21,
+      "fail": 0
+    },
+    {
+      "stage": "K16",
+      "returncode": 0,
+      "pass": 12,
+      "fail": 0
+    },
+    {
+      "stage": "K15",
+      "returncode": 0,
+      "pass": 14,
+      "fail": 0
+    },
+    {
+      "stage": "K14b",
+      "returncode": 0,
+      "pass": 12,
+      "fail": 0
+    },
+    {
+      "stage": "K12",
+      "returncode": 0,
+      "pass": 21,
+      "fail": 0
+    }
+  ]
+}

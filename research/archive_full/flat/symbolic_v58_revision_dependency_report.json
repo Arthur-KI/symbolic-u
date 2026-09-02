@@ -1,0 +1,345 @@
+{
+  "version": "v5.8-versioned-revision-dependency-propagation",
+  "result": "PASS",
+  "checks": {
+    "initial_anonymous_hierarchy_active": true,
+    "new_evidence_conflicts_with_r4_v1": true,
+    "challenge_propagates_to_all_descendants": true,
+    "revision_search_finds_symbolic_guard_not_semantic_head": true,
+    "r4_v2_full_combined_support_zero_conflict": true,
+    "r4_v1_superseded_r4_v2_active": true,
+    "r8_reversioned_against_r4_v2": true,
+    "r9_reversioned_against_r8_v2": true,
+    "good_root_and_descendant_proofs_survive": true,
+    "guard_incompatible_root_and_descendants_unknown": true,
+    "query_is_not_evidence_or_revision_trigger": true,
+    "failed_revision_rolls_back_without_replacing_active": true,
+    "history_and_parent_links_preserved": true,
+    "unrepairable_root_has_no_safe_guard": true,
+    "unrepairable_root_cascades_to_no_active_descendants": true,
+    "all_concept_heads_remain_anonymous": true
+  },
+  "winner_guard": [
+    "G0",
+    0
+  ],
+  "challenge_state": {
+    "R4": "CHALLENGED",
+    "R8": "CHALLENGED",
+    "R9": "CHALLENGED"
+  },
+  "proofs": {
+    "good": [
+      1,
+      1,
+      1
+    ],
+    "guard_incompatible": [
+      0,
+      0,
+      0
+    ]
+  },
+  "versions": {
+    "R4": [
+      {
+        "vid": "R4_v1",
+        "status": "SUPERSEDED",
+        "guard": null,
+        "parents": {},
+        "parent_version": null,
+        "support": 0,
+        "conflict": 0,
+        "frozen_support": 0,
+        "frozen_conflict": 0,
+        "provenance": [
+          "v5.7-autodiscovered"
+        ]
+      },
+      {
+        "vid": "R4_v2",
+        "status": "ACTIVE",
+        "guard": [
+          "G0",
+          0
+        ],
+        "parents": {},
+        "parent_version": 1,
+        "support": 7,
+        "conflict": 0,
+        "frozen_support": 3,
+        "frozen_conflict": 0,
+        "provenance": [
+          "challenge-batch-1",
+          "symbolic-guard-search"
+        ]
+      },
+      {
+        "vid": "R4_v3",
+        "status": "RETIRED",
+        "guard": [
+          "G2",
+          0
+        ],
+        "parents": {},
+        "parent_version": 2,
+        "support": 3,
+        "conflict": 4,
+        "frozen_support": 0,
+        "frozen_conflict": 3,
+        "provenance": [
+          "failed-proactive-revision"
+        ]
+      }
+    ],
+    "R8": [
+      {
+        "vid": "R8_v1",
+        "status": "SUPERSEDED",
+        "guard": null,
+        "parents": {
+          "R4": 1
+        },
+        "parent_version": null,
+        "support": 0,
+        "conflict": 0,
+        "frozen_support": 0,
+        "frozen_conflict": 0,
+        "provenance": [
+          "hierarchical-mine"
+        ]
+      },
+      {
+        "vid": "R8_v2",
+        "status": "ACTIVE",
+        "guard": null,
+        "parents": {
+          "R4": 2
+        },
+        "parent_version": 1,
+        "support": 3,
+        "conflict": 0,
+        "frozen_support": 2,
+        "frozen_conflict": 0,
+        "provenance": [
+          "dependency-revalidation"
+        ]
+      }
+    ],
+    "R9": [
+      {
+        "vid": "R9_v1",
+        "status": "SUPERSEDED",
+        "guard": null,
+        "parents": {
+          "R8": 1
+        },
+        "parent_version": null,
+        "support": 0,
+        "conflict": 0,
+        "frozen_support": 0,
+        "frozen_conflict": 0,
+        "provenance": [
+          "hierarchical-mine"
+        ]
+      },
+      {
+        "vid": "R9_v2",
+        "status": "ACTIVE",
+        "guard": null,
+        "parents": {
+          "R8": 2
+        },
+        "parent_version": 1,
+        "support": 3,
+        "conflict": 0,
+        "frozen_support": 2,
+        "frozen_conflict": 0,
+        "provenance": [
+          "dependency-revalidation"
+        ]
+      }
+    ]
+  },
+  "revision_candidates": [
+    {
+      "guard": [
+        "G0",
+        0
+      ],
+      "train_support": 4,
+      "train_conflict": 0,
+      "frozen_support": 3,
+      "frozen_conflict": 0,
+      "challenge_support": 3,
+      "challenge_conflict": 0,
+      "valid": true
+    },
+    {
+      "guard": [
+        "G1",
+        0
+      ],
+      "train_support": 0,
+      "train_conflict": 4,
+      "frozen_support": 0,
+      "frozen_conflict": 3,
+      "challenge_support": 0,
+      "challenge_conflict": 3,
+      "valid": false
+    },
+    {
+      "guard": [
+        "G2",
+        0
+      ],
+      "train_support": 2,
+      "train_conflict": 2,
+      "frozen_support": 0,
+      "frozen_conflict": 3,
+      "challenge_support": 1,
+      "challenge_conflict": 2,
+      "valid": false
+    },
+    {
+      "guard": [
+        "G0",
+        1
+      ],
+      "train_support": 0,
+      "train_conflict": 4,
+      "frozen_support": 1,
+      "frozen_conflict": 2,
+      "challenge_support": 3,
+      "challenge_conflict": 0,
+      "valid": false
+    },
+    {
+      "guard": [
+        "G1",
+        1
+      ],
+      "train_support": 0,
+      "train_conflict": 4,
+      "frozen_support": 1,
+      "frozen_conflict": 2,
+      "challenge_support": 3,
+      "challenge_conflict": 0,
+      "valid": false
+    },
+    {
+      "guard": [
+        "G2",
+        1
+      ],
+      "train_support": 0,
+      "train_conflict": 4,
+      "frozen_support": 1,
+      "frozen_conflict": 2,
+      "challenge_support": 3,
+      "challenge_conflict": 0,
+      "valid": false
+    }
+  ],
+  "lifecycle_events": [
+    [
+      "installed_initial",
+      "R4_v1",
+      {}
+    ],
+    [
+      "installed_initial",
+      "R8_v1",
+      {
+        "R4": 1
+      }
+    ],
+    [
+      "installed_initial",
+      "R9_v1",
+      {
+        "R8": 1
+      }
+    ],
+    [
+      "challenged",
+      "R4_v1",
+      {
+        "new_conflicts": 3
+      }
+    ],
+    [
+      "dependency_challenged",
+      "R8_v1",
+      "R4"
+    ],
+    [
+      "dependency_challenged",
+      "R9_v1",
+      "R4"
+    ],
+    [
+      "revision_activated",
+      "R4_v1",
+      "R4_v2",
+      [
+        "G0",
+        0
+      ]
+    ],
+    [
+      "dependency_revalidated",
+      "R8_v1",
+      "R8_v2",
+      {
+        "R4": 2
+      },
+      {
+        "train_gated": 0,
+        "frozen_gated": 1
+      }
+    ],
+    [
+      "dependency_revalidated",
+      "R9_v1",
+      "R9_v2",
+      {
+        "R8": 2
+      },
+      {
+        "train_gated": 0,
+        "frozen_gated": 1
+      }
+    ],
+    [
+      "staged_revision_rejected",
+      "R4_v3",
+      [
+        "G2",
+        0
+      ]
+    ]
+  ],
+  "unrepairable_fork": {
+    "R4": null,
+    "R8": null,
+    "R9": null
+  },
+  "design": [
+    "Anonymous concept heads remain R4/R8/R9.",
+    "A challenged root immediately challenges all active descendants.",
+    "Revision searches a small generic symbolic guard language over head ports.",
+    "A new root version must pass combined training, challenge, and frozen gates before activation.",
+    "Dependent concepts are re-versioned only against the exact active parent version they depend on.",
+    "Failed proactive revision is RETIRED and cannot replace the current ACTIVE chain.",
+    "If the root is unrepairable, no descendant is allowed to remain ACTIVE.",
+    "Queries call prove() only and never add selector facts, examples, versions, or lifecycle events."
+  ],
+  "caveats": [
+    "The revision language is intentionally tiny: one unary guard on one head port.",
+    "Selectors G0/G1/G2 are supplied symbolic ontology observations; discovering new selector predicates is not attempted.",
+    "Dependency revalidation preserves the dependent body structure; arbitrary structural repair of descendants is not attempted.",
+    "The unrepairable cascade is tested as a conservative fork policy, not as a full transactional clone of the library.",
+    "This is a symbolic hierarchy PoC, not a raw-text end-to-end test."
+  ]
+}

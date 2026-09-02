@@ -1,0 +1,11 @@
+check,passed
+nested_query_succeeds,True
+child_installed_before_parent,True
+ADD_learned_once,True
+PATH_COST_learned_once,True
+second_query_reuses_both,True
+wrong_cost_stays_unknown,True
+query_world_started_without_ADD,True
+query_world_received_derived_ADD,True
+cycle_detected_no_install,True
+failed_child_aborts_parent,True

@@ -1,0 +1,32 @@
+[
+  {
+    "module": "symbolic_v70_k2_action_head_ablation.py",
+    "returncode": 0,
+    "pass": 17,
+    "fail": 0
+  },
+  {
+    "module": "symbolic_v69_k1_surface_cue_ablation.py",
+    "returncode": 0,
+    "pass": 12,
+    "fail": 0
+  },
+  {
+    "module": "symbolic_v68_c15_surface_paraphrases.py",
+    "returncode": 0,
+    "pass": 9,
+    "fail": 0
+  },
+  {
+    "module": "symbolic_v67_raw_text_family_invention.py",
+    "returncode": 0,
+    "pass": 20,
+    "fail": 0
+  },
+  {
+    "module": "symbolic_v66_semantic_family_invention.py",
+    "returncode": 0,
+    "pass": 17,
+    "fail": 0
+  }
+]

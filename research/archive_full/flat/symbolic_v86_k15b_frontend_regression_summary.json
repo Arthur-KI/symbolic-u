@@ -1,0 +1,42 @@
+[
+  {
+    "stage": "K12",
+    "result": "PASS",
+    "checks_pass": 21,
+    "checks_total": 21,
+    "all_pass": true,
+    "fresh_this_turn": false
+  },
+  {
+    "stage": "K13",
+    "result": "PASS",
+    "checks_pass": 14,
+    "checks_total": 14,
+    "all_pass": true,
+    "fresh_this_turn": false
+  },
+  {
+    "stage": "K14b",
+    "result": "PASS",
+    "checks_pass": 12,
+    "checks_total": 12,
+    "all_pass": true,
+    "fresh_this_turn": false
+  },
+  {
+    "stage": "K15",
+    "result": "PASS_WITH_MULTI_EVENT_BOUNDARY",
+    "checks_pass": 14,
+    "checks_total": 14,
+    "all_pass": true,
+    "fresh_this_turn": true
+  },
+  {
+    "stage": "K15b",
+    "result": "PASS",
+    "checks_pass": 10,
+    "checks_total": 10,
+    "all_pass": true,
+    "fresh_this_turn": true
+  }
+]

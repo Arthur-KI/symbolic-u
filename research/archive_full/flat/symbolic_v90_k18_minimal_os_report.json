@@ -1,0 +1,178 @@
+{
+  "version": "v9.0-K18-minimal-symbolic-os",
+  "result": "PASS",
+  "fixed_os": [
+    "raw SYMBOL identity",
+    "persistent IDENTITY",
+    "ORDER",
+    "KEY",
+    "U",
+    "explicit opposition NEG(KEY)",
+    "VARIABLE/PORT/BIND",
+    "CONTEXT/PROVENANCE",
+    "ternary KEY/U truth",
+    "MATCH/COMPOSE/SEARCH",
+    "query-guided BACKWARD proof",
+    "generic RESOURCE accounting/BUDGET",
+    "cycle detection for terminating backward search"
+  ],
+  "learned_language_content": [
+    "raw-token participant anchors",
+    "anonymous port-incidence types",
+    "anonymous raw role-marker behavior",
+    "transfer operation topology from before/after identity",
+    "raw event-form semantic equivalence",
+    "productive determiner morphology",
+    "productive verb-form morphology",
+    "text event binder / argument selection",
+    "event-local grouping inside unsplit raw context",
+    "reuse/cache policy from curriculum resource pressure"
+  ],
+  "raw_dictionary_claim": "For the controlled integrated task the dictionary contributes token boundaries/raw token identity only; human POS, lemma, case, ENTITY, PERSON/OBJECT and GIVE labels are absent.",
+  "frozen_text": {
+    "story": "Die Frau schenkte einem Jungen das Buch und der Mann gab dem Kind den Ball.",
+    "Q1": "QueryResult(state=1, contradiction=False, pos_support=(\"U::S1:(0, 7):('WOMAN', 'BOY', 'BOOK')\", \"U::S1:(0, 8):('WOMAN', 'BOY', 'BOOK')\", \"U::S1:(0, 9):('WOMAN', 'BOY', 'BOOK')\", \"U::S1:(0, 10):('WOMAN', 'BOY', 'BOOK')\"), neg_support=())",
+    "Q2": "QueryResult(state=1, contradiction=False, pos_support=(\"U::S1:(6, 15):('MAN', 'CHILD', 'BALL')\", \"U::S1:(7, 15):('MAN', 'CHILD', 'BALL')\", \"U::S1:(8, 15):('MAN', 'CHILD', 'BALL')\"), neg_support=())",
+    "absent": "QueryResult(state=0, contradiction=False, pos_support=(), neg_support=())",
+    "absent_after_explicit_opposite": "QueryResult(state=-1, contradiction=False, pos_support=(), neg_support=('FACT',))",
+    "contradiction": "QueryResult(state=0, contradiction=True, pos_support=(\"U::S1:(0, 7):('WOMAN', 'BOY', 'BOOK')\", \"U::S1:(0, 8):('WOMAN', 'BOY', 'BOOK')\", \"U::S1:(0, 9):('WOMAN', 'BOY', 'BOOK')\", \"U::S1:(0, 10):('WOMAN', 'BOY', 'BOOK')\"), neg_support=('FACT',))"
+  },
+  "cycles": {
+    "pure_cycle": "QueryResult(state=0, contradiction=False, pos_support=(), neg_support=())",
+    "pure_u_states": [
+      0,
+      0
+    ],
+    "cycle_with_independent_base": "QueryResult(state=1, contradiction=False, pos_support=('UC2',), neg_support=())"
+  },
+  "reuse_curriculum": {
+    "C1": {
+      "NO_REUSE": [
+        1,
+        17
+      ],
+      "REUSE": [
+        1,
+        27
+      ]
+    },
+    "C1_selected": "NO_REUSE",
+    "C2": {
+      "NO_REUSE": [
+        1,
+        1907
+      ],
+      "REUSE": [
+        1,
+        165
+      ]
+    },
+    "C2_selected": "REUSE"
+  },
+  "ablations": [
+    {
+      "component": "PERSISTENT_IDENTITY",
+      "status": "NECESSARY",
+      "kind": "information-theoretic",
+      "evidence": "Without persistent cross-episode participant identity, lexical anchor mappings are permutation-symmetric."
+    },
+    {
+      "component": "ORDER",
+      "status": "NECESSARY",
+      "kind": "information-theoretic",
+      "evidence": "Token bags collide under fronting, so attachment/group structure cannot be recovered from unordered input."
+    },
+    {
+      "component": "VARIABLE_BIND_IDENTITY",
+      "status": "NECESSARY",
+      "kind": "information-theoretic",
+      "evidence": "Without cross-position identity sharing, transfer and replacement deltas collapse."
+    },
+    {
+      "component": "CONTEXT_PROVENANCE",
+      "status": "NECESSARY",
+      "kind": "information-theoretic/causal",
+      "evidence": "A perfectly recurring remote change is indistinguishable from lexical meaning without evidence-to-context assignment."
+    },
+    {
+      "component": "TERNARY_KEY_U_TRUTH",
+      "status": "NECESSARY",
+      "kind": "semantic",
+      "evidence": "Rejected derivations, unknown propositions, explicit negation and contradiction are four distinct situations."
+    },
+    {
+      "component": "QUERY_GUIDED_BACKWARD",
+      "status": "PRACTICALLY_KERNEL_NEAR",
+      "kind": "resource",
+      "evidence": "Forward can be extensionally correct, but query-guided backward touched 192 relevant U versus an eager space of >5192."
+    },
+    {
+      "component": "RESOURCE_COST_BUDGET",
+      "status": "NECESSARY_FOR_EFFICIENCY_LEARNING",
+      "kind": "meta-identifiability",
+      "evidence": "Semantically equivalent search/reuse programs cannot be ranked for efficiency without generic resource evidence."
+    },
+    {
+      "component": "CACHE_POLICY",
+      "status": "LEARNABLE",
+      "kind": "learned-content",
+      "evidence": "Curriculum selects no reuse on tiny proofs and reuse after repeated shared subproofs."
+    },
+    {
+      "component": "FIXED_CLAUSE_BOUNDARY",
+      "status": "LEARNABLE/REMOVABLE",
+      "kind": "learned-content",
+      "evidence": "Backward target search finds both events inside one unsplit raw text context."
+    },
+    {
+      "component": "POS_LEMMA_CASE_ENTITY_SEMANTIC_LABELS",
+      "status": "REMOVABLE_IN_CONTROLLED_GROUNDED_CURRICULUM",
+      "kind": "learned-content",
+      "evidence": "Raw tokens recover anchors, anonymous types/roles, event semantics and held-out morphology."
+    },
+    {
+      "component": "CYCLE_DETECTION",
+      "status": "NECESSARY_FOR_TERMINATING_BACKWARD_SEARCH",
+      "kind": "operational",
+      "evidence": "Pure unsupported cycles remain UNKNOWN; an independently grounded cycle can still prove through an alternate base."
+    }
+  ],
+  "checks": {
+    "K18_dictionary_is_raw_token_identity_only": true,
+    "K18_content_anchors_are_learned_from_grounded_episode_identity": true,
+    "K18_anonymous_types_are_learned_from_port_incidence": true,
+    "K18_no_case_labels_needed_for_learned_raw_role_markers": true,
+    "K18_productive_unseen_einem_role_is_learned": true,
+    "K18_raw_event_forms_discover_same_anonymous_transfer_semantics": true,
+    "K18_productive_unseen_schenkten_semantics_is_learned": true,
+    "K18_single_event_parser_works_without_POS_lemma_case_entity_labels": true,
+    "K18_backward_raw_text_query_proves_first_event": true,
+    "K18_backward_raw_text_query_proves_second_event_without_fixed_clause_split": true,
+    "K18_absent_event_is_KEY_zero_not_false": true,
+    "K18_rejected_text_U_does_not_make_absent_KEY_minus1": true,
+    "K18_explicit_opposite_evidence_makes_KEY_minus1": true,
+    "K18_positive_plus_opposite_makes_contradiction_zero": true,
+    "K18_query_is_read_only": true,
+    "K18_pure_cycle_stays_UNKNOWN_without_U_rejection": true,
+    "K18_cycle_with_independent_base_can_prove": true,
+    "K18_curriculum_selects_no_reuse_small_then_reuse_deep": true,
+    "K18_kernel_ablation_matrix_has_no_unexplained_required_language_label": true
+  },
+  "interpretation": [
+    "The integrated controlled PoC supports the current minimal-OS hypothesis: most language-specific categories can be moved into learned symbolic content when grounded curricula preserve enough distinguishing evidence.",
+    "Ternary truth and backward proving remain non-negotiable architectural invariants in this design. U rejection is local to a derivation; KEY -1 requires proof of an explicit opposite proposition.",
+    "Persistent identity, order, variable binding and context/provenance repeatedly hit information-theoretic collisions when removed.",
+    "Fixed clause boundaries and a fixed cache policy are not required in the controlled task; both can be replaced by search/composition and curriculum-selected reuse.",
+    "Generic resource accounting is required if the learner must choose efficient algorithms among semantically equivalent ones.",
+    "Cycle detection is operationally required for terminating backward search, but pure unsupported recursion remains UNKNOWN rather than being rejected.",
+    "The remaining kernel is better described as a symbolic learning/reasoning OS than as a hand-authored language ontology."
+  ],
+  "caveats": [
+    "This is a controlled integrated PoC, not unrestricted German or a general language benchmark.",
+    "Tokenization/word boundaries are assumed; raw characters are not segmented here.",
+    "Grounded curriculum episodes provide persistent world participant IDs and symbolic before/after Keys.",
+    "Candidate hypothesis families (local marker windows, character-affix morphology, event-span search) are generic but still bounded priors.",
+    "The event inventory exercised end-to-end is primarily one anonymous transfer family; earlier tests covered additional operation families separately.",
+    "Abstract words, polysemy, long-distance coreference and unrestricted nested syntax are not solved by this integration."
+  ]
+}

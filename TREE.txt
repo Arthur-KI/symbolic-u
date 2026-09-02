@@ -1,0 +1,91 @@
+Arthur-KI-symbolic-u/
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   ├── workflows/
+├── data/
+│   ├── README.md
+│   ├── vision/
+├── demos/
+│   ├── __init__.py
+│   ├── demo_core.py
+│   ├── demo_monolith.py
+│   ├── demo_temporal.py
+│   ├── demo_vision.py
+├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── CLAIMS_AND_EVIDENCE.md
+│   ├── EXPERIMENTS.md
+│   ├── GITHUB_UPLOAD.md
+│   ├── GLOSSARY.md
+│   ├── LICENSE_GUIDE.md
+│   ├── LIMITATIONS.md
+│   ├── MODEL_CARD.md
+│   ├── PRIOR_ART.md
+│   ├── PROJECT_STRUCTURE.md
+│   ├── RELEASE_CHECKLIST.md
+│   ├── REPRODUCIBILITY.md
+│   ├── TRAINING_METHOD.md
+│   ├── VISION_AND_SENSORS.md
+├── research/
+│   ├── archive_full/  # preservation archive (372 flat artifacts)
+│   ├── ARCHIVE_NOTES.md
+│   ├── kernel_time/  # 32 files
+│   ├── language/  # 67 files
+│   ├── math/  # 17 files
+│   ├── README.md
+│   ├── RESEARCH_INVENTORY.json
+│   ├── run_snapshot.py
+│   ├── vision/  # 23 files
+├── scripts/
+│   ├── verify_repository.py
+├── symbolic_u/
+│   ├── __init__.py
+│   ├── arithmetic.py
+│   ├── core.py
+│   ├── helpers.py
+│   ├── monolith.py
+│   ├── temporal.py
+│   ├── vision_reasoner.py
+│   ├── vision_sensor.py
+├── tests/
+│   ├── test_arithmetic_temporal.py
+│   ├── test_core.py
+│   ├── test_monolith.py
+│   ├── test_vision.py
+├── tools/
+│   ├── inspect_sensor.py
+│   ├── vision_cli.py
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── ACKNOWLEDGEMENTS.md
+├── ARCHITECTURE.md
+├── AUTHORS.md
+├── BUILD_MANIFEST.json
+├── CHANGELOG.md
+├── CITATION.bib
+├── CITATION.cff
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── CURRENT_MODEL.py
+├── HOW_TO_EXTEND.md
+├── LICENSE
+├── Makefile
+├── MODEL_STATUS.md
+├── NOTICE
+├── pyproject.toml
+├── QUICKSTART.md
+├── README.md
+├── README_DE.md
+├── REPOSITORY_METADATA.md
+├── requirements-tested.txt
+├── requirements.txt
+├── RESEARCH_MAP.md
+├── ROADMAP.md
+├── run_all.py
+├── SECURITY.md
+├── TESTED_BUILD.json
+├── THIRD_PARTY_NOTICES.md
+├── UPLOAD_TO_GITHUB.md
+├── VERIFICATION.md

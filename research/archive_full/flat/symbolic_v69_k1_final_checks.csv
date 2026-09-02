@@ -1,0 +1,30 @@
+section,check,passed
+main,frozen_v68_base_stays_green,True
+main,K1_forbidden_semantic_surface_cues_are_absent,True
+main,K1_learns_all_four_primitive_transition_classes,True
+main,K1_all_selected_rules_zero_conflict_on_training,True
+main,K1_frozen_transfer_without_named_semantic_cues,True
+main,K1_adversarial_minimal_pairs_and_typed_polysemy,True
+main,K1_state_integration_remains_correct,True
+main,K1_handoff_matches_existing_C14_anonymous_stop_family,True
+main,K1_three_distinct_raw_surface_patterns_support_same_opaque_family,True
+main,K1_Grimm_cessation_clause_works_via_form_features,True
+main,K1_bounded_rule_search_remains_tractable,True
+main,K1_long_frozen_mix_does_not_mutate_rules,True
+robustness,case_1: Das Rad hörte auf zu drehen.,True
+robustness,case_2: Zu drehen hört das Rad auf.,True
+robustness,case_3: Ben ging in das Haus.,True
+robustness,case_4: Ben ging in dem Haus.,True
+robustness,case_5: Ben betrat den Garten.,True
+robustness,case_6: Cara verließ das Haus.,True
+robustness,case_7: Cara ging aus dem Haus.,True
+robustness,case_8: Das Tor ging aus.,True
+robustness,case_9: Die Lampe erlosch.,True
+robustness,case_10: Die Maschine begann zu laufen.,True
+robustness,case_11: Die Lampe fing an zu leuchten.,True
+robustness,case_12: Anna schaut ins Haus.,True
+regression,symbolic_v68_c15_surface_paraphrases.py,True
+regression,symbolic_v67_raw_text_family_invention.py,True
+regression,symbolic_v66_semantic_family_invention.py,True
+regression,symbolic_v65_unknown_imperative.py,True
+master,v4.9.1 sharded 21/21,True

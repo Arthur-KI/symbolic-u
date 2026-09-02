@@ -1,0 +1,782 @@
+{
+  "version": "v4.9-versioned-revision-u-library",
+  "result": "PASS",
+  "checks": {
+    "v1_initially_active": true,
+    "v1_learned_without_selector_guard": true,
+    "v1_conflicted_with_new_evidence": true,
+    "revision_found_symbolic_specialization": true,
+    "v2_active_v1_superseded": true,
+    "v2_preserves_even_generalization": true,
+    "v2_blocks_odd_overgeneralization": true,
+    "failed_v3_rolls_back_transactionally": true,
+    "version_history_preserved": true,
+    "provenance_preserved": true,
+    "unrepairable_challenge_disables_unsafe_active_version": true,
+    "unrepairable_query_returns_unknown_not_false_proof": true
+  },
+  "initial": {
+    "before_even": "+1",
+    "before_odd": "+1",
+    "challenge_conflict": 5
+  },
+  "revision": {
+    "selected_guard": "EVEN(Y)",
+    "after_even": "+1",
+    "after_odd": "0"
+  },
+  "versions": [
+    {
+      "id": "R1_v1",
+      "number": 1,
+      "status": "SUPERSEDED",
+      "parent": null,
+      "provenance": [
+        "initial_training",
+        "initial_frozen"
+      ],
+      "meta": {
+        "train": {
+          "support": 32,
+          "positive_n": 32,
+          "conflict": 0,
+          "negative_n": 63,
+          "missed": [],
+          "false_positive": []
+        },
+        "frozen": {
+          "support": 5,
+          "positive_n": 5,
+          "conflict": 0,
+          "negative_n": 5,
+          "missed": [],
+          "false_positive": []
+        },
+        "certificate": {
+          "mode": "WELL_FOUNDED_DECREASE",
+          "measure": "X",
+          "via": "SUCC",
+          "base_anchor": "X"
+        },
+        "base_rule": "EQ(Z,Y) + ZERO(X) -> R1(X,Y,Z)",
+        "recursive_rule": "R1(_NUM1,Y,_NUM0) + SUCC(_NUM0,Z) + SUCC(_NUM1,X) -> R1(X,Y,Z)"
+      }
+    },
+    {
+      "id": "R1_v2",
+      "number": 2,
+      "status": "ACTIVE",
+      "parent": 1,
+      "provenance": [
+        "initial_training",
+        "initial_frozen",
+        "challenge_batch_1",
+        "revision_frozen"
+      ],
+      "meta": {
+        "guard": "EVEN(Y)",
+        "combined": {
+          "support": 36,
+          "positive_n": 36,
+          "conflict": 0,
+          "negative_n": 72,
+          "missed": [],
+          "false_positive": []
+        },
+        "frozen": {
+          "support": 5,
+          "positive_n": 5,
+          "conflict": 0,
+          "negative_n": 5,
+          "missed": [],
+          "false_positive": []
+        },
+        "base_rule": "EQ(Z,Y) + EVEN(Y) + ZERO(X) -> R1(X,Y,Z)",
+        "recursive_rule": "R1(_NUM1,Y,_NUM0) + SUCC(_NUM0,Z) + SUCC(_NUM1,X) -> R1(X,Y,Z)"
+      }
+    },
+    {
+      "id": "R1_v3",
+      "number": 3,
+      "status": "RETIRED",
+      "parent": 1,
+      "provenance": [
+        "initial_training",
+        "initial_frozen",
+        "challenge_batch_1",
+        "revision_frozen"
+      ],
+      "meta": {
+        "guard": "ODD(Y)",
+        "combined": {
+          "support": 0,
+          "positive_n": 36,
+          "conflict": 5,
+          "negative_n": 72,
+          "missed": [
+            [
+              "N0",
+              "N0",
+              "N0"
+            ],
+            [
+              "N0",
+              "N2",
+              "N2"
+            ],
+            [
+              "N0",
+              "N4",
+              "N4"
+            ],
+            [
+              "N0",
+              "N6",
+              "N6"
+            ],
+            [
+              "N1",
+              "N0",
+              "N1"
+            ],
+            [
+              "N1",
+              "N2",
+              "N3"
+            ],
+            [
+              "N1",
+              "N4",
+              "N5"
+            ],
+            [
+              "N1",
+              "N6",
+              "N7"
+            ],
+            [
+              "N2",
+              "N0",
+              "N2"
+            ],
+            [
+              "N2",
+              "N2",
+              "N4"
+            ],
+            [
+              "N2",
+              "N4",
+              "N6"
+            ],
+            [
+              "N2",
+              "N6",
+              "N8"
+            ],
+            [
+              "N3",
+              "N0",
+              "N3"
+            ],
+            [
+              "N3",
+              "N2",
+              "N5"
+            ],
+            [
+              "N3",
+              "N4",
+              "N7"
+            ],
+            [
+              "N3",
+              "N6",
+              "N9"
+            ],
+            [
+              "N4",
+              "N0",
+              "N4"
+            ],
+            [
+              "N4",
+              "N2",
+              "N6"
+            ],
+            [
+              "N4",
+              "N4",
+              "N8"
+            ],
+            [
+              "N4",
+              "N6",
+              "N10"
+            ],
+            [
+              "N5",
+              "N0",
+              "N5"
+            ],
+            [
+              "N5",
+              "N2",
+              "N7"
+            ],
+            [
+              "N5",
+              "N4",
+              "N9"
+            ],
+            [
+              "N5",
+              "N6",
+              "N11"
+            ],
+            [
+              "N6",
+              "N0",
+              "N6"
+            ],
+            [
+              "N6",
+              "N2",
+              "N8"
+            ],
+            [
+              "N6",
+              "N4",
+              "N10"
+            ],
+            [
+              "N6",
+              "N6",
+              "N12"
+            ],
+            [
+              "N7",
+              "N0",
+              "N7"
+            ],
+            [
+              "N7",
+              "N2",
+              "N9"
+            ],
+            [
+              "N7",
+              "N4",
+              "N11"
+            ],
+            [
+              "N7",
+              "N6",
+              "N13"
+            ],
+            [
+              "N8",
+              "N2",
+              "N10"
+            ],
+            [
+              "N9",
+              "N4",
+              "N13"
+            ],
+            [
+              "N10",
+              "N6",
+              "N16"
+            ],
+            [
+              "N11",
+              "N8",
+              "N19"
+            ]
+          ],
+          "false_positive": [
+            [
+              "N2",
+              "N1",
+              "N3"
+            ],
+            [
+              "N3",
+              "N3",
+              "N6"
+            ],
+            [
+              "N4",
+              "N5",
+              "N9"
+            ],
+            [
+              "N6",
+              "N7",
+              "N13"
+            ],
+            [
+              "N8",
+              "N9",
+              "N17"
+            ]
+          ]
+        },
+        "frozen": {
+          "support": 0,
+          "positive_n": 5,
+          "conflict": 5,
+          "negative_n": 5,
+          "missed": [
+            [
+              "N13",
+              "N0",
+              "N13"
+            ],
+            [
+              "N14",
+              "N2",
+              "N16"
+            ],
+            [
+              "N15",
+              "N8",
+              "N23"
+            ],
+            [
+              "N16",
+              "N10",
+              "N26"
+            ],
+            [
+              "N17",
+              "N12",
+              "N29"
+            ]
+          ],
+          "false_positive": [
+            [
+              "N9",
+              "N1",
+              "N10"
+            ],
+            [
+              "N10",
+              "N3",
+              "N13"
+            ],
+            [
+              "N11",
+              "N5",
+              "N16"
+            ],
+            [
+              "N12",
+              "N7",
+              "N19"
+            ],
+            [
+              "N13",
+              "N11",
+              "N24"
+            ]
+          ]
+        },
+        "base_rule": "EQ(Z,Y) + ODD(Y) + ZERO(X) -> R1(X,Y,Z)",
+        "recursive_rule": "R1(_NUM1,Y,_NUM0) + SUCC(_NUM0,Z) + SUCC(_NUM1,X) -> R1(X,Y,Z)",
+        "retire_reason": "revision_gate_failed"
+      }
+    },
+    {
+      "id": "R1_v4",
+      "number": 4,
+      "status": "RETIRED",
+      "parent": 1,
+      "provenance": [
+        "initial_training",
+        "initial_frozen",
+        "challenge_batch_1",
+        "revision_frozen"
+      ],
+      "meta": {
+        "guard": "NONZERO(Y)",
+        "combined": {
+          "support": 28,
+          "positive_n": 36,
+          "conflict": 5,
+          "negative_n": 72,
+          "missed": [
+            [
+              "N0",
+              "N0",
+              "N0"
+            ],
+            [
+              "N1",
+              "N0",
+              "N1"
+            ],
+            [
+              "N2",
+              "N0",
+              "N2"
+            ],
+            [
+              "N3",
+              "N0",
+              "N3"
+            ],
+            [
+              "N4",
+              "N0",
+              "N4"
+            ],
+            [
+              "N5",
+              "N0",
+              "N5"
+            ],
+            [
+              "N6",
+              "N0",
+              "N6"
+            ],
+            [
+              "N7",
+              "N0",
+              "N7"
+            ]
+          ],
+          "false_positive": [
+            [
+              "N2",
+              "N1",
+              "N3"
+            ],
+            [
+              "N3",
+              "N3",
+              "N6"
+            ],
+            [
+              "N4",
+              "N5",
+              "N9"
+            ],
+            [
+              "N6",
+              "N7",
+              "N13"
+            ],
+            [
+              "N8",
+              "N9",
+              "N17"
+            ]
+          ]
+        },
+        "frozen": {
+          "support": 4,
+          "positive_n": 5,
+          "conflict": 5,
+          "negative_n": 5,
+          "missed": [
+            [
+              "N13",
+              "N0",
+              "N13"
+            ]
+          ],
+          "false_positive": [
+            [
+              "N9",
+              "N1",
+              "N10"
+            ],
+            [
+              "N10",
+              "N3",
+              "N13"
+            ],
+            [
+              "N11",
+              "N5",
+              "N16"
+            ],
+            [
+              "N12",
+              "N7",
+              "N19"
+            ],
+            [
+              "N13",
+              "N11",
+              "N24"
+            ]
+          ]
+        },
+        "base_rule": "EQ(Z,Y) + NONZERO(Y) + ZERO(X) -> R1(X,Y,Z)",
+        "recursive_rule": "R1(_NUM1,Y,_NUM0) + SUCC(_NUM0,Z) + SUCC(_NUM1,X) -> R1(X,Y,Z)",
+        "retire_reason": "revision_gate_failed"
+      }
+    },
+    {
+      "id": "R1_v5",
+      "number": 5,
+      "status": "RETIRED",
+      "parent": 1,
+      "provenance": [
+        "initial_training",
+        "initial_frozen",
+        "challenge_batch_1",
+        "revision_frozen"
+      ],
+      "meta": {
+        "guard": "LOW(Y)",
+        "combined": {
+          "support": 36,
+          "positive_n": 36,
+          "conflict": 4,
+          "negative_n": 72,
+          "missed": [],
+          "false_positive": [
+            [
+              "N2",
+              "N1",
+              "N3"
+            ],
+            [
+              "N3",
+              "N3",
+              "N6"
+            ],
+            [
+              "N4",
+              "N5",
+              "N9"
+            ],
+            [
+              "N6",
+              "N7",
+              "N13"
+            ]
+          ]
+        },
+        "frozen": {
+          "support": 3,
+          "positive_n": 5,
+          "conflict": 4,
+          "negative_n": 5,
+          "missed": [
+            [
+              "N16",
+              "N10",
+              "N26"
+            ],
+            [
+              "N17",
+              "N12",
+              "N29"
+            ]
+          ],
+          "false_positive": [
+            [
+              "N9",
+              "N1",
+              "N10"
+            ],
+            [
+              "N10",
+              "N3",
+              "N13"
+            ],
+            [
+              "N11",
+              "N5",
+              "N16"
+            ],
+            [
+              "N12",
+              "N7",
+              "N19"
+            ]
+          ]
+        },
+        "base_rule": "EQ(Z,Y) + LOW(Y) + ZERO(X) -> R1(X,Y,Z)",
+        "recursive_rule": "R1(_NUM1,Y,_NUM0) + SUCC(_NUM0,Z) + SUCC(_NUM1,X) -> R1(X,Y,Z)",
+        "retire_reason": "revision_gate_failed"
+      }
+    },
+    {
+      "id": "R1_v6",
+      "number": 6,
+      "status": "RETIRED",
+      "parent": 2,
+      "provenance": [
+        "initial_training",
+        "initial_frozen",
+        "challenge_batch_1",
+        "revision_frozen",
+        "experimental_over_specialization"
+      ],
+      "meta": {
+        "guard": "NONZERO(Y)",
+        "combined": {
+          "support": 28,
+          "positive_n": 36,
+          "conflict": 0,
+          "negative_n": 72,
+          "missed": [
+            [
+              "N0",
+              "N0",
+              "N0"
+            ],
+            [
+              "N1",
+              "N0",
+              "N1"
+            ],
+            [
+              "N2",
+              "N0",
+              "N2"
+            ],
+            [
+              "N3",
+              "N0",
+              "N3"
+            ],
+            [
+              "N4",
+              "N0",
+              "N4"
+            ],
+            [
+              "N5",
+              "N0",
+              "N5"
+            ],
+            [
+              "N6",
+              "N0",
+              "N6"
+            ],
+            [
+              "N7",
+              "N0",
+              "N7"
+            ]
+          ],
+          "false_positive": []
+        },
+        "frozen": {
+          "support": 4,
+          "positive_n": 5,
+          "conflict": 0,
+          "negative_n": 5,
+          "missed": [
+            [
+              "N13",
+              "N0",
+              "N13"
+            ]
+          ],
+          "false_positive": []
+        },
+        "base_rule": "EQ(Z,Y) + EVEN(Y) + NONZERO(Y) + ZERO(X) -> R1(X,Y,Z)",
+        "recursive_rule": "R1(_NUM1,Y,_NUM0) + SUCC(_NUM0,Z) + SUCC(_NUM1,X) -> R1(X,Y,Z)",
+        "retire_reason": "proactive_revision_failed"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "installed_initial",
+      "version": "R1_v1"
+    },
+    {
+      "event": "version_challenged",
+      "version": "R1_v1",
+      "batch": "challenge_batch_1",
+      "conflict": 5,
+      "support_gap": 0
+    },
+    {
+      "event": "staged_revision_rejected",
+      "version": "R1_v3",
+      "guard": "ODD(Y)",
+      "train_ok": false,
+      "frozen_ok": false
+    },
+    {
+      "event": "staged_revision_rejected",
+      "version": "R1_v4",
+      "guard": "NONZERO(Y)",
+      "train_ok": false,
+      "frozen_ok": false
+    },
+    {
+      "event": "staged_revision_rejected",
+      "version": "R1_v5",
+      "guard": "LOW(Y)",
+      "train_ok": false,
+      "frozen_ok": false
+    },
+    {
+      "event": "revision_activated",
+      "old": "R1_v1",
+      "new": "R1_v2",
+      "guard": "EVEN(Y)"
+    },
+    {
+      "event": "proactive_revision_rollback",
+      "attempted": "R1_v6",
+      "kept_active": "R1_v2",
+      "combined_ok": false,
+      "frozen_ok": false
+    }
+  ],
+  "rollback_test": {
+    "attempted": "R1_v6",
+    "status": "RETIRED",
+    "active_before": "R1_v2",
+    "active_after": "R1_v2"
+  },
+  "unrepairable_challenge": {
+    "active_number": null,
+    "proof_state": "0",
+    "version_statuses": {
+      "R1_v1": "SUPERSEDED",
+      "R1_v2": "CHALLENGED",
+      "R1_v3": "RETIRED",
+      "R1_v4": "RETIRED",
+      "R1_v5": "RETIRED",
+      "R1_v6": "RETIRED",
+      "R1_v7": "RETIRED",
+      "R1_v8": "RETIRED",
+      "R1_v9": "RETIRED",
+      "R1_v10": "RETIRED"
+    },
+    "policy": "When accepted evidence falsifies ACTIVE and no safe revision passes, no version remains ACTIVE. The challenged version stays in provenance/history but is not used for proof."
+  },
+  "architecture": [
+    "Accepted U definitions are immutable version objects.",
+    "New evidence is evaluated against the current ACTIVE version.",
+    "A conflict changes ACTIVE -> CHALLENGED before revision search.",
+    "Revision searches minimal symbolic guards over recursion-invariant typed ports.",
+    "Candidate revisions are STAGED and must pass all accepted evidence plus a frozen revision set.",
+    "Winning revision becomes ACTIVE; parent becomes SUPERSEDED.",
+    "Failed staged revisions become RETIRED and do not change the active pointer.",
+    "If a contradicted version cannot be repaired safely, the library exposes no ACTIVE version rather than silently proving with invalid knowledge.",
+    "All versions retain parent links and provenance."
+  ],
+  "caveats": [
+    "The v4.9 specialization language is deliberately small: unary symbolic guards on recursion-invariant head ports.",
+    "Selector predicates EVEN/ODD/NONZERO/LOW are supplied as extensional symbolic features; inventing those predicates themselves is outside this test.",
+    "This benchmark revises one anonymous numeric relation; arbitrary structural rule repair is not yet implemented.",
+    "No probabilistic/neural confidence is used: revision decisions are support/conflict/frozen-test/MDL gates.",
+    "A challenged but unrepaired version is quarantined rather than partially trusted by context; scoped trust is a future extension."
+  ]
+}

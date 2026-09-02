@@ -1,0 +1,105 @@
+{
+  "version": "v5.0a-unified-structured-text-adaptive-u",
+  "result": "PASS",
+  "scope": "controlled synthetic German text; not general NLP accuracy",
+  "checks": {
+    "raw_text_produces_world_keys": true,
+    "raw_query_parses_symbolically": true,
+    "anonymous_relation_invented_without_SUB_vocabulary": true,
+    "anonymous_relation_training_gate": true,
+    "anonymous_relation_frozen_gate": true,
+    "main_unseen_text_answer_correct": true,
+    "wrong_answer_stays_unknown": true,
+    "query_story_not_training_evidence": true,
+    "second_text_reuses_same_anonymous_u": true,
+    "claim_does_not_enter_world": true,
+    "actual_world_event_after_claim_enables_reasoning": true,
+    "story_contexts_do_not_mix": true,
+    "parent_u_is_structural_and_uses_R1": true,
+    "library_is_versioned": true
+  },
+  "main": {
+    "raw_text": "Anna hat fünfzehn Äpfel. Anna gibt sechs Äpfel weg.",
+    "query": "Wie viele Äpfel hat Anna noch?",
+    "parsed_keys": [
+      "WORLD:INITIAL_COUNT(anna, APPLE, N15)",
+      "WORLD:REMOVED_COUNT(anna, APPLE, N6)"
+    ],
+    "answer": "N9",
+    "wrong_N10_state": 0
+  },
+  "anonymous_u": {
+    "version": "R1_v1",
+    "status": "ACTIVE",
+    "signature": [
+      "NUM",
+      "NUM",
+      "NUM"
+    ],
+    "support": 36,
+    "positive_n": 36,
+    "conflict": 0,
+    "frozen_passed": 7,
+    "frozen_n": 7,
+    "frozen_false_positive": 0,
+    "base_rule": "EQ(X,Z) + ZERO(Y) -> R1(X,Y,Z)",
+    "recursive_rule": "PRED(Y,_NUM1) + PRED(_NUM0,Z) + R1(X,_NUM1,_NUM0) -> R1(X,Y,Z)",
+    "certificate": {
+      "mode": "WELL_FOUNDED_DECREASE",
+      "measure": "Y",
+      "via": "PRED",
+      "base_anchor": "Y"
+    },
+    "training_source": "independent structured raw-text bank"
+  },
+  "parent_u": {
+    "target": "REMAINING_COUNT(O,I,Z)",
+    "body": [
+      "INITIAL_COUNT(O,I,X)",
+      "REMOVED_COUNT(O,I,Y)",
+      "R1(X,Y,Z)"
+    ],
+    "dependency": "R1_v1",
+    "source": "typed structural hole completion"
+  },
+  "reuse": {
+    "raw_text": "Mia hat siebzehn Birnen. Mia gibt vier Birnen weg.",
+    "answer": "N13",
+    "learn_attempts": {
+      "R1": 1
+    }
+  },
+  "claim_attack": {
+    "raw_text": "Anna hat elf Äpfel. Paul sagt: „Anna gibt drei Äpfel weg.“",
+    "parsed_keys": [
+      "WORLD:INITIAL_COUNT(anna, APPLE, N11)",
+      "CLAIM:paul:REMOVED_COUNT(anna, APPLE, N3)"
+    ],
+    "world_answer": null,
+    "with_actual_world_event_answer": "N8"
+  },
+  "story_isolation": {
+    "story_a_answer": "N8",
+    "story_b_answer": "N5"
+  },
+  "architecture": [
+    "Raw German text is tokenized through a symbolic dictionary.",
+    "Lexeme features and fixed clause-role patterns create provenance-marked WORLD or CLAIM Keys.",
+    "The query is parsed independently into a symbolic target and is never training evidence.",
+    "A structural parent-U hole infers the need for an anonymous NUM,NUM,NUM relation.",
+    "The anonymous relation is induced from a separate bank of structured raw-text examples, with no ADD/SUB candidate vocabulary.",
+    "Recursive-U induction uses only symbolic ZERO/EQ/PRED/SUCC/LT primitives and the frozen verifier.",
+    "The learned anonymous relation is stored as ACTIVE R1_v1 in a versioned U library.",
+    "The generated parent U composes parsed text Keys with R1 and answers the original query.",
+    "Later stories reuse R1 without relearning.",
+    "CLAIM-scoped removal Keys are excluded from WORLD reasoning."
+  ],
+  "caveats": [
+    "This is a controlled structured-language benchmark, not general German understanding.",
+    "The clause grammar currently covers explicit subject count-state, explicit subject transfer-out, quoted speech claims, and a remaining-count query.",
+    "The parent-U structural schema is constrained to a single anonymous numeric hole over already introduced ports.",
+    "Number-word lexicon is currently bounded to 0..20 while the numeric ontology used by the reasoner is larger.",
+    "v5.0a integrates the versioned library container but does not trigger an in-story v4.9 revision challenge yet.",
+    "No pronouns, passive voice, coordination, temporal sequencing beyond sentence order, or free Grimm prose are claimed here."
+  ]
+}

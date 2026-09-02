@@ -1,0 +1,114 @@
+{
+  "version": "v8.5-K15-event-argument-mention-u",
+  "result": "PASS_WITH_MULTI_EVENT_BOUNDARY",
+  "learned_programs": [
+    {
+      "role": "C1",
+      "type": "Q2",
+      "target_index": 0,
+      "reject_residual": false,
+      "rank": "RIGHTMOST",
+      "equivalent_fits": 4
+    },
+    {
+      "role": "C2",
+      "type": "Q2",
+      "target_index": 1,
+      "reject_residual": true,
+      "rank": "NEAREST",
+      "equivalent_fits": 3
+    },
+    {
+      "role": "C3",
+      "type": "Q1",
+      "target_index": 2,
+      "reject_residual": false,
+      "rank": "RIGHTMOST",
+      "equivalent_fits": 1
+    }
+  ],
+  "frozen": {
+    "base": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BOOK",
+      "schenkt"
+    ],
+    "known_adjunct": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BOOK",
+      "schenkt"
+    ],
+    "closer_adjunct": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BOOK",
+      "schenkt"
+    ],
+    "unseen_residual_introducer": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BOOK",
+      "schenkt"
+    ],
+    "recipient_fronting": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BOOK",
+      "schenkt"
+    ],
+    "theme_fronting": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BOOK",
+      "schenkt"
+    ],
+    "new_combination": [
+      "Z_GIVE",
+      "GIRL",
+      "BOY",
+      "BALL",
+      "schenkt"
+    ],
+    "symmetric_unknown": null,
+    "unknown_entity": null
+  },
+  "ablations": {
+    "rank_only_recipient_fits": 0,
+    "identical_features_nonidentifiable": true
+  },
+  "next_boundary": {
+    "multi_event_text": "Die Frau gab dem Jungen das Buch und der Mann schenkte dem Kind den Ball.",
+    "event_count": 2,
+    "result": null,
+    "finding": "Single-event argument-vs-adjunct attachment is learnable from structural consequence supervision. A raw span with multiple events still needs event-local grouping/segmentation; otherwise the system safely stays UNKNOWN."
+  },
+  "checks": {
+    "K15_previous_K14_hard_distractor_gap_recorded": true,
+    "K15_all_three_argument_programs_learned": true,
+    "K15_base": true,
+    "K15_known_adjunct": true,
+    "K15_closer_adjunct": true,
+    "K15_unseen_residual_introducer": true,
+    "K15_recipient_fronting": true,
+    "K15_theme_fronting": true,
+    "K15_new_combination": true,
+    "K15_structurally_undistinguished_candidates_UNKNOWN": true,
+    "K15_unknown_entity_UNKNOWN": true,
+    "K15_rank_only_cannot_fit_hard_recipient_curriculum": true,
+    "K15_identical_features_nonidentifiable": true,
+    "K15_multi_event_span_still_needs_grouping": true
+  },
+  "caveats": [
+    "Residual-before-marker is a learned structural cue, not full dependency grammar.",
+    "Training still has consequence-derived participant identity.",
+    "Main learner assumes one event per span."
+  ]
+}

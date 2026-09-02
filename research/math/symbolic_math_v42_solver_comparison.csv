@@ -1,0 +1,13 @@
+query,expected,baseline,optimized,baseline_cold_us,optimized_cold_us,same_semantics
+"PACKING_PLAN(apples, N4, N3)",+1,+1,+1,16880.537,467.336,True
+"HAS_LEFTOVER(apples, N4, N3)",+1,+1,+1,738.436,109.075,True
+"PACKING_PLAN(oranges, N4, N0)",+1,+1,+1,18238.209,174.874,True
+"EXACT_PACKING(oranges, N4)",+1,+1,+1,86.731,6.83,True
+"PACKING_PLAN(bolts, N12, N0)",+1,+1,+1,59822.515,1055.254,True
+"EXACT_PACKING(bolts, N12)",+1,+1,+1,102.625,8.823,True
+"PACKING_PLAN(stones, N8, N1)",+1,+1,+1,62920.396,880.291,True
+"HAS_LEFTOVER(stones, N8, N1)",+1,+1,+1,497.331,16.825,True
+"PACKING_PLAN(beads, N8, N0)",+1,+1,+1,68906.151,586.076,True
+"EXACT_PACKING(beads, N8)",+1,+1,+1,83.516,6.359,True
+"PACKING_PLAN(apples, N3, N8)",0,0,0,17084.065,33.691,True
+"PACKING_PLAN(stones, N7, N12)",0,0,0,62727.004,22.774,True

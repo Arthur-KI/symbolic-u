@@ -1,0 +1,33 @@
+qid,kind,question,target,state,expected,category,correct
+Q01,gold_positive,Hat die Witwe zwei Töchter?,"WORLD:INITIAL_COUNT('widow', 'DAUGHTER', 'N2')",1,1,CLAUSE,True
+Q02,gold_positive,Ist die eine Tochter fleißig?,"WORLD:PROPERTY('good_daughter', 'INDUSTRIOUS')",0,1,REFERENCE,False
+Q03,gold_positive,Ist die andere Tochter faul?,"WORLD:PROPERTY('lazy_daughter', 'LAZY')",0,1,REFERENCE,False
+Q04,gold_positive,Muss das arme Mädchen täglich spinnen?,"WORLD:SPIN('good_daughter',)",0,1,EVENT,False
+Q05,gold_positive,Fällt die Spule in den Brunnen?,"WORLD:FALL('SPOOL', 'WELL')",0,1,EVENT,False
+Q06,gold_positive,Springt das Mädchen in den Brunnen?,"WORLD:JUMP('good_daughter', 'WELL')",0,1,EVENT,False
+Q07,gold_positive,Erwacht das Mädchen auf einer Wiese?,"WORLD:AT('good_daughter', 'MEADOW')",0,1,STATE,False
+Q08,gold_positive,"Bittet das Brot darum, herausgezogen zu werden?","CLAIM:BREAD:REQUEST('BREAD', 'PULL_OUT')",0,1,CONTEXT,False
+Q09,gold_positive,Holt das Mädchen das Brot heraus?,"WORLD:PULL_OUT('good_daughter', 'BREAD')",0,1,EVENT,False
+Q10,gold_positive,"Bittet der Apfelbaum darum, geschüttelt zu werden?","CLAIM:TREE:REQUEST('TREE', 'SHAKE')",0,1,CONTEXT,False
+Q11,gold_positive,Schüttelt das Mädchen den Apfelbaum?,"WORLD:SHAKE('good_daughter', 'TREE')",0,1,EVENT,False
+Q12,gold_positive,Geht das Mädchen in Frau Holles Dienst?,"WORLD:SERVE('good_daughter', 'frau_holle')",0,1,EVENT,False
+Q13,gold_positive,Soll das Mädchen Frau Holles Bett aufschütteln?,"CLAIM:frau_holle:REQUEST('frau_holle', 'SHAKE_BED')",0,1,CONTEXT,False
+Q14,gold_positive,Wird das Mädchen bei Frau Holle traurig und heimwehkrank?,"WORLD:WANT_HOME('good_daughter',)",0,1,STATE,False
+Q15,gold_positive,Führt Frau Holle das Mädchen zum Tor?,"WORLD:LEAD('frau_holle', 'good_daughter', 'GATE')",0,1,EVENT,False
+Q16,gold_positive,Wird das fleißige Mädchen mit Gold bedeckt?,"WORLD:COVER('good_daughter', 'GOLD')",0,1,EVENT,False
+Q17,gold_positive,Gibt Frau Holle dem Mädchen die Spule zurück?,"WORLD:GIVE('frau_holle', 'good_daughter', 'SPOOL')",0,1,EVENT,False
+Q18,gold_positive,Kehrt das fleißige Mädchen nach Hause zurück?,"WORLD:RETURN_HOME('good_daughter',)",0,1,EVENT,False
+Q19,gold_positive,Will die Mutter der faulen Tochter dasselbe Glück verschaffen?,"WORLD:INTEND('mother', 'lazy_daughter', 'SAME_LUCK')",0,1,STATE,False
+Q20,gold_positive,Wirft die faule Tochter ihre Spule in den Brunnen?,"WORLD:THROW('lazy_daughter', 'SPOOL', 'WELL')",0,1,EVENT,False
+Q21,gold_positive,Lehnt die faule Tochter die Bitte des Brotes ab?,"WORLD:REFUSE('lazy_daughter', 'BREAD')",0,1,CONTEXT,False
+Q22,gold_positive,Lehnt die faule Tochter die Bitte des Apfelbaums ab?,"WORLD:REFUSE('lazy_daughter', 'TREE')",0,1,CONTEXT,False
+Q23,gold_positive,Vernachlässigt die faule Tochter Frau Holles Bett?,"WORLD:NEGLECT('lazy_daughter', 'BED')",0,1,EVENT,False
+Q24,gold_positive,Beendet Frau Holle den Dienst der faulen Tochter?,"WORLD:DISMISS('frau_holle', 'lazy_daughter')",0,1,EVENT,False
+Q25,gold_positive,Wird über die faule Tochter Pech ausgeschüttet?,"WORLD:COVER('lazy_daughter', 'PITCH')",0,1,EVENT,False
+Q26,gold_positive,Bleibt das Pech an ihr hängen?,"WORLD:REMAIN_ATTACHED('PITCH', 'lazy_daughter')",0,1,STATE,False
+A01,adversarial_absent,Wird die faule Tochter mit Gold bedeckt?,"WORLD:COVER('lazy_daughter', 'GOLD')",0,0,EVENT,True
+A02,adversarial_absent,Zieht die faule Tochter das Brot heraus?,"WORLD:PULL_OUT('lazy_daughter', 'BREAD')",0,0,EVENT,True
+A03,adversarial_absent,Schüttelt die faule Tochter den Apfelbaum?,"WORLD:SHAKE('lazy_daughter', 'TREE')",0,0,EVENT,True
+A04,adversarial_absent,Wird das fleißige Mädchen mit Pech bedeckt?,"WORLD:COVER('good_daughter', 'PITCH')",0,0,EVENT,True
+A05,adversarial_absent,Springt Frau Holle in den Brunnen?,"WORLD:JUMP('frau_holle', 'WELL')",0,0,EVENT,True
+A06,adversarial_absent,Gibt die Mutter dem fleißigen Mädchen Gold?,"WORLD:GIVE('mother', 'good_daughter', 'GOLD')",0,0,EVENT,True

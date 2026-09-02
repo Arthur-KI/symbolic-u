@@ -1,0 +1,166 @@
+{
+  "version": "v6.5-unknown-imperative-semantics",
+  "result": "PASS",
+  "anonymous_relation": "R10",
+  "checks": {
+    "frozen_v64_base_stays_green": true,
+    "C11_unknown_imperative_schema_learned_from_unrelated_examples": true,
+    "C11_schema_full_positive_support_zero_negative_conflict": true,
+    "C11_wrong_target_action_negative_rejected": true,
+    "C11_first_token_evidence_only_staged": true,
+    "C11_second_independent_evidence_activates_token": true,
+    "C11_active_token_reuses_across_new_target_action": true,
+    "C11_directive_semantics_alone_not_world_cessation": true,
+    "C11_independent_matching_observation_can_ground_world_cessation": true,
+    "grimm_two_unknown_steh_occurrences_found": true,
+    "grimm_first_steh_only_staged": true,
+    "grimm_second_steh_activates_lexical_U": true,
+    "grimm_steh_active_after_two_independent_consequences": true,
+    "grimm_both_steh_consequences_are_local_COOK_cessations": true,
+    "grimm_learned_steh_reuses_on_new_action": true,
+    "grimm_reused_steh_directive_still_not_world_evidence": true,
+    "adversarial_one_support_cannot_normal_reuse": true,
+    "adversarial_no_consequence_creates_no_semantic_entry": true,
+    "adversarial_contradictory_consequence_challenges_active_token": true,
+    "C12_mixed_long_text_uses_new_lexical_U_plus_old_language_U": true
+  },
+  "learned_schema": {
+    "require_cease": false,
+    "target_mode": "SAME_COMMAND_PRE_POST",
+    "action_mode": "SAME_PRE_POST",
+    "support": 3,
+    "conflict": 0
+  },
+  "synthetic_lifecycle": {
+    "after_one": [
+      "STAGED",
+      1
+    ],
+    "after_two": [
+      "ACTIVE",
+      2
+    ],
+    "reuse": [
+      "R10",
+      [
+        "GATE",
+        "OPEN"
+      ]
+    ],
+    "world_without_observation": false,
+    "third_observed_world_cessation": true
+  },
+  "grimm": {
+    "stop_occurrences": [
+      {
+        "quote_index": 1,
+        "token": "steh",
+        "pre_action": "COOK",
+        "cease": [
+          "POT",
+          "COOK"
+        ],
+        "lex_status": "STAGED",
+        "lex_support": 1
+      },
+      {
+        "quote_index": 3,
+        "token": "steh",
+        "pre_action": "COOK",
+        "cease": [
+          "POT",
+          "COOK"
+        ],
+        "lex_status": "ACTIVE",
+        "lex_support": 2
+      }
+    ],
+    "lexical_entry": {
+      "token": "steh",
+      "relation": "R10",
+      "status": "ACTIVE",
+      "support": 2,
+      "conflicts": 0,
+      "provenance": [
+        "grimm-quote-2",
+        "grimm-quote-4"
+      ]
+    },
+    "reuse_on_new_action": [
+      "R10",
+      [
+        "LAMP",
+        "LIGHT"
+      ]
+    ],
+    "reuse_world_without_observation": false,
+    "trace": [
+      {
+        "i": 0,
+        "quote": "Töpfchen koche,",
+        "kind": "KNOWN",
+        "target": "POT",
+        "action": "COOK",
+        "world_observed": true,
+        "active_after": {
+          "POT": "COOK"
+        }
+      },
+      {
+        "i": 1,
+        "quote": "Töpfchen steh,",
+        "kind": "UNKNOWN",
+        "target": "POT",
+        "token": "steh",
+        "pre_action": "COOK",
+        "cease": [
+          "POT",
+          "COOK"
+        ],
+        "lex_status": "STAGED",
+        "active_after": {}
+      },
+      {
+        "i": 2,
+        "quote": "Töpfchen koche,",
+        "kind": "KNOWN",
+        "target": "POT",
+        "action": "COOK",
+        "world_observed": true,
+        "active_after": {
+          "POT": "COOK"
+        }
+      },
+      {
+        "i": 3,
+        "quote": "Töpfchen steh,",
+        "kind": "UNKNOWN",
+        "target": "POT",
+        "token": "steh",
+        "pre_action": "COOK",
+        "cease": [
+          "POT",
+          "COOK"
+        ],
+        "lex_status": "ACTIVE",
+        "active_after": {}
+      }
+    ]
+  },
+  "interpretation": [
+    "The learner is not given STEH=STOP_COOK or any other token-specific stop meaning.",
+    "A generic anonymous U is learned from unrelated opaque imperatives whose local consequence is cessation of the same target's same currently active action.",
+    "A new token begins STAGED after one independent consequence and becomes ACTIVE only after a second independent matching consequence.",
+    "In the frozen Grimm tale, the two occurrences of 'Töpfchen steh' provide the two independent local COOK cessation observations, activating an anonymous lexical U for 'steh'.",
+    "After activation, 'steh' transfers to a new target/action as the same anonymous directive class R10.",
+    "Recognizing directive semantics is still not WORLD evidence: execution/cessation requires an independent narrative observation."
+  ],
+  "caveats": [
+    "The CEASE observation vocabulary ('hört ... auf zu ...') and primitive action morphology are supplied symbolic infrastructure.",
+    "Token lexical activation threshold=2 is a hand-set lifecycle prior.",
+    "The learned R10 is a generic cessation-directive class; the experiment does not claim full lexical semantics induction for arbitrary verbs.",
+    "The two Grimm supports use the same target/action pair POT/COOK, although they are independent discourse occurrences.",
+    "The system learns the meaning after observing consequences; it does not predict the first-ever unseen token's effect before any evidence.",
+    "Full free-German parsing remains outside this curriculum PoC."
+  ]
+}

@@ -1,0 +1,7 @@
+name,category,status,seconds,file
+TERNARY_U_KEY,core,PASS,0.628,ternary_u_key_negative_full.py
+TEMPORAL_STATE,core,PASS,0.631,temporal_mini_lm_v02.py
+CORE_V1,core,PASS,0.6,symbolic_mini_lm_v1.py
+DICTIONARY_ONTOLOGY,language,PASS,0.623,symbolic_mini_lm_v11_dictionary_test.py
+CONTROLLED_E2E_V12,language,PASS,0.6,symbolic_mini_lm_v12_end_to_end.py
+REFERENCE_U,language,PASS,0.644,symbolic_mini_lm_v13_reference_u.py

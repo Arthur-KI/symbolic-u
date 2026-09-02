@@ -1,0 +1,81 @@
+{
+  "version": "v7.9c-K9-return-home-consequence-binder",
+  "result": "PASS",
+  "binders": {
+    "gehen_heim": {
+      "signature": [
+        [
+          "T4",
+          "NOM",
+          null,
+          false
+        ]
+      ],
+      "equivalent_fits": 6,
+      "consequence": [
+        "P4",
+        "O4",
+        "HOME"
+      ]
+    },
+    "kehren_heim": {
+      "signature": [
+        [
+          "T4",
+          "NOM",
+          null,
+          false
+        ]
+      ],
+      "equivalent_fits": 6,
+      "consequence": [
+        "P4",
+        "O4",
+        "HOME"
+      ]
+    },
+    "kommen_heim": {
+      "signature": [
+        [
+          "T4",
+          "NOM",
+          null,
+          false
+        ]
+      ],
+      "equivalent_fits": 6,
+      "consequence": [
+        "P4",
+        "O4",
+        "HOME"
+      ]
+    }
+  },
+  "merged": true,
+  "canonical_head": "E31",
+  "frozen": {
+    "sweet": "Event(head='E31', args=('GIRL',), evidence='sweet-return-k9', source_lexeme='kommen_heim')",
+    "holle": "Event(head='E31', args=('LAZY_DAUGHTER',), evidence='holle-return-k9', source_lexeme='kommen_heim')"
+  },
+  "checks": {
+    "K9c_three_return_surface_families_learn_binders_from_P4_O4_consequences": true,
+    "K9c_all_return_binders_converge": true,
+    "K9c_same_event_merge_requires_same_binder_relation_operation_and_endpoint": true,
+    "K9c_frozen_SweetPorridge_return_home_transfers": true,
+    "K9c_frozen_FrauHolle_return_home_transfers": true,
+    "K9c_missing_heim_surface_stays_UNKNOWN": true,
+    "K9c_wrong_verb_with_heim_stays_UNKNOWN": true,
+    "K9c_wrong_endpoint_consequence_does_not_support_home_family": true,
+    "K9c_wrong_relation_consequence_does_not_support_home_family": true,
+    "K9c_multiple_nominative_candidates_stay_UNKNOWN": true
+  },
+  "interpretation": [
+    "Consequence-supervised binder induction is not limited to three-participant transfers: a unary return-home binder is recovered from repeated P4/O4 appearance consequences.",
+    "gehen/kehren/kommen + heim merge only because they learn the same subject selector, anonymous relation/operation topology, and repeated endpoint identity.",
+    "A wrong endpoint or wrong anonymous relation does not count as evidence for the learned family."
+  ],
+  "caveats": [
+    "HOME remains an observed symbolic endpoint identity shared across training episodes; K9c does not learn perceptual grounding of home.",
+    "Formal morphology/case and mention extraction remain substrate."
+  ]
+}

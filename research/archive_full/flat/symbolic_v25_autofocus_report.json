@@ -1,0 +1,10 @@
+{
+  "autofocus": {
+    "correct": 15,
+    "n": 15,
+    "wrong": 0,
+    "unknown": 0
+  },
+  "failures": [],
+  "caveat": "Nearest explicit mention focus is unsafe when the last mention is an object; subject/role-aware Clause-U is preferable."
+}

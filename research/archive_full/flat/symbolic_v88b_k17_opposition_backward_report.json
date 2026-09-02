@@ -1,0 +1,44 @@
+{
+  "version": "v8.8b-K17b-opposition-aware-backward-negation",
+  "result": "PASS",
+  "semantics": {
+    "negative_truth": "KEY(P)=-1 iff opposite proposition NOT(P) is positively provable",
+    "contradiction": "P and NOT(P) both positively provable -> KEY(P)=0 with contradiction=True",
+    "u_separation": "rejected U does not prove opposite output proposition"
+  },
+  "results": {
+    "Q": "QueryResult(state=-1, contradiction=False, positive_key='Q', negative_key='NOT_Q', pos_support=(), neg_support=('U_NEG_Q',))",
+    "NOT_Q": "QueryResult(state=1, contradiction=False, positive_key='NOT_Q', negative_key='Q', pos_support=('U_NEG_Q',), neg_support=())",
+    "R": "QueryResult(state=0, contradiction=True, positive_key='R', negative_key='NOT_R', pos_support=('U_POS_R',), neg_support=('U_NEG_R',))",
+    "X": "QueryResult(state=-1, contradiction=False, positive_key='X', negative_key='NOT_X', pos_support=(), neg_support=('U_NOT_X',))",
+    "S": "QueryResult(state=1, contradiction=False, positive_key='S', negative_key='NOT_S', pos_support=('U_GOOD_S',), neg_support=())",
+    "Y": "QueryResult(state=0, contradiction=False, positive_key='Y', negative_key='NOT_Y', pos_support=(), neg_support=())",
+    "Y_after_independent_evidence": "QueryResult(state=1, contradiction=False, positive_key='Y', negative_key='NOT_Y', pos_support=('U_PENDING_Y',), neg_support=())"
+  },
+  "u_states": {
+    "U_NEG_Q": 1,
+    "U_POS_R": 1,
+    "U_NEG_R": 1,
+    "U_NOT_X": 1,
+    "U_BAD_S": -1,
+    "U_GOOD_S": 1,
+    "U_PENDING_Y": 1
+  },
+  "checks": {
+    "K17b_derived_opposite_KEY_makes_query_minus1": true,
+    "K17b_querying_negative_KEY_itself_returns_plus1": true,
+    "K17b_positive_and_derived_negative_support_make_contradiction": true,
+    "K17b_backward_derived_negative_premise_can_reject_U": true,
+    "K17b_rejected_U_does_not_create_negative_output_KEY": true,
+    "K17b_unknown_stays_zero_when_neither_side_provable": true,
+    "K17b_query_is_read_only": true,
+    "K17b_independent_evidence_not_query_promotes_pending_positive": true
+  },
+  "interpretation": [
+    "KEY -1 is implemented through proof of an explicit opposite proposition, not through failure of positive proof.",
+    "Negative propositions are ordinary Keys and can themselves be derived backward through U.",
+    "A derived negative premise may reject a particular U, while another U can still prove the output Key positively.",
+    "Contradiction is symmetric proof support for both proposition and opposite; it is represented as KEY state 0 plus a contradiction flag.",
+    "Queries remain read-only; only independent evidence changes a pending proof."
+  ]
+}

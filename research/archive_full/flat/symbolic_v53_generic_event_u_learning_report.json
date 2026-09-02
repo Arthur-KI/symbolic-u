@@ -1,0 +1,198 @@
+{
+  "version": "v5.3-generic-event-u-learning",
+  "result": "PASS",
+  "scope": "symbolic supervised U-binding induction on separate controlled examples; frozen held-out Grimm transfer test",
+  "learned_programs": [
+    {
+      "name": "U_GIFT",
+      "input_kind": "GIFT",
+      "head": "GIVE",
+      "arg_slots": [
+        "S0",
+        "S1",
+        "S2"
+      ],
+      "support": 2,
+      "conflict": 0
+    },
+    {
+      "name": "U_COMMAND",
+      "input_kind": "COMMAND",
+      "head": "COMMAND",
+      "arg_slots": [
+        "S0",
+        "S1",
+        "S2"
+      ],
+      "support": 3,
+      "conflict": 0
+    },
+    {
+      "name": "U_ACTION",
+      "input_kind": "ACTION_RESPONSE",
+      "head": "ACTION",
+      "arg_slots": [
+        "S0",
+        "S1"
+      ],
+      "support": 3,
+      "conflict": 0
+    },
+    {
+      "name": "U_STOP",
+      "input_kind": "STOP_RESPONSE",
+      "head": "STOP_ACTION",
+      "arg_slots": [
+        "S0",
+        "S1"
+      ],
+      "support": 2,
+      "conflict": 0
+    }
+  ],
+  "training": {
+    "gift_examples": 2,
+    "command_examples": 3,
+    "action_examples": 3,
+    "stop_examples": 2,
+    "forbidden_heldout_lexemes_absent": true
+  },
+  "frozen_synthetic": {
+    "passed": 2,
+    "n": 2
+  },
+  "heldout": {
+    "source": "grimm_der_suesse_brei.txt",
+    "targets_passed": 5,
+    "targets_n": 5,
+    "false_commits": 0,
+    "adversarial_n": 5,
+    "targets": [
+      {
+        "fact": "('GIVE', ('old_woman', 'girl', 'POT'))",
+        "proved": true
+      },
+      {
+        "fact": "('COMMAND', ('mother', 'POT', 'COOK'))",
+        "proved": true
+      },
+      {
+        "fact": "('COOK', ('POT', 'PORRIDGE'))",
+        "proved": true
+      },
+      {
+        "fact": "('COMMAND', ('girl', 'POT', 'STOP'))",
+        "proved": true
+      },
+      {
+        "fact": "('STOP_COOK', ('POT',))",
+        "proved": true
+      }
+    ],
+    "adversarial": [
+      {
+        "fact": "('GIVE', ('mother', 'girl', 'POT'))",
+        "proved": false
+      },
+      {
+        "fact": "('COMMAND', ('mother', 'POT', 'STOP'))",
+        "proved": false
+      },
+      {
+        "fact": "('COOK', ('POT', 'GOLD'))",
+        "proved": false
+      },
+      {
+        "fact": "('COMMAND', ('old_woman', 'POT', 'COOK'))",
+        "proved": false
+      },
+      {
+        "fact": "('STOP_COOK', ('mother',))",
+        "proved": false
+      }
+    ]
+  },
+  "facts": [
+    {
+      "fact": "('GIVE', ('old_woman', 'girl', 'POT'))",
+      "rule": "U_GIFT",
+      "source": " Da gieng das\nKind hinaus in den Wald, und begegnete ihm da eine alte Frau,\ndie wußte seinen Jammer schon und schenkte ihm ein Töpfchen, zu\ndem sollt es sagen „Töpfchen koche,“ so kochte es guten süßen\nHirsenbrei, und wenn es sagte „Töpfc"
+    },
+    {
+      "fact": "('COMMAND', ('girl', 'POT', 'COOK'))",
+      "rule": "U_COMMAND",
+      "source": "Töpfchen koche,"
+    },
+    {
+      "fact": "('COMMAND', ('girl', 'POT', 'STOP'))",
+      "rule": "U_COMMAND",
+      "source": "Töpfchen steh,"
+    },
+    {
+      "fact": "('COMMAND', ('mother', 'POT', 'COOK'))",
+      "rule": "U_COMMAND",
+      "source": "Töpfchen koche,"
+    },
+    {
+      "fact": "('COMMAND', ('girl', 'POT', 'STOP'))",
+      "rule": "U_COMMAND",
+      "source": "Töpfchen steh,"
+    },
+    {
+      "fact": "('ACTION', ('POT', 'COOK'))",
+      "rule": "U_ACTION",
+      "source": " so kochte es guten süßen\nHirsenbrei, und wenn es sagte "
+    },
+    {
+      "fact": "('STOP_ACTION', ('POT', 'COOK'))",
+      "rule": "U_STOP",
+      "source": " so hörte es wieder auf\nzu kochen. Das Mädchen brachte den Topf seiner Mutter heim,\nund nun waren sie ihrer Armuth und ihres Hungers ledig und\naßen süßen Brei so oft sie wollten. Auf eine Zeit war das Mädchen\nausgegangen"
+    },
+    {
+      "fact": "('ACTION', ('POT', 'COOK'))",
+      "rule": "U_ACTION",
+      "source": " da kocht\nes, und sie ißt sich satt; nun will sie daß das Töpfchen wieder\naufhören soll, aber sie weiß das Wort nicht. Also kocht es fort,\nund der Brei steigt über den Rand heraus und kocht immer zu,\ndie Küche und das ga"
+    },
+    {
+      "fact": "('STOP_ACTION', ('POT', 'COOK'))",
+      "rule": "U_STOP",
+      "source": " da steht es und hört auf zu kochen;\nund wer wieder in die Stadt wollte, der mußte sich durchessen."
+    },
+    {
+      "fact": "('COOK', ('POT', 'PORRIDGE'))",
+      "rule": "ACTION_PRODUCT_PROJECTION_U",
+      "source": " so kochte es guten süßen\nHirsenbrei, und wenn es sagte "
+    },
+    {
+      "fact": "('STOP_COOK', ('POT',))",
+      "rule": "STOP_ACTION_PROJECTION_U",
+      "source": " so hörte es wieder auf\nzu kochen. Das Mädchen brachte den Topf seiner Mutter heim,\nund nun waren sie ihrer Armuth und ihres Hungers ledig und\naßen süßen Brei so oft sie wollten. Auf eine Zeit war das Mädchen\nausgegangen"
+    },
+    {
+      "fact": "('COOK', ('POT', 'PORRIDGE'))",
+      "rule": "ACTION_PRODUCT_PROJECTION_U",
+      "source": " da kocht\nes, und sie ißt sich satt; nun will sie daß das Töpfchen wieder\naufhören soll, aber sie weiß das Wort nicht. Also kocht es fort,\nund der Brei steigt über den Rand heraus und kocht immer zu,\ndie Küche und das ga"
+    },
+    {
+      "fact": "('STOP_COOK', ('POT',))",
+      "rule": "STOP_ACTION_PROJECTION_U",
+      "source": " da steht es und hört auf zu kochen;\nund wer wieder in die Stadt wollte, der mußte sich durchessen."
+    }
+  ],
+  "constraints": [
+    "The held-out Grimm text is not used in U induction.",
+    "POT/COOK/PORRIDGE/'steh' do not occur in the training bank.",
+    "Dictionary entries provide primitive entity/action types only.",
+    "GIVE/COMMAND/ACTION/STOP_ACTION slot bindings are selected by symbolic permutation search.",
+    "Learned programs are frozen before parsing the Grimm text.",
+    "FAIRY_TALE scope permits magical-object interpretation but does not create evidence by itself.",
+    "Queries are evaluation only and are never inserted as facts."
+  ],
+  "caveats": [
+    "Training is supervised at the semantic-event level; this does not yet learn relation names from scratch.",
+    "The neutral surface analyzers are still hand-written symbolic syntax extractors.",
+    "Held-out entity aliasing Mädchen/Kind -> girl is a discourse/lexicon assumption.",
+    "The ACTION_PRODUCT and STOP_ACTION projection U are generic symbolic projections, not learned in this experiment.",
+    "This is one held-out Grimm tale plus two synthetic frozen cases; not general language accuracy."
+  ]
+}

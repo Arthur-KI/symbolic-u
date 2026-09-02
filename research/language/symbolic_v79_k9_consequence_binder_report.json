@@ -1,0 +1,291 @@
+{
+  "version": "v7.9-K9-consequence-supervised-binder-induction",
+  "result": "PASS",
+  "removed_supervision": "explicit event participant tuples",
+  "training_signal": "clause + ordered before/after anonymous state snapshots",
+  "binders": {
+    "geben": {
+      "signature": [
+        [
+          "T4",
+          "NOM",
+          null,
+          true
+        ],
+        [
+          "T4",
+          "DAT",
+          null,
+          false
+        ],
+        [
+          "T5",
+          "ACC",
+          null,
+          false
+        ]
+      ],
+      "equivalent_fitting_programs": 8,
+      "inferred_training_tuples": [
+        {
+          "eid": "g1",
+          "text": "Die Frau gab dem Jungen das Buch.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "WOMAN",
+            "BOY",
+            "BOOK"
+          ]
+        },
+        {
+          "eid": "g2",
+          "text": "Dem Jungen gab die Frau den Ball.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "WOMAN",
+            "BOY",
+            "BALL"
+          ]
+        },
+        {
+          "eid": "g3",
+          "text": "Das Buch gab die Frau dem Jungen.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "WOMAN",
+            "BOY",
+            "BOOK"
+          ]
+        },
+        {
+          "eid": "g4",
+          "text": "Der Mann gab dem Kind einen Apfel.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "MAN",
+            "CHILD",
+            "APPLE"
+          ]
+        },
+        {
+          "eid": "g5",
+          "text": "Neben dem Ball gab die Frau dem Jungen das Buch.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "WOMAN",
+            "BOY",
+            "BOOK"
+          ]
+        },
+        {
+          "eid": "g6",
+          "text": "gab dem Jungen das Buch.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "WOMAN",
+            "BOY",
+            "BOOK"
+          ]
+        }
+      ]
+    },
+    "schenken": {
+      "signature": [
+        [
+          "T4",
+          "NOM",
+          null,
+          true
+        ],
+        [
+          "T4",
+          "DAT",
+          null,
+          false
+        ],
+        [
+          "T5",
+          "ACC",
+          null,
+          false
+        ]
+      ],
+      "equivalent_fitting_programs": 8,
+      "inferred_training_tuples": [
+        {
+          "eid": "s1",
+          "text": "Die Frau schenkte dem Jungen das Buch.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "WOMAN",
+            "BOY",
+            "BOOK"
+          ]
+        },
+        {
+          "eid": "s2",
+          "text": "Dem Jungen schenkte die Frau den Ball.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "WOMAN",
+            "BOY",
+            "BALL"
+          ]
+        },
+        {
+          "eid": "s3",
+          "text": "Das Buch schenkte die Frau dem Jungen.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "WOMAN",
+            "BOY",
+            "BOOK"
+          ]
+        },
+        {
+          "eid": "s4",
+          "text": "Der Mann schenkte dem Kind einen Apfel.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "MAN",
+            "CHILD",
+            "APPLE"
+          ]
+        },
+        {
+          "eid": "s5",
+          "text": "Neben dem Buch schenkte die Frau dem Jungen den Ball.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "WOMAN",
+            "BOY",
+            "BALL"
+          ]
+        },
+        {
+          "eid": "s6",
+          "text": "schenkte dem Jungen das Buch.",
+          "relation": "P3",
+          "op_id": "O2",
+          "values": [
+            "WOMAN",
+            "BOY",
+            "BOOK"
+          ]
+        }
+      ]
+    }
+  },
+  "same_event": {
+    "merged": true,
+    "canonical_head": "E21",
+    "consequence_signatures": {
+      "geben": [
+        "P3",
+        "O2",
+        [
+          "V0",
+          "V1",
+          "V2"
+        ]
+      ],
+      "schenken": [
+        "P3",
+        "O2",
+        [
+          "V0",
+          "V1",
+          "V2"
+        ]
+      ]
+    }
+  },
+  "frozen": {
+    "sweet_porridge": "Event(head='E21', args=('OLD_WOMAN', 'GIRL', 'POT'), evidence='sweet-k9', source_lexeme='schenken')",
+    "frau_holle": "Event(head='E21', args=('FRAU_HOLLE', 'GOOD_DAUGHTER', 'SPOOL'), evidence='holle-k9', source_lexeme='geben')",
+    "dative_front": "Event(head='E21', args=('ANNA', 'BOY', 'BOOK'), evidence='a1', source_lexeme='schenken')",
+    "theme_front": "Event(head='E21', args=('ANNA', 'BOY', 'BOOK'), evidence='a2', source_lexeme='geben')",
+    "missing": "None",
+    "ambiguous": "None"
+  },
+  "identifiability": {
+    "transfer_without_identity": [
+      [
+        [
+          "P3",
+          2
+        ]
+      ],
+      [
+        [
+          "P3",
+          2
+        ]
+      ]
+    ],
+    "replace_without_identity": [
+      [
+        [
+          "P3",
+          2
+        ]
+      ],
+      [
+        [
+          "P3",
+          2
+        ]
+      ]
+    ],
+    "collision": true,
+    "resolution_without_cross_time_identity": null,
+    "finding": "If cross-time argument identity is removed, transfer-first and replace-second produce the same coarse before/after fact counts and arities. The binder cannot know which clause mention is the preserved theme versus the changing participant."
+  },
+  "checks": {
+    "K9_K8_base_is_green": true,
+    "K9_no_explicit_event_tuple_labels_used_in_training": true,
+    "K9_geben_latent_tuples_are_inferred_from_P3_O2_deltas": true,
+    "K9_schenken_latent_tuples_are_inferred_from_P3_O2_deltas": true,
+    "K9_geben_binder_learned_from_consequences": true,
+    "K9_schenken_binder_learned_from_consequences": true,
+    "K9_independent_binders_converge_to_same_structure": true,
+    "K9_same_event_merge_still_requires_same_binder_and_consequence": true,
+    "K9_wrong_relation_consequence_is_not_accepted_as_GIVE_training": true,
+    "K9_missing_shared_argument_identity_rejects_transfer_delta": true,
+    "K9_multi_change_without_local_decomposition_is_not_used": true,
+    "K9_duplicate_evidence_cannot_activate_binder": true,
+    "K9_frozen_SweetPorridge_GIVE_transfers": true,
+    "K9_frozen_FrauHolle_GIVE_regression": true,
+    "K9_dative_front_word_order_transfers": true,
+    "K9_theme_front_word_order_transfers": true,
+    "K9_incomplete_clause_remains_UNKNOWN": true,
+    "K9_multiple_dative_candidates_remain_UNKNOWN_frozen": true,
+    "K9_training_consequence_can_identify_ambiguous_episode_without_compiling_exception": true,
+    "K9_removing_cross_time_identity_makes_transfer_vs_replace_non_identifiable": true
+  },
+  "interpretation": [
+    "K9 removes direct event-tuple supervision from K8. The binder learner derives its training tuple from the anonymous P3/O2 state consequence: old first argument, new first argument, shared second argument.",
+    "Varied clause forms then force a reusable case/T-type binder, which independently converges for geben and schenken.",
+    "The frozen binder still transfers to both Frau Holle and Der süße Brei without target-story learning.",
+    "State consequences can disambiguate a difficult training episode, but that local resolution is not compiled as a lexical exception; the same ambiguous clause remains UNKNOWN at frozen inference without an independent state consequence.",
+    "Cross-time identity is again exposed as kernel-near: without equality of arguments across snapshots, the latent event roles are not identifiable."
+  ],
+  "caveats": [
+    "The learner still knows the anonymous possession relation P3 and the K5 transfer topology O2 from earlier learned layers.",
+    "Formal case morphology, anonymous T-types, mention extraction, reference resolution and Clause-U remain frozen substrate.",
+    "Training examples provide before/after truth snapshots; deriving those snapshots from perception or unrestricted text is outside this PoC.",
+    "The current learner covers a three-participant transfer event. Other event topologies need their own consequence-driven induction experiments.",
+    "Multiple simultaneous state changes must first be locally decomposed by K5b; K9 intentionally rejects an undecomposed multi-change episode."
+  ]
+}

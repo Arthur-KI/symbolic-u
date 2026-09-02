@@ -1,0 +1,263 @@
+{
+  "version": "v8.8-K17-ternary-backward-curriculum-reuse",
+  "result": "PASS",
+  "hard_invariants": {
+    "key_states": {
+      "+1": "proposition provable",
+      "0": "unknown/undecided, or contradiction flagged separately",
+      "-1": "explicit negative proposition provable"
+    },
+    "u_states": {
+      "+1": "this derivation/link is confirmed",
+      "0": "open/pending",
+      "-1": "this derivation/link is rejected"
+    },
+    "strict_separation": "U=-1 does not imply KEY=-1",
+    "query_not_evidence": true,
+    "direction": "query-guided backward proving"
+  },
+  "core": {
+    "positive": "KeyResult(state=1, contradiction=False, pos_support=('U_POS',), neg_support=())",
+    "pending": "KeyResult(state=0, contradiction=False, pos_support=(), neg_support=())",
+    "rejected_derivation_output": "KeyResult(state=0, contradiction=False, pos_support=(), neg_support=())",
+    "alternate_derivations": "KeyResult(state=1, contradiction=False, pos_support=('U_ALT_GOOD',), neg_support=())",
+    "explicit_negative": "KeyResult(state=-1, contradiction=False, pos_support=(), neg_support=('FACT-',))",
+    "contradiction": "KeyResult(state=0, contradiction=True, pos_support=('U_CONTRA',), neg_support=('FACT-',))",
+    "u_states": {
+      "U_POS": 1,
+      "U_PENDING": 0,
+      "U_REJECT": -1,
+      "U_ALT_BAD": -1,
+      "U_ALT_GOOD": 1,
+      "U_CONTRA": 1
+    }
+  },
+  "backward_relevance": {
+    "query": "T_POS",
+    "u_tests": 1,
+    "eager_forward_rule_scan": 206,
+    "opened_u": [
+      "U_POS"
+    ]
+  },
+  "meta_curriculum": {
+    "primitive_meta_ops": [
+      "LOOKUP",
+      "STORE"
+    ],
+    "candidate_programs": [
+      {
+        "name": "M0_NONE",
+        "lookup": false,
+        "store": false
+      },
+      {
+        "name": "M1_STORE",
+        "lookup": false,
+        "store": true
+      },
+      {
+        "name": "M2_LOOKUP_STORE",
+        "lookup": true,
+        "store": true
+      },
+      {
+        "name": "M3_LOOKUP_ONLY",
+        "lookup": true,
+        "store": false
+      }
+    ],
+    "C1": {
+      "M0_NONE": {
+        "state": 1,
+        "cost": 10,
+        "key_expansions": 7,
+        "u_tests": 3,
+        "lookup_ops": 0,
+        "store_ops": 0
+      },
+      "M1_STORE": {
+        "state": 1,
+        "cost": 17,
+        "key_expansions": 7,
+        "u_tests": 3,
+        "lookup_ops": 0,
+        "store_ops": 7
+      },
+      "M2_LOOKUP_STORE": {
+        "state": 1,
+        "cost": 22,
+        "key_expansions": 6,
+        "u_tests": 3,
+        "lookup_ops": 7,
+        "store_ops": 6
+      },
+      "M3_LOOKUP_ONLY": {
+        "state": 1,
+        "cost": 17,
+        "key_expansions": 7,
+        "u_tests": 3,
+        "lookup_ops": 7,
+        "store_ops": 0
+      }
+    },
+    "C1_selected": "M0_NONE",
+    "C2": {
+      "M0_NONE": {
+        "state": 1,
+        "cost": 568,
+        "key_expansions": 379,
+        "u_tests": 189,
+        "lookup_ops": 0,
+        "store_ops": 0
+      },
+      "M1_STORE": {
+        "state": 1,
+        "cost": 947,
+        "key_expansions": 379,
+        "u_tests": 189,
+        "lookup_ops": 0,
+        "store_ops": 379
+      },
+      "M2_LOOKUP_STORE": {
+        "state": 1,
+        "cost": 117,
+        "key_expansions": 31,
+        "u_tests": 18,
+        "lookup_ops": 37,
+        "store_ops": 31
+      },
+      "M3_LOOKUP_ONLY": {
+        "state": 1,
+        "cost": 947,
+        "key_expansions": 379,
+        "u_tests": 189,
+        "lookup_ops": 379,
+        "store_ops": 0
+      }
+    },
+    "C2_selected": "M2_LOOKUP_STORE",
+    "generic_budget": 150,
+    "correctness_only_nonidentifiable": true,
+    "cost_breaks_tie": true
+  },
+  "frozen_scaling": [
+    {
+      "depth": 1,
+      "naive_state": 1,
+      "reuse_state": 1,
+      "naive_cost": 10,
+      "reuse_cost": 22,
+      "naive_expansions": 7,
+      "reuse_expansions": 6,
+      "cost_ratio": 0.45454545454545453
+    },
+    {
+      "depth": 2,
+      "naive_state": 1,
+      "reuse_state": 1,
+      "naive_cost": 28,
+      "reuse_cost": 41,
+      "naive_expansions": 19,
+      "reuse_expansions": 11,
+      "cost_ratio": 0.6829268292682927
+    },
+    {
+      "depth": 4,
+      "naive_state": 1,
+      "reuse_state": 1,
+      "naive_cost": 136,
+      "reuse_cost": 79,
+      "naive_expansions": 91,
+      "reuse_expansions": 21,
+      "cost_ratio": 1.7215189873417722
+    },
+    {
+      "depth": 6,
+      "naive_state": 1,
+      "reuse_state": 1,
+      "naive_cost": 568,
+      "reuse_cost": 117,
+      "naive_expansions": 379,
+      "reuse_expansions": 31,
+      "cost_ratio": 4.854700854700854
+    },
+    {
+      "depth": 8,
+      "naive_state": 1,
+      "reuse_state": 1,
+      "naive_cost": 2296,
+      "reuse_cost": 155,
+      "naive_expansions": 1531,
+      "reuse_expansions": 41,
+      "cost_ratio": 14.812903225806451
+    },
+    {
+      "depth": 10,
+      "naive_state": 1,
+      "reuse_state": 1,
+      "naive_cost": 9208,
+      "reuse_cost": 193,
+      "naive_expansions": 6139,
+      "reuse_expansions": 51,
+      "cost_ratio": 47.70984455958549
+    },
+    {
+      "depth": 12,
+      "naive_state": 1,
+      "reuse_state": 1,
+      "naive_cost": 36856,
+      "reuse_cost": 231,
+      "naive_expansions": 24571,
+      "reuse_expansions": 61,
+      "cost_ratio": 159.54978354978354
+    }
+  ],
+  "distractors": {
+    "irrelevant_rules": 5000,
+    "irrelevant_rules_opened": 0
+  },
+  "revision": {
+    "before": "KeyResult(state=0, contradiction=False, pos_support=(), neg_support=())",
+    "after_independent_evidence": "KeyResult(state=1, contradiction=False, pos_support=('RU',), neg_support=())",
+    "versioned_cache_safe": true
+  },
+  "checks": {
+    "K17_KEY_plus1_for_provable_target": true,
+    "K17_KEY_zero_for_unknown_pending_target": true,
+    "K17_U_pending_is_zero": true,
+    "K17_U_rejected_is_minus1_but_output_KEY_is_not_minus1": true,
+    "K17_alternate_good_derivation_can_prove_KEY_despite_rejected_U": true,
+    "K17_KEY_minus1_requires_explicit_negative_evidence": true,
+    "K17_positive_and_negative_support_yield_zero_contradiction": true,
+    "K17_query_does_not_mutate_evidence": true,
+    "K17_repeated_query_does_not_promote_pending_U": true,
+    "K17_independent_evidence_can_promote_pending_U_and_KEY": true,
+    "K17_backward_query_opens_only_relevant_U": true,
+    "K17_backward_query_tests_far_less_than_eager_forward_scan": true,
+    "K17_C1_semantics_do_not_require_cache": true,
+    "K17_C2_semantic_correctness_alone_cannot_identify_reuse": true,
+    "K17_generic_cost_selects_LOOKUP_STORE_on_shared_subproof_curriculum": true,
+    "K17_generic_budget_challenges_naive_while_reuse_survives": true,
+    "K17_frozen_reuse_program_preserves_semantics_through_depth12": true,
+    "K17_frozen_reuse_program_reduces_deep_cost": true,
+    "K17_backward_reuse_ignores_5000_irrelevant_rules": true,
+    "K17_versioned_cache_does_not_freeze_stale_UNKNOWN": true,
+    "K17_cache_preserves_contradiction_state": true
+  },
+  "interpretation": [
+    "The ternary distinction survives backward reasoning: a rejected U sets only that derivation to -1; its output Key remains UNKNOWN unless an explicit negative proposition is independently provable.",
+    "Queries are read-only. Repeating an UNKNOWN query does not add evidence or promote a pending U. Independent evidence can later promote the exact pending U and its output Key.",
+    "Backward proving opens only U whose outputs are needed by the query and recursively required premises; thousands of unrelated rules are untouched.",
+    "Reuse/cache can itself be selected by curriculum from generic LOOKUP and STORE meta-operations. The simple no-cache program is cheapest on the tiny curriculum but is challenged by repeated shared subproofs.",
+    "Semantic correctness alone cannot identify memoization: naive and cached backward provers return the same Key states. Generic resource cost/budget is required to prefer the reusable meta-program.",
+    "The frozen LOOKUP+STORE program keeps exact ternary semantics while reducing repeated backward work strongly on deep shared proof graphs.",
+    "Cache entries are versioned by evidence/rule revision so cached UNKNOWN does not become stale truth after independent evidence arrives."
+  ],
+  "caveats": [
+    "The meta-program search space contains four small combinations of LOOKUP/STORE; arbitrary optimizer synthesis is not tested.",
+    "Negative Key support in this PoC is explicit evidence; learned derivations of explicit negation can be represented as ordinary Keys but are not separately synthesized here.",
+    "The shared-proof curriculum graph is controlled and acyclic; cyclic proof-program learning needs a separate termination experiment.",
+    "Resource cost is symbolic operation count, not a production wall-clock benchmark."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-02",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "numpy": "2.3.5",
+    "Pillow": "12.3.0",
+    "opencv": "4.13.0"
+  },
+  "clean_runtime_tests": {
+    "passed": 15,
+    "failed": 0
+  },
+  "demos": [
+    {
+      "module": "demos.demo_core",
+      "returncode": 0
+    },
+    {
+      "module": "demos.demo_temporal",
+      "returncode": 0
+    },
+    {
+      "module": "demos.demo_vision",
+      "returncode": 0
+    },
+    {
+      "module": "demos.demo_monolith",
+      "returncode": 0
+    }
+  ],
+  "portable_historical_smoke": [
+    {
+      "script": "kernel_time/symbolic_v90_k18_minimal_os.py",
+      "returncode": 0,
+      "pass_lines": 19,
+      "fail_lines": 0
+    },
+    {
+      "script": "kernel_time/symbolic_v94_k22_nested_temporal_progress.py",
+      "returncode": 0,
+      "pass_lines": 32,
+      "fail_lines": 0
+    },
+    {
+      "script": "kernel_time/symbolic_v100_k23_monolith_compiler.py",
+      "returncode": 0,
+      "pass_lines": 23,
+      "fail_lines": 0
+    }
+  ],
+  "k24c_reproduction": {
+    "returncode": 0,
+    "blind_scenes": 4,
+    "composed_query_check": "PASS"
+  },
+  "k25_fresh_run": {
+    "returncode": 0,
+    "checks_passed": 12,
+    "checks_failed": 0
+  },
+  "editable_package_build": {
+    "result": "PASS",
+    "mode": "--no-build-isolation --no-deps (offline verification)"
+  },
+  "python_syntax_audit": {
+    "files": 170,
+    "errors": 0
+  }
+}

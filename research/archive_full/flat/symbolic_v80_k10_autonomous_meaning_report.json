@@ -1,0 +1,259 @@
+{
+  "version": "v8.0-K10-autonomous-event-meaning",
+  "result": "PASS",
+  "training_signal": "surface clause + local before/after snapshots; no event label, no event tuple, no preselected relation/operation target",
+  "meanings": {
+    "geben": {
+      "full_support_hypotheses": [
+        {
+          "topology": [
+            "P3",
+            "O2",
+            [
+              "V0",
+              "V1",
+              "V2"
+            ]
+          ],
+          "support": [
+            "g1",
+            "g2",
+            "g3",
+            "g4"
+          ]
+        }
+      ],
+      "selected": [
+        "P3",
+        "O2",
+        [
+          "V0",
+          "V1",
+          "V2"
+        ]
+      ],
+      "binder": [
+        [
+          "T4",
+          "NOM",
+          null,
+          true
+        ],
+        [
+          "T4",
+          "DAT",
+          null,
+          false
+        ],
+        [
+          "T5",
+          "ACC",
+          null,
+          false
+        ]
+      ]
+    },
+    "schenken": {
+      "full_support_hypotheses": [
+        {
+          "topology": [
+            "P3",
+            "O2",
+            [
+              "V0",
+              "V1",
+              "V2"
+            ]
+          ],
+          "support": [
+            "s1",
+            "s2",
+            "s3",
+            "s4"
+          ]
+        }
+      ],
+      "selected": [
+        "P3",
+        "O2",
+        [
+          "V0",
+          "V1",
+          "V2"
+        ]
+      ],
+      "binder": [
+        [
+          "T4",
+          "NOM",
+          null,
+          true
+        ],
+        [
+          "T4",
+          "DAT",
+          null,
+          false
+        ],
+        [
+          "T5",
+          "ACC",
+          null,
+          false
+        ]
+      ]
+    },
+    "kommen_heim": {
+      "full_support_hypotheses": [
+        {
+          "topology": [
+            "P4",
+            "O4",
+            [
+              "V0",
+              "V1"
+            ]
+          ],
+          "support": [
+            "h1",
+            "h2",
+            "h3"
+          ]
+        }
+      ],
+      "selected": [
+        "P4",
+        "O4",
+        [
+          "V0",
+          "V1"
+        ]
+      ],
+      "binder": [
+        [
+          "T4",
+          "NOM",
+          null,
+          false
+        ]
+      ]
+    },
+    "sehen": {
+      "full_support_hypotheses": [],
+      "selected": null,
+      "binder": null
+    }
+  },
+  "frozen": {
+    "sweet_porridge_give": "Event(head='Z1', args=('OLD_WOMAN', 'GIRL', 'POT'), evidence='sweet', source_lexeme='schenken')",
+    "frau_holle_give": "Event(head='Z1', args=('FRAU_HOLLE', 'GOOD_DAUGHTER', 'SPOOL'), evidence='holle', source_lexeme='geben')",
+    "sweet_porridge_return_home": "Event(head='Z2', args=('GIRL',), evidence='sweet-home', source_lexeme='kommen_heim')",
+    "seeing": "None"
+  },
+  "boundaries": {
+    "cooccurring_consequences": {
+      "hypotheses": [
+        [
+          "P3",
+          "O2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "P4",
+          "O4",
+          [
+            "V0",
+            "V1"
+          ]
+        ]
+      ],
+      "non_identifiable": true,
+      "after_discriminating_intervention": [
+        [
+          "P3",
+          "O2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "resolved": true,
+      "finding": "If two locally grounded anonymous consequences occur in every training episode of a surface family, observational correlation alone cannot determine which consequence is the lexical meaning. A discriminating episode/intervention is required."
+    },
+    "provenance": {
+      "unsafe_hypotheses": [
+        [
+          "P2",
+          "O1",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "P3",
+          "O2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "safe_hypotheses": [
+        [
+          "P3",
+          "O2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "remote_candidate_without_grounding": true,
+      "remote_candidate_with_grounding": false,
+      "finding": "A recurring remote state change can become a spurious lexical-meaning candidate unless consequence participants are grounded in the local clause/reference context."
+    }
+  },
+  "checks": {
+    "K10_K9_base_is_green": true,
+    "K10_no_event_label_or_preselected_P_O_target_is_used": true,
+    "K10_geben_discovers_unique_recurring_grounded_consequence": true,
+    "K10_schenken_discovers_unique_recurring_grounded_consequence": true,
+    "K10_return_home_discovers_unique_recurring_grounded_consequence": true,
+    "K10_seeing_with_unstable_incidental_changes_stays_UNKNOWN": true,
+    "K10_geben_and_schenken_merge_only_after_discovered_meaning_and_binder_match": true,
+    "K10_frozen_SweetPorridge_GIVE_transfers": true,
+    "K10_frozen_FrauHolle_GIVE_regression": true,
+    "K10_frozen_SweetPorridge_RETURN_HOME_transfers": true,
+    "K10_no_stable_meaning_means_no_frozen_event": true,
+    "K10_two_always_cooccurring_local_consequences_are_non_identifiable": true,
+    "K10_one_discriminating_intervention_breaks_consequence_tie": true,
+    "K10_without_local_grounding_recurring_remote_change_can_be_spurious_candidate": true,
+    "K10_with_local_grounding_remote_change_is_rejected": true
+  },
+  "interpretation": [
+    "K10 removes the last explicit semantic target used by K9. The learner is not told to search for P3/O2 or P4/O4; it enumerates all local anonymous changes and selects only a topology recurring across every independent episode of a lexical family.",
+    "geben and schenken independently discover the same P3/O2 transfer topology and the same case/T-type binder, after which they can be merged as one anonymous event family.",
+    "kommen+heim independently discovers a P4/O4 appearance topology with HOME as a repeated non-text consequence endpoint and learns a unary subject binder.",
+    "sehen receives varying incidental state changes and therefore gets no stable semantic consequence, remaining UNKNOWN rather than acquiring a random world effect.",
+    "The frozen foreign-story transfer achieved in K8/K9 survives even though event labels, event tuples, and preselected consequence families are all absent from K10 training.",
+    "A real identifiability boundary appears when two locally grounded consequences always co-occur. Pure observation cannot decide which is lexical meaning; a discriminating example/intervention is necessary.",
+    "Local provenance is also kernel-near as an inductive constraint: without it, an unrelated recurring world change can be learned as a false semantic correlate."
+  ],
+  "caveats": [
+    "K10 still receives explicit symbolic before/after snapshots; grounding those snapshots from perception or unrestricted narrative is not solved here.",
+    "Anonymous P/O structures are already available from earlier learned layers.",
+    "The recurrence criterion is strict support across all curriculum episodes; probabilistic/noisy semantic induction is not tested.",
+    "Clause segmentation, mention/reference resolution, formal morphology and anonymous T-types remain frozen substrate.",
+    "Discriminating interventions are supplied by curriculum design; autonomously choosing informative experiments is a separate problem."
+  ]
+}

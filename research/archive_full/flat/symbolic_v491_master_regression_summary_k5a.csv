@@ -1,0 +1,9 @@
+name,category,status,seconds,file
+TERNARY_U_KEY,core,PASS,7.375,ternary_u_key_negative_full.py
+TEMPORAL_STATE,core,PASS,4.479,temporal_mini_lm_v02.py
+CORE_V1,core,PASS,4.074,symbolic_mini_lm_v1.py
+DICTIONARY_ONTOLOGY,language,PASS,4.104,symbolic_mini_lm_v11_dictionary_test.py
+CONTROLLED_E2E_V12,language,PASS,4.057,symbolic_mini_lm_v12_end_to_end.py
+REFERENCE_U,language,PASS,4.045,symbolic_mini_lm_v13_reference_u.py
+CLAUSE_U,language,FAIL,3.797,symbolic_v27_clause_u_ablation.py
+RAW_SWEET_PORRIDGE,language,FAIL,4.199,symbolic_v32_full_raw_end_to_end.py

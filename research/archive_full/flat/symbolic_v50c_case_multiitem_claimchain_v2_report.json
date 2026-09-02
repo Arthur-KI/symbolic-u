@@ -1,0 +1,187 @@
+{
+  "version": "v5.0c-case-multiitem-claimchain-v2",
+  "result": "PASS",
+  "scope": "controlled synthetic German; not general NLP accuracy",
+  "checks": {
+    "C1_er_resolves_male_actor": true,
+    "C1_ihr_resolves_female_recipient": true,
+    "C1_pronoun_transfer_state": true,
+    "C2_sie_and_ihm_case_roles": true,
+    "C3_ambiguous_dative_reference_recorded": true,
+    "C3_ambiguous_recipient_not_guessed": true,
+    "C4_multiple_item_types_make_davon_ambiguous": true,
+    "C4_item_ambiguity_does_not_change_state": true,
+    "C4_explicit_item_disambiguates": true,
+    "C5_claim_local_reference_chain_resolves": true,
+    "C5_claim_chain_does_not_leak_world": true,
+    "C6_v2_fronted_object_with_pronouns": true,
+    "C6_v2_fronted_object_with_names": true,
+    "C7_wrong_answer_stays_unknown": true,
+    "C7_numeric_u_still_reused_once": true
+  },
+  "numeric_u": {
+    "version": "R1_v1",
+    "attempts": {
+      "R1": 1
+    },
+    "base_rule": "EQ(X,Z) + ZERO(Y) -> R1(X,Y,Z)",
+    "recursive_rule": "PRED(Y,_NUM1) + R1(X,_NUM1,_NUM0) + SUCC(Z,_NUM0) -> R1(X,Y,Z)"
+  },
+  "pronouns": {
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "paul",
+        "recipient": "anna",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 2,
+        "time_rank": 2.0,
+        "source": "Er gibt ihr zwei davon."
+      }
+    ],
+    "answers": {
+      "paul": "N3",
+      "anna": "N2"
+    }
+  },
+  "ambiguous_dative": {
+    "unresolved": [
+      {
+        "type": "REFERENCE",
+        "case": "DAT",
+        "surface": "ihr",
+        "context": "WORLD",
+        "candidates": [
+          "mia",
+          "anna"
+        ],
+        "sentence_index": 3
+      }
+    ],
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "paul",
+        "recipient": null,
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 3,
+        "time_rank": 3.0,
+        "source": "Er gibt ihr zwei davon."
+      }
+    ],
+    "answers": {
+      "paul": "N3",
+      "anna": "N0",
+      "mia": "N0"
+    }
+  },
+  "multiple_items": {
+    "ambiguous_unresolved": [
+      {
+        "type": "ITEM_REFERENCE",
+        "surface": "davon",
+        "context": "WORLD",
+        "candidates": [
+          "APPLE",
+          "PEAR"
+        ]
+      }
+    ],
+    "ambiguous_events": [],
+    "clear_events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "paul",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 3,
+        "time_rank": 3.0,
+        "source": "Sie gibt Paul zwei Äpfel."
+      }
+    ]
+  },
+  "claim_chain": {
+    "keys": [
+      "CLAIM:paul:INITIAL_COUNT(mia, APPLE, N3)",
+      "CLAIM:paul:TRANSFER(E1, mia, anna, APPLE, N2)"
+    ],
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "mia",
+        "recipient": "anna",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "CLAIM:paul",
+        "surface_index": 2,
+        "time_rank": 2.0,
+        "source": "Sie gibt Anna zwei davon."
+      }
+    ]
+  },
+  "v2_fronting": {
+    "pronoun_events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "paul",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 2,
+        "time_rank": 2.0,
+        "source": "Zwei Äpfel gibt sie ihm."
+      }
+    ],
+    "name_events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "paul",
+        "item": "APPLE",
+        "count": "N3",
+        "context": "WORLD",
+        "surface_index": 2,
+        "time_rank": 2.0,
+        "source": "Drei Äpfel gibt Anna Paul."
+      }
+    ],
+    "pronoun_answers": {
+      "anna": "N5",
+      "paul": "N2"
+    },
+    "name_answers": {
+      "anna": "N4",
+      "paul": "N3"
+    }
+  },
+  "architecture": [
+    "Nominative and dative pronoun forms contribute explicit symbolic case and gender constraints.",
+    "Reference-U selects only a unique compatible entity; multiple compatible entities remain unresolved.",
+    "A transfer with unresolved recipient may still commit the independently supported sender-loss event, while no recipient state is guessed.",
+    "Bare 'davon' is resolved only when one item type is compatible in the proposition context; multiple item types remain unresolved.",
+    "Quoted multi-clause content has a local CLAIM context in which mentions and item references can chain without becoming WORLD facts.",
+    "German V2 object fronting is handled by clause-role structure rather than a fixed subject-before-verb heuristic.",
+    "The same ACTIVE anonymous numeric U R1 is reused; no new arithmetic relation is learned."
+  ],
+  "caveats": [
+    "Case inventory is deliberately small: nominative er/sie and dative ihm/ihr.",
+    "German 'sie' syncretism (nominative/accusative/plural) is not generally solved; this benchmark constrains it to feminine singular nominative.",
+    "Item anaphora deliberately prefers UNKNOWN over recency when multiple item types are active.",
+    "Partial-event commitment is conservative only for independently supported roles; a richer proposition dependency graph is future work.",
+    "V2 fronting covers tested numeric-object and temporal fronting patterns, not arbitrary German scrambling.",
+    "Still controlled German, not Grimm prose."
+  ]
+}

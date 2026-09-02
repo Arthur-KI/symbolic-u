@@ -1,0 +1,168 @@
+{
+  "version": "v5.0d-passive-group-relative-nested-claim",
+  "result": "PASS",
+  "scope": "controlled synthetic German; not general NLP accuracy",
+  "checks": {
+    "D1_passive_roles_from_structure": true,
+    "D1_passive_state_correct": true,
+    "D2_group_entity_created": true,
+    "D2_plural_sie_resolves_group_by_agreement": true,
+    "D2_group_state_correct": true,
+    "D2_singular_sie_does_not_fake_group": true,
+    "D3_relative_clause_binds_antecedent": true,
+    "D3_relative_matrix_clause_separate_event": true,
+    "D3_relative_clause_state_correct": true,
+    "D4_nested_claim_context_created": true,
+    "D4_nested_claim_does_not_leak_world": true,
+    "D5_passive_inside_claim_parses": true,
+    "D5_passive_claim_does_not_change_world": true,
+    "D6_same_numeric_u_reused": true,
+    "D6_wrong_passive_answer_stays_unknown": true
+  },
+  "numeric_u": {
+    "version": "R1_v1",
+    "attempts": {
+      "R1": 1
+    },
+    "base_rule": "EQ(X,Z) + ZERO(Y) -> R1(X,Y,Z)",
+    "recursive_rule": "PRED(Y,_NUM0) + PRED(_NUM1,Z) + R1(X,_NUM0,_NUM1) -> R1(X,Y,Z)"
+  },
+  "passive": {
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "paul",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 2,
+        "time_rank": 2.0,
+        "source": "Zwei Äpfel werden Paul von Anna gegeben."
+      }
+    ],
+    "answers": {
+      "anna": "N3",
+      "paul": "N2"
+    }
+  },
+  "group": {
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "GROUP[anna+mia]",
+        "recipient": "paul",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 2,
+        "time_rank": 2.0,
+        "source": "Sie geben Paul zwei davon."
+      }
+    ],
+    "unresolved_singular": [
+      {
+        "type": "REFERENCE",
+        "surface": "Sie",
+        "number": "SG",
+        "gender": "F",
+        "context": "WORLD",
+        "candidates": [
+          "anna",
+          "mia"
+        ],
+        "sentence_index": 2
+      }
+    ],
+    "answers": {
+      "group": "N4",
+      "paul": "N2"
+    }
+  },
+  "relative": {
+    "keys": [
+      "WORLD:INITIAL_COUNT(paul, APPLE, N0)",
+      "WORLD:INITIAL_COUNT(anna, APPLE, N7)",
+      "WORLD:RELATIVE_OF(RC1, anna)",
+      "WORLD:TRANSFER(E1, anna, paul, APPLE, N2)"
+    ],
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "paul",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "WORLD",
+        "surface_index": 1,
+        "time_rank": 1.0,
+        "source": "Anna gibt Paul zwei Äpfel."
+      }
+    ],
+    "answers": {
+      "anna": "N5",
+      "paul": "N2"
+    }
+  },
+  "nested_claim": {
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "mia",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "CLAIM:paul>CLAIM:mia",
+        "surface_index": 20101,
+        "time_rank": 20101.0,
+        "source": "Anna gibt Mia zwei Äpfel."
+      }
+    ],
+    "world_answers": {
+      "anna": "N5",
+      "mia": "N0"
+    }
+  },
+  "claim_passive": {
+    "events": [
+      {
+        "eid": "E1",
+        "kind": "TRANSFER",
+        "actor": "anna",
+        "recipient": "paul",
+        "item": "APPLE",
+        "count": "N2",
+        "context": "CLAIM:mia",
+        "surface_index": 201,
+        "time_rank": 201.0,
+        "source": "Zwei Äpfel werden Paul von Anna gegeben."
+      }
+    ],
+    "world_answers": {
+      "anna": "N5",
+      "paul": "N0"
+    }
+  },
+  "architecture": [
+    "Passive transfer roles are derived from symbolic clause cues: 'von' marks source/actor and the recipient region marks addressee/recipient.",
+    "Syncretic German 'sie' is constrained by finite-verb agreement: plural 'geben' may resolve to a GROUP mention, singular 'gibt' may resolve only to a singular feminine entity.",
+    "Coordinated names can create a persistent GROUP entity with a shared count state.",
+    "Relative clauses create a separate clause Key linked to the antecedent; the matrix clause creates its own Event-U.",
+    "Speech parsing is recursive: every nested speaker pushes a new CLAIM context.",
+    "Nested or passive CLAIM events never enter WORLD state progression.",
+    "All state arithmetic continues to use the same learned anonymous R1 relation."
+  ],
+  "caveats": [
+    "Passive coverage is limited to a controlled 'werden ... von ... gegeben' transfer construction.",
+    "Plural-group semantics currently models a shared group inventory, not distribution of items among members.",
+    "German 'sie' syncretism is constrained here only by singular/plural verb agreement and discourse candidates.",
+    "Relative-clause coverage is limited to one antecedent-linked count-state pattern.",
+    "Nested CLAIM parsing is recursive but uses controlled quotation syntax.",
+    "No general subordinate-clause grammar, case morphology, or arbitrary German scrambling is claimed.",
+    "Still a controlled benchmark; Grimm prose is the next qualitatively different test."
+  ]
+}

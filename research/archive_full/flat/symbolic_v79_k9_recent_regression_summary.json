@@ -1,0 +1,37 @@
+[
+  {
+    "module": "symbolic_v78_k8_binder_abstraction.py",
+    "returncode": 0,
+    "pass": 13,
+    "fail": 0,
+    "final": null
+  },
+  {
+    "module": "symbolic_v76_frau_holle_curriculum_test.py",
+    "returncode": 0,
+    "pass": 6,
+    "fail": 0,
+    "final": "Final: 26 / 26 adv false commits 0"
+  },
+  {
+    "module": "symbolic_v75_k7_context_ablation.py",
+    "returncode": 0,
+    "pass": 11,
+    "fail": 0,
+    "final": null
+  },
+  {
+    "module": "symbolic_v74_k6_persistence.py",
+    "returncode": 0,
+    "pass": 18,
+    "fail": 0,
+    "final": null
+  },
+  {
+    "module": "symbolic_v73_k5_operation_ablation.py",
+    "returncode": 0,
+    "pass": 15,
+    "fail": 0,
+    "final": null
+  }
+]

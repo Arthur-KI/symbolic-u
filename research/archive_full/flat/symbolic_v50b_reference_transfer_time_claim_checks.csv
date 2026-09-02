@@ -1,0 +1,15 @@
+check,passed
+B1_pronoun_sie_resolves_to_anna,True
+B1_davon_resolves_item_type,True
+B2_transfer_roles_actor_recipient,True
+B3_chained_state_updates,True
+B4_danach_temporal_order,True
+B4_vorher_reorders_surface_events,True
+B5_ambiguous_pronoun_stays_unknown,True
+B6_claim_internal_reference_resolves,True
+B6_claim_does_not_change_world_state,True
+B7_coordination_creates_two_events,True
+B7_coordination_state_correct,True
+B8_ellipsis_actor_state_correct,True
+numeric_u_reused_not_relearned,True
+wrong_chain_answer_stays_unknown,True

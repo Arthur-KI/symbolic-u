@@ -1,0 +1,17 @@
+filename,target_background,target_color,target_shape,target_count,sensor_count_available
+train_01.png,white,red,triangle,1,NO
+train_02.png,white,red,triangle,2,NO
+train_03.png,white,red,quadrilateral,1,NO
+train_04.png,white,red,quadrilateral,2,NO
+train_05.png,white,blue,triangle,1,NO
+train_06.png,white,blue,quadrilateral,1,NO
+train_07.png,white,green,triangle,1,NO
+train_08.png,white,green,quadrilateral,1,NO
+train_09.png,white,blue,triangle,3,NO
+train_10.png,white,green,quadrilateral,3,NO
+train_11.png,white,red,triangle,4,NO
+train_12.png,white,blue,quadrilateral,4,NO
+train_13.png,lightgray,red,triangle,1,NO
+train_14.png,lightgray,blue,quadrilateral,2,NO
+train_15.png,lightgray,green,triangle,3,NO
+train_16.png,lightgray,red,quadrilateral,4,NO

@@ -1,0 +1,39 @@
+{
+  "K21": {
+    "pass": 25,
+    "fail": 0,
+    "returncode": 0
+  },
+  "v44b_fresh_synthesis": {
+    "SUB": {
+      "unseen": "12/12",
+      "support": 36,
+      "conflict": 0
+    },
+    "MUL": {
+      "unseen": "10/10",
+      "support": 49,
+      "conflict": 0
+    }
+  },
+  "fresh_regressions": [
+    {
+      "stage": "K20",
+      "returncode": 0,
+      "pass": 29,
+      "fail": 0
+    },
+    {
+      "stage": "K19",
+      "returncode": 0,
+      "pass": 23,
+      "fail": 0
+    },
+    {
+      "stage": "K18",
+      "returncode": 0,
+      "pass": 19,
+      "fail": 0
+    }
+  ]
+}

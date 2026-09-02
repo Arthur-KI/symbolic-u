@@ -1,0 +1,24 @@
+{
+  "version": "v7.3b-K5-local-operation-composition",
+  "result": "PASS",
+  "checks": {
+    "K5b_persistent_unchanged_context_is_ignored": true,
+    "K5b_independent_simultaneous_changes_decompose_locally": true,
+    "K5b_two_independent_same_relation_appearances_split": true,
+    "K5b_connected_complex_change_remains_UNKNOWN": true,
+    "K5b_replace_and_transfer_survive_localization": true,
+    "K5b_classification_is_non_mutating": true,
+    "K5b_temporal_reversal_changes_operation_identity": true
+  },
+  "interpretation": [
+    "Operation recognition should run over changed Keys, not complete snapshots; unchanged context is semantically irrelevant to the local change motif.",
+    "Independent simultaneous changes can be decomposed into local anonymous O-components using only changed-Key relation identity and argument connectivity.",
+    "Connected complex changes that do not match a learned motif remain UNKNOWN rather than being greedily split into convenient operations.",
+    "Temporal reversal changes the anonymous O identity, reaffirming time order as required information rather than a semantic operation label."
+  ],
+  "caveats": [
+    "The changed-Key comparator and connectivity decomposition are fixed symbolic mechanisms.",
+    "Connectivity by exact shared argument identity is conservative; more complex causal decomposition may require learned higher-order U.",
+    "Simultaneous connected multi-effect events are intentionally not decomposed in this audit."
+  ]
+}

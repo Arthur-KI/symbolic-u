@@ -1,0 +1,191 @@
+{
+  "version": "v6.4-syncretism-reporting-curriculum",
+  "result": "PASS",
+  "checks": {
+    "frozen_v63_base_stays_green": true,
+    "C8_port_types_learned_from_prior_unambiguous_U": true,
+    "C8_syncretic_training_resolved_by_joint_constraints": true,
+    "C8_syncretic_frozen_reordered_transfer": true,
+    "C8_same_type_syncretism_remains_unknown": true,
+    "C9_reporting_selector_learned_full_support_zero_conflict": true,
+    "C9_reporting_U_learns_clause_local_nom_person": true,
+    "C9_frozen_mother_pre_and_post_quote": true,
+    "C9_non_reporting_verb_does_not_bind_speaker": true,
+    "C9_multiple_nom_people_remain_unknown": true,
+    "C9_quote_semantics_reuses_existing_action_lexicon": true,
+    "C10_mixed_ten_line_text_all_parsed_without_new_U": true,
+    "C10_mixed_text_exact_composition": true,
+    "C10_reading_longer_mix_does_not_mutate_U": true,
+    "endboss_girl_command_response_still_works": true,
+    "endboss_mother_reporting_command_now_recognized": true,
+    "endboss_mother_local_command_response_now_composes": true,
+    "endboss_stop_formula_still_unknown": true,
+    "adversarial_reporting_suite": true
+  },
+  "C8": {
+    "transitive_port_types": [
+      "PERSON",
+      "OBJECT"
+    ],
+    "give_port_types": [
+      "PERSON",
+      "PERSON",
+      "OBJECT"
+    ],
+    "train": [
+      {
+        "text": "Das Mädchen trägt das Buch.",
+        "pred": "Event(rel='CARRY', args=('GIRL', 'BOOK'))",
+        "gold": "Event(rel='CARRY', args=('GIRL', 'BOOK'))"
+      },
+      {
+        "text": "Die Mutter sieht die Lampe.",
+        "pred": "Event(rel='SEE', args=('MOTHER', 'LAMP'))",
+        "gold": "Event(rel='SEE', args=('MOTHER', 'LAMP'))"
+      },
+      {
+        "text": "Das Mädchen gibt dem Jungen das Buch.",
+        "pred": "Event(rel='GIVE', args=('GIRL', 'BOY', 'BOOK'))",
+        "gold": "Event(rel='GIVE', args=('GIRL', 'BOY', 'BOOK'))"
+      }
+    ],
+    "frozen": [
+      {
+        "text": "Das Buch trägt das Mädchen.",
+        "pred": "Event(rel='CARRY', args=('GIRL', 'BOOK'))",
+        "gold": "Event(rel='CARRY', args=('GIRL', 'BOOK'))"
+      },
+      {
+        "text": "Die Lampe sieht die Mutter.",
+        "pred": "Event(rel='SEE', args=('MOTHER', 'LAMP'))",
+        "gold": "Event(rel='SEE', args=('MOTHER', 'LAMP'))"
+      },
+      {
+        "text": "Das Buch gibt das Mädchen dem Jungen.",
+        "pred": "Event(rel='GIVE', args=('GIRL', 'BOY', 'BOOK'))",
+        "gold": "Event(rel='GIVE', args=('GIRL', 'BOY', 'BOOK'))"
+      }
+    ],
+    "ambiguous": {
+      "text": "Das Kind sieht das Mädchen.",
+      "pred": "None"
+    }
+  },
+  "C9": {
+    "scores": {
+      "PERSON_BEFORE_REPORT": [
+        2,
+        4
+      ],
+      "PERSON_AFTER_REPORT": [
+        4,
+        2
+      ],
+      "GLOBAL_NOM_PERSON": [
+        4,
+        2
+      ],
+      "LOCAL_CLAUSE_NOM_PERSON": [
+        6,
+        0
+      ]
+    },
+    "winner": "LOCAL_CLAUSE_NOM_PERSON",
+    "frozen": [
+      {
+        "text": "\"Topf koche\", sprach die Mutter.",
+        "speaker": "MOTHER",
+        "gold": "MOTHER"
+      },
+      {
+        "text": "Die Mutter sagte: \"Topf koche.\"",
+        "speaker": "MOTHER",
+        "gold": "MOTHER"
+      },
+      {
+        "text": "\"Topf koche\", sagte Cara.",
+        "speaker": "CARA",
+        "gold": "CARA"
+      }
+    ],
+    "ambiguous": null
+  },
+  "C10": {
+    "lines": [
+      "Das Mädchen trägt das Buch.",
+      "Der Junge sieht den Hund.",
+      "Das Buch gibt das Mädchen dem Jungen.",
+      "Der Junge trägt den Schlüssel.",
+      "\"Topf koche\", sprach die Mutter.",
+      "Die Lampe sieht die Mutter.",
+      "Das Mädchen gibt dem Jungen das Buch.",
+      "\"Topf koche\", sagte Cara.",
+      "Das Buch trägt das Mädchen.",
+      "Der Junge öffnet den Schrank."
+    ],
+    "results": [
+      "('EVENT', Event(rel='CARRY', args=('GIRL', 'BOOK')))",
+      "('EVENT', Event(rel='SEE', args=('BOY', 'DOG')))",
+      "('EVENT', Event(rel='GIVE', args=('GIRL', 'BOY', 'BOOK')))",
+      "('EVENT', Event(rel='CARRY', args=('BOY', 'KEY')))",
+      "('QUOTE', ('MOTHER', 'POT', 'COOK'))",
+      "('EVENT', Event(rel='SEE', args=('MOTHER', 'LAMP')))",
+      "('EVENT', Event(rel='GIVE', args=('GIRL', 'BOY', 'BOOK')))",
+      "('QUOTE', ('CARA', 'POT', 'COOK'))",
+      "('EVENT', Event(rel='CARRY', args=('GIRL', 'BOOK')))",
+      "('EVENT', Event(rel='OPEN', args=('BOY', 'CABINET')))"
+    ],
+    "u_snapshot_equal": true
+  },
+  "grimm": {
+    "quotes": [
+      {
+        "quote": "Töpfchen koche,",
+        "speaker": "GIRL",
+        "target": "POT",
+        "action": "COOK",
+        "local_response": true
+      },
+      {
+        "quote": "Töpfchen steh,",
+        "speaker": null,
+        "target": "POT",
+        "action": null,
+        "local_response": false
+      },
+      {
+        "quote": "Töpfchen koche,",
+        "speaker": "MOTHER",
+        "target": "POT",
+        "action": "COOK",
+        "local_response": true
+      },
+      {
+        "quote": "Töpfchen steh,",
+        "speaker": null,
+        "target": "POT",
+        "action": null,
+        "local_response": false
+      }
+    ],
+    "girl_command_response": true,
+    "mother_command_count": 1,
+    "mother_command_response": true,
+    "stop_semantics_known": false
+  },
+  "interpretation": [
+    "Syncretic articles are represented as candidate case sets rather than prematurely collapsed to one case.",
+    "Prior U training supplies port type signatures; joint case+type constraints resolve only uniquely determined role bindings.",
+    "Same-type syncretism remains UNKNOWN instead of falling back to word order.",
+    "Reporting-speaker binding is learned from mixed pre/post-verb examples; the surviving U selects the unique local nominative PERSON.",
+    "This new reporting U transfers to the mother clause in the frozen Grimm tale, so the second POT/COOK command and its local response compose.",
+    "The magical 'Töpfchen steh' semantics remains unsolved and is not hard-coded."
+  ],
+  "caveats": [
+    "The morphology and primitive semantic types remain supplied symbolic infrastructure.",
+    "Port type signatures are learned from supervised event examples, not autonomously invented ontology types.",
+    "The controlled C8 solver does not yet model full German determiner paradigms or adjective agreement.",
+    "C9 handles local reporting clauses; arbitrary long-distance quotation attribution remains open.",
+    "The Grimm improvement is narrow but genuine: mother reporting inversion is newly solved; stop semantics remains unknown."
+  ]
+}

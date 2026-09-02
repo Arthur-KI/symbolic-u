@@ -1,0 +1,581 @@
+{
+  "version": "v10.0-K23-symbolic-monolith-compiler",
+  "result": "PASS",
+  "active_macro_count": 16,
+  "retired_macro_count": 12,
+  "training_query_count": 14,
+  "mined_shapes": [
+    {
+      "shape": [
+        "TIME",
+        "ANCHOR",
+        "CUE",
+        "U",
+        "UNIT",
+        "ANCHOR",
+        "MUL",
+        "ADD"
+      ],
+      "count": 3
+    },
+    {
+      "shape": [
+        "TIME",
+        "ANCHOR",
+        "CUE",
+        "CUE",
+        "U",
+        "U",
+        "UNIT",
+        "UNIT",
+        "ANCHOR",
+        "MUL",
+        "ADD",
+        "MUL",
+        "ADD_BACK"
+      ],
+      "count": 3
+    },
+    {
+      "shape": [
+        "TIME",
+        "ANCHOR",
+        "CUE",
+        "CUE",
+        "U",
+        "U",
+        "U",
+        "UNIT",
+        "UNIT",
+        "ANCHOR",
+        "MUL",
+        "ADD",
+        "MUL",
+        "ADD_BACK",
+        "MUL",
+        "ADD"
+      ],
+      "count": 3
+    },
+    {
+      "shape": [
+        "TIME",
+        "ANCHOR",
+        "CUE",
+        "CUE",
+        "U",
+        "U",
+        "U",
+        "U",
+        "UNIT",
+        "UNIT",
+        "UNIT",
+        "ANCHOR",
+        "MUL",
+        "ADD",
+        "MUL",
+        "ADD_BACK",
+        "MUL",
+        "ADD",
+        "MUL",
+        "ADD"
+      ],
+      "count": 3
+    },
+    {
+      "shape": [
+        "TIME",
+        "ANCHOR",
+        "CUE",
+        "CUE",
+        "U",
+        "U",
+        "U",
+        "U",
+        "U",
+        "U",
+        "UNIT",
+        "UNIT",
+        "UNIT",
+        "ANCHOR",
+        "MUL",
+        "ADD",
+        "MUL",
+        "ADD_BACK",
+        "MUL",
+        "ADD",
+        "MUL",
+        "ADD",
+        "MUL",
+        "ADD_BACK",
+        "MUL",
+        "ADD"
+      ],
+      "count": 3
+    },
+    {
+      "shape": [
+        "DURING",
+        "ANCHOR",
+        "CUE",
+        "CUE",
+        "INTERVAL",
+        "U",
+        "U",
+        "U",
+        "UNIT",
+        "UNIT",
+        "INTERVAL_TEST"
+      ],
+      "count": 3
+    },
+    {
+      "shape": [
+        "DURING",
+        "ANCHOR",
+        "CUE",
+        "CUE",
+        "INTERVAL",
+        "U",
+        "U",
+        "U",
+        "U",
+        "UNIT",
+        "UNIT",
+        "INTERVAL_TEST"
+      ],
+      "count": 3
+    },
+    {
+      "shape": [
+        "CONTAINS",
+        "ANCHOR",
+        "CUE",
+        "CUE",
+        "INTERVAL",
+        "INTERVAL",
+        "U",
+        "U",
+        "U",
+        "U",
+        "UNIT",
+        "UNIT",
+        "UNIT",
+        "CONTAIN_TEST"
+      ],
+      "count": 3
+    },
+    {
+      "shape": [
+        "DURATION",
+        "ANCHOR",
+        "COUNT",
+        "CUE",
+        "CUE",
+        "INTERVAL",
+        "U",
+        "U",
+        "U",
+        "UNIT",
+        "UNIT",
+        "DURATION_TEST"
+      ],
+      "count": 3
+    },
+    {
+      "shape": [
+        "STATE",
+        "ANCHOR",
+        "CUE",
+        "CUE",
+        "STATE",
+        "STATE",
+        "U",
+        "U",
+        "U",
+        "UNIT",
+        "UNIT",
+        "ADD"
+      ],
+      "count": 3
+    }
+  ],
+  "equivalence": [
+    {
+      "query": "TIME|[\"B\"]",
+      "same": true,
+      "micro_cost": 1456,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        "Q_df9cfd192d19"
+      ],
+      "macro_signature": [
+        1,
+        false,
+        "Q_df9cfd192d19"
+      ]
+    },
+    {
+      "query": "TIME|[\"C\"]",
+      "same": true,
+      "micro_cost": 1966,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        "Q_e975218121d9"
+      ],
+      "macro_signature": [
+        1,
+        false,
+        "Q_e975218121d9"
+      ]
+    },
+    {
+      "query": "TIME|[\"D\"]",
+      "same": true,
+      "micro_cost": 2404,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        "Q_461b180d1895"
+      ],
+      "macro_signature": [
+        1,
+        false,
+        "Q_461b180d1895"
+      ]
+    },
+    {
+      "query": "TIME|[\"E\"]",
+      "same": true,
+      "micro_cost": 19513,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        "Q_a96c062a50d3"
+      ],
+      "macro_signature": [
+        1,
+        false,
+        "Q_a96c062a50d3"
+      ]
+    },
+    {
+      "query": "TIME|[\"GQ\"]",
+      "same": true,
+      "micro_cost": 21572,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        "Q_1609b5a73923"
+      ],
+      "macro_signature": [
+        1,
+        false,
+        "Q_1609b5a73923"
+      ]
+    },
+    {
+      "query": "DURING|[\"B\",\"INNER\"]",
+      "same": true,
+      "micro_cost": 3607,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        "Q_df9cfd192d19"
+      ],
+      "macro_signature": [
+        1,
+        false,
+        "Q_df9cfd192d19"
+      ]
+    },
+    {
+      "query": "DURING|[\"X\",\"INNER\"]",
+      "same": true,
+      "micro_cost": 5457,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        -1,
+        false,
+        "Q_a56b9f2fb602"
+      ],
+      "macro_signature": [
+        -1,
+        false,
+        "Q_a56b9f2fb602"
+      ]
+    },
+    {
+      "query": "CONTAINS|[\"OUTER\",\"INNER\"]",
+      "same": true,
+      "micro_cost": 22657,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        null
+      ],
+      "macro_signature": [
+        1,
+        false,
+        null
+      ]
+    },
+    {
+      "query": "DURATION|[\"INNER\",45,\"minuten\"]",
+      "same": true,
+      "micro_cost": 6706,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        "Q_62a91c120a2d"
+      ],
+      "macro_signature": [
+        1,
+        false,
+        "Q_62a91c120a2d"
+      ]
+    },
+    {
+      "query": "STATE|[\"wolf\",\"house\",\"B\"]",
+      "same": true,
+      "micro_cost": 5258,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        "Q_e975218121d9"
+      ],
+      "macro_signature": [
+        1,
+        false,
+        "Q_e975218121d9"
+      ]
+    },
+    {
+      "query": "STATE|[\"wolf\",\"house\",\"X\"]",
+      "same": true,
+      "micro_cost": 5512,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        -1,
+        false,
+        "Q_461b180d1895"
+      ],
+      "macro_signature": [
+        -1,
+        false,
+        "Q_461b180d1895"
+      ]
+    },
+    {
+      "query": "STATE|[\"anna\",\"house\",\"B\"]",
+      "same": true,
+      "micro_cost": 20348,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        "Q_7ead5825178f"
+      ],
+      "macro_signature": [
+        1,
+        false,
+        "Q_7ead5825178f"
+      ]
+    },
+    {
+      "query": "MEET|[\"wolf\",\"anna\",\"house\",\"B\"]",
+      "same": true,
+      "micro_cost": 24145,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        1,
+        false,
+        null
+      ],
+      "macro_signature": [
+        1,
+        false,
+        null
+      ]
+    },
+    {
+      "query": "MEET|[\"wolf\",\"anna\",\"house\",\"X\"]",
+      "same": true,
+      "micro_cost": 24542,
+      "macro_cost": 0,
+      "mode": "MONOLITH",
+      "micro_signature": [
+        -1,
+        false,
+        null
+      ],
+      "macro_signature": [
+        -1,
+        false,
+        null
+      ]
+    }
+  ],
+  "performance": {
+    "one_pass_micro_cost": 165143,
+    "one_pass_monolith_lookup_cost": 14,
+    "compile_training_micro_cost": 1014651,
+    "repeated_workload_queries": 560,
+    "repeated_micro_cost": 6605720,
+    "repeated_monolith_cost": 560,
+    "repeated_monolith_plus_compile_cost": 1015211,
+    "symbolic_execution_cost_ratio": 11795.92857142857,
+    "amortized_ratio_including_compile": 6.506745888293173,
+    "break_even_repetitions_of_training_set": 6.144596043093581
+  },
+  "hard_cases": {
+    "unknown": {
+      "state": 0,
+      "contradiction": false,
+      "value": null,
+      "trace": [
+        "TIME(D) unknown"
+      ]
+    },
+    "rejected": {
+      "state": 0,
+      "contradiction": false,
+      "value": null,
+      "trace": [
+        "TIME(D) unknown"
+      ]
+    },
+    "contradiction": {
+      "state": 0,
+      "contradiction": true,
+      "value": null,
+      "trace": [
+        "MONOLITH contradiction"
+      ]
+    },
+    "cycle": {
+      "state": 0,
+      "contradiction": false,
+      "value": null,
+      "trace": [
+        "TIME(A) unknown"
+      ]
+    }
+  },
+  "revision": {
+    "retired_primary": [
+      "M0001"
+    ],
+    "alternate_fallback": {
+      "state": 1,
+      "contradiction": false,
+      "value": "Q_ebd520ec6869",
+      "trace": [
+        "ANCHOR:a",
+        "P2",
+        "MUL->Q_67e3eab20547",
+        "ADD->Q_ebd520ec6869"
+      ]
+    },
+    "alternate_recompiled": {
+      "state": 1,
+      "contradiction": false,
+      "value": "Q_ebd520ec6869",
+      "trace": [
+        "MONOLITH M0002"
+      ]
+    },
+    "truth_change_before": {
+      "state": -1,
+      "contradiction": false,
+      "value": "Q_461b180d1895",
+      "trace": [
+        "MONOLITH M0011 proves OPPOSITE"
+      ]
+    },
+    "truth_change_after": {
+      "state": 1,
+      "contradiction": false,
+      "value": "Q_e975218121d9",
+      "trace": [
+        "latest O_ADD"
+      ]
+    },
+    "truth_change_recompiled": {
+      "state": 1,
+      "contradiction": false,
+      "value": "Q_e975218121d9",
+      "trace": [
+        "MONOLITH M0017"
+      ]
+    },
+    "unrelated_retired": []
+  },
+  "checks": {
+    "K23_micro_reference_queries_all_have_expected_ternary_domain": true,
+    "K23_compiles_stable_proof_U_after_repeated_support": true,
+    "K23_all_compiled_training_queries_equal_micro_semantics": true,
+    "K23_negative_KEY_is_compiled_as_positive_opposite_macro_U": true,
+    "K23_context_provenance_prevents_cross_story_macro_reuse": true,
+    "K23_unknown_query_does_not_compile_fake_proof": true,
+    "K23_rejected_inner_U_keeps_outer_KEY_unknown_not_negative": true,
+    "K23_contradiction_compiles_both_support_polarities": true,
+    "K23_cycle_stays_unknown_and_uncompiled": true,
+    "K23_related_revision_retires_old_macro_U": true,
+    "K23_retired_macro_U_does_not_make_KEY_negative": true,
+    "K23_alternate_micro_U_restores_truth_after_retirement": true,
+    "K23_alternate_proof_recompiles_to_active_macro": true,
+    "K23_truth_changing_revision_drops_stale_negative_macro": true,
+    "K23_truth_changing_revision_recompiles_new_positive_macro": true,
+    "K23_unrelated_revision_does_not_retire_unrelated_macro": true,
+    "K23_macro_explanations_retain_decomposition_and_provenance": true,
+    "K23_queries_are_read_only": true,
+    "K23_monolith_reduces_repeated_symbolic_cost": true,
+    "K23_monolith_amortizes_its_compile_cost_on_repeated_workload": true,
+    "K23_mined_recurring_proof_shapes_exist": true,
+    "K23_final_monolith_json_written": true,
+    "K23_final_monolith_manifest_written": true
+  },
+  "interpretation": [
+    "Stable repeated micro-U proof graphs can be compiled into Macro-U without changing KEY ternary semantics.",
+    "The monolith is a container of confirmed proof Macro-U, not an opaque truth cache. Negative KEY answers are represented by positive Macro-U proving the explicit opposite proposition.",
+    "UNKNOWN produces no proof Macro-U. Contradiction is represented by simultaneous compiled positive and negative support, preserving KEY 0 + contradiction.",
+    "Dependency-indexed invalidation makes a changed proof Macro-U state -1. This retirement never makes the output Key negative; the runtime falls back to the original backward micro-U graph.",
+    "If an alternate micro-U proof exists, fallback finds it and repeated support recompiles a replacement Macro-U.",
+    "A truth-changing revision retires the stale negative Macro-U and allows the new positive proof to replace it, preventing stale monolithic answers.",
+    "Unrelated changes do not invalidate unrelated Macro-U because dependencies are explicit.",
+    "Every compiled Macro-U retains its dependency list, source provenance, proof shape, and can therefore be decomposed for explanation or debugging.",
+    "The symbolic operation-count benchmark shows a large repeated-query reduction after compilation. This is an amortized execution optimization, not a claim that compilation itself is free."
+  ],
+  "caveats": [
+    "K23 compiles grounded stable query proof graphs inside a context. It does not yet synthesize fully parameterized macro-programs that generalize to arbitrary unseen stories.",
+    "The proof-shape miner is structural/frequency-based and the support threshold is fixed at three observations.",
+    "The performance metric is symbolic operation count, not production wall-clock latency.",
+    "The monolith runtime retains the micro-U prover as a correctness fallback; deleting the decomposition would lose revision safety.",
+    "The K22 numeric progress/arithmetic structures are reused as the micro reference substrate."
+  ]
+}

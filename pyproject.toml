@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "symbolic-u-research"
+version = "0.25.0"
+description = "Non-neural symbolic Key/U learning and reasoning research runtime"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Arthur-KI"}]
+license = {text = "Apache-2.0"}
+keywords = [
+  "symbolic-ai",
+  "reasoning",
+  "knowledge-representation",
+  "program-induction",
+  "computer-vision",
+]
+dependencies = [
+  "numpy>=1.24",
+  "Pillow>=10",
+  "opencv-python-headless>=4.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/Arthur-KI/symbolic-u"
+Repository = "https://github.com/Arthur-KI/symbolic-u"
+Issues = "https://github.com/Arthur-KI/symbolic-u/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["symbolic_u*"]

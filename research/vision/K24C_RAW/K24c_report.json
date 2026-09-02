@@ -1,0 +1,2207 @@
+{
+  "version": "K24c",
+  "result": "PASS",
+  "sensor_predicates": [
+    "AREA_MEASURE",
+    "BACKGROUND_MEASURE",
+    "CENTROID_MEASURE",
+    "CLOSED",
+    "COLOR_MEASURE",
+    "EDGE",
+    "MEMBER",
+    "POSITION",
+    "VERTEX_OF"
+  ],
+  "count_candidate_scores": {
+    "C0_CONST_ONE": [
+      7,
+      9
+    ],
+    "C1_NONEMPTY": [
+      7,
+      9
+    ],
+    "C2_MEMBER_RECURSE": [
+      16,
+      0
+    ]
+  },
+  "selected_count_program": "C2_MEMBER_RECURSE",
+  "learned_shape_map": {
+    "3": "triangle",
+    "4": "quadrilateral"
+  },
+  "color_tolerance": 20.0,
+  "color_between_min": 180.27756377319946,
+  "blind_tests": {
+    "1": {
+      "background": {
+        "state": 1,
+        "value": "white"
+      },
+      "count": {
+        "state": 1,
+        "value": 2,
+        "trace": [
+          "COUNT_BASE_EMPTY",
+          "MEMBER:TEST_01:R2",
+          "PROGRESS:K_d16859cc79->K_47550a75b9",
+          "MEMBER:TEST_01:R1",
+          "PROGRESS:K_47550a75b9->K_87b34d2c06"
+        ]
+      },
+      "regions": [
+        {
+          "rid": "TEST_01:R1",
+          "color": {
+            "state": 1,
+            "value": "green"
+          },
+          "shape": {
+            "state": 1,
+            "value": "quadrilateral",
+            "vertex_count": 4,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_01:R1:V4",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_01:R1:V3",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_01:R1:V2",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "MEMBER:TEST_01:R1:V1",
+              "PROGRESS:K_a1b857412b->K_4822674e50",
+              "SHAPE_U:K_4822674e50->quadrilateral"
+            ]
+          }
+        },
+        {
+          "rid": "TEST_01:R2",
+          "color": {
+            "state": 1,
+            "value": "red"
+          },
+          "shape": {
+            "state": 1,
+            "value": "triangle",
+            "vertex_count": 3,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_01:R2:V3",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_01:R2:V2",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_01:R2:V1",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "SHAPE_U:K_a1b857412b->triangle"
+            ]
+          }
+        }
+      ],
+      "queries": {
+        "red_quadrilaterals": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_01:R1",
+              {
+                "state": 1,
+                "value": "green"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_01:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_01:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_01:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_01:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_01:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_01:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_01:R2",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_01:R2:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_01:R2:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_01:R2:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        },
+        "blue_quadrilaterals": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_01:R1",
+              {
+                "state": 1,
+                "value": "green"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_01:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_01:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_01:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_01:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_01:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_01:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_01:R2",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_01:R2:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_01:R2:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_01:R2:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        },
+        "blue_triangles": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_01:R1",
+              {
+                "state": 1,
+                "value": "green"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_01:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_01:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_01:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_01:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_01:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_01:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_01:R2",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_01:R2:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_01:R2:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_01:R2:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        },
+        "green_quadrilaterals": {
+          "state": 1,
+          "value": 1,
+          "members": [
+            "TEST_01:R1"
+          ],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_01:R1",
+              {
+                "state": 1,
+                "value": "green"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_01:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_01:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_01:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_01:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_01:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_01:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_01:R2",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_01:R2:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_01:R2:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_01:R2:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY",
+            "MEMBER:TEST_01:R1",
+            "PROGRESS:K_d16859cc79->K_47550a75b9"
+          ]
+        },
+        "red_triangles": {
+          "state": 1,
+          "value": 1,
+          "members": [
+            "TEST_01:R2"
+          ],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_01:R1",
+              {
+                "state": 1,
+                "value": "green"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_01:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_01:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_01:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_01:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_01:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_01:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_01:R2",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_01:R2:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_01:R2:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_01:R2:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY",
+            "MEMBER:TEST_01:R2",
+            "PROGRESS:K_d16859cc79->K_47550a75b9"
+          ]
+        }
+      }
+    },
+    "2": {
+      "background": {
+        "state": 1,
+        "value": "white"
+      },
+      "count": {
+        "state": 1,
+        "value": 3,
+        "trace": [
+          "COUNT_BASE_EMPTY",
+          "MEMBER:TEST_02:R3",
+          "PROGRESS:K_d16859cc79->K_47550a75b9",
+          "MEMBER:TEST_02:R2",
+          "PROGRESS:K_47550a75b9->K_87b34d2c06",
+          "MEMBER:TEST_02:R1",
+          "PROGRESS:K_87b34d2c06->K_a1b857412b"
+        ]
+      },
+      "regions": [
+        {
+          "rid": "TEST_02:R1",
+          "color": {
+            "state": 1,
+            "value": "blue"
+          },
+          "shape": {
+            "state": 1,
+            "value": "quadrilateral",
+            "vertex_count": 4,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_02:R1:V4",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_02:R1:V3",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_02:R1:V2",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "MEMBER:TEST_02:R1:V1",
+              "PROGRESS:K_a1b857412b->K_4822674e50",
+              "SHAPE_U:K_4822674e50->quadrilateral"
+            ]
+          }
+        },
+        {
+          "rid": "TEST_02:R2",
+          "color": {
+            "state": 1,
+            "value": "blue"
+          },
+          "shape": {
+            "state": 1,
+            "value": "quadrilateral",
+            "vertex_count": 4,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_02:R2:V4",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_02:R2:V3",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_02:R2:V2",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "MEMBER:TEST_02:R2:V1",
+              "PROGRESS:K_a1b857412b->K_4822674e50",
+              "SHAPE_U:K_4822674e50->quadrilateral"
+            ]
+          }
+        },
+        {
+          "rid": "TEST_02:R3",
+          "color": {
+            "state": 1,
+            "value": "blue"
+          },
+          "shape": {
+            "state": 1,
+            "value": "quadrilateral",
+            "vertex_count": 4,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_02:R3:V4",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_02:R3:V3",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_02:R3:V2",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "MEMBER:TEST_02:R3:V1",
+              "PROGRESS:K_a1b857412b->K_4822674e50",
+              "SHAPE_U:K_4822674e50->quadrilateral"
+            ]
+          }
+        }
+      ],
+      "queries": {
+        "red_quadrilaterals": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_02:R1",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_02:R2",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R2",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R2:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R2:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R2:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R2:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_02:R3",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R3",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R3:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R3:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R3:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R3:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        },
+        "blue_quadrilaterals": {
+          "state": 1,
+          "value": 3,
+          "members": [
+            "TEST_02:R1",
+            "TEST_02:R2",
+            "TEST_02:R3"
+          ],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_02:R1",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_02:R2",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R2",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R2:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R2:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R2:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R2:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_02:R3",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R3",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R3:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R3:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R3:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R3:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY",
+            "MEMBER:TEST_02:R3",
+            "PROGRESS:K_d16859cc79->K_47550a75b9",
+            "MEMBER:TEST_02:R2",
+            "PROGRESS:K_47550a75b9->K_87b34d2c06",
+            "MEMBER:TEST_02:R1",
+            "PROGRESS:K_87b34d2c06->K_a1b857412b"
+          ]
+        },
+        "blue_triangles": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_02:R1",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_02:R2",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R2",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R2:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R2:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R2:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R2:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_02:R3",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R3",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R3:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R3:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R3:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R3:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        },
+        "green_quadrilaterals": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_02:R1",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_02:R2",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R2",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R2:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R2:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R2:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R2:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_02:R3",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R3",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R3:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R3:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R3:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R3:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        },
+        "red_triangles": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_02:R1",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_02:R2",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R2",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R2:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R2:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R2:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R2:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_02:R3",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_02:R3",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_02:R3:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_02:R3:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_02:R3:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_02:R3:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        }
+      }
+    },
+    "3": {
+      "background": {
+        "state": 1,
+        "value": "white"
+      },
+      "count": {
+        "state": 1,
+        "value": 4,
+        "trace": [
+          "COUNT_BASE_EMPTY",
+          "MEMBER:TEST_03:R4",
+          "PROGRESS:K_d16859cc79->K_47550a75b9",
+          "MEMBER:TEST_03:R3",
+          "PROGRESS:K_47550a75b9->K_87b34d2c06",
+          "MEMBER:TEST_03:R2",
+          "PROGRESS:K_87b34d2c06->K_a1b857412b",
+          "MEMBER:TEST_03:R1",
+          "PROGRESS:K_a1b857412b->K_4822674e50"
+        ]
+      },
+      "regions": [
+        {
+          "rid": "TEST_03:R1",
+          "color": {
+            "state": 1,
+            "value": "blue"
+          },
+          "shape": {
+            "state": 1,
+            "value": "triangle",
+            "vertex_count": 3,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_03:R1:V3",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_03:R1:V2",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_03:R1:V1",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "SHAPE_U:K_a1b857412b->triangle"
+            ]
+          }
+        },
+        {
+          "rid": "TEST_03:R2",
+          "color": {
+            "state": 1,
+            "value": "red"
+          },
+          "shape": {
+            "state": 1,
+            "value": "quadrilateral",
+            "vertex_count": 4,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_03:R2:V4",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_03:R2:V3",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_03:R2:V2",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "MEMBER:TEST_03:R2:V1",
+              "PROGRESS:K_a1b857412b->K_4822674e50",
+              "SHAPE_U:K_4822674e50->quadrilateral"
+            ]
+          }
+        },
+        {
+          "rid": "TEST_03:R3",
+          "color": {
+            "state": 1,
+            "value": "green"
+          },
+          "shape": {
+            "state": 1,
+            "value": "quadrilateral",
+            "vertex_count": 4,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_03:R3:V4",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_03:R3:V3",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_03:R3:V2",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "MEMBER:TEST_03:R3:V1",
+              "PROGRESS:K_a1b857412b->K_4822674e50",
+              "SHAPE_U:K_4822674e50->quadrilateral"
+            ]
+          }
+        },
+        {
+          "rid": "TEST_03:R4",
+          "color": {
+            "state": 1,
+            "value": "blue"
+          },
+          "shape": {
+            "state": 1,
+            "value": "quadrilateral",
+            "vertex_count": 4,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_03:R4:V4",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_03:R4:V3",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_03:R4:V2",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "MEMBER:TEST_03:R4:V1",
+              "PROGRESS:K_a1b857412b->K_4822674e50",
+              "SHAPE_U:K_4822674e50->quadrilateral"
+            ]
+          }
+        }
+      ],
+      "queries": {
+        "red_quadrilaterals": {
+          "state": 1,
+          "value": 1,
+          "members": [
+            "TEST_03:R2"
+          ],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_03:R1",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R1",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R1:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R1:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R1:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R2",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R2:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R2:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R2:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R2:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R3",
+              {
+                "state": 1,
+                "value": "green"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R3",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R3:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R3:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R3:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R3:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R4",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R4",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R4:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R4:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R4:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R4:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY",
+            "MEMBER:TEST_03:R2",
+            "PROGRESS:K_d16859cc79->K_47550a75b9"
+          ]
+        },
+        "blue_quadrilaterals": {
+          "state": 1,
+          "value": 1,
+          "members": [
+            "TEST_03:R4"
+          ],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_03:R1",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R1",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R1:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R1:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R1:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R2",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R2:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R2:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R2:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R2:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R3",
+              {
+                "state": 1,
+                "value": "green"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R3",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R3:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R3:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R3:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R3:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R4",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R4",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R4:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R4:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R4:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R4:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY",
+            "MEMBER:TEST_03:R4",
+            "PROGRESS:K_d16859cc79->K_47550a75b9"
+          ]
+        },
+        "blue_triangles": {
+          "state": 1,
+          "value": 1,
+          "members": [
+            "TEST_03:R1"
+          ],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_03:R1",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R1",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R1:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R1:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R1:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R2",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R2:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R2:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R2:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R2:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R3",
+              {
+                "state": 1,
+                "value": "green"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R3",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R3:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R3:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R3:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R3:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R4",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R4",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R4:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R4:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R4:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R4:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY",
+            "MEMBER:TEST_03:R1",
+            "PROGRESS:K_d16859cc79->K_47550a75b9"
+          ]
+        },
+        "green_quadrilaterals": {
+          "state": 1,
+          "value": 1,
+          "members": [
+            "TEST_03:R3"
+          ],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_03:R1",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R1",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R1:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R1:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R1:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R2",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R2:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R2:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R2:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R2:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R3",
+              {
+                "state": 1,
+                "value": "green"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R3",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R3:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R3:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R3:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R3:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R4",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R4",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R4:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R4:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R4:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R4:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY",
+            "MEMBER:TEST_03:R3",
+            "PROGRESS:K_d16859cc79->K_47550a75b9"
+          ]
+        },
+        "red_triangles": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_03:R1",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R1",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R1:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R1:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R1:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R2",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R2:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R2:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R2:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R2:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R3",
+              {
+                "state": 1,
+                "value": "green"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R3",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R3:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R3:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R3:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R3:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_03:R4",
+              {
+                "state": 1,
+                "value": "blue"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_03:R4",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_03:R4:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_03:R4:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_03:R4:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_03:R4:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        }
+      }
+    },
+    "4": {
+      "background": {
+        "state": 1,
+        "value": "white"
+      },
+      "count": {
+        "state": 1,
+        "value": 2,
+        "trace": [
+          "COUNT_BASE_EMPTY",
+          "MEMBER:TEST_04:R2",
+          "PROGRESS:K_d16859cc79->K_47550a75b9",
+          "MEMBER:TEST_04:R1",
+          "PROGRESS:K_47550a75b9->K_87b34d2c06"
+        ]
+      },
+      "regions": [
+        {
+          "rid": "TEST_04:R1",
+          "color": {
+            "state": 1,
+            "value": "red"
+          },
+          "shape": {
+            "state": 1,
+            "value": "quadrilateral",
+            "vertex_count": 4,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_04:R1:V4",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_04:R1:V3",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_04:R1:V2",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "MEMBER:TEST_04:R1:V1",
+              "PROGRESS:K_a1b857412b->K_4822674e50",
+              "SHAPE_U:K_4822674e50->quadrilateral"
+            ]
+          }
+        },
+        {
+          "rid": "TEST_04:R2",
+          "color": {
+            "state": 1,
+            "value": "red"
+          },
+          "shape": {
+            "state": 1,
+            "value": "triangle",
+            "vertex_count": 3,
+            "trace": [
+              "COUNT_BASE_EMPTY",
+              "MEMBER:TEST_04:R2:V3",
+              "PROGRESS:K_d16859cc79->K_47550a75b9",
+              "MEMBER:TEST_04:R2:V2",
+              "PROGRESS:K_47550a75b9->K_87b34d2c06",
+              "MEMBER:TEST_04:R2:V1",
+              "PROGRESS:K_87b34d2c06->K_a1b857412b",
+              "SHAPE_U:K_a1b857412b->triangle"
+            ]
+          }
+        }
+      ],
+      "queries": {
+        "red_quadrilaterals": {
+          "state": 1,
+          "value": 1,
+          "members": [
+            "TEST_04:R1"
+          ],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_04:R1",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_04:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_04:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_04:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_04:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_04:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_04:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_04:R2",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_04:R2:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_04:R2:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_04:R2:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY",
+            "MEMBER:TEST_04:R1",
+            "PROGRESS:K_d16859cc79->K_47550a75b9"
+          ]
+        },
+        "blue_quadrilaterals": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_04:R1",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_04:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_04:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_04:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_04:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_04:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_04:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_04:R2",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_04:R2:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_04:R2:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_04:R2:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        },
+        "blue_triangles": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_04:R1",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_04:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_04:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_04:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_04:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_04:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_04:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_04:R2",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_04:R2:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_04:R2:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_04:R2:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        },
+        "green_quadrilaterals": {
+          "state": 1,
+          "value": 0,
+          "members": [],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_04:R1",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_04:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_04:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_04:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_04:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_04:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_04:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_04:R2",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_04:R2:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_04:R2:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_04:R2:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY"
+          ]
+        },
+        "red_triangles": {
+          "state": 1,
+          "value": 1,
+          "members": [
+            "TEST_04:R2"
+          ],
+          "trace": [
+            [
+              "COLOR",
+              "TEST_04:R1",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_04:R1",
+              {
+                "state": 1,
+                "value": "quadrilateral",
+                "vertex_count": 4,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_04:R1:V4",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_04:R1:V3",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_04:R1:V2",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "MEMBER:TEST_04:R1:V1",
+                  "PROGRESS:K_a1b857412b->K_4822674e50",
+                  "SHAPE_U:K_4822674e50->quadrilateral"
+                ]
+              }
+            ],
+            [
+              "COLOR",
+              "TEST_04:R2",
+              {
+                "state": 1,
+                "value": "red"
+              }
+            ],
+            [
+              "SHAPE",
+              "TEST_04:R2",
+              {
+                "state": 1,
+                "value": "triangle",
+                "vertex_count": 3,
+                "trace": [
+                  "COUNT_BASE_EMPTY",
+                  "MEMBER:TEST_04:R2:V3",
+                  "PROGRESS:K_d16859cc79->K_47550a75b9",
+                  "MEMBER:TEST_04:R2:V2",
+                  "PROGRESS:K_47550a75b9->K_87b34d2c06",
+                  "MEMBER:TEST_04:R2:V1",
+                  "PROGRESS:K_87b34d2c06->K_a1b857412b",
+                  "SHAPE_U:K_a1b857412b->triangle"
+                ]
+              }
+            ],
+            "COUNT_BASE_EMPTY",
+            "MEMBER:TEST_04:R2",
+            "PROGRESS:K_d16859cc79->K_47550a75b9"
+          ]
+        }
+      }
+    }
+  },
+  "unknown_rejected": {
+    "pentagon_shape": {
+      "state": 0,
+      "value": null,
+      "vertex_count": 5,
+      "trace": [
+        "COUNT_BASE_EMPTY",
+        "MEMBER:PENT:V5",
+        "PROGRESS:K_d16859cc79->K_47550a75b9",
+        "MEMBER:PENT:V4",
+        "PROGRESS:K_47550a75b9->K_87b34d2c06",
+        "MEMBER:PENT:V3",
+        "PROGRESS:K_87b34d2c06->K_a1b857412b",
+        "MEMBER:PENT:V2",
+        "PROGRESS:K_a1b857412b->K_4822674e50",
+        "MEMBER:PENT:V1",
+        "PROGRESS:K_4822674e50->K_e4e59486b5"
+      ]
+    },
+    "pentagon_color": {
+      "state": 0,
+      "value": null
+    },
+    "rejected_u": {
+      "uid": "U_BAD_5_TRIANGLE",
+      "state": -1,
+      "input_count": 5,
+      "output": "triangle"
+    }
+  },
+  "checks": {
+    "sensor_emits_no_count_or_semantic_labels": true,
+    "count_U_selected_from_curriculum": true,
+    "constant_count_shortcuts_rejected": true,
+    "recursive_count_U_fits_all_16_train_images": true,
+    "sensor_never_emits_region_count": true,
+    "sensor_never_emits_corner_count": true,
+    "shape_U_learned_from_COUNT_of_VERTEX_members": true,
+    "color_U_learned_and_classes_separable": true,
+    "all_blind_image_counts_provable": true,
+    "all_blind_region_shapes_provable": true,
+    "all_blind_region_colors_provable": true,
+    "five_vertex_shape_stays_KEY_0": true,
+    "unknown_color_stays_KEY_0": true,
+    "U_minus1_does_not_make_shape_KEY_minus1": true,
+    "queries_are_read_only": true
+  },
+  "caveats": [
+    "OpenCV still detects connected regions and polygon vertices.",
+    "The sensor exposes each region and each vertex individually but no cardinality.",
+    "COUNT-U is chosen from a tiny generic candidate family.",
+    "Anonymous cardinal PROGRESS is supplied here; K22 separately tested learning progress from ORDER.",
+    "Synthetic images only."
+  ]
+}

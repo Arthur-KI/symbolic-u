@@ -1,0 +1,117 @@
+{
+  "version": "v9.3-K21-temporal-arithmetic-via-learned-recursive-u",
+  "result": "PASS",
+  "reused_frozen_learning": {
+    "source": "symbolic_math_v40_mul_report.json",
+    "ADD": "Y0_ZX__DEC_Y_DEC_Z",
+    "MUL": "Y0_Z0__DEC_Y_ADD_X",
+    "v40_invariants": [
+      "MUL is an ordinary Proposition/Key",
+      "MUL recursively requires ADD",
+      "ADD recursively requires PRED",
+      "PRED is produced by Standard-U from SUCC",
+      "MUL result is consumed by Standard-U semantic reasoning",
+      "wrong result remains UNKNOWN, not FALSE",
+      "held-out self-tests do not train"
+    ],
+    "v40_caveats": [
+      "ADD/MUL induction searches small predefined recursive skeleton families",
+      "SUCC number structure is a symbolic prior",
+      "training labels are external supervision; proof engine does not call Python + or *",
+      "semantic GROUP_COUNT/PER_GROUP facts are injected to isolate reasoning from language parsing"
+    ]
+  },
+  "removed_from_K20_temporal_solver": [
+    "direct Python source + offset computation",
+    "direct Python count * scale computation",
+    "direct subtraction for duration"
+  ],
+  "remaining_arithmetic_prior": [
+    "ZERO/SUCC symbolic number ontology",
+    "PRED derived from SUCC",
+    "finite number-node availability",
+    "generic recursive execution/search"
+  ],
+  "temporal_chain": {
+    "E0": "TRes(state=1, contradiction=False, value='N480', trace=('U10', 'MUL(N60,N2,N120)', 'ADD_BACK(...)->N480'))",
+    "E1": "TRes(state=1, contradiction=False, value='N600', trace=('ANCHOR:10:00-anchor',))",
+    "E2": "TRes(state=1, contradiction=False, value='N780', trace=('U12', 'MUL(N60,N3,N180)', 'ADD(...)->N780'))",
+    "E3": "TRes(state=1, contradiction=False, value='N810', trace=('U23', 'MUL(N1,N30,N30)', 'ADD(...)->N810'))",
+    "E4": "TRes(state=1, contradiction=False, value='N2250', trace=('U34', 'MUL(N1440,N1,N1440)', 'ADD(...)->N2250'))"
+  },
+  "arithmetic_audit": {
+    "mul_3h": true,
+    "add_E2": true,
+    "day_mul": true,
+    "day_add": true,
+    "wrong_mul_truth": "0",
+    "wrong_add_truth": "0",
+    "witness_counts": {
+      "pred_steps": 12569,
+      "succ_steps": 15760,
+      "add_witness_calls": 414,
+      "mul_witness_calls": 31,
+      "verified_add": 418,
+      "verified_mul": 33
+    }
+  },
+  "duration": {
+    "3_hours": "TRes(state=1, contradiction=False, value='N180', trace=('ADD(N180,N600,N780)', 'MUL(N60,N3,N180)'))",
+    "180_minutes": "TRes(state=1, contradiction=False, value='N180', trace=('ADD(N180,N600,N780)', 'MUL(N1,N180,N180)'))",
+    "wrong_2_hours": "TRes(state=-1, contradiction=False, value='N180', trace=('proved duration N180', 'query expects N120'))"
+  },
+  "state": {
+    "before_leave": "TRes(state=1, contradiction=False, value='N600', trace=('latest O_ADD at N600',))",
+    "after_leave": "TRes(state=-1, contradiction=False, value='N720', trace=('latest O_REMOVE at N720',))",
+    "equal_time_conflict": "TRes(state=0, contradiction=True, value='N1060', trace=('simultaneous ADD/REMOVE',))"
+  },
+  "ternary": {
+    "unknown": "TRes(state=0, contradiction=False, value=None, trace=('TIME(B) unknown',))",
+    "rejected_u_state": -1,
+    "rejected_output_key": "TRes(state=0, contradiction=False, value=None, trace=('TIME(B) unknown',))",
+    "conflicting_derivations": "TRes(state=0, contradiction=True, value=None, trace=('X=N660', 'X=N720'))"
+  },
+  "checks": {
+    "K21_reuses_actual_frozen_learned_ADD_spec": true,
+    "K21_reuses_actual_frozen_learned_MUL_spec": true,
+    "K21_time_solver_does_not_use_direct_temporal_python_plus_or_multiply": true,
+    "K21_recursive_MUL_proves_3_hours_offset": true,
+    "K21_recursive_ADD_proves_E2_timestamp": true,
+    "K21_wrong_MUL_output_remains_KEY_zero": true,
+    "K21_wrong_ADD_output_remains_KEY_zero": true,
+    "K21_absolute_E0_before_anchor_derived_by_backward_ADD": true,
+    "K21_absolute_E2_derived_through_MUL_then_ADD": true,
+    "K21_absolute_E3_chain_derived": true,
+    "K21_one_day_offset_works_through_same_learned_recursive_U": true,
+    "K21_exact_time_query_plus1": true,
+    "K21_wrong_exact_time_query_minus1_only_after_unique_time_proof": true,
+    "K21_duration_3_hours_plus1_without_SUB_primitive": true,
+    "K21_duration_180_minutes_same_value_plus1": true,
+    "K21_wrong_duration_minus1": true,
+    "K21_latest_state_after_learned_arithmetic_leave_is_minus1": true,
+    "K21_latest_state_before_leave_is_plus1": true,
+    "K21_equal_1hour_and_60minute_times_expose_contradiction": true,
+    "K21_unknown_temporal_cue_keeps_U_and_KEY_zero": true,
+    "K21_rejected_temporal_U_does_not_make_time_KEY_minus1": true,
+    "K21_conflicting_time_derivations_make_KEY_zero_contradiction": true,
+    "K21_backward_time_query_ignores_5000_disconnected_U": true,
+    "K21_queries_are_read_only": true,
+    "K21_number_successor_structure_is_still_a_real_prior": true
+  },
+  "interpretation": [
+    "K21 removes the direct arithmetic formula from the temporal solver. Temporal relative U now call frozen learned recursive MUL and ADD U from the earlier v4.0 arithmetic experiment.",
+    "The query TIME(E2) opens the temporal U backward; its arithmetic subgoals recursively execute the learned ADD/MUL structure over the symbolic SUCC/PRED number graph.",
+    "The same frozen arithmetic U handles minute-, hour- and one-day-scale offsets. No new time-specific arithmetic rule is introduced for the larger day offset.",
+    "Duration can be recovered without a primitive subtraction operation by backward-binding the first argument of the learned ADD relation: ADD(duration,start,end).",
+    "Wrong arithmetic outputs remain UNKNOWN at the arithmetic-Key level, preserving the earlier invariant. A wrong exact TIME query becomes -1 only after a unique different TIME value has been positively proved.",
+    "The remaining strong arithmetic prior is not addition or multiplication semantics but the provided symbolic ZERO/SUCC number structure. Removing that structure prevents the learned recursive U from executing.",
+    "This pushes concrete temporal arithmetic out of the minimal kernel; generic ordered successor structure plus recursive U execution remains."
+  ],
+  "caveats": [
+    "The ADD/MUL U are frozen learned results from v4.0, not relearned inside K21.",
+    "Their induction originally searched small predefined recursive skeleton families.",
+    "The number ontology ZERO/SUCC is still provided and finite.",
+    "K21 raises only the recursion-depth operational limit so the unchanged learned ADD U can traverse a 1440-step day-scale offset.",
+    "Natural-language number parsing and calendar irregularities are still outside this test."
+  ]
+}

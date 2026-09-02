@@ -1,0 +1,470 @@
+{
+  "version": "v6.7-c14-raw-text-family-invention",
+  "result": "PASS",
+  "checks": {
+    "C14_invents_seven_families_from_raw_text_deltas": true,
+    "C14_family_heads_all_anonymous": true,
+    "C14_each_family_has_three_raw_supports_cross_domain": true,
+    "C14_family_clustering_does_not_use_same_token_repetition": true,
+    "C14_heldout_tokens_stage_then_activate_all_seven": true,
+    "C14_heldout_tokens_choose_expected_raw_invented_family": true,
+    "C14_active_lexical_U_reuse_new_arguments_all_seven": true,
+    "C14_long_raw_mixed_text_extracts_fourteen_transitions": true,
+    "C14_long_raw_mixed_text_activates_all_seven_tokens": true,
+    "C14_zero_delta_creates_no_family": true,
+    "C14_open_world_missing_prior_negative_rejected": true,
+    "C14_explicit_prior_negative_allows_add_transition": true,
+    "C14_duplicate_evidence_cannot_activate": true,
+    "C14_conflicting_raw_family_challenges_active_token": true,
+    "C14_semantic_recognition_does_not_mutate_world": true,
+    "C14_frozen_novel_raw_examples_classify_all_seven": true,
+    "grimm_same_raw_extractor_finds_two_steh_transitions": true,
+    "grimm_both_steh_raw_deltas_match_remove_active_family": true,
+    "grimm_steh_raw_lifecycle_staged_then_active": true,
+    "grimm_steh_reuses_raw_learned_family_on_new_action": true
+  },
+  "families": {
+    "R18": {
+      "signature": {
+        "removed": [
+          [
+            "ACTIVE",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ],
+        "added": []
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "kem",
+        "nax",
+        "rul"
+      ]
+    },
+    "R19": {
+      "signature": {
+        "removed": [
+          [
+            "AT",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ],
+        "added": []
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "fud",
+        "raq",
+        "vek"
+      ]
+    },
+    "R20": {
+      "signature": {
+        "removed": [
+          [
+            "HAVE",
+            [
+              "S0",
+              "S2"
+            ]
+          ]
+        ],
+        "added": [
+          [
+            "HAVE",
+            [
+              "S1",
+              "S2"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "jop",
+        "tir",
+        "wex"
+      ]
+    },
+    "R21": {
+      "signature": {
+        "removed": [
+          [
+            "STATE",
+            [
+              "S0",
+              "V0"
+            ]
+          ]
+        ],
+        "added": [
+          [
+            "STATE",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "duk",
+        "fep",
+        "pol"
+      ]
+    },
+    "R22": {
+      "signature": {
+        "removed": [],
+        "added": [
+          [
+            "ACTIVE",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "dax",
+        "miv",
+        "sop"
+      ]
+    },
+    "R23": {
+      "signature": {
+        "removed": [],
+        "added": [
+          [
+            "AT",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "lom",
+        "pud",
+        "zef"
+      ]
+    },
+    "R24": {
+      "signature": {
+        "removed": [],
+        "added": [
+          [
+            "HAVE",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "bim",
+        "gax",
+        "qus"
+      ]
+    }
+  },
+  "evaluator_only_mapping": {
+    "ADD_ACTIVE": "R22",
+    "REMOVE_ACTIVE": "R18",
+    "ADD_AT": "R23",
+    "REMOVE_AT": "R19",
+    "TRANSFER_HAVE": "R20",
+    "ADD_HAVE": "R24",
+    "REPLACE_STATE": "R21"
+  },
+  "heldout": {
+    "ADD_ACTIVE": {
+      "lifecycle": [
+        [
+          "STAGED",
+          1,
+          "R22"
+        ],
+        [
+          "ACTIVE",
+          2,
+          "R22"
+        ]
+      ],
+      "reuse": [
+        "R22",
+        [
+          "WHEEL",
+          "TURN"
+        ]
+      ]
+    },
+    "REMOVE_ACTIVE": {
+      "lifecycle": [
+        [
+          "STAGED",
+          1,
+          "R18"
+        ],
+        [
+          "ACTIVE",
+          2,
+          "R18"
+        ]
+      ],
+      "reuse": [
+        "R18",
+        [
+          "WHEEL",
+          "TURN"
+        ]
+      ]
+    },
+    "ADD_AT": {
+      "lifecycle": [
+        [
+          "STAGED",
+          1,
+          "R23"
+        ],
+        [
+          "ACTIVE",
+          2,
+          "R23"
+        ]
+      ],
+      "reuse": [
+        "R23",
+        [
+          "BEN",
+          "HOUSE"
+        ]
+      ]
+    },
+    "REMOVE_AT": {
+      "lifecycle": [
+        [
+          "STAGED",
+          1,
+          "R19"
+        ],
+        [
+          "ACTIVE",
+          2,
+          "R19"
+        ]
+      ],
+      "reuse": [
+        "R19",
+        [
+          "BEN",
+          "HOUSE"
+        ]
+      ]
+    },
+    "TRANSFER_HAVE": {
+      "lifecycle": [
+        [
+          "STAGED",
+          1,
+          "R20"
+        ],
+        [
+          "ACTIVE",
+          2,
+          "R20"
+        ]
+      ],
+      "reuse": [
+        "R20",
+        [
+          "CARA",
+          "ANNA",
+          "COIN"
+        ]
+      ]
+    },
+    "ADD_HAVE": {
+      "lifecycle": [
+        [
+          "STAGED",
+          1,
+          "R24"
+        ],
+        [
+          "ACTIVE",
+          2,
+          "R24"
+        ]
+      ],
+      "reuse": [
+        "R24",
+        [
+          "BOY",
+          "BOOK"
+        ]
+      ]
+    },
+    "REPLACE_STATE": {
+      "lifecycle": [
+        [
+          "STAGED",
+          1,
+          "R21"
+        ],
+        [
+          "ACTIVE",
+          2,
+          "R21"
+        ]
+      ],
+      "reuse": [
+        "R21",
+        [
+          "GATE",
+          "OPEN_STATE"
+        ]
+      ]
+    }
+  },
+  "long_raw": {
+    "transition_count": 14,
+    "active_entries": {
+      "zor": [
+        "R22",
+        "ACTIVE",
+        2
+      ],
+      "plim": [
+        "R18",
+        "ACTIVE",
+        2
+      ],
+      "nex": [
+        "R23",
+        "ACTIVE",
+        2
+      ],
+      "vak": [
+        "R19",
+        "ACTIVE",
+        2
+      ],
+      "tirx": [
+        "R20",
+        "ACTIVE",
+        2
+      ],
+      "mup": [
+        "R24",
+        "ACTIVE",
+        2
+      ],
+      "fel": [
+        "R21",
+        "ACTIVE",
+        2
+      ]
+    }
+  },
+  "grimm": {
+    "steh_count": 2,
+    "families": [
+      "R18",
+      "R18"
+    ],
+    "lifecycle": [
+      [
+        "STAGED",
+        1,
+        "R18"
+      ],
+      [
+        "ACTIVE",
+        2,
+        "R18"
+      ]
+    ],
+    "reuse": [
+      "R18",
+      [
+        "LAMP",
+        "LIGHT"
+      ]
+    ],
+    "transitions": [
+      {
+        "evidence_id": "grimm:q2",
+        "slots": [
+          "POT",
+          "COOK"
+        ],
+        "before": [
+          [
+            "ACTIVE",
+            [
+              "POT",
+              "COOK"
+            ]
+          ]
+        ],
+        "after": [],
+        "before_negative": []
+      },
+      {
+        "evidence_id": "grimm:q4",
+        "slots": [
+          "POT",
+          "COOK"
+        ],
+        "before": [
+          [
+            "ACTIVE",
+            [
+              "POT",
+              "COOK"
+            ]
+          ]
+        ],
+        "after": [],
+        "before_negative": []
+      }
+    ]
+  },
+  "interpretation": [
+    "The anonymous family miner receives only deltas produced by a controlled raw-text StoryState front-end; no prebuilt BEFORE/AFTER Keys are supplied to the miner.",
+    "Seven recurring transition topologies are invented from raw textual experiences with distinct opaque command tokens.",
+    "Held-out opaque tokens become STAGED after one raw consequence and ACTIVE after a second matching raw consequence.",
+    "A 14-command continuous mixed raw text is processed with the same extractor and activates all seven held-out lexical meanings.",
+    "The exact same raw extractor is applied to the untouched Grimm tale; both occurrences of Töpfchen steh become remove-ACTIVE(POT,COOK) deltas and select the independently invented anonymous family.",
+    "Lexical semantic recognition never mutates WORLD state by itself."
+  ],
+  "caveats": [
+    "The raw German front-end is still controlled and uses supplied primitive vocabulary for ACTIVE, AT, HAVE, STATE and a small morphology.",
+    "Opaque commands in the synthetic curriculum use structured argument phrases; this is not arbitrary free-language semantic induction.",
+    "For Grimm-like Töpfchen steh, a missing action argument is contextually completed only when the target has exactly one active action; this is a symbolic reference constraint, not outcome evidence.",
+    "The family miner still relies on canonical state-delta comparison as a fixed OS prior.",
+    "Open-world safety is handled by requiring explicit positive/negative state observations in synthetic start/gain/enter examples.",
+    "The Grimm result tests the existing tale and is not an unseen tale-level language-generalization claim."
+  ]
+}

@@ -1,0 +1,9 @@
+check,passed
+semantic_query_triggered_SUB_install,True
+second_SUB_query_reused,True
+semantic_query_triggered_PATH_install,True
+second_PATH_query_reused,True
+PATH_COST_installed_and_consumed,True
+wrong_PATH_COST_stays_unknown,True
+query_without_training_is_not_evidence,True
+poisoned_training_rejected,True

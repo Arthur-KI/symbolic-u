@@ -1,0 +1,124 @@
+{
+  "version": "v6.2-language-curriculum",
+  "result": "CURRICULUM_PASS_END_BOSS_PARTIAL",
+  "checks": {
+    "L0_simple_transitive_learns_working_U": true,
+    "L0_initial_U_is_position_based": true,
+    "L1_word_order_breaks_old_U": true,
+    "L1_revision_learns_case_based_U": true,
+    "L1_case_U_full_training_support_zero_conflict": true,
+    "L1_frozen_order_and_tense_transfer": true,
+    "L2_three_port_give_U_learned_uniquely": true,
+    "L2_give_U_full_training_support_zero_conflict": true,
+    "L2_frozen_scrambled_order_transfer": true,
+    "L3_reference_U_prefers_typed_unique_resolution": true,
+    "L3_role_typed_reference_and_ambiguity": true,
+    "L4_shared_subject_clause_U_full_support_zero_conflict": true,
+    "L4_shared_subject_clause_U_learned": true,
+    "L5_claim_directive_context_U_learned": true,
+    "L6_local_response_bound_learned": true,
+    "composite_heldout_reuses_prior_U": true,
+    "endboss_first_girl_quote_command_recognized": true,
+    "endboss_first_local_pot_cook_observation_recognized": true,
+    "endboss_first_command_plus_response_composes": true,
+    "endboss_mother_reporting_speaker_not_yet_solved": true,
+    "endboss_stop_formula_remains_unknown": true,
+    "no_nearest_noun_kitchen_cook_failure": true
+  },
+  "stages": {
+    "L0": {
+      "learned": [
+        "FIRST_BEFORE_VERB",
+        "FIRST_AFTER_VERB"
+      ],
+      "frozen_pass": true
+    },
+    "L1": {
+      "old_challenge": [
+        0,
+        3
+      ],
+      "learned": [
+        "CASE_NOM",
+        "CASE_ACC"
+      ],
+      "frozen_pass": true
+    },
+    "L2": {
+      "learned": [
+        "CASE_NOM",
+        "CASE_DAT",
+        "CASE_ACC"
+      ],
+      "frozen_pass": true
+    },
+    "L3": {
+      "strategy": "GENDER_TYPE_UNIQUE",
+      "scores": {
+        "RECENCY": [
+          2,
+          1
+        ],
+        "GENDER_TYPE_UNIQUE": [
+          3,
+          0
+        ]
+      },
+      "frozen_pass": true
+    },
+    "L4": {
+      "strategy": "INHERIT_LEFT_SUBJECT",
+      "scores": {
+        "NEAREST_ENTITY": [
+          0,
+          2
+        ],
+        "INHERIT_LEFT_SUBJECT": [
+          2,
+          0
+        ]
+      },
+      "frozen_pass": true
+    },
+    "L5": {
+      "strategy": "REPORT_TO_CLAIM_DIRECTIVE_TO_POTENTIAL",
+      "scores": {
+        "ALL_WORLD": [
+          0,
+          3
+        ],
+        "REPORT_TO_CLAIM_DIRECTIVE_TO_POTENTIAL": [
+          3,
+          0
+        ]
+      },
+      "frozen_pass": true
+    },
+    "L6": {
+      "locality": 1,
+      "frozen_pass": true
+    }
+  },
+  "end_boss": {
+    "source": "grimm_der_suesse_brei.txt",
+    "girl_command": true,
+    "local_pot_cook_world": true,
+    "girl_command_response_composed": true,
+    "mother_reporting_speaker": false,
+    "stop_formula_known": false
+  },
+  "interpretation": [
+    "Simple structured sentences let the learner discover a usable positional U.",
+    "Word-order challenges force revision from position to morphology/case rather than adding a story-specific rule.",
+    "The same case machinery scales to a learned three-port GIVE U.",
+    "Reference, shared-subject, proposition context, and local-response U are then learned as separate later curriculum skills.",
+    "The first Grimm command/response becomes reachable from the learned curriculum, but reporting-clause speaker inversion for the mother and the magical 'steh' formula remain unsolved."
+  ],
+  "caveats": [
+    "The lexicon/morphology is supplied symbolic infrastructure.",
+    "Gold event structures supervise each curriculum stage; autonomous discovery of training targets is not solved.",
+    "German case analysis is deliberately tiny and controlled.",
+    "The end-boss probe is diagnostic and not counted as curriculum training success.",
+    "This experiment does not replace the broader v6.1 bridge; it tests whether staged U acquisition is a viable training strategy."
+  ]
+}

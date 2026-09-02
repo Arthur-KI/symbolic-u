@@ -1,0 +1,227 @@
+{
+  "version": "v5.5-anonymous-multistage-concept-invention",
+  "result": "PASS",
+  "base_anonymous_relations": [
+    "R1",
+    "R2",
+    "R3"
+  ],
+  "new_concepts": [
+    {
+      "relation": "R4",
+      "version": 1,
+      "status": "ACTIVE",
+      "body": [
+        [
+          "R1",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "W",
+          [
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2"
+      ],
+      "support": 3,
+      "conflict": 0
+    },
+    {
+      "relation": "R5",
+      "version": 1,
+      "status": "ACTIVE",
+      "body": [
+        [
+          "R2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "W",
+          [
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2"
+      ],
+      "support": 3,
+      "conflict": 0
+    },
+    {
+      "relation": "R6",
+      "version": 1,
+      "status": "ACTIVE",
+      "body": [
+        [
+          "R3",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "R3",
+          [
+            "V1",
+            "V0",
+            "V2"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2"
+      ],
+      "support": 3,
+      "conflict": 0
+    }
+  ],
+  "checks": {
+    "three_new_anonymous_concepts_invented": true,
+    "no_semantic_concept_names": true,
+    "all_concepts_full_support_zero_conflict": true,
+    "concepts_are_connected_two_u_patterns": true,
+    "two_same_port_world_motifs_remain_distinct": true,
+    "frozen_relation_a_world_match_positive": true,
+    "frozen_relation_a_world_mismatch_rejected": true,
+    "frozen_relation_b_world_match_positive": true,
+    "frozen_relation_b_world_mismatch_rejected": true,
+    "frozen_roundtrip_positive": true,
+    "frozen_wrong_return_rejected": true,
+    "story_isolation_blocks_cross_story_composition": true,
+    "reverse_temporal_order_rejected": true,
+    "sweet_porridge_reuses_same_higher_concept": true,
+    "versioned_active_concepts": true
+  },
+  "frozen": {
+    "f01": {
+      "interesting": true,
+      "instances": [
+        {
+          "relation": "R4",
+          "args": [
+            "witch",
+            "DRAGON",
+            "FLY"
+          ]
+        }
+      ]
+    },
+    "f02": {
+      "interesting": false,
+      "instances": []
+    },
+    "f03": {
+      "interesting": true,
+      "instances": [
+        {
+          "relation": "R5",
+          "args": [
+            "scientist",
+            "PROBE",
+            "ACTIVE"
+          ]
+        }
+      ]
+    },
+    "f04": {
+      "interesting": false,
+      "instances": []
+    },
+    "f05": {
+      "interesting": true,
+      "instances": [
+        {
+          "relation": "R6",
+          "args": [
+            "mia",
+            "paul",
+            "KEY2"
+          ]
+        }
+      ]
+    },
+    "f06": {
+      "interesting": false,
+      "instances": []
+    }
+  },
+  "sweet_porridge": [
+    {
+      "scene": "sweet1",
+      "instances": [
+        {
+          "relation": "R4",
+          "args": [
+            "girl",
+            "POT",
+            "COOK"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "sweet2",
+      "instances": [
+        {
+          "relation": "R4",
+          "args": [
+            "mother",
+            "POT",
+            "COOK"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "sweet3",
+      "instances": [
+        {
+          "relation": "R4",
+          "args": [
+            "girl",
+            "POT",
+            "STOP"
+          ]
+        }
+      ]
+    }
+  ],
+  "design": [
+    "The learner receives no semantic class labels for the three higher-order motifs.",
+    "Candidate concepts are connected ordered pairs of existing anonymous U/fact relations.",
+    "Variable sharing is inferred by canonicalizing equality structure across ports.",
+    "Only motifs with support >=3 and zero conflicts on near-miss scenes are installed.",
+    "Fresh concept heads are anonymous R4/R5/R6 and versioned ACTIVE.",
+    "Temporal order and StoryContext are hard constraints.",
+    "No ACTION, CLAIM, HAVE, COMMAND, TRANSFER, compliance, truthfulness, or loan labels appear in the learned concept heads/bodies."
+  ],
+  "caveats": [
+    "W is still a fixed generic independent-world-observation relation.",
+    "Concept search is limited to connected ordered 2-event motifs.",
+    "Positive 'interesting composition' scenes are supervised; autonomous salience selection is not solved.",
+    "Head variables are currently all variables in first-occurrence order, not learned by MDL.",
+    "No recursion or three-stage concept induction is attempted in v5.5.",
+    "Sweet-porridge test starts from frozen lower-level anonymous R events plus independently extracted world observations; it is not a fresh raw-text parser test."
+  ]
+}

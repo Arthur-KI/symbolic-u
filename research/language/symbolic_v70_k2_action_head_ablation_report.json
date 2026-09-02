@@ -1,0 +1,179 @@
+{
+  "version": "v7.0-K2-action-head-ablation",
+  "result": "PASS",
+  "checks": {
+    "frozen_K1_report_is_green": true,
+    "K2_five_action_classes_are_anonymous_A_symbols": true,
+    "K2_no_human_semantic_action_head_is_learned": true,
+    "K2_inflectional_lemma_transfer_preserves_action_identity": true,
+    "K2_entity_action_compatibility_is_learned_from_observations": true,
+    "K2_single_capability_observation_stays_STAGED": true,
+    "K2_implicit_surfaces_use_only_unique_learned_capability": true,
+    "K2_STAGED_capability_cannot_drive_implicit_semantics": true,
+    "K2_second_independent_capability_support_can_enable_reuse": true,
+    "K2_ambiguous_learned_capability_stays_UNKNOWN": true,
+    "K2_explicit_action_disambiguates_ambiguous_capability": true,
+    "K2_K1_frozen_paraphrases_transfer_with_A_symbols": true,
+    "K2_grounded_ACTIVE_deltas_use_only_A_symbols": true,
+    "K2_C14_remove_ACTIVE_family_is_unchanged": true,
+    "K2_three_different_surface_forms_and_A_symbols_support_same_C14_family": true,
+    "K2_Grimm_steh_learning_path_works_without_COOK_head": true,
+    "K2_Grimm_steh_reuse_targets_an_anonymous_action": true
+  },
+  "anonymous_actions": {
+    "drehen": {
+      "head": "A1",
+      "support": 2,
+      "examples": [
+        "Das Rad dreht.",
+        "Das Rad drehte."
+      ]
+    },
+    "kochen": {
+      "head": "A2",
+      "support": 3,
+      "examples": [
+        "Das Wasser kocht.",
+        "Das Wasser kochte.",
+        "Der Kessel kocht."
+      ]
+    },
+    "laufen": {
+      "head": "A3",
+      "support": 2,
+      "examples": [
+        "Die Maschine läuft.",
+        "Die Maschine lief."
+      ]
+    },
+    "leuchten": {
+      "head": "A4",
+      "support": 2,
+      "examples": [
+        "Die Lampe leuchtet.",
+        "Die Lampe leuchtete."
+      ]
+    },
+    "öffnen": {
+      "head": "A5",
+      "support": 2,
+      "examples": [
+        "Das Tor öffnet.",
+        "Das Tor öffnete."
+      ]
+    }
+  },
+  "learned_capabilities": {
+    "GATE": [
+      "A5"
+    ],
+    "LAMP": [
+      "A4"
+    ],
+    "MACHINE": [
+      "A3"
+    ],
+    "WATER": [
+      "A2"
+    ],
+    "WHEEL": [
+      "A1"
+    ]
+  },
+  "capability_status": {
+    "LAMP": {
+      "A4": "ACTIVE"
+    },
+    "WHEEL": {
+      "A1": "ACTIVE"
+    },
+    "MACHINE": {
+      "A3": "ACTIVE"
+    },
+    "GATE": {
+      "A5": "ACTIVE"
+    },
+    "WATER": {
+      "A2": "ACTIVE"
+    },
+    "KETTLE": {
+      "A2": "STAGED"
+    }
+  },
+  "capability_lifecycle_attack": {
+    "before_second_support": null,
+    "after_second_support": "STOP",
+    "after_slots": [
+      "KETTLE",
+      "A2"
+    ]
+  },
+  "ambiguity": {
+    "lamp_base": [
+      "A4"
+    ],
+    "injected_second_action": "A5",
+    "implicit_prediction": null,
+    "implicit_slots": [],
+    "explicit_prediction": "STOP",
+    "explicit_slots": [
+      "LAMP",
+      "A4"
+    ]
+  },
+  "c14": {
+    "remove_active_family": "R18",
+    "handoff": "R18",
+    "lexical_support_families": [
+      "R18",
+      "R18",
+      "R18"
+    ]
+  },
+  "grimm": {
+    "anonymous_kochen_action": "A2",
+    "steh_support": [
+      [
+        "q1",
+        "R18",
+        "POT",
+        "A2"
+      ],
+      [
+        "q3",
+        "R18",
+        "POT",
+        "A2"
+      ]
+    ],
+    "active": true,
+    "reuse": [
+      "R18",
+      [
+        "LAMP",
+        "A4"
+      ]
+    ],
+    "trace": [
+      "(0, 'KNOWN', 'POT', 'A2', {'POT': 'A2'})",
+      "(1, 'OPAQUE', 'POT', 'A2', 'R18', {})",
+      "(2, 'KNOWN', 'POT', 'A2', {'POT': 'A2'})",
+      "(3, 'OPAQUE', 'POT', 'A2', 'R18', {})"
+    ]
+  },
+  "interpretation": [
+    "K2 replaces human-readable lexical action heads with anonymous A-symbols induced from recurring formally lemmatized activity predicates.",
+    "The old entity-to-default-action capability table is replaced by compatibility learned from explicit entity/action observations.",
+    "Implicit surfaces can fill the action port only when the learned capability set is unique; ambiguity remains UNKNOWN.",
+    "An explicit action lemma can resolve that ambiguity without using a semantic action name.",
+    "Frozen K1 Surface-U and C14 transition-family structure continue to work because they need only an ACTION port identity, not a human-readable action label.",
+    "The Grimm 'kochen/koche' action is represented by an anonymous A-symbol, while the two 'steh' consequences still support the same remove-ACTIVE family."
+  ],
+  "caveats": [
+    "A formal lemmatizer and a small curriculum of canonical activity-observation sentences remain supplied.",
+    "K2 does not yet discover synonymy between unrelated lexical lemmas; one recurring lemma induces one anonymous lexical action identity.",
+    "Entity identities and the primitive relation ACTIVE remain fixed.",
+    "The curriculum marks simple sentences as activity observations, which is still supervision even though no semantic action label is supplied.",
+    "Capability induction is entity-instance based in this PoC rather than learned type-level generalization."
+  ]
+}

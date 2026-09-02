@@ -1,0 +1,106 @@
+{
+  "version": "v8.4-K14-learned-attachment",
+  "result": "PASS",
+  "best_attachment": {
+    "direction": "LEFT",
+    "max_distance": 2
+  },
+  "initial_fits": [
+    {
+      "direction": "LEFT",
+      "max_distance": 2
+    }
+  ],
+  "survivors_after_distractors": [],
+  "frozen": {
+    "base": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BOOK",
+      "schenkt"
+    ],
+    "adjective": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BALL",
+      "schenkt"
+    ],
+    "front": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BALL",
+      "schenkt"
+    ],
+    "long_untrained_span": null,
+    "sweet_style": [
+      "Z_GIVE",
+      "WOMAN",
+      "GIRL",
+      "POT",
+      "schenkte"
+    ],
+    "holle_style": [
+      "Z_GIVE",
+      "WOMAN",
+      "GIRL",
+      "SPOOL",
+      "gab"
+    ],
+    "ambiguous": null,
+    "unknown_marker": null
+  },
+  "boundaries": {
+    "order": {
+      "bag1_equals_bag2": true,
+      "finding": "If token order is erased, identical token/entity bags cannot encode which raw marker is structurally attached to which mention."
+    },
+    "entity_anchor_probe": {
+      "active": [
+        "buch",
+        "frau",
+        "jungen",
+        "kind"
+      ],
+      "staged": [
+        "apfel",
+        "ball",
+        "mann"
+      ],
+      "finding": "Human labels such as ENTITY can be weakened: raw content symbols can become active anchors through repeated text↔world participant alignment. However, the correspondence between a raw token and a world participant is still evidence supplied by grounded episodes."
+    }
+  },
+  "checks": {
+    "K14_K12_K13_bases_green": true,
+    "K14_fixed_immediate_preceding_marker_rule_removed": true,
+    "K14_attachment_program_is_learned_from_binding_success": true,
+    "K14_learned_attachment_is_left_local_window": true,
+    "K14_base_clause_parses": true,
+    "K14_adjective_intervening_marker_parses": true,
+    "K14_fronted_adjective_clause_parses": true,
+    "K14_longer_untrained_attachment_span_stays_UNKNOWN": true,
+    "K14_sweet_style_clause_transfers": true,
+    "K14_holle_style_clause_transfers": true,
+    "K14_competing_local_role_markers_stay_UNKNOWN": true,
+    "K14_unknown_marker_stays_UNKNOWN": true,
+    "K14_without_token_order_bag_representation_cannot_recover_attachment": true,
+    "K14_entity_anchor_labels_can_be_partly_learned_from_repeated_world_text_alignment": true,
+    "K14_one_shot_entity_candidates_remain_STAGED": true
+  },
+  "interpretation": [
+    "K14 removes the fixed immediate-preceding-token attachment rule. A generic LEFT-window attachment U is selected because it alone explains consequence-derived participant bindings across simple and adjective-intervening clauses.",
+    "Adversarial farther-left role-like distractors penalize overly broad windows, so the smallest sufficient structural neighborhood is preferred.",
+    "The learned attachment generalizes to fronted and adjective-bearing clauses within its learned span, but a longer unseen structural span remains UNKNOWN rather than being guessed.",
+    "Token order is again kernel-near: once order is reduced to an unordered bag, local attachment is not recoverable.",
+    "A preliminary entity-anchor probe shows that raw content symbols can be promoted to reusable participant anchors from repeated world/text alignment, suggesting the dictionary need not permanently label them as ENTITY."
+  ],
+  "caveats": [
+    "World/text participant alignment is still available during entity-anchor learning.",
+    "The attachment hypothesis space is a simple directional window, not arbitrary dependency-tree induction.",
+    "Clause boundaries remain fixed.",
+    "Reference resolution for pronouns is not relearned here.",
+    "The learned window is intentionally conservative and does not cover unrestricted German noun phrases."
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "version": "v9.0b-K18b-drop-one-minimal-kernel-audit",
+  "result": "PASS",
+  "kernel_rows": [
+    {
+      "component": "PERSISTENT_IDENTITY",
+      "status": "NECESSARY",
+      "necessity_kind": "information-theoretic",
+      "passed": true,
+      "evidence": "Two token↔participant permutations fit perfectly until discriminating identity evidence appears."
+    },
+    {
+      "component": "ORDER",
+      "status": "NECESSARY",
+      "necessity_kind": "information-theoretic",
+      "passed": true,
+      "evidence": "Same unordered symbol bag can correspond to R(A,B) or R(B,A)."
+    },
+    {
+      "component": "VARIABLE_BIND_IDENTITY",
+      "status": "NECESSARY",
+      "necessity_kind": "information-theoretic",
+      "passed": true,
+      "evidence": "Transfer and replacement collapse when cross-position equality is removed."
+    },
+    {
+      "component": "CONTEXT_PROVENANCE",
+      "status": "NECESSARY",
+      "necessity_kind": "information-theoretic/causal",
+      "passed": true,
+      "evidence": "A perfectly correlated remote change is indistinguishable without context membership."
+    },
+    {
+      "component": "TERNARY_KEY_U_TRUTH",
+      "status": "NECESSARY",
+      "necessity_kind": "semantic",
+      "passed": true,
+      "evidence": "Unknown, explicit negative, positive, contradiction, and rejected derivation cannot be collapsed safely."
+    },
+    {
+      "component": "QUERY_GUIDED_BACKWARD",
+      "status": "PRACTICALLY_KERNEL_NEAR",
+      "necessity_kind": "resource",
+      "passed": true,
+      "evidence": "One relevant U opened versus 5001-rule eager space."
+    },
+    {
+      "component": "RESOURCE_COST_BUDGET",
+      "status": "NECESSARY_FOR_EFFICIENCY_LEARNING",
+      "necessity_kind": "meta-identifiability",
+      "passed": true,
+      "evidence": "Equal answers do not identify the cheaper algorithm without resource observations."
+    },
+    {
+      "component": "CYCLE_DETECTION",
+      "status": "NECESSARY_FOR_TERMINATION",
+      "necessity_kind": "operational",
+      "passed": true,
+      "evidence": "Unsupported recursion exhausts budget without active-path cycle detection."
+    },
+    {
+      "component": "SEARCH",
+      "status": "NECESSARY_FOR_LEARNING",
+      "necessity_kind": "operational",
+      "passed": true,
+      "evidence": "When multiple U candidates exist, a fixed unsearched choice can miss the supported one."
+    },
+    {
+      "component": "EXPLICIT_OPPOSITION",
+      "status": "NECESSARY_FOR_KEY_MINUS1",
+      "necessity_kind": "semantic",
+      "passed": true,
+      "evidence": "Failure to prove P is not proof of NOT(P); an opposing proposition must be representable."
+    }
+  ],
+  "learnable_not_kernel": [
+    "POS/LEMMA/CASE/ENTITY labels",
+    "fixed clause boundaries",
+    "cache policy",
+    "concrete search factorization",
+    "semantic relation/action/type names"
+  ],
+  "provisional_minimal_kernel": [
+    "raw SYMBOL identity / token boundaries",
+    "persistent IDENTITY",
+    "ORDER",
+    "KEY and U",
+    "VARIABLE / PORT / BIND",
+    "CONTEXT / PROVENANCE",
+    "explicit OPPOSITION representation",
+    "ternary KEY/U semantics (+1/0/-1, contradiction separately)",
+    "MATCH / COMPOSE / SEARCH",
+    "query-guided BACKWARD proving",
+    "active-path CYCLE detection / termination control",
+    "generic RESOURCE accounting / BUDGET"
+  ],
+  "classification_note": {
+    "information_theoretic": "Removing the component creates observationally equivalent worlds with different intended structure.",
+    "semantic": "Removing the component collapses truth situations the architecture explicitly needs to distinguish.",
+    "operational": "Semantics may still be representable, but reliable terminating learning/proof is not.",
+    "resource": "A less directed algorithm may remain extensionally correct but becomes practically non-scalable.",
+    "meta_identifiability": "Correctness alone cannot select between extensionally equivalent algorithms."
+  },
+  "checks": {
+    "K18b_PERSISTENT_IDENTITY": true,
+    "K18b_ORDER": true,
+    "K18b_VARIABLE_BIND_IDENTITY": true,
+    "K18b_CONTEXT_PROVENANCE": true,
+    "K18b_TERNARY_KEY_U_TRUTH": true,
+    "K18b_QUERY_GUIDED_BACKWARD": true,
+    "K18b_RESOURCE_COST_BUDGET": true,
+    "K18b_CYCLE_DETECTION": true,
+    "K18b_SEARCH": true,
+    "K18b_EXPLICIT_OPPOSITION": true,
+    "K18b_all_language_specific_items_classified_learnable": true
+  },
+  "caveats": [
+    "This audit proves necessity only for the constructed counterexamples and the current architecture, not a universal theorem about every possible symbolic formalism.",
+    "Some primitives can be reformulated jointly; e.g. cycle detection may be implemented through a generic resource/active-context mechanism rather than a named CYCLE primitive.",
+    "Backward proving is classified practical/kernel-near rather than information-theoretically necessary because eager forward proof can compute the same semantics on finite spaces.",
+    "Token boundaries remain assumed."
+  ]
+}

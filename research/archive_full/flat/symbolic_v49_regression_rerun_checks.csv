@@ -1,0 +1,13 @@
+check,passed
+v1_initially_active,True
+v1_learned_without_selector_guard,True
+v1_conflicted_with_new_evidence,True
+revision_found_symbolic_specialization,True
+v2_active_v1_superseded,True
+v2_preserves_even_generalization,True
+v2_blocks_odd_overgeneralization,True
+failed_v3_rolls_back_transactionally,True
+version_history_preserved,True
+provenance_preserved,True
+unrepairable_challenge_disables_unsafe_active_version,True
+unrepairable_query_returns_unknown_not_false_proof,True

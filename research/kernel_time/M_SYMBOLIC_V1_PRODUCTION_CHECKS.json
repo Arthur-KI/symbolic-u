@@ -1,0 +1,8 @@
+{
+  "production_positive_hit": true,
+  "production_negative_hit": true,
+  "wrong_context_never_reuses_macro": true,
+  "negative_query_decomposes_to_positive_NEG_macro": true,
+  "retired_macro_does_not_make_key_negative": true,
+  "retired_macro_keeps_decomposition": true
+}

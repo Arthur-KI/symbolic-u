@@ -1,0 +1,328 @@
+{
+  "version": "v6.3-kindergarten-more-ports-longer-text",
+  "result": "PASS",
+  "checks": {
+    "base_v62_curriculum_frozen_green": true,
+    "C2_adjunct_U_learned_full_support_zero_conflict": true,
+    "C2_adjunct_U_frozen_fronting_transfer": true,
+    "C2_four_role_GIVE_is_composition_not_new_base_rule": true,
+    "C2_four_role_OPEN_instrument_location_composes": true,
+    "C2_frozen_four_role_word_order_transfer": true,
+    "C3_multi_action_shared_subject_reuses_clause_U": true,
+    "C3_explicit_second_subject_overrides_inheritance": true,
+    "C4_two_sentence_pronoun_reference": true,
+    "C4_ambiguous_pronoun_remains_unknown": true,
+    "C5_state_U_learned_from_event_effect_patterns": true,
+    "C6_six_sentence_story_all_events_parsed": true,
+    "C6_state_tracks_key_after_two_transfers": true,
+    "C7_length_scaling_2_4_8_16_without_new_U": true,
+    "C7_sixteen_sentence_story_uses_same_U_set": true,
+    "story_contexts_do_not_mix_state": true,
+    "endboss_girl_command_still_reachable": true,
+    "endboss_local_response_still_reachable": true,
+    "endboss_mother_reporting_still_open": true,
+    "endboss_stop_formula_still_open": true
+  },
+  "frozen_base": {
+    "transitive_selectors": [
+      "CASE_NOM",
+      "CASE_ACC"
+    ],
+    "give_selectors": [
+      "CASE_NOM",
+      "CASE_DAT",
+      "CASE_ACC"
+    ],
+    "reference_strategy": "GENDER_TYPE_UNIQUE",
+    "clause_strategy": "INHERIT_LEFT_SUBJECT",
+    "context_strategy": "REPORT_TO_CLAIM_DIRECTIVE_TO_POTENTIAL",
+    "locality": 1
+  },
+  "C2": {
+    "adjunct_rule": {
+      "LOC": "LOCATION",
+      "INSTR": "INSTRUMENT"
+    },
+    "scores": [
+      {
+        "mapping": {
+          "LOC": "LOCATION",
+          "INSTR": "INSTRUMENT"
+        },
+        "support": 4,
+        "conflict": 0
+      },
+      {
+        "mapping": {
+          "LOC": "INSTRUMENT",
+          "INSTR": "LOCATION"
+        },
+        "support": 0,
+        "conflict": 4
+      }
+    ],
+    "train_frames": [
+      {
+        "text": "Der Junge gibt dem Mädchen den Schlüssel im Garten.",
+        "frame": {
+          "rel": "GIVE",
+          "roles": [
+            [
+              "ACTOR",
+              "BOY"
+            ],
+            [
+              "RECIPIENT",
+              "GIRL"
+            ],
+            [
+              "THEME",
+              "KEY"
+            ],
+            [
+              "LOCATION",
+              "GARDEN"
+            ]
+          ]
+        }
+      },
+      {
+        "text": "Anna öffnet den Schrank mit dem Schlüssel im Haus.",
+        "frame": {
+          "rel": "OPEN",
+          "roles": [
+            [
+              "ACTOR",
+              "ANNA"
+            ],
+            [
+              "PATIENT",
+              "CABINET"
+            ],
+            [
+              "INSTRUMENT",
+              "KEY"
+            ],
+            [
+              "LOCATION",
+              "HOUSE"
+            ]
+          ]
+        }
+      }
+    ],
+    "frozen_frames": [
+      {
+        "text": "Im Garten gibt der Junge dem Mädchen den Schlüssel.",
+        "frame": {
+          "rel": "GIVE",
+          "roles": [
+            [
+              "ACTOR",
+              "BOY"
+            ],
+            [
+              "RECIPIENT",
+              "GIRL"
+            ],
+            [
+              "THEME",
+              "KEY"
+            ],
+            [
+              "LOCATION",
+              "GARDEN"
+            ]
+          ]
+        }
+      },
+      {
+        "text": "Mit dem Hammer öffnet der Junge den Schrank im Haus.",
+        "frame": {
+          "rel": "OPEN",
+          "roles": [
+            [
+              "ACTOR",
+              "BOY"
+            ],
+            [
+              "PATIENT",
+              "CABINET"
+            ],
+            [
+              "INSTRUMENT",
+              "HAMMER"
+            ],
+            [
+              "LOCATION",
+              "HOUSE"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "C3": {
+    "shared_subject": true,
+    "explicit_subject_override": true
+  },
+  "C4": {
+    "pronoun_two_sentence": "Event(rel='OPEN', args=('ANNA', 'CABINET'))",
+    "ambiguous": "None"
+  },
+  "C5": {
+    "state_rules": {
+      "GIVE": {
+        "pos": [
+          [
+            "V1",
+            "V2"
+          ]
+        ],
+        "neg": [
+          [
+            "V0",
+            "V2"
+          ]
+        ]
+      },
+      "CARRY": {
+        "pos": [
+          [
+            "V0",
+            "V1"
+          ]
+        ],
+        "neg": []
+      }
+    }
+  },
+  "C6": {
+    "story": [
+      "Das Mädchen trägt den Schlüssel.",
+      "Der Junge sieht den Hund.",
+      "Das Mädchen gibt dem Jungen den Schlüssel.",
+      "Der Junge trägt den Schlüssel.",
+      "Der Junge gibt dem Mädchen den Schlüssel.",
+      "Das Mädchen öffnet den Schrank."
+    ],
+    "events": [
+      {
+        "rel": "CARRY",
+        "args": [
+          "GIRL",
+          "KEY"
+        ]
+      },
+      {
+        "rel": "SEE",
+        "args": [
+          "BOY",
+          "DOG"
+        ]
+      },
+      {
+        "rel": "GIVE",
+        "args": [
+          "GIRL",
+          "BOY",
+          "KEY"
+        ]
+      },
+      {
+        "rel": "CARRY",
+        "args": [
+          "BOY",
+          "KEY"
+        ]
+      },
+      {
+        "rel": "GIVE",
+        "args": [
+          "BOY",
+          "GIRL",
+          "KEY"
+        ]
+      },
+      {
+        "rel": "OPEN",
+        "args": [
+          "GIRL",
+          "CABINET"
+        ]
+      }
+    ],
+    "final_have": [
+      [
+        "GIRL",
+        "KEY"
+      ]
+    ]
+  },
+  "C7": {
+    "length_results": {
+      "2": {
+        "events": 2,
+        "unknown": 0,
+        "state": [
+          [
+            "GIRL",
+            "KEY"
+          ]
+        ]
+      },
+      "4": {
+        "events": 4,
+        "unknown": 0,
+        "state": [
+          [
+            "BOY",
+            "KEY"
+          ]
+        ]
+      },
+      "8": {
+        "events": 8,
+        "unknown": 0,
+        "state": [
+          [
+            "GIRL",
+            "KEY"
+          ]
+        ]
+      },
+      "16": {
+        "events": 16,
+        "unknown": 0,
+        "state": [
+          [
+            "GIRL",
+            "KEY"
+          ]
+        ]
+      }
+    }
+  },
+  "end_boss": {
+    "girl_command": true,
+    "local_pot_cook": true,
+    "girl_command_response": true,
+    "mother_reporting": false,
+    "stop_formula": false
+  },
+  "interpretation": [
+    "Event complexity can increase by composing small previously learned U rather than replacing them with larger sentence-specific rules.",
+    "A 4-role GIVE/OPEN frame is built from frozen base role-U plus a separately learned adjunct-U.",
+    "Only after local event/role U are stable does the curriculum increase discourse length.",
+    "The same U set handles 2, 4, 8, and 16 sentence controlled stories without new language rules.",
+    "Longer text therefore tests memory/composition rather than simultaneously introducing new syntax.",
+    "The Grimm diagnostic remains partially solved: the first girl command/response works; mother reporting inversion and the magical stop formula remain future curriculum stages."
+  ],
+  "caveats": [
+    "This remains controlled symbolic German with supplied morphology/lexicon.",
+    "The 16-sentence scaling story repeats a known structural vocabulary; it is a composition/memory test, not broad linguistic generalization.",
+    "Adjunct learning uses supervised semantic role labels LOCATION/INSTRUMENT.",
+    "State-effect learning is supervised by state deltas.",
+    "Syncretism and richer German prepositional case are still separate future curriculum stages."
+  ]
+}

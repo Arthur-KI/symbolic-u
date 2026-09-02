@@ -1,0 +1,252 @@
+{
+  "version": "v5.6b-autonomous-salience-with-query-utility",
+  "result": "PASS",
+  "corpus": {
+    "stories": 39,
+    "labeled_interesting": false,
+    "explicit_negative_scene_labels": false
+  },
+  "thresholds": {
+    "min_stories": 5,
+    "min_domains": 2,
+    "min_precision": 0.74,
+    "min_closure": 1.0,
+    "min_compression_gain": 1,
+    "min_query_utility_stories": 3
+  },
+  "concepts": [
+    {
+      "relation": "R4",
+      "version": 1,
+      "status": "ACTIVE",
+      "body": [
+        [
+          "R1",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "W",
+          [
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2"
+      ],
+      "support_occ": 6,
+      "support_stories": 6,
+      "domains": 4,
+      "opportunities": 7,
+      "precision": 0.8571428571428571,
+      "closure": 1.0,
+      "compression_gain": 7,
+      "query_utility_stories": 5
+    },
+    {
+      "relation": "R5",
+      "version": 1,
+      "status": "ACTIVE",
+      "body": [
+        [
+          "R2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "W",
+          [
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2"
+      ],
+      "support_occ": 6,
+      "support_stories": 6,
+      "domains": 4,
+      "opportunities": 7,
+      "precision": 0.8571428571428571,
+      "closure": 1.0,
+      "compression_gain": 7,
+      "query_utility_stories": 5
+    },
+    {
+      "relation": "R6",
+      "version": 1,
+      "status": "ACTIVE",
+      "body": [
+        [
+          "R3",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "R3",
+          [
+            "V1",
+            "V0",
+            "V2"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2"
+      ],
+      "support_occ": 6,
+      "support_stories": 6,
+      "domains": 5,
+      "opportunities": 8,
+      "precision": 0.75,
+      "closure": 1.0,
+      "compression_gain": 12,
+      "query_utility_stories": 5
+    }
+  ],
+  "checks": {
+    "no_interesting_or_negative_labels_in_corpus": true,
+    "exactly_three_salient_concepts_discovered": true,
+    "fresh_heads_are_R4_R5_R6": true,
+    "all_salient_cross_story": true,
+    "all_salient_cross_domain": true,
+    "all_salient_predictive": true,
+    "all_salient_compressive": true,
+    "all_salient_closed": true,
+    "repeated_noise_pair_rejected": true,
+    "cross_domain_structured_irrelevant_noise_rejected_by_query_utility": true,
+    "degenerate_repetition_rejected": true,
+    "frozen_r1_match": true,
+    "frozen_r1_mismatch_unknown": true,
+    "frozen_r2_match": true,
+    "frozen_r2_mismatch_unknown": true,
+    "frozen_roundtrip_match": true,
+    "frozen_wrong_return_unknown": true,
+    "frozen_distractor_story_exact_binding_only": true,
+    "story_isolation": true,
+    "reverse_time_rejected": true,
+    "sweet_porridge_reuses_autodiscovered_concept": true,
+    "versioned_active": true
+  },
+  "frozen": {
+    "f01": [
+      {
+        "relation": "R4",
+        "args": [
+          "witch",
+          "dragon",
+          "fly"
+        ]
+      }
+    ],
+    "f02": [],
+    "f03": [
+      {
+        "relation": "R5",
+        "args": [
+          "scientist",
+          "probe",
+          "active"
+        ]
+      }
+    ],
+    "f04": [],
+    "f05": [
+      {
+        "relation": "R6",
+        "args": [
+          "mia",
+          "paul",
+          "key2"
+        ]
+      }
+    ],
+    "f06": [],
+    "f07": [
+      {
+        "relation": "R4",
+        "args": [
+          "pilot",
+          "drone",
+          "scan"
+        ]
+      }
+    ]
+  },
+  "sweet_porridge": [
+    {
+      "scene": "sweet1",
+      "instances": [
+        {
+          "relation": "R4",
+          "args": [
+            "girl",
+            "pot",
+            "cook"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "sweet2",
+      "instances": [
+        {
+          "relation": "R4",
+          "args": [
+            "mother",
+            "pot",
+            "cook"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "sweet3",
+      "instances": [
+        {
+          "relation": "R4",
+          "args": [
+            "girl",
+            "pot",
+            "stop"
+          ]
+        }
+      ]
+    }
+  ],
+  "design": [
+    "The corpus contains no interesting/not-interesting annotations.",
+    "Near misses become counterevidence automatically because structurally compatible observed relation-pairs with different variable bindings lower pair precision.",
+    "Salience requires recurrence across stories/domains, high structural pair precision, full variable closure, positive compression gain, repeated historical query/proof utility, connectedness, and non-degeneracy.",
+    "Query utility is derived from ordinary StoryContext query terms and proof-neighborhood usage, not interesting/not-interesting concept labels.",
+    "Fresh concept heads are anonymous R4/R5/R6.",
+    "StoryContext and temporal order are hard inference constraints."
+  ],
+  "caveats": [
+    "Salience thresholds are fixed priors and currently hand-selected.",
+    "Query/proof utility is an extrinsic relevance signal; purely intrinsic concept discovery still cannot distinguish a perfectly regular irrelevant process from a useful one.",
+    "The corpus is synthetic symbolic event logs, not raw text.",
+    "Search is limited to ordered connected two-event motifs.",
+    "Domain labels are used only to demand cross-domain reuse; automatic domain discovery is not solved.",
+    "Compression metric is a simple MDL-like token cost, not a full code-length model.",
+    "No hierarchical second-pass mining over newly invented concepts is attempted in v5.6."
+  ]
+}

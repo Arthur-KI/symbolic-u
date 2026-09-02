@@ -1,0 +1,64 @@
+{
+  "version": "v7.5-K7-context-semantic-ablation",
+  "result": "PASS",
+  "checks": {
+    "K7_three_context_behaviors_receive_anonymous_C_ids": true,
+    "K7_no_WORLD_CLAIM_HYPOTHETICAL_names_in_context_families": true,
+    "K7_root_clause_exports": true,
+    "K7_actor_quote_is_local_not_parent_export": true,
+    "K7_marked_subordinate_is_local_not_actor_or_parent": true,
+    "K7_unseen_context_origin_stays_UNKNOWN": true,
+    "K7_opposite_speaker_scopes_do_not_create_parent_contradiction": true,
+    "K7_queries_do_not_mutate_context_evidence": true,
+    "K7_FrauHolle_bread_request_is_scoped_but_action_is_world_root": true,
+    "K7_FrauHolle_Holle_instruction_does_not_itself_assert_action": true,
+    "K7_FrauHolle_marked_conditional_content_remains_scoped": true
+  },
+  "context_families": {
+    "ROOT_CLAUSE": "C3",
+    "ACTOR_QUOTE": "C2",
+    "MARKED_SUBORDINATE": "C1"
+  },
+  "profiles": {
+    "ROOT_CLAUSE": {
+      "anonymous_family": "C3",
+      "parent_export": 1,
+      "local_access": 1,
+      "actor_scoped_access": 0
+    },
+    "ACTOR_QUOTE": {
+      "anonymous_family": "C2",
+      "parent_export": 0,
+      "local_access": 1,
+      "actor_scoped_access": 1
+    },
+    "MARKED_SUBORDINATE": {
+      "anonymous_family": "C1",
+      "parent_export": 0,
+      "local_access": 1,
+      "actor_scoped_access": 0
+    }
+  },
+  "identifiability": {
+    "export_only_quote_vs_subordinate_collision": true,
+    "finding": "If contexts are observed only through whether they export to the parent, actor-attributed quoted content and non-actor marked subordinate content are behaviorally identical. Additional scope/attribution behavior is required to distinguish them."
+  },
+  "frau_holle_diagnostic": {
+    "bread_request_family": "C2",
+    "holle_instruction_family": "C2",
+    "conditional_family": "C1",
+    "root_family": "C3"
+  },
+  "interpretation": [
+    "K7 removes the semantic context names WORLD, CLAIM and HYPOTHETICAL from the learned context layer.",
+    "Anonymous C-families are learned from scope behavior: parent export, local accessibility, and actor-scoped accessibility.",
+    "Quoted requests can be proved inside the speaker-attached scope without becoming parent/world facts; later narrative actions are independent root evidence.",
+    "An unseen formal context origin remains UNKNOWN rather than inheriting a convenient export rule.",
+    "Context distinctions are only identifiable to the extent that their observable scope behavior differs."
+  ],
+  "caveats": [
+    "Context nesting, actor attachment, and structural origin detection remain fixed mechanisms in this isolated K7 test.",
+    "The formal origins ROOT_CLAUSE, ACTOR_QUOTE and MARKED_SUBORDINATE are structural parser outputs, not semantic WORLD/CLAIM/HYPOTHETICAL labels, but their extraction from raw language is not re-learned here.",
+    "The K7 Frau-Holle diagnostic tests context behavior after proposition extraction; the separate curriculum experiment tests raw-text learnability."
+  ]
+}

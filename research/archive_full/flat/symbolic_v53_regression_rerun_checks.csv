@@ -1,0 +1,9 @@
+check,passed
+gift_u_full_support_zero_conflict,True
+command_u_full_support_zero_conflict,True
+action_u_full_support_zero_conflict,True
+stop_u_full_support_zero_conflict,True
+frozen_synthetic_full_pass,True
+heldout_sweet_porridge_5of5,True
+heldout_false_commits_zero,True
+heldout_lexemes_absent_from_training,True

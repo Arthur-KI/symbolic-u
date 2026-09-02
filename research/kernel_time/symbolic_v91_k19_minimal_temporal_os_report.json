@@ -1,0 +1,182 @@
+{
+  "version": "v9.1-K19-minimal-temporal-os",
+  "result": "PASS",
+  "fixed_temporal_kernel": [
+    "event/context identity",
+    "generic ORDER capability",
+    "ternary KEY/U truth",
+    "query-guided backward traversal",
+    "variable/argument identity",
+    "context/provenance"
+  ],
+  "learned_temporal_content": {
+    "SEQ": {
+      "relation": "BEFORE",
+      "orientation": [
+        0,
+        1
+      ]
+    },
+    "bevor": {
+      "relation": "BEFORE",
+      "orientation": [
+        1,
+        0
+      ]
+    },
+    "danach": {
+      "relation": "BEFORE",
+      "orientation": [
+        0,
+        1
+      ]
+    },
+    "gleichzeitig": {
+      "relation": "SAME",
+      "orientation": [
+        0,
+        1
+      ]
+    },
+    "später": {
+      "relation": "BEFORE",
+      "orientation": [
+        0,
+        1
+      ]
+    },
+    "während": {
+      "relation": "DURING",
+      "orientation": [
+        1,
+        0
+      ]
+    }
+  },
+  "persistence": {
+    "learned_persistent_relations": [
+      "P_LOC"
+    ],
+    "stats": {
+      "P_LOC": {
+        "state": 1,
+        "support": 2,
+        "conflict": 0
+      },
+      "P_FLASH": {
+        "state": -1,
+        "support": 0,
+        "conflict": 2
+      }
+    }
+  },
+  "stories": {
+    "A": {
+      "timeline_layers": [
+        [
+          "A1"
+        ],
+        [
+          "A2"
+        ],
+        [
+          "A3"
+        ]
+      ],
+      "wolf_at_red_entry": "Result(state=-1, contradiction=False, trace=('QUERY AT(wolf,house) @ A3', 'U -1 stale state path via A1', 'U +1 latest REMOVE A2 => NOT_AT'))",
+      "red_at_red_entry": "Result(state=1, contradiction=False, trace=('QUERY AT(red,house) @ A3', 'U +1 latest ADD A3 => AT'))",
+      "meet": "Result(state=-1, contradiction=False, trace=('one NOT_AT => MEET -1',))"
+    },
+    "B": {
+      "meet_before_leave": "Result(state=1, contradiction=False, trace=('both AT => MEET +1',))",
+      "meet_after_leave": "Result(state=-1, contradiction=False, trace=('one NOT_AT => MEET -1',))"
+    },
+    "C_before": {
+      "red_enter_before_wolf_leave": "Result(state=1, contradiction=False, trace=('backward path C2 -> ... -> C1',))",
+      "wolf_at_red_entry": "Result(state=1, contradiction=False, trace=('QUERY AT(wolf,house) @ C2', 'U +1 latest ADD C0 => AT'))",
+      "meet": "Result(state=1, contradiction=False, trace=('both AT => MEET +1',))"
+    },
+    "D_same_time_conflict": {
+      "timeline_layers": [
+        [
+          "D1",
+          "D2",
+          "D3"
+        ]
+      ],
+      "state": "Result(state=0, contradiction=True, trace=('QUERY AT(wolf,house) @ D3', 'same-time ADD and REMOVE', '=> KEY 0 + contradiction'))"
+    },
+    "E_unknown_order": {
+      "unknown_cue_u_state": 0,
+      "state": "Result(state=0, contradiction=False, trace=('QUERY AT(wolf,house) @ E3', 'temporal order of E2 to target unresolved', '=> KEY 0'))"
+    },
+    "F_during": {
+      "timeline_layers": [
+        [
+          "F1"
+        ],
+        [
+          "F2"
+        ],
+        [
+          "F3"
+        ],
+        [
+          "F4"
+        ]
+      ],
+      "inside": "Result(state=1, contradiction=False, trace=('DURING(F2,I_RUN)',))",
+      "outside": "Result(state=-1, contradiction=False, trace=('event outside interval',))"
+    }
+  },
+  "ablations": {
+    "without_persistence": "Result(state=0, contradiction=False, trace=('QUERY AT(red,house) @ A3', 'persistence not learned => KEY 0'))",
+    "without_order": "Result(state=0, contradiction=False, trace=('QUERY AT(wolf,house) @ N3', 'no confirmed earlier state event => KEY 0'))",
+    "rejected_temporal_u": {
+      "u_state": -1,
+      "before_key": "Result(state=0, contradiction=False, trace=('order unknown',))"
+    }
+  },
+  "checks": {
+    "K19_temporal_cues_learned_not_hardcoded_as_orientation": true,
+    "K19_unknown_temporal_cue_remains_U_zero": true,
+    "K19_persistence_is_learned_for_location_state": true,
+    "K19_occurrence_relation_does_not_get_universal_persistence": true,
+    "K19_A_latest_leave_proves_wolf_NOT_AT": true,
+    "K19_A_red_is_AT_after_enter": true,
+    "K19_A_meeting_is_explicitly_negative": true,
+    "K19_B_meeting_true_before_leave": true,
+    "K19_B_meeting_negative_after_leave": true,
+    "K19_BEFORE_raw_orientation_is_learned_correctly": true,
+    "K19_BEFORE_story_wolf_still_AT_when_red_enters": true,
+    "K19_BEFORE_story_meeting_true": true,
+    "K19_same_time_enter_leave_yields_contradiction": true,
+    "K19_unknown_order_blocks_latest_state_commit": true,
+    "K19_DURING_positive_query": true,
+    "K19_DURING_outside_interval_is_negative": true,
+    "K19_when_timeline_returns_relative_layers": true,
+    "K19_story_contexts_do_not_cross_join": true,
+    "K19_backward_query_remains_context_and_target_relevant": true,
+    "K19_without_learned_persistence_state_query_is_UNKNOWN": true,
+    "K19_without_order_latest_state_is_UNKNOWN": true,
+    "K19_queries_are_read_only": true,
+    "K19_rejected_temporal_U_does_not_make_BEFORE_KEY_minus1": true
+  },
+  "interpretation": [
+    "The temporal layer remains powerful under the minimal-OS architecture. The fixed kernel needs generic order/identity/context mechanics, not human temporal cue semantics.",
+    "Raw temporal cues can learn orientation: narrative SEQ/danach/später support left-before-right, while 'bevor' learns the reverse clause orientation. SAME_TIME and DURING are learned temporal relations rather than fixed lexical meanings.",
+    "State-at-time is computed backward from the target event. Only state-change events for the queried entity/place and temporal paths relevant to the target are opened.",
+    "A learned persistence profile carries location-like state across unrelated events. Occurrence-like relations are not universally persisted.",
+    "The latest confirmed state-change event determines truth: latest ADD gives KEY +1; latest REMOVE proves the explicit opposite and yields KEY -1. Older state paths are rejected U=-1 without negating their Keys.",
+    "If temporal order is incomplete, the state remains KEY 0. Same-time conflicting ADD/REMOVE yields KEY 0 with contradiction=True.",
+    "Time is naturally a partial order. 'When did it happen?' can therefore return relative timeline layers/constraints without inventing absolute clock timestamps.",
+    "ORDER is again kernel-near: removing temporal order makes latest-state reasoning non-identifiable."
+  ],
+  "caveats": [
+    "The event semantics ADD/REMOVE/OCCUR and relation IDs are evaluator-readable labels here; the kernel only requires operation/Key identity, and earlier K5/K6 tests showed those semantic families can be anonymized/learned.",
+    "The cue learner uses a controlled pairwise hypothesis space.",
+    "Absolute calendar/clock time, durations with arithmetic, and dense interval algebra are not tested here.",
+    "The persistence curriculum is controlled; noisy probabilistic persistence is not tested.",
+    "The full K18 raw-language learner is not rerun inside every temporal story; K19 isolates and integrates the temporal reasoning layer above learned event Keys."
+  ]
+}

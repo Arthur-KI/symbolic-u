@@ -1,0 +1,33 @@
+[
+  {
+    "module": "symbolic_v80_k10_autonomous_meaning.py",
+    "returncode": 0,
+    "pass": 15,
+    "fail": 0
+  },
+  {
+    "module": "symbolic_v79_k9_consequence_binder.py",
+    "returncode": 0,
+    "pass": 20,
+    "fail": 0
+  },
+  {
+    "module": "symbolic_v78_k8_binder_abstraction.py",
+    "returncode": 0,
+    "pass": 13,
+    "fail": 0
+  },
+  {
+    "module": "symbolic_v76_frau_holle_curriculum_test.py",
+    "returncode": 0,
+    "pass": 6,
+    "fail": 0,
+    "final": "Final: 26 / 26 adv false commits 0"
+  },
+  {
+    "module": "symbolic_v75_k7_context_ablation.py",
+    "returncode": 0,
+    "pass": 11,
+    "fail": 0
+  }
+]

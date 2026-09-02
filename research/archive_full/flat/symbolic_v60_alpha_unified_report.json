@@ -1,0 +1,470 @@
+{
+  "version": "v6.0-alpha-unified-raw-text-self-growing-hierarchy",
+  "result": "PASS",
+  "scope": "controlled German end-to-end integration alpha",
+  "checks": {
+    "event_u_training_three_anonymous_heads": true,
+    "event_u_rules_full_support_zero_conflict": true,
+    "raw_dev_contains_no_manual_R_injection": true,
+    "all_base_anonymous_events_come_from_raw_surface_classification": true,
+    "raw_text_produces_structural_W_X_Y_without_R_injection": true,
+    "generic_miner_reaches_fixed_point": true,
+    "autonomous_root_active": true,
+    "autonomous_second_level_uses_learned_root": true,
+    "autonomous_third_level_uses_learned_mid": true,
+    "hierarchy_depth_three_or_more": true,
+    "assertive_family_separate_and_active": true,
+    "roundtrip_family_active": true,
+    "unused_structured_noise_not_active": true,
+    "heldout_raw_text_reaches_high_concept": true,
+    "heldout_high_proof_covers_four_primitive_observations": true,
+    "heldout_wrong_world_binding_unknown": true,
+    "assertion_does_not_enter_directive_hierarchy": true,
+    "claim_context_materialized_without_world_action": true,
+    "command_without_independent_execution_unknown_at_high_level": true,
+    "cross_story_halves_do_not_compose": true,
+    "query_does_not_mutate_evidence_or_learning_state": true,
+    "two_frozen_raw_paraphrases_reach_high_concept": true,
+    "anti_tautology_no_direct_self_heads": true,
+    "all_learned_relation_heads_remain_anonymous": true
+  },
+  "event_u": {
+    "R1": {
+      "surface_rule": [
+        "DIRECTIVE_CONTENT"
+      ],
+      "slot_types": [
+        [
+          "S0",
+          "PERSON"
+        ],
+        [
+          "S1",
+          "ENTITY"
+        ],
+        [
+          "S2",
+          "SYMBOL"
+        ]
+      ],
+      "effect_signature": [
+        [
+          "ACTION",
+          [
+            "S1",
+            "S2"
+          ]
+        ]
+      ],
+      "support": 3,
+      "conflict": 0
+    },
+    "R2": {
+      "surface_rule": [
+        "ASSERTIVE_CONTENT"
+      ],
+      "slot_types": [
+        [
+          "S0",
+          "PERSON"
+        ],
+        [
+          "S1",
+          "ENTITY"
+        ],
+        [
+          "S2",
+          "SYMBOL"
+        ]
+      ],
+      "effect_signature": [
+        [
+          "CLAIM",
+          [
+            "S0",
+            "S1",
+            "S2"
+          ]
+        ]
+      ],
+      "support": 3,
+      "conflict": 0
+    },
+    "R3": {
+      "surface_rule": [
+        "POSSESSION_CHANGE"
+      ],
+      "slot_types": [
+        [
+          "S0",
+          "PERSON"
+        ],
+        [
+          "S1",
+          "PERSON"
+        ],
+        [
+          "S2",
+          "OBJECT"
+        ]
+      ],
+      "effect_signature": [
+        [
+          "HAVE",
+          [
+            "S1",
+            "S2"
+          ]
+        ],
+        [
+          "NOT_HAVE",
+          [
+            "S0",
+            "S2"
+          ]
+        ]
+      ],
+      "support": 3,
+      "conflict": 0
+    }
+  },
+  "rounds": [
+    {
+      "epoch": 0,
+      "strong_candidates": 4,
+      "staged": [
+        "R4",
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "promoted": [
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "materialized": 14,
+      "active": [
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "pending": [
+        "R4"
+      ]
+    },
+    {
+      "epoch": 1,
+      "strong_candidates": 1,
+      "staged": [
+        "R8"
+      ],
+      "promoted": [
+        "R8"
+      ],
+      "materialized": 6,
+      "active": [
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "pending": [
+        "R4"
+      ]
+    },
+    {
+      "epoch": 2,
+      "strong_candidates": 1,
+      "staged": [
+        "R9"
+      ],
+      "promoted": [
+        "R9"
+      ],
+      "materialized": 6,
+      "active": [
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "pending": [
+        "R4"
+      ]
+    },
+    {
+      "epoch": 3,
+      "strong_candidates": 0,
+      "staged": [],
+      "promoted": [],
+      "materialized": 0,
+      "active": [
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "pending": [
+        "R4"
+      ]
+    }
+  ],
+  "lineage": [
+    "R1",
+    "R5",
+    "R8",
+    "R9"
+  ],
+  "active_concepts": {
+    "R5": {
+      "depth": 1,
+      "pattern": [
+        [
+          "R1",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "W",
+          [
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "parents": {},
+      "support_stories": 6,
+      "domains": 4,
+      "precision": 0.75,
+      "closure": 1.0,
+      "avg_primitive_coverage": 2.0,
+      "mdl_gain": 6.0,
+      "query_use": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06"
+      ]
+    },
+    "R6": {
+      "depth": 1,
+      "pattern": [
+        [
+          "R2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "W",
+          [
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "parents": {},
+      "support_stories": 4,
+      "domains": 4,
+      "precision": 1.0,
+      "closure": 1.0,
+      "avg_primitive_coverage": 2.0,
+      "mdl_gain": 2.0,
+      "query_use": [
+        "a01",
+        "a02",
+        "a03",
+        "a04"
+      ]
+    },
+    "R7": {
+      "depth": 1,
+      "pattern": [
+        [
+          "R3",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "R3",
+          [
+            "V1",
+            "V0",
+            "V2"
+          ]
+        ]
+      ],
+      "parents": {},
+      "support_stories": 4,
+      "domains": 4,
+      "precision": 1.0,
+      "closure": 1.0,
+      "avg_primitive_coverage": 2.0,
+      "mdl_gain": 1.5,
+      "query_use": [
+        "t01",
+        "t02",
+        "t03",
+        "t04"
+      ]
+    },
+    "R8": {
+      "depth": 2,
+      "pattern": [
+        [
+          "R5",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "X",
+          [
+            "V1",
+            "V3"
+          ]
+        ]
+      ],
+      "parents": {
+        "R5": 1
+      },
+      "support_stories": 6,
+      "domains": 4,
+      "precision": 1.0,
+      "closure": 0.5,
+      "avg_primitive_coverage": 3.0,
+      "mdl_gain": 11.5,
+      "query_use": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06"
+      ]
+    },
+    "R9": {
+      "depth": 3,
+      "pattern": [
+        [
+          "R8",
+          [
+            "V0",
+            "V1",
+            "V2",
+            "V3"
+          ]
+        ],
+        [
+          "Y",
+          [
+            "V3",
+            "V4"
+          ]
+        ]
+      ],
+      "parents": {
+        "R8": 1
+      },
+      "support_stories": 6,
+      "domains": 4,
+      "precision": 1.0,
+      "closure": 0.5,
+      "avg_primitive_coverage": 4.0,
+      "mdl_gain": 16.5,
+      "query_use": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06"
+      ]
+    }
+  },
+  "heldout": {
+    "text": "Zoe befiehlt dem Kristall zu glühen. Danach glüht der Kristall.\nDer Kristall steht im Tresor. Der Tresor ist geschützt.",
+    "query": "Ist der Kristall von Zoe nach dem Glühen im Tresor schließlich geschützt?",
+    "answer_state": 1,
+    "proof": {
+      "relation": "R9",
+      "args": [
+        "zoe",
+        "CRYSTAL",
+        "GLOW",
+        "VAULT",
+        "SECURE"
+      ],
+      "primitive_support_n": 4
+    },
+    "wrong_binding_state": 0,
+    "claim_directive_high_instances": 0,
+    "command_only_high_instances": 0,
+    "cross_story_high_instances": 0,
+    "paraphrases": [
+      [
+        "p1",
+        1,
+        "R9",
+        [
+          "ivy",
+          "ORB",
+          "GLOW",
+          "TOWER",
+          "STABLE"
+        ],
+        0,
+        7
+      ],
+      [
+        "p2",
+        1,
+        "R9",
+        [
+          "pauline",
+          "MACHINE",
+          "TURN",
+          "LAB",
+          "SAFE"
+        ],
+        0,
+        7
+      ]
+    ]
+  },
+  "invariants": [
+    "No raw development or held-out text contains manually injected R1/R2/R3 propositions.",
+    "Anonymous base Event-U relations are produced only by the learned Surface->R classifier.",
+    "WORLD observations W, structural X/Y facts, CLAIM keys, and learned R events enter one shared symbolic story space.",
+    "Only ACTIVE concepts materialize and become later concept-mining input.",
+    "Derived events carry primitive proof provenance; overlapping support cannot be reused as independent concept evidence.",
+    "Query text is reduced to symbolic terms and selects existing proofs; it never inserts evidence.",
+    "CLAIM does not become WORLD ACTION.",
+    "StoryContexts never compose across stories."
+  ],
+  "caveats": [
+    "This is controlled German, not general German NLP.",
+    "The raw parser is a compact symbolic grammar with supplied dictionary/ontology entries.",
+    "Event-U induction still uses supervised primitive downstream effect signatures ACTION/CLAIM/HAVE/NOT_HAVE.",
+    "Concept mining uses a chronological raw-query utility stream; autonomous task generation is not attempted.",
+    "The higher concept miner remains pairwise per round, though repeated rounds create depth-3 hierarchy.",
+    "Lore is supplied as StoryContext metadata; automatic lore/domain induction is not attempted.",
+    "v6.0-alpha does not yet integrate the full v5.8 transactional revision objects into this same monolith.",
+    "The held-out test is a controlled new German story, not an untouched full Grimm tale."
+  ]
+}

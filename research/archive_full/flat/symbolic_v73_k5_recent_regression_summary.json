@@ -1,0 +1,26 @@
+[
+  {
+    "module": "symbolic_v72_k4_type_ablation.py",
+    "returncode": 0,
+    "pass": 18,
+    "fail": 0
+  },
+  {
+    "module": "symbolic_v71_k3_relation_ablation.py",
+    "returncode": 0,
+    "pass": 16,
+    "fail": 0
+  },
+  {
+    "module": "symbolic_v70_k2_action_head_ablation.py",
+    "returncode": 0,
+    "pass": 17,
+    "fail": 0
+  },
+  {
+    "module": "symbolic_v69_k1_surface_cue_ablation.py",
+    "returncode": 0,
+    "pass": 12,
+    "fail": 0
+  }
+]

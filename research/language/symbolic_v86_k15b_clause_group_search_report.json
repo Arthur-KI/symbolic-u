@@ -1,0 +1,366 @@
+{
+  "version": "v8.6-K15b-clause-group-search",
+  "result": "PASS",
+  "algorithm": "enumerate contiguous split candidates between event tokens; require one complete event proof per segment; accept only semantic consensus",
+  "fixed_clause_boundary": false,
+  "fixed_separator_lexicon": false,
+  "cases": {
+    "two": {
+      "result": [
+        [
+          "Z_GIVE",
+          "WOMAN",
+          "BOY",
+          "BOOK",
+          "gab"
+        ],
+        [
+          "Z_GIVE",
+          "MAN",
+          "CHILD",
+          "BALL",
+          "schenkte"
+        ]
+      ],
+      "info": {
+        "raw_candidates": 8,
+        "valid_candidates": 2,
+        "semantic_variants": 1,
+        "splits": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ]
+      }
+    },
+    "two_without_separator": {
+      "result": [
+        [
+          "Z_GIVE",
+          "WOMAN",
+          "BOY",
+          "BOOK",
+          "gab"
+        ],
+        [
+          "Z_GIVE",
+          "MAN",
+          "CHILD",
+          "BALL",
+          "schenkte"
+        ]
+      ],
+      "info": {
+        "raw_candidates": 7,
+        "valid_candidates": 1,
+        "semantic_variants": 1,
+        "splits": [
+          [
+            7
+          ]
+        ]
+      }
+    },
+    "fronted": {
+      "result": [
+        [
+          "Z_GIVE",
+          "WOMAN",
+          "BOY",
+          "BOOK",
+          "gab"
+        ],
+        [
+          "Z_GIVE",
+          "MAN",
+          "CHILD",
+          "BALL",
+          "schenkte"
+        ]
+      ],
+      "info": {
+        "raw_candidates": 8,
+        "valid_candidates": 2,
+        "semantic_variants": 1,
+        "splits": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ]
+      }
+    },
+    "three": {
+      "result": [
+        [
+          "Z_GIVE",
+          "WOMAN",
+          "BOY",
+          "BOOK",
+          "gab"
+        ],
+        [
+          "Z_GIVE",
+          "MAN",
+          "CHILD",
+          "BALL",
+          "schenkte"
+        ],
+        [
+          "Z_GIVE",
+          "GIRL",
+          "BOY",
+          "APPLE",
+          "gibt"
+        ]
+      ],
+      "info": {
+        "raw_candidates": 64,
+        "valid_candidates": 4,
+        "semantic_variants": 1,
+        "splits": [
+          [
+            7,
+            15
+          ],
+          [
+            7,
+            16
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            8,
+            16
+          ]
+        ]
+      }
+    },
+    "four": {
+      "result": [
+        [
+          "Z_GIVE",
+          "WOMAN",
+          "BOY",
+          "BOOK",
+          "gab"
+        ],
+        [
+          "Z_GIVE",
+          "MAN",
+          "CHILD",
+          "BALL",
+          "schenkte"
+        ],
+        [
+          "Z_GIVE",
+          "GIRL",
+          "BOY",
+          "APPLE",
+          "gibt"
+        ],
+        [
+          "Z_GIVE",
+          "WOMAN",
+          "CHILD",
+          "BOOK",
+          "schenkt"
+        ]
+      ],
+      "info": {
+        "raw_candidates": 512,
+        "valid_candidates": 8,
+        "semantic_variants": 1,
+        "splits": [
+          [
+            7,
+            15,
+            23
+          ],
+          [
+            7,
+            15,
+            24
+          ],
+          [
+            7,
+            16,
+            23
+          ],
+          [
+            7,
+            16,
+            24
+          ],
+          [
+            8,
+            15,
+            23
+          ],
+          [
+            8,
+            15,
+            24
+          ],
+          [
+            8,
+            16,
+            23
+          ],
+          [
+            8,
+            16,
+            24
+          ]
+        ]
+      }
+    },
+    "ambiguous": {
+      "result": null,
+      "info": {
+        "raw_candidates": 7,
+        "valid_candidates": 3,
+        "semantic_variants": 2,
+        "splits": [
+          [
+            7
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ]
+        ]
+      }
+    },
+    "bad": {
+      "result": null,
+      "info": {
+        "raw_candidates": 6,
+        "valid_candidates": 0,
+        "semantic_variants": 0,
+        "splits": []
+      }
+    }
+  },
+  "scaling": [
+    {
+      "events": 2,
+      "raw_candidates": 8,
+      "valid_candidates": 2,
+      "semantic_variants": 1,
+      "splits": [
+        [
+          7
+        ],
+        [
+          8
+        ]
+      ]
+    },
+    {
+      "events": 3,
+      "raw_candidates": 64,
+      "valid_candidates": 4,
+      "semantic_variants": 1,
+      "splits": [
+        [
+          7,
+          15
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          16
+        ]
+      ]
+    },
+    {
+      "events": 4,
+      "raw_candidates": 512,
+      "valid_candidates": 8,
+      "semantic_variants": 1,
+      "splits": [
+        [
+          7,
+          15,
+          23
+        ],
+        [
+          7,
+          15,
+          24
+        ],
+        [
+          7,
+          16,
+          23
+        ],
+        [
+          7,
+          16,
+          24
+        ],
+        [
+          8,
+          15,
+          23
+        ],
+        [
+          8,
+          15,
+          24
+        ],
+        [
+          8,
+          16,
+          23
+        ],
+        [
+          8,
+          16,
+          24
+        ]
+      ]
+    }
+  ],
+  "checks": {
+    "K15b_K15_base_green": true,
+    "K15b_two_events_without_fixed_boundary_parse": true,
+    "K15b_no_conjunction_or_punctuation_semantics_needed": true,
+    "K15b_fronted_arguments_multi_event_parse": true,
+    "K15b_three_event_span_parse": true,
+    "K15b_four_event_span_parse": true,
+    "K15b_multiple_boundary_candidates_same_semantics_are_safe": true,
+    "K15b_different_semantic_bindings_across_valid_groupings_stay_UNKNOWN": true,
+    "K15b_no_complete_grouping_stays_UNKNOWN": true,
+    "K15b_group_search_does_not_mutate_or_learn_online": true
+  },
+  "interpretation": [
+    "Fixed clause boundaries are not required in the controlled multi-event test. Generic symbolic search can hypothesize contiguous event-local groups and use existing event proofs to validate them.",
+    "The exact textual boundary need not be identifiable if every valid grouping yields the same event semantics; semantic consensus is sufficient.",
+    "If valid groupings yield different participant bindings, the text is observationally ambiguous under the current features and the result remains UNKNOWN.",
+    "The cost shifts from a fixed parser prior into search: raw grouping candidates grow multiplicatively with the token gaps between adjacent events."
+  ],
+  "caveats": [
+    "Event surface tokens must already be recognized.",
+    "Only contiguous non-overlapping event groups are searched.",
+    "Nested clauses, shared arguments across events and ellipsis are not handled.",
+    "Candidate growth exposes search/MDL/locality as the next practical bottleneck."
+  ]
+}

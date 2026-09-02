@@ -1,0 +1,27 @@
+{
+  "K20": {
+    "pass": 29,
+    "fail": 0,
+    "returncode": 0
+  },
+  "fresh_regressions": [
+    {
+      "stage": "K19",
+      "returncode": 0,
+      "pass": 23,
+      "fail": 0
+    },
+    {
+      "stage": "K18",
+      "returncode": 0,
+      "pass": 19,
+      "fail": 0
+    },
+    {
+      "stage": "K17",
+      "returncode": 0,
+      "pass": 21,
+      "fail": 0
+    }
+  ]
+}

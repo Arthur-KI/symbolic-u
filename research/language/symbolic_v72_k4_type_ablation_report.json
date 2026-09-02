@@ -1,0 +1,228 @@
+{
+  "version": "v7.2-K4-concrete-port-type-ablation",
+  "result": "PASS",
+  "checks": {
+    "frozen_K3_base_is_green": true,
+    "K4_no_concrete_type_names_in_learned_type_ids": true,
+    "K4_port_role_equivalence_recovers_expected_anonymous_classes": true,
+    "K4_shared_occupants_merge_process_and_attribute_first_ports": true,
+    "K4_shared_occupants_merge_possession_and_location_first_ports": true,
+    "K4_second_ports_remain_distinct_without_evidence_of_equivalence": true,
+    "K4_all_training_facts_validate_using_only_anonymous_types": true,
+    "K4_two_observations_activate_novel_member_for_cross_port_reuse": true,
+    "K4_novel_object_member_activates": true,
+    "K4_single_observation_stays_staged_and_cannot_cross_port_transfer": true,
+    "K4_duplicate_evidence_cannot_activate_membership": true,
+    "K4_symbol_can_be_multi_typed_without_forced_merge": true,
+    "K4_ambiguous_relation_query_stays_multi_candidate": true,
+    "K4_pure_binary_topology_without_relation_identity_is_non_identifiable": true,
+    "K4_formal_anonymous_relation_port_provenance_rescues_type_identity": true,
+    "K4_anonymous_K2_actions_acquire_reusable_T_membership": true,
+    "K4_Grimm_POT_Akochen_fact_valid_without_ENTITY_ACTION_names": true,
+    "K4_Grimm_remove_process_family_remains_structurally_available": true
+  },
+  "anonymous_types": {
+    "T1": [
+      [
+        "P1",
+        0
+      ],
+      [
+        "P2",
+        0
+      ]
+    ],
+    "T2": [
+      [
+        "P1",
+        1
+      ]
+    ],
+    "T3": [
+      [
+        "P2",
+        1
+      ]
+    ],
+    "T4": [
+      [
+        "P3",
+        0
+      ],
+      [
+        "P4",
+        0
+      ]
+    ],
+    "T5": [
+      [
+        "P3",
+        1
+      ]
+    ],
+    "T6": [
+      [
+        "P4",
+        1
+      ]
+    ]
+  },
+  "accepted_bridges": [
+    {
+      "a": [
+        "P1",
+        0
+      ],
+      "b": [
+        "P2",
+        0
+      ],
+      "shared_symbols": [
+        "GATE",
+        "LAMP",
+        "MACHINE",
+        "WHEEL"
+      ],
+      "coverage_a": 1.0,
+      "coverage_b": 1.0
+    },
+    {
+      "a": [
+        "P3",
+        0
+      ],
+      "b": [
+        "P4",
+        0
+      ],
+      "shared_symbols": [
+        "ANNA",
+        "BEN",
+        "CARA",
+        "GIRL"
+      ],
+      "coverage_a": 1.0,
+      "coverage_b": 1.0
+    }
+  ],
+  "evaluator_only_expected": {
+    "MACHINE_ENTITY": {
+      "ports": [
+        [
+          "P1",
+          0
+        ],
+        [
+          "P2",
+          0
+        ]
+      ],
+      "type": "T1"
+    },
+    "ACTION": {
+      "ports": [
+        [
+          "P1",
+          1
+        ]
+      ],
+      "type": "T2"
+    },
+    "ATTRIBUTE_VALUE": {
+      "ports": [
+        [
+          "P2",
+          1
+        ]
+      ],
+      "type": "T3"
+    },
+    "PERSON_ENTITY": {
+      "ports": [
+        [
+          "P3",
+          0
+        ],
+        [
+          "P4",
+          0
+        ]
+      ],
+      "type": "T4"
+    },
+    "OBJECT": {
+      "ports": [
+        [
+          "P3",
+          1
+        ]
+      ],
+      "type": "T5"
+    },
+    "PLACE": {
+      "ports": [
+        [
+          "P4",
+          1
+        ]
+      ],
+      "type": "T6"
+    }
+  },
+  "lifecycle": {
+    "dora_active_types": [
+      "T4"
+    ],
+    "dora_cross_port_reuse": true,
+    "erin_active_types": [],
+    "erin_cross_port_reuse": false,
+    "duplicate_status": "STAGED",
+    "x_active_types": [
+      "T5",
+      "T6"
+    ],
+    "yx_relation_candidates": [
+      "P3",
+      "P4"
+    ]
+  },
+  "identifiability": {
+    "pure_binary_collision": true,
+    "pure_resolution": null,
+    "formal_relation_port_rescue": true,
+    "finding": "If relation identity, semantic type names, surface provenance, and occupant overlap are all removed, binary port-1 roles with identical coarse topology are not identifiable. Anonymous relation-port provenance is sufficient to distinguish them without semantic type labels."
+  },
+  "grimm": {
+    "anonymous_kochen_action": "A2",
+    "pot_types": [
+      "T1"
+    ],
+    "process_fact_valid": true,
+    "remove_process_family": "R25"
+  },
+  "search": {
+    "ports": 8,
+    "pair_comparisons": 28,
+    "accepted_bridges": 2,
+    "bridge_min_symbols": 2,
+    "bridge_min_coverage": 0.75,
+    "type_classes": 6,
+    "max_component_size": 2
+  },
+  "interpretation": [
+    "K4 removes the concrete type names ENTITY, PERSON, PLACE, OBJECT, STATE, and ACTION from the new port-type layer.",
+    "Anonymous T-classes are induced from repeated shared occupancy of anonymous relation ports.",
+    "Two relation ports are merged only when at least two distinct symbols occupy both roles and the overlap covers at least 75% of each observed role population; this conservative gate rejects sparse polymorphic overlap.",
+    "Symbols can acquire reusable anonymous type membership through repeated evidence; single or duplicate evidence does not license cross-port transfer.",
+    "A symbol may legitimately acquire two incompatible T-memberships; the system preserves ambiguity rather than merging the type classes.",
+    "The K2 anonymous A-symbols and K3 anonymous P-relations remain usable with T-symbols, including the Grimm process fact P(POT,A_kochen).",
+    "A genuine non-identifiability boundary appears when all relation identity/provenance and semantic typing are removed: multiple binary roles can become observationally isomorphic."
+  ],
+  "caveats": [
+    "Entity and lexical symbol identities are still supplied constants.",
+    "The generic type-induction gate uses a hand-set threshold of two distinct shared occupants.",
+    "The learner uses anonymous relation-port provenance P#:port as formal evidence; K4 shows concrete semantic type names are unnecessary, not that all structural provenance can be removed.",
+    "Type membership induction is based on observed port incidence, not perceptual grounding.",
+    "The full free-text parser is not retrained from scratch under T-symbols in this PoC; frozen earlier language U are treated as already learned content while only their type layer is ablated."
+  ]
+}

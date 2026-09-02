@@ -1,0 +1,152 @@
+{
+  "version": "v6.8-c15-surface-paraphrases",
+  "result": "PASS",
+  "checks": {
+    "frozen_v67_base_stays_green": true,
+    "C15_learns_rules_for_four_primitive_delta_types": true,
+    "C15_all_surface_rules_zero_conflict_on_training": true,
+    "C15_frozen_paraphrases_transfer": true,
+    "C15_adversarial_minimal_pairs_unknown": true,
+    "C15_mixed_story_grounding_and_state_update": true,
+    "C15_handoff_matches_existing_C14_stop_family": true,
+    "C15_distinct_stop_paraphrases_support_same_opaque_family": true,
+    "grimm_auf_zu_kochen_surface_maps_to_STOP": true
+  },
+  "rules": [
+    {
+      "delta": "STOP",
+      "required": [
+        "CESSATIVE_PERIPH"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ],
+      "support": 1,
+      "conflict": 0
+    },
+    {
+      "delta": "STOP",
+      "required": [
+        "LEX_CEASE"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ],
+      "support": 1,
+      "conflict": 0
+    },
+    {
+      "delta": "STOP",
+      "required": [
+        "NEG_MORE"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ],
+      "support": 1,
+      "conflict": 0
+    },
+    {
+      "delta": "STOP",
+      "required": [
+        "OUTWARD"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ],
+      "support": 1,
+      "conflict": 0
+    },
+    {
+      "delta": "START",
+      "required": [
+        "INCHOATIVE_PERIPH"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ],
+      "support": 3,
+      "conflict": 0
+    },
+    {
+      "delta": "START",
+      "required": [
+        "PARTICLE_ON"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ],
+      "support": 1,
+      "conflict": 0
+    },
+    {
+      "delta": "ENTER",
+      "required": [
+        "INWARD"
+      ],
+      "slot_types": [
+        "PERSON",
+        "PLACE"
+      ],
+      "support": 2,
+      "conflict": 0
+    },
+    {
+      "delta": "ENTER",
+      "required": [
+        "ENTER_LEX"
+      ],
+      "slot_types": [
+        "PERSON",
+        "PLACE"
+      ],
+      "support": 1,
+      "conflict": 0
+    },
+    {
+      "delta": "LEAVE",
+      "required": [
+        "OUTWARD"
+      ],
+      "slot_types": [
+        "PERSON",
+        "PLACE"
+      ],
+      "support": 2,
+      "conflict": 0
+    },
+    {
+      "delta": "LEAVE",
+      "required": [
+        "LEAVE_LEX"
+      ],
+      "slot_types": [
+        "PERSON",
+        "PLACE"
+      ],
+      "support": 1,
+      "conflict": 0
+    }
+  ],
+  "c14_handoff": {
+    "family": "R18",
+    "expected": "R18"
+  },
+  "grimm": {
+    "clauses": 2,
+    "stop_recall": 2
+  },
+  "caveats": [
+    "Cue extraction remains supplied symbolic infrastructure.",
+    "Only STOP/START/ENTER/LEAVE are covered.",
+    "Primitive ACTIVE/AT and slot types remain fixed ontology anchors.",
+    "C15 training is supervised by primitive delta labels.",
+    "This is controlled German paraphrase learning, not unrestricted parsing."
+  ]
+}

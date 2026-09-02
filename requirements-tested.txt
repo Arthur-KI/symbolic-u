@@ -1,0 +1,5 @@
+# Versions used for the repository verification build on 2026-09-02.
+# Exact availability can vary by Python/platform.
+numpy==2.3.5
+Pillow==12.3.0
+opencv-python-headless==4.13.0.92

@@ -1,0 +1,146 @@
+{
+  "version": "v7.4-K6-learned-persistence",
+  "result": "PASS",
+  "checks": {
+    "frozen_K5_base_is_green": true,
+    "K6_P1_to_P4_learn_active_anonymous_persistence_modes": true,
+    "K6_same_coarse_binary_P5_does_not_acquire_persistence": true,
+    "K6_frozen_new_constants_transfer_by_relation_policy": true,
+    "K6_unrelated_relation_does_not_block_persistence": true,
+    "K6_same_relation_same_first_new_second_blocks_old_key": true,
+    "K6_new_replacement_value_itself_persists": true,
+    "K6_different_first_argument_does_not_block": true,
+    "K6_query_calls_do_not_add_learning_evidence": true,
+    "K6_duplicate_evidence_cannot_activate_persistence": true,
+    "K6_later_conflict_challenges_active_persistence": true,
+    "K6_endpoint_only_gap_is_non_identifiable": true,
+    "K6_endpoint_only_data_does_not_license_persistence": true,
+    "K6_explicit_midpoint_continuity_evidence_can_activate_persistence": true,
+    "K6_same_arity_same_coarse_occupants_are_separated_by_temporal_evidence": true,
+    "K6_Grimm_process_persists_before_O3": true,
+    "K6_Grimm_O3_boundary_stops_old_persistence_interval": true,
+    "K6_Grimm_new_cook_observation_starts_new_interval": true
+  },
+  "modes": {
+    "P1": {
+      "mode_id": "M1",
+      "support": 3,
+      "conflict": 0,
+      "status": "ACTIVE"
+    },
+    "P2": {
+      "mode_id": "M4",
+      "support": 3,
+      "conflict": 0,
+      "status": "ACTIVE"
+    },
+    "P3": {
+      "mode_id": "M3",
+      "support": 3,
+      "conflict": 0,
+      "status": "ACTIVE"
+    },
+    "P4": {
+      "mode_id": "M2",
+      "support": 3,
+      "conflict": 0,
+      "status": "ACTIVE"
+    },
+    "P5": {
+      "mode_id": "M5",
+      "support": 0,
+      "conflict": 3,
+      "status": "REJECTED"
+    }
+  },
+  "identifiability": {
+    "endpoint_only_models": {
+      "PERSIST_THROUGH_GAP": {
+        "0": [
+          "('PZ', ('A', 'B'))"
+        ],
+        "1": [
+          "('PZ', ('A', 'B'))"
+        ],
+        "2": [
+          "('PZ', ('A', 'B'))"
+        ]
+      },
+      "DISAPPEAR_REAPPEAR": {
+        "0": [
+          "('PZ', ('A', 'B'))"
+        ],
+        "1": [],
+        "2": [
+          "('PZ', ('A', 'B'))"
+        ]
+      }
+    },
+    "same_explicit_endpoint_observations": true,
+    "endpoint_only_midgap_inference": [
+      0,
+      "NO_ACTIVE_PERSISTENCE_U"
+    ],
+    "after_explicit_midpoint_training": [
+      1,
+      "M1"
+    ],
+    "finding": "Positive observations at t0 and t2 with silence at t1 do not identify persistence. A persistence model and a disappear/reappear model fit exactly the same endpoint observations. Additional continuity evidence or an inductive bias is required."
+  },
+  "coarse_collision": {
+    "P1_profile": [
+      "BINARY",
+      2,
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "P5_profile": [
+      "BINARY",
+      2,
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "collision": true,
+    "P1_status": "ACTIVE",
+    "P5_status": "REJECTED",
+    "finding": "Two anonymous binary relations with the same coarse arity/occupant profile can learn different memory behavior from temporal supervision alone."
+  },
+  "grimm": {
+    "key": "('P1', ('POT', 'A2'))",
+    "before_stop": [
+      1,
+      "M1"
+    ],
+    "after_O3": [
+      0,
+      "BLOCKED_BY_ANONYMOUS_O3_TOMBSTONE"
+    ],
+    "restart": [
+      1,
+      "M1"
+    ]
+  },
+  "interpretation": [
+    "K6 removes universal fixed inertia from the new memory layer. Open-world default is no carry inference.",
+    "Anonymous relation-specific persistence modes M# are activated only by repeated independent midpoint continuity evidence.",
+    "A same-arity anonymous relation P5 does not persist because midpoint labels conflict with the carry hypothesis; port shape alone is insufficient.",
+    "Structural replacement of the same relation/first argument blocks an older key without semantic LOCATION/STATE knowledge.",
+    "Queries are read-only and duplicate evidence IDs cannot create support.",
+    "A later counterexample challenges an active persistence policy.",
+    "The Grimm process key P1(POT,A2) persists across unrelated material, is cut by the learned anonymous O3 disappearance boundary, and can begin a new interval after a later observation."
+  ],
+  "caveats": [
+    "K6 still receives explicit midpoint truth labels during persistence curriculum. Endpoint observations alone are proven insufficient by the identifiability audit.",
+    "The open-world default 'do not infer from silence' remains fixed kernel policy.",
+    "Exact Key identity and temporal order remain fixed and were already shown kernel-near in K5.",
+    "The blocker rule uses exact same-relation/same-first-argument replacement topology; more general persistence termination conditions should be learned as higher U.",
+    "The O3 tombstone in the Grimm audit is structural provenance from K5, not a named REMOVE semantic operation.",
+    "P5 is a controlled anonymous occurrence-like relation introduced specifically to test that persistence is not inferred from binary shape."
+  ]
+}

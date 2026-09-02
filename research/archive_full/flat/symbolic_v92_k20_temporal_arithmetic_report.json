@@ -1,0 +1,121 @@
+{
+  "version": "v9.2-K20-learned-temporal-arithmetic",
+  "result": "PASS",
+  "fixed_generic_arithmetic_substrate": [
+    "integer numeric identity",
+    "integer addition/subtraction/multiplication by observed count",
+    "numeric order"
+  ],
+  "learned_temporal_language": {
+    "cue_direction": {
+      "nach": 1,
+      "später": 1,
+      "vor": -1,
+      "vorher": -1
+    },
+    "unit_scale": {
+      "minute": 1,
+      "minuten": 1,
+      "stunde": 60,
+      "stunden": 60,
+      "tag": 1440,
+      "tage": 1440
+    },
+    "scale_classes": {
+      "1": [
+        "minute",
+        "minuten"
+      ],
+      "60": [
+        "stunde",
+        "stunden"
+      ],
+      "1440": [
+        "tag",
+        "tage"
+      ]
+    }
+  },
+  "frozen": {
+    "E0": "Result(state=1, contradiction=False, value=480, trace=('ANCHOR:a10', 'U05'))",
+    "E1": "Result(state=1, contradiction=False, value=600, trace=('ANCHOR:a10',))",
+    "E2": "Result(state=1, contradiction=False, value=780, trace=('ANCHOR:a10', 'U12'))",
+    "E3": "Result(state=1, contradiction=False, value=810, trace=('ANCHOR:a10', 'U12', 'U23'))",
+    "E4": "Result(state=1, contradiction=False, value=2250, trace=('ANCHOR:a10', 'U12', 'U23', 'U34'))",
+    "E1_before_E4": "Result(state=1, contradiction=False, value=None, trace=('600<2250',))",
+    "E2_exact": "Result(state=1, contradiction=False, value=780, trace=('ANCHOR:a10', 'U12', 'equals 780'))",
+    "E2_wrong_time": "Result(state=-1, contradiction=False, value=780, trace=('ANCHOR:a10', 'U12', 'proven time 780 != 840'))",
+    "conflict": "Result(state=0, contradiction=True, value=None, trace=('CX=660', 'CX=720'))",
+    "redundant": "Result(state=1, contradiction=False, value=660, trace=('ANCHOR:r0', 'R2', 'R3'))"
+  },
+  "intervals": {
+    "duration_2_hours": "Result(state=1, contradiction=False, value=120, trace=('600-480', '=2*60'))",
+    "duration_120_minutes": "Result(state=1, contradiction=False, value=120, trace=('600-480', '=120*1'))",
+    "duration_3_hours": "Result(state=-1, contradiction=False, value=120, trace=('600-480', '!=3*60'))",
+    "inside": "Result(state=1, contradiction=False, value=570, trace=('480<=570<=600',))",
+    "outside": "Result(state=-1, contradiction=False, value=630, trace=('630 outside [480,600]',))"
+  },
+  "state_reasoning": {
+    "before_leave": "Result(state=1, contradiction=False, value=600, trace=('latest ADD at 600',))",
+    "after_leave": "Result(state=-1, contradiction=False, value=720, trace=('latest REMOVE at 720',))",
+    "same_time_conflict": "Result(state=0, contradiction=True, value=1060, trace=('simultaneous conflicting state changes',))"
+  },
+  "backward_relevance": {
+    "disconnected_time_u": 5000,
+    "disconnected_opened": 0,
+    "query": "Result(state=1, contradiction=False, value=180, trace=('ANCHOR:root', 'D1', 'D2', 'D3'))"
+  },
+  "ablations": {
+    "without_absolute_anchor": "Result(state=0, contradiction=False, value=None, trace=('no absolute derivation for Q',))",
+    "relative_order_without_anchor": "Result(state=1, contradiction=False, value=None, trace=('positive offset 120',))",
+    "unit_scale_required": true,
+    "direction_required": true
+  },
+  "checks": {
+    "K20_cue_direction_is_learned_from_anchored_examples": true,
+    "K20_raw_unit_scales_are_learned_not_named_semantics": true,
+    "K20_inflected_units_cluster_by_equal_learned_scale": true,
+    "K20_absolute_plus_relative_chain_derives_E2": true,
+    "K20_chain_derives_E3": true,
+    "K20_day_offset_derives_E4": true,
+    "K20_before_offset_derives_E0": true,
+    "K20_exact_time_query_plus1": true,
+    "K20_different_proven_time_query_minus1": true,
+    "K20_before_from_derived_absolute_times": true,
+    "K20_unknown_cue_keeps_relative_U_and_time_zero": true,
+    "K20_unknown_unit_keeps_relative_U_and_time_zero": true,
+    "K20_conflicting_absolute_derivations_yield_contradiction": true,
+    "K20_redundant_consistent_derivations_do_not_contradict": true,
+    "K20_rejected_time_U_does_not_make_time_KEY_minus1": true,
+    "K20_interval_duration_2_hours_plus1": true,
+    "K20_same_duration_120_minutes_plus1": true,
+    "K20_wrong_duration_is_explicitly_negative": true,
+    "K20_during_inside_interval_plus1": true,
+    "K20_during_outside_interval_minus1": true,
+    "K20_latest_state_after_leave_is_minus1": true,
+    "K20_latest_state_before_leave_is_plus1": true,
+    "K20_equal_derived_times_can_expose_state_contradiction": true,
+    "K20_backward_time_query_ignores_5000_disconnected_time_U": true,
+    "K20_queries_are_read_only": true,
+    "K20_unit_scale_is_information_needed_for_mixed_units": true,
+    "K20_direction_is_information_needed_for_later_vs_before": true,
+    "K20_without_absolute_anchor_absolute_WHEN_is_zero": true,
+    "K20_without_absolute_anchor_relative_BEFORE_can_still_be_plus1": true
+  },
+  "interpretation": [
+    "Absolute and relative narrative time can be represented on top of the same minimal ORDER/IDENTITY/BACKWARD substrate when a generic numeric arithmetic substrate is available.",
+    "The language-specific meanings of later/before cues and minute/hour/day-like units are learned from anchored examples. The system is not given that 'hour' means 60 or 'day' means 1440 base ticks.",
+    "Raw inflectional variants such as stunde/stunden and tag/tage cluster because they independently acquire the same scale, not because a lemma table declares them identical.",
+    "Backward time solving starts at the queried event and walks only connected temporal constraints toward absolute anchors. Thousands of disconnected temporal U remain unopened.",
+    "A missing absolute anchor makes absolute WHEN unknown, but relative BEFORE can still be proved from a positive learned offset.",
+    "Conflicting independent time derivations produce KEY 0 with contradiction=True. A rejected temporal U alone leaves the time KEY unknown rather than negative.",
+    "The arithmetic timeline composes with latest-state reasoning: a later REMOVE proves an explicit negative state, while equal-time ADD/REMOVE produces contradiction."
+  ],
+  "caveats": [
+    "K20 assumes generic integer arithmetic as substrate. It does not yet test whether addition/multiplication themselves can be learned as recursive U.",
+    "The base temporal coordinate is evaluator-readable as minutes but is semantically just an integer tick.",
+    "Calendar complications such as months, leap years, daylight-saving transitions and timezone offsets are not tested.",
+    "Natural-language number parsing is not tested; the curriculum supplies integer counts.",
+    "The cue/unit learner uses controlled anchored examples and exact repeated ratios."
+  ]
+}

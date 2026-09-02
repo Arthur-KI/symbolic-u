@@ -1,0 +1,74 @@
+{
+  "reference": {
+    "V0_RECENCY": {
+      "correct": 7,
+      "n": 15,
+      "wrong_commit": 6,
+      "unknown": 2,
+      "adversarial_false_commits": 3
+    },
+    "V1_MORPH": {
+      "correct": 4,
+      "n": 15,
+      "wrong_commit": 0,
+      "unknown": 11,
+      "adversarial_false_commits": 0
+    },
+    "V2_ROLE": {
+      "correct": 11,
+      "n": 15,
+      "wrong_commit": 0,
+      "unknown": 4,
+      "adversarial_false_commits": 0
+    },
+    "V3_ROLE_SCENE": {
+      "correct": 13,
+      "n": 15,
+      "wrong_commit": 0,
+      "unknown": 2,
+      "adversarial_false_commits": 0
+    },
+    "V4_CLAUSE_SCENE": {
+      "correct": 15,
+      "n": 15,
+      "wrong_commit": 0,
+      "unknown": 0,
+      "adversarial_false_commits": 0
+    }
+  },
+  "event": {
+    "BAG": {
+      "predicted": [
+        "house",
+        "kitchen",
+        "second_house",
+        "street",
+        "world"
+      ],
+      "precision": 0.8,
+      "recall": 1.0,
+      "adv_false": true
+    },
+    "STRICT": {
+      "predicted": [
+        "house",
+        "kitchen"
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "adv_false": false
+    },
+    "CLAUSE_CHAIN": {
+      "predicted": [
+        "house",
+        "kitchen",
+        "second_house",
+        "street"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "adv_false": false
+    }
+  },
+  "caveat": "V3/V4 scene membership is oracle local-scene state; automatic raw scene extraction remains untested."
+}

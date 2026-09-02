@@ -1,0 +1,292 @@
+{
+  "version": "K25-v1-multi-sensor-selection",
+  "status": "PARTIAL_PASS_NEXT_BOTTLENECK_FOUND",
+  "interpretation": "Automatic non-neural sensor-selection benchmark. The conservative learned gate reduces false commits and sensor cost, but unseen combined disturbances still force many UNKNOWN answers; robust compositional sensor reliability is the next bottleneck.",
+  "train_variants": [
+    [],
+    [
+      "dark"
+    ],
+    [
+      "blur"
+    ],
+    [
+      "noise"
+    ],
+    [
+      "lowcontrast"
+    ],
+    [
+      "rotate"
+    ],
+    [
+      "occlude"
+    ],
+    [
+      "dark",
+      "blur"
+    ],
+    [
+      "dark",
+      "noise"
+    ],
+    [
+      "blur",
+      "noise"
+    ],
+    [
+      "lowcontrast",
+      "noise"
+    ],
+    [
+      "rotate",
+      "noise"
+    ],
+    [
+      "occlude",
+      "blur"
+    ]
+  ],
+  "blind_variants": [
+    [
+      "lowcontrast",
+      "blur"
+    ],
+    [
+      "rotate",
+      "dark"
+    ],
+    [
+      "occlude",
+      "noise"
+    ],
+    [
+      "dark",
+      "blur",
+      "noise"
+    ],
+    [
+      "lowcontrast",
+      "blur",
+      "noise"
+    ],
+    [
+      "rotate",
+      "lowcontrast"
+    ],
+    [
+      "occlude",
+      "dark"
+    ],
+    [
+      "rotate",
+      "occlude"
+    ],
+    [
+      "dark",
+      "occlude",
+      "noise"
+    ]
+  ],
+  "sensor_paths": [
+    "RAW",
+    "DENOISE",
+    "GAIN",
+    "CONSERVATIVE",
+    "OTSU_RGB",
+    "OTSU_CHROMA"
+  ],
+  "sensor_cost": {
+    "RAW": 1,
+    "DENOISE": 2,
+    "CONSERVATIVE": 2,
+    "GAIN": 3,
+    "OTSU_RGB": 4,
+    "OTSU_CHROMA": 5
+  },
+  "clean_calibration": {
+    "RAW": {
+      "count_scenes": 16,
+      "shape_map": {
+        "3": "triangle",
+        "4": "quadrilateral"
+      },
+      "color_tolerance": 20.0
+    },
+    "DENOISE": {
+      "count_scenes": 16,
+      "shape_map": {
+        "3": "triangle",
+        "4": "quadrilateral"
+      },
+      "color_tolerance": 20.0
+    },
+    "GAIN": {
+      "count_scenes": 16,
+      "shape_map": {
+        "3": "triangle",
+        "4": "quadrilateral"
+      },
+      "color_tolerance": 60.0
+    },
+    "CONSERVATIVE": {
+      "count_scenes": 16,
+      "shape_map": {
+        "3": "triangle",
+        "4": "quadrilateral"
+      },
+      "color_tolerance": 20.0
+    },
+    "OTSU_RGB": {
+      "count_scenes": 16,
+      "shape_map": {
+        "3": "triangle",
+        "4": "quadrilateral"
+      },
+      "color_tolerance": 20.0
+    },
+    "OTSU_CHROMA": {
+      "count_scenes": 16,
+      "shape_map": {
+        "3": "triangle",
+        "4": "quadrilateral"
+      },
+      "color_tolerance": 8.0
+    }
+  },
+  "anonymous_feature_thresholds": {
+    "F1": [
+      225.0,
+      243.884765625
+    ],
+    "F2": [
+      26.997851232412838,
+      46.95961923722639
+    ],
+    "F3": [
+      38.8092041015625,
+      2963.6606902327476
+    ],
+    "F4": [
+      0.007568359375,
+      8.805335998535156
+    ],
+    "F5": [
+      0.0037994384765625,
+      0.17829513549804688
+    ],
+    "F6": [
+      24.80551528930664,
+      42.923057556152344
+    ]
+  },
+  "trust_u_count": 113,
+  "best_fixed_sensor_per_query": {
+    "total": "DENOISE",
+    "triangle": "CONSERVATIVE",
+    "quadrilateral": "CONSERVATIVE",
+    "red": "OTSU_CHROMA",
+    "blue": "OTSU_CHROMA",
+    "green": "OTSU_CHROMA",
+    "red_quadrilateral": "OTSU_CHROMA",
+    "red_triangle": "OTSU_CHROMA",
+    "blue_quadrilateral": "OTSU_CHROMA",
+    "blue_triangle": "OTSU_CHROMA",
+    "green_quadrilateral": "OTSU_CHROMA",
+    "green_triangle": "OTSU_CHROMA"
+  },
+  "metrics": {
+    "gate": {
+      "n": 432,
+      "correct": 150,
+      "false_commits": 11,
+      "unknown": 271,
+      "coverage": 0.3726851851851852,
+      "conditional_accuracy": 0.9316770186335404,
+      "overall_correct_rate": 0.3472222222222222,
+      "total_sensor_cost": 902,
+      "mean_sensor_cost": 2.087962962962963
+    },
+    "fixed": {
+      "n": 432,
+      "correct": 361,
+      "false_commits": 71,
+      "unknown": 0,
+      "coverage": 1.0,
+      "conditional_accuracy": 0.8356481481481481,
+      "overall_correct_rate": 0.8356481481481481,
+      "total_sensor_cost": 1836,
+      "mean_sensor_cost": 4.25
+    },
+    "all": {
+      "n": 432,
+      "correct": 262,
+      "false_commits": 64,
+      "unknown": 106,
+      "coverage": 0.7546296296296297,
+      "conditional_accuracy": 0.803680981595092,
+      "overall_correct_rate": 0.6064814814814815,
+      "total_sensor_cost": 7344,
+      "mean_sensor_cost": 17.0
+    }
+  },
+  "sensor_usage": {
+    "blue|OTSU_RGB": 8,
+    "blue_quadrilateral|GAIN": 9,
+    "blue_triangle|OTSU_CHROMA": 14,
+    "green|CONSERVATIVE": 8,
+    "green|DENOISE": 2,
+    "green|OTSU_CHROMA": 10,
+    "green|OTSU_RGB": 13,
+    "green|RAW": 8,
+    "green_quadrilateral|CONSERVATIVE": 8,
+    "green_quadrilateral|DENOISE": 2,
+    "green_quadrilateral|OTSU_CHROMA": 18,
+    "green_quadrilateral|RAW": 8,
+    "green_triangle|CONSERVATIVE": 8,
+    "green_triangle|OTSU_CHROMA": 9,
+    "green_triangle|OTSU_RGB": 9,
+    "green_triangle|RAW": 8,
+    "quadrilateral|CONSERVATIVE": 30,
+    "quadrilateral|DENOISE": 30,
+    "red_quadrilateral|CONSERVATIVE": 9,
+    "red_quadrilateral|OTSU_CHROMA": 3,
+    "red_quadrilateral|RAW": 9,
+    "total|CONSERVATIVE": 36,
+    "total|DENOISE": 12,
+    "total|RAW": 12,
+    "triangle|CONSERVATIVE": 35,
+    "triangle|DENOISE": 30,
+    "triangle|OTSU_RGB": 5
+  },
+  "rejected_u_audit": {
+    "u": {
+      "uid": "TRUST_BAD",
+      "state": -1,
+      "sensor": "RAW",
+      "query": "total"
+    },
+    "answer_key_state": 0
+  },
+  "checks": {
+    "K25_no_neural_sensor_path": true,
+    "K25_blind_disturbance_combinations_absent_from_training": true,
+    "K25_blind_source_images_not_used_for_rule_induction": true,
+    "K25_learner_features_are_anonymous_F1_to_F6": true,
+    "K25_confirmed_TRUST_U_have_zero_training_conflicts": true,
+    "K25_multiple_sensor_paths_survive_learning": true,
+    "K25_query_context_changes_sensor_usage": true,
+    "K25_gate_reduces_false_commits_vs_fixed_best_sensor": true,
+    "K25_gate_uses_less_sensor_cost_than_fixed_best_sensor": true,
+    "K25_gate_uses_far_less_cost_than_all_sensors": true,
+    "K25_hard_unseen_combinations_can_remain_UNKNOWN": true,
+    "K25_rejected_TRUST_U_does_not_make_answer_KEY_minus1": true
+  },
+  "caveats": [
+    "All input scenes remain synthetic geometric images.",
+    "The six sensor paths share some low-level OpenCV operations and are not statistically independent physical sensors.",
+    "The selection learner uses anonymous global image measurements F1..F6 and zero-conflict trust rules; it does not receive disturbance names.",
+    "The blind stress set holds out disturbance combinations, not the primitive disturbance families themselves.",
+    "High UNKNOWN rate is intentional under the current ternary safety policy and shows the selector has not solved compositional sensor reliability yet."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": "v7.1b-K3-identifiability-lifecycle-audit",
+  "result": "PASS",
+  "checks": {
+    "K3b_two_supports_keep_relation_STAGED": true,
+    "K3b_third_independent_support_activates_relation": true,
+    "K3b_duplicate_evidence_id_cannot_activate_relation": true,
+    "K3b_new_incompatible_motif_challenges_frozen_relation": true,
+    "K3b_minimal_form_features_rescue_process": true,
+    "K3b_minimal_form_features_rescue_possession": true,
+    "K3b_too_coarse_copula_feature_does_not_force_attribute": true,
+    "K3b_extended_pure_form_features_resolve_all_four_relations": true,
+    "K3b_unseen_nondiagnostic_form_remains_UNKNOWN": true
+  },
+  "lifecycle": {
+    "after_two": "STAGED",
+    "after_three": "ACTIVE",
+    "duplicate_support_count": 1,
+    "after_unseen_motif": "CHALLENGED"
+  },
+  "formal_rescue": {
+    "minimal_rules": {
+      "P1": "F:A_LEXEME",
+      "P4": "F:PREPOSITIONAL",
+      "P3": "F:HABEN",
+      "P2": null
+    },
+    "minimal_resolutions": {
+      "process": "P1",
+      "location": "P4",
+      "possession": "P3",
+      "attribute": null
+    },
+    "extended_rules": {
+      "P1": "F:A_LEXEME",
+      "P4": "F:COPULA_PP",
+      "P3": "F:HABEN",
+      "P2": "F:COPULA_NONPP"
+    },
+    "extended_resolutions": {
+      "process": "P1",
+      "location": "P4",
+      "possession": "P3",
+      "attribute": "P2"
+    },
+    "unknown_sentence": null
+  },
+  "interpretation": [
+    "Relation schemas follow the same STAGED-to-ACTIVE evidence discipline as other learned U: two supports are insufficient when the gate is three.",
+    "Repeated identical evidence cannot fake independence, and a new incompatible motif challenges a frozen relation schema.",
+    "Very small formal surface features can recover some anonymous relation identity without semantic relation names or semantic port types.",
+    "A deliberately too-coarse feature language fails on copular location versus attribute usage; the safe result is UNKNOWN.",
+    "Adding a purely syntactic distinction, copula+PP versus copula without PP, resolves that collision without reintroducing AT/STATE labels."
+  ]
+}

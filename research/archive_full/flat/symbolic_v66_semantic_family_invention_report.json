@@ -1,0 +1,394 @@
+{
+  "version": "v6.6-autonomous-semantic-family-invention",
+  "result": "PASS",
+  "checks": {
+    "frozen_v65_base_stays_green": true,
+    "C13_invents_seven_distinct_anonymous_families": true,
+    "C13_all_family_heads_are_anonymous": true,
+    "C13_each_family_cross_domain_support_at_least_three": true,
+    "C13_family_invention_does_not_use_token_identity": true,
+    "C13_all_seven_heldout_tokens_stage_then_activate": true,
+    "C13_all_heldout_tokens_choose_correct_invented_family": true,
+    "C13_active_meanings_reuse_on_new_arguments": true,
+    "C13_family_conflict_challenges_active_lexical_meaning": true,
+    "C13_no_state_delta_creates_no_family_entry": true,
+    "C13_duplicate_evidence_id_cannot_activate": true,
+    "C13_semantic_recognition_does_not_mutate_world": true,
+    "grimm_two_steh_evidence_occurrences_found": true,
+    "grimm_first_steh_staged_second_active": true,
+    "grimm_steh_selects_independently_invented_remove_ACTIVE_family": true,
+    "grimm_steh_reuses_on_new_target_action": true,
+    "frozen_novel_transitions_classify_all_seven_families": true
+  },
+  "families": {
+    "R11": {
+      "signature": {
+        "removed": [
+          [
+            "ACTIVE",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ],
+        "added": []
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "kem",
+        "nax",
+        "rul"
+      ]
+    },
+    "R12": {
+      "signature": {
+        "removed": [
+          [
+            "AT",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ],
+        "added": []
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "fud",
+        "raq",
+        "vek"
+      ]
+    },
+    "R13": {
+      "signature": {
+        "removed": [
+          [
+            "HAVE",
+            [
+              "S0",
+              "S2"
+            ]
+          ]
+        ],
+        "added": [
+          [
+            "HAVE",
+            [
+              "S1",
+              "S2"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "jop",
+        "tir",
+        "wex"
+      ]
+    },
+    "R14": {
+      "signature": {
+        "removed": [
+          [
+            "STATE",
+            [
+              "S0",
+              "V0"
+            ]
+          ]
+        ],
+        "added": [
+          [
+            "STATE",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "duk",
+        "fep",
+        "pol"
+      ]
+    },
+    "R15": {
+      "signature": {
+        "removed": [],
+        "added": [
+          [
+            "ACTIVE",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "dax",
+        "miv",
+        "sop"
+      ]
+    },
+    "R16": {
+      "signature": {
+        "removed": [],
+        "added": [
+          [
+            "AT",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "lom",
+        "pud",
+        "zef"
+      ]
+    },
+    "R17": {
+      "signature": {
+        "removed": [],
+        "added": [
+          [
+            "HAVE",
+            [
+              "S0",
+              "S1"
+            ]
+          ]
+        ]
+      },
+      "support": 3,
+      "domains": 3,
+      "tokens": [
+        "bim",
+        "gax",
+        "qus"
+      ]
+    }
+  },
+  "evaluator_only_mapping": {
+    "START": "R15",
+    "STOP": "R11",
+    "ENTER": "R16",
+    "LEAVE": "R12",
+    "TRANSFER": "R13",
+    "GAIN": "R17",
+    "CHANGE": "R14"
+  },
+  "heldout_lifecycle": {
+    "START": {
+      "after_first": [
+        "STAGED",
+        1,
+        "R15"
+      ],
+      "after_second": [
+        "ACTIVE",
+        2,
+        "R15"
+      ],
+      "reuse": [
+        "R15",
+        [
+          "WHEEL",
+          "TURN"
+        ]
+      ]
+    },
+    "STOP": {
+      "after_first": [
+        "STAGED",
+        1,
+        "R11"
+      ],
+      "after_second": [
+        "ACTIVE",
+        2,
+        "R11"
+      ],
+      "reuse": [
+        "R11",
+        [
+          "WHEEL",
+          "TURN"
+        ]
+      ]
+    },
+    "ENTER": {
+      "after_first": [
+        "STAGED",
+        1,
+        "R16"
+      ],
+      "after_second": [
+        "ACTIVE",
+        2,
+        "R16"
+      ],
+      "reuse": [
+        "R16",
+        [
+          "BEN",
+          "HOUSE"
+        ]
+      ]
+    },
+    "LEAVE": {
+      "after_first": [
+        "STAGED",
+        1,
+        "R12"
+      ],
+      "after_second": [
+        "ACTIVE",
+        2,
+        "R12"
+      ],
+      "reuse": [
+        "R12",
+        [
+          "BEN",
+          "HOUSE"
+        ]
+      ]
+    },
+    "TRANSFER": {
+      "after_first": [
+        "STAGED",
+        1,
+        "R13"
+      ],
+      "after_second": [
+        "ACTIVE",
+        2,
+        "R13"
+      ],
+      "reuse": [
+        "R13",
+        [
+          "CARA",
+          "ANNA",
+          "COIN"
+        ]
+      ]
+    },
+    "GAIN": {
+      "after_first": [
+        "STAGED",
+        1,
+        "R17"
+      ],
+      "after_second": [
+        "ACTIVE",
+        2,
+        "R17"
+      ],
+      "reuse": [
+        "R17",
+        [
+          "BOY",
+          "BOOK"
+        ]
+      ]
+    },
+    "CHANGE": {
+      "after_first": [
+        "STAGED",
+        1,
+        "R14"
+      ],
+      "after_second": [
+        "ACTIVE",
+        2,
+        "R14"
+      ],
+      "reuse": [
+        "R14",
+        [
+          "GATE",
+          "OPEN_STATE"
+        ]
+      ]
+    }
+  },
+  "grimm": {
+    "steh_occurrences": [
+      {
+        "evidence_id": "grimm-1",
+        "token": "steh",
+        "family": "R11",
+        "status": "STAGED",
+        "support": 1,
+        "pre_action": "COOK",
+        "cease": [
+          "POT",
+          "COOK"
+        ]
+      },
+      {
+        "evidence_id": "grimm-3",
+        "token": "steh",
+        "family": "R11",
+        "status": "ACTIVE",
+        "support": 2,
+        "pre_action": "COOK",
+        "cease": [
+          "POT",
+          "COOK"
+        ]
+      }
+    ],
+    "entry": {
+      "token": "steh",
+      "family": "R11",
+      "status": "ACTIVE",
+      "support": 2,
+      "evidence_ids": [
+        "grimm-1",
+        "grimm-3"
+      ]
+    },
+    "matches_remove_active_family": true,
+    "reuse": [
+      "R11",
+      [
+        "LAMP",
+        "LIGHT"
+      ]
+    ]
+  },
+  "interpretation": [
+    "The learner is not told that C13 is a STOP task; it clusters canonical before/after state-delta topologies and invents anonymous family heads.",
+    "Seven different transition families emerge from recurring cross-domain state changes.",
+    "Opaque lexical tokens are learned as members of one invented family via STAGED-to-ACTIVE lifecycle.",
+    "Frozen Grimm steh selects the already independently invented remove-ACTIVE topology after two distinct evidence occurrences.",
+    "Semantic family recognition never mutates WORLD state by itself."
+  ],
+  "caveats": [
+    "Primitive state predicates ACTIVE, AT, HAVE, STATE are fixed symbolic anchors.",
+    "The delta canonicalizer is an OS prior, not learned from text.",
+    "Family training is synthetic symbolic experience, not raw German family discovery.",
+    "Family recurrence and lexical activation thresholds are hand-set.",
+    "The two Grimm supports are distinct occurrences in one story, not two independent stories.",
+    "Automatic extraction of arbitrary state deltas from free German remains open."
+  ]
+}

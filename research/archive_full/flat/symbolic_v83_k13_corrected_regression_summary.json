@@ -1,0 +1,47 @@
+{
+  "K13": {
+    "pass": 14,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K12": {
+    "pass": 21,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K11b": {
+    "pass": 10,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K11": {
+    "pass": 11,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K8": {
+    "pass": 13,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K9": {
+    "pass": 20,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K10": {
+    "pass": 15,
+    "fail": 0,
+    "returncode": 0
+  },
+  "FrauHolle": {
+    "pass": "26/26",
+    "false_commits": 0,
+    "note": "all 6 harness checks and all 26 gold lines passed before read-only report write"
+  },
+  "K7": {
+    "pass": 11,
+    "fail": 0,
+    "note": "all checks passed before read-only report write"
+  }
+}

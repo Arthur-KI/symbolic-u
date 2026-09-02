@@ -1,0 +1,38 @@
+{
+  "version": "v8.0b-K10-full-raw-foreign-story",
+  "result": "PASS",
+  "events": [
+    "Event(head='Z1', args=('OLD_WOMAN', 'GIRL', 'POT'), evidence='raw-k10-give@223', source_lexeme='schenken')",
+    "Event(head='Z2', args=('GIRL',), evidence='raw-k10-home@1055', source_lexeme='kommen_heim')"
+  ],
+  "expected": [
+    [
+      "Z1",
+      [
+        "OLD_WOMAN",
+        "GIRL",
+        "POT"
+      ]
+    ],
+    [
+      "Z2",
+      [
+        "GIRL"
+      ]
+    ]
+  ],
+  "checks": {
+    "K10b_full_raw_foreign_story_finds_exact_two_supported_events": true,
+    "K10b_no_extra_supported_event_false_commit": true,
+    "K10b_no_online_learning": true
+  },
+  "interpretation": [
+    "The entire unchanged Sweet-Porridge text is scanned with the frozen K10 library learned from text-to-world correlations rather than event labels or event tuples.",
+    "Exactly the two supported cross-story events are recovered and no extra supported event is committed.",
+    "No target-story learning or revision occurs."
+  ],
+  "caveats": [
+    "Reference resolution and local clause isolation remain frozen structural substrate.",
+    "Only K10-learned supported lexical families are scanned; this is not a full semantic parse of the tale."
+  ]
+}

@@ -1,0 +1,5 @@
+target,base_candidates,recursive_candidates,candidate_pairs,verifier_accepted,verifier_rejected_pct,full_evaluated,train_support,train_conflict,unseen_passed,unseen_n,mode
+SUB,55,3026,18156,988,94.56,24,36,0,12,12,WELL_FOUNDED_DECREASE
+MUL,1160,1428,19992,192,99.04,24,49,0,10,10,WELL_FOUNDED_DECREASE
+PATH,1,4,4,4,0.0,4,32,0,168,168,FINITE_TRAVERSAL
+PATH_COST,1,19,19,14,26.32,14,32,0,80,80,FINITE_TRAVERSAL

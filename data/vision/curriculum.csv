@@ -1,0 +1,17 @@
+filename,target_background,target_color,target_shape,target_count
+train_01.png,white,red,triangle,1
+train_02.png,white,red,triangle,2
+train_03.png,white,red,quadrilateral,1
+train_04.png,white,red,quadrilateral,2
+train_05.png,white,blue,triangle,1
+train_06.png,white,blue,quadrilateral,1
+train_07.png,white,green,triangle,1
+train_08.png,white,green,quadrilateral,1
+train_09.png,white,blue,triangle,3
+train_10.png,white,green,quadrilateral,3
+train_11.png,white,red,triangle,4
+train_12.png,white,blue,quadrilateral,4
+train_13.png,lightgray,red,triangle,1
+train_14.png,lightgray,blue,quadrilateral,2
+train_15.png,lightgray,green,triangle,3
+train_16.png,lightgray,red,quadrilateral,4

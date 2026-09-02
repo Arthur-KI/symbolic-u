@@ -1,0 +1,292 @@
+{
+  "version": "v6.9-K1-C16-final",
+  "result": "PASS",
+  "main_checks": {
+    "frozen_v68_base_stays_green": true,
+    "K1_forbidden_semantic_surface_cues_are_absent": true,
+    "K1_learns_all_four_primitive_transition_classes": true,
+    "K1_all_selected_rules_zero_conflict_on_training": true,
+    "K1_frozen_transfer_without_named_semantic_cues": true,
+    "K1_adversarial_minimal_pairs_and_typed_polysemy": true,
+    "K1_state_integration_remains_correct": true,
+    "K1_handoff_matches_existing_C14_anonymous_stop_family": true,
+    "K1_three_distinct_raw_surface_patterns_support_same_opaque_family": true,
+    "K1_Grimm_cessation_clause_works_via_form_features": true,
+    "K1_bounded_rule_search_remains_tractable": true,
+    "K1_long_frozen_mix_does_not_mutate_rules": true
+  },
+  "main_passed": 12,
+  "main_n": 12,
+  "search": {
+    "total_zero_conflict_candidates": 976,
+    "max_equal_best_tie_count": 2,
+    "cover_steps_with_equal_best": 3,
+    "selected_rule_count": 11
+  },
+  "selected_rules": [
+    {
+      "delta": "STOP",
+      "required": [
+        "L:erlöschen"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ]
+    },
+    {
+      "delta": "STOP",
+      "required": [
+        "L:auf",
+        "L:zu"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ]
+    },
+    {
+      "delta": "STOP",
+      "required": [
+        "L:mehr",
+        "M:NEG"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ]
+    },
+    {
+      "delta": "STOP",
+      "required": [
+        "L:aus",
+        "L:gehen"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ]
+    },
+    {
+      "delta": "START",
+      "required": [
+        "L:an",
+        "L:zu"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ]
+    },
+    {
+      "delta": "START",
+      "required": [
+        "L:an",
+        "L:gehen"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ]
+    },
+    {
+      "delta": "START",
+      "required": [
+        "L:beginnen",
+        "L:zu"
+      ],
+      "slot_types": [
+        "ENTITY",
+        "ACTION"
+      ]
+    },
+    {
+      "delta": "ENTER",
+      "required": [
+        "L:gehen",
+        "M:PREP_IN_ACC"
+      ],
+      "slot_types": [
+        "PERSON",
+        "PLACE"
+      ]
+    },
+    {
+      "delta": "ENTER",
+      "required": [
+        "L:betreten"
+      ],
+      "slot_types": [
+        "PERSON",
+        "PLACE"
+      ]
+    },
+    {
+      "delta": "LEAVE",
+      "required": [
+        "L:aus",
+        "L:gehen"
+      ],
+      "slot_types": [
+        "PERSON",
+        "PLACE"
+      ]
+    },
+    {
+      "delta": "LEAVE",
+      "required": [
+        "L:verlassen"
+      ],
+      "slot_types": [
+        "PERSON",
+        "PLACE"
+      ]
+    }
+  ],
+  "robustness": {
+    "passed": 12,
+    "n": 12,
+    "cases": [
+      {
+        "text": "Das Rad hörte auf zu drehen.",
+        "pred": "STOP",
+        "gold": "STOP",
+        "pass": true
+      },
+      {
+        "text": "Zu drehen hört das Rad auf.",
+        "pred": "STOP",
+        "gold": "STOP",
+        "pass": true
+      },
+      {
+        "text": "Ben ging in das Haus.",
+        "pred": "ENTER",
+        "gold": "ENTER",
+        "pass": true
+      },
+      {
+        "text": "Ben ging in dem Haus.",
+        "pred": null,
+        "gold": null,
+        "pass": true
+      },
+      {
+        "text": "Ben betrat den Garten.",
+        "pred": "ENTER",
+        "gold": "ENTER",
+        "pass": true
+      },
+      {
+        "text": "Cara verließ das Haus.",
+        "pred": "LEAVE",
+        "gold": "LEAVE",
+        "pass": true
+      },
+      {
+        "text": "Cara ging aus dem Haus.",
+        "pred": "LEAVE",
+        "gold": "LEAVE",
+        "pass": true
+      },
+      {
+        "text": "Das Tor ging aus.",
+        "pred": "STOP",
+        "gold": "STOP",
+        "pass": true
+      },
+      {
+        "text": "Die Lampe erlosch.",
+        "pred": "STOP",
+        "gold": "STOP",
+        "pass": true
+      },
+      {
+        "text": "Die Maschine begann zu laufen.",
+        "pred": "START",
+        "gold": "START",
+        "pass": true
+      },
+      {
+        "text": "Die Lampe fing an zu leuchten.",
+        "pred": "START",
+        "gold": "START",
+        "pass": true
+      },
+      {
+        "text": "Anna schaut ins Haus.",
+        "pred": null,
+        "gold": null,
+        "pass": true
+      }
+    ]
+  },
+  "regressions": [
+    {
+      "module": "symbolic_v68_c15_surface_paraphrases.py",
+      "returncode": 0,
+      "pass": 9,
+      "fail": 0
+    },
+    {
+      "module": "symbolic_v67_raw_text_family_invention.py",
+      "returncode": 0,
+      "pass": 20,
+      "fail": 0
+    },
+    {
+      "module": "symbolic_v66_semantic_family_invention.py",
+      "returncode": 0,
+      "pass": 17,
+      "fail": 0
+    },
+    {
+      "module": "symbolic_v65_unknown_imperative.py",
+      "returncode": 0,
+      "pass": 20,
+      "fail": 0
+    }
+  ],
+  "v491_master_sharded": {
+    "passed": 21,
+    "n": 21,
+    "result": "PASS",
+    "shards": [
+      {
+        "suffix": "k1a",
+        "passed": 7,
+        "n": 7,
+        "result": "PASS"
+      },
+      {
+        "suffix": "k1b",
+        "passed": 5,
+        "n": 5,
+        "result": "PASS"
+      },
+      {
+        "suffix": "k1c",
+        "passed": 5,
+        "n": 5,
+        "result": "PASS"
+      },
+      {
+        "suffix": "k1d",
+        "passed": 4,
+        "n": 4,
+        "result": "PASS"
+      }
+    ]
+  },
+  "initial_failures_found_during_development": [
+    "Overbroad L:auf rule falsely classified 'Das Tor ist auf.', 'Die Maschine bleibt auf.', and 'Die Lampe wartet auf.' as STOP.",
+    "Collapsing 'ins' and 'im' to the same lemma made 'Anna geht im Haus.' falsely classify as ENTER.",
+    "Raw-form-biased rules failed tense transfer such as 'Ben betrat ...', 'Cara verließ ...', and 'Cara ging aus ...'."
+  ],
+  "generic_fixes": [
+    "Added counterexamples; STOP then required formal co-occurrence auf+zu rather than bare auf.",
+    "Preserved formal preposition/case morphology PREP_IN_ACC vs PREP_IN_DAT, without adding ENTER semantics.",
+    "MDL bias now prefers lemma/morphology features over raw word-form memorization, enabling tense transfer."
+  ],
+  "conclusion": "K1 succeeds in this controlled curriculum: named semantic surface cues are not required. The removed knowledge can be reconstructed from lexical/formal features, port types and morphology. No kernel boundary is observed yet. However, morphology/lemmatization, slot typing, capability priors, primitive ACTIVE/AT deltas and a bounded feature-conjunction search language remain fixed priors."
+}

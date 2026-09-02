@@ -1,0 +1,443 @@
+{
+  "version": "v5.9-autonomous-self-growing-hierarchy",
+  "result": "PASS",
+  "checks": {
+    "generic_loop_reached_fixed_point": true,
+    "no_manual_layer_instruction_in_miner": true,
+    "root_concept_autonomously_discovered_and_active": true,
+    "second_level_uses_learned_root_and_is_active": true,
+    "third_level_uses_learned_mid_and_is_active": true,
+    "hierarchy_depth_at_least_three": true,
+    "new_concepts_become_learning_material": true,
+    "structured_unused_junk_not_active": true,
+    "no_direct_definitional_echo_activated": true,
+    "anti_tautology_support_sets_enforced": true,
+    "concept_budget_prevents_round_explosion": true,
+    "frozen_unseen_story_reaches_highest_concept": true,
+    "frozen_mismatch_does_not_reach_highest_concept": true,
+    "challenge_propagates_over_three_levels": true,
+    "root_revision_found_anonymous_guard": true,
+    "revision_reactivates_full_three_level_chain": true,
+    "descendant_versions_incremented_after_parent_revision": true,
+    "good_revised_chain_proves": true,
+    "guard_incompatible_chain_is_unknown": true,
+    "all_learned_heads_anonymous": true
+  },
+  "rounds": [
+    {
+      "epoch": 0,
+      "strong_candidates": 4,
+      "staged_new": [
+        "R4",
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "promoted": [
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "materialized_events": 14,
+      "active": [
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "staged": [
+        "R4"
+      ]
+    },
+    {
+      "epoch": 1,
+      "strong_candidates": 1,
+      "staged_new": [
+        "R8"
+      ],
+      "promoted": [
+        "R8"
+      ],
+      "materialized_events": 6,
+      "active": [
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "staged": [
+        "R4"
+      ]
+    },
+    {
+      "epoch": 2,
+      "strong_candidates": 1,
+      "staged_new": [
+        "R9"
+      ],
+      "promoted": [
+        "R9"
+      ],
+      "materialized_events": 6,
+      "active": [
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "staged": [
+        "R4"
+      ]
+    },
+    {
+      "epoch": 3,
+      "strong_candidates": 0,
+      "staged_new": [],
+      "promoted": [],
+      "materialized_events": 0,
+      "active": [
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "staged": [
+        "R4"
+      ]
+    }
+  ],
+  "target_lineage": [
+    "R5",
+    "R8",
+    "R9"
+  ],
+  "max_active_depth": 3,
+  "concepts": {
+    "R4": {
+      "status": "STAGED",
+      "depth": 1,
+      "pattern": [
+        [
+          "N1",
+          [
+            "V0"
+          ]
+        ],
+        [
+          "N2",
+          [
+            "V0"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0"
+      ],
+      "parents": {},
+      "support_stories": 6,
+      "domains": 6,
+      "opportunities": 6,
+      "matches": 6,
+      "precision": 1.0,
+      "avg_primitive_coverage": 2.0,
+      "mdl_gain": 8.5,
+      "query_use": []
+    },
+    "R5": {
+      "status": "ACTIVE",
+      "depth": 1,
+      "pattern": [
+        [
+          "R1",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "W",
+          [
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2"
+      ],
+      "parents": {},
+      "support_stories": 6,
+      "domains": 4,
+      "opportunities": 8,
+      "matches": 6,
+      "precision": 0.75,
+      "avg_primitive_coverage": 2.0,
+      "mdl_gain": 6.0,
+      "query_use": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06"
+      ]
+    },
+    "R6": {
+      "status": "ACTIVE",
+      "depth": 1,
+      "pattern": [
+        [
+          "R2",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "W",
+          [
+            "V1",
+            "V2"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2"
+      ],
+      "parents": {},
+      "support_stories": 4,
+      "domains": 4,
+      "opportunities": 4,
+      "matches": 4,
+      "precision": 1.0,
+      "avg_primitive_coverage": 2.0,
+      "mdl_gain": 2.0,
+      "query_use": [
+        "r21",
+        "r22",
+        "r23",
+        "r24"
+      ]
+    },
+    "R7": {
+      "status": "ACTIVE",
+      "depth": 1,
+      "pattern": [
+        [
+          "R3",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "R3",
+          [
+            "V1",
+            "V0",
+            "V2"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2"
+      ],
+      "parents": {},
+      "support_stories": 4,
+      "domains": 4,
+      "opportunities": 4,
+      "matches": 4,
+      "precision": 1.0,
+      "avg_primitive_coverage": 2.0,
+      "mdl_gain": 1.5,
+      "query_use": [
+        "rt1",
+        "rt2",
+        "rt3",
+        "rt4"
+      ]
+    },
+    "R8": {
+      "status": "ACTIVE",
+      "depth": 2,
+      "pattern": [
+        [
+          "R5",
+          [
+            "V0",
+            "V1",
+            "V2"
+          ]
+        ],
+        [
+          "X",
+          [
+            "V1",
+            "V3"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "parents": {
+        "R5": 1
+      },
+      "support_stories": 6,
+      "domains": 4,
+      "opportunities": 6,
+      "matches": 6,
+      "precision": 1.0,
+      "avg_primitive_coverage": 3.0,
+      "mdl_gain": 11.5,
+      "query_use": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06"
+      ]
+    },
+    "R9": {
+      "status": "ACTIVE",
+      "depth": 3,
+      "pattern": [
+        [
+          "R8",
+          [
+            "V0",
+            "V1",
+            "V2",
+            "V3"
+          ]
+        ],
+        [
+          "Y",
+          [
+            "V3",
+            "V4"
+          ]
+        ]
+      ],
+      "head_vars": [
+        "V0",
+        "V1",
+        "V2",
+        "V3",
+        "V4"
+      ],
+      "parents": {
+        "R8": 1
+      },
+      "support_stories": 6,
+      "domains": 4,
+      "opportunities": 6,
+      "matches": 6,
+      "precision": 1.0,
+      "avg_primitive_coverage": 4.0,
+      "mdl_gain": 16.5,
+      "query_use": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06"
+      ]
+    }
+  },
+  "revision": {
+    "challenged_chain": {
+      "R5": "CHALLENGED",
+      "R8": "CHALLENGED",
+      "R9": "CHALLENGED"
+    },
+    "winner_guard": [
+      "G0",
+      0
+    ],
+    "versions": {
+      "R5": 2,
+      "R8": 2,
+      "R9": 2
+    },
+    "status": {
+      "R5": "ACTIVE",
+      "R8": "ACTIVE",
+      "R9": "ACTIVE"
+    },
+    "good_chain": [
+      1,
+      1,
+      1
+    ],
+    "bad_chain": [
+      0,
+      0,
+      0
+    ],
+    "events": [
+      [
+        "revision_activated",
+        "R5",
+        1,
+        2,
+        [
+          "G0",
+          0
+        ]
+      ],
+      [
+        "dependency_revalidated",
+        "R8",
+        1,
+        2,
+        {
+          "R5": 2
+        }
+      ],
+      [
+        "dependency_revalidated",
+        "R9",
+        1,
+        2,
+        {
+          "R8": 2
+        }
+      ]
+    ]
+  },
+  "design": [
+    "The same mining loop runs repeatedly until a fixed point; no layer number or target relation is supplied to the miner.",
+    "Only ACTIVE concepts materialize into StoryContexts and become input to later mining rounds.",
+    "Query use arrives as an ordinary chronological access stream; one query credits only the best matching staged abstraction.",
+    "Primitive proof-support sets are carried by every derived event.",
+    "Candidate pairs with overlapping primitive proof support are forbidden, preventing tautological R1->R4/R4->R4 self-explanation.",
+    "Ranking favors concepts that package more independent primitive evidence, which favors factorized hierarchy over shallow shortcuts.",
+    "Primitive-to-primitive motifs require full consequent-variable closure; learned-concept reuse may introduce one connected new port, enabling controlled hierarchy expansion.",
+    "A generic per-round staging budget bounds growth.",
+    "Revision of a learned root challenges descendants recursively and revalidates/version-bumps the learned chain."
+  ],
+  "caveats": [
+    "The experience corpus and query stream are synthetic symbolic logs, not raw text.",
+    "Queries arrive at natural chronological epochs chosen by the test; autonomous task-generation is not attempted.",
+    "Mining still considers connected ordered two-event motifs per round, though repeated rounds create deeper concepts.",
+    "The MDL measure is approximate and the staging budget/thresholds/closure policy are fixed OS priors.",
+    "Revision still uses a tiny supplied unary guard language G0/G1.",
+    "The multi-level revision proof is a focused hierarchy test rather than the full v5.8 transactional version object implementation."
+  ]
+}

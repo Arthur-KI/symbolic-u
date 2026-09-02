@@ -1,0 +1,798 @@
+{
+  "version": "v5.1-frau-holle-frozen-grimm-transfer",
+  "result": "FAIL_SEMANTIC_COVERAGE",
+  "scope": "real uploaded Grimm raw text; frozen v5.0d; lexicon/ontology additions only; benchmark-specified query targets",
+  "source_file": "grimm_frau_holle.txt",
+  "metrics": {
+    "gold_proved": 1,
+    "gold_n": 26,
+    "semantic_coverage": 0.038461538461538464,
+    "adversarial_false_commits": 0,
+    "adversarial_n": 6,
+    "evidence_keys": 1,
+    "events": 0,
+    "unresolved_references": 0,
+    "known_tokens": 338,
+    "tokens": 1088,
+    "known_token_fraction": 0.31066176470588236
+  },
+  "materialized_relation_counts": {
+    "INITIAL_COUNT": 1
+  },
+  "evidence": [
+    {
+      "key": "WORLD:INITIAL_COUNT(widow, DAUGHTER, N2)",
+      "rule": "COUNT_STATE(actor,item,count)",
+      "source": "Eine Witwe hatte zwei Töchter, davon war die eine schön und fleißig, die andere häßlich und faul."
+    }
+  ],
+  "questions": [
+    {
+      "qid": "Q01",
+      "kind": "gold_positive",
+      "question": "Hat die Witwe zwei Töchter?",
+      "target": "WORLD:INITIAL_COUNT('widow', 'DAUGHTER', 'N2')",
+      "state": 1,
+      "expected": 1,
+      "category": "CLAUSE",
+      "correct": true
+    },
+    {
+      "qid": "Q02",
+      "kind": "gold_positive",
+      "question": "Ist die eine Tochter fleißig?",
+      "target": "WORLD:PROPERTY('good_daughter', 'INDUSTRIOUS')",
+      "state": 0,
+      "expected": 1,
+      "category": "REFERENCE",
+      "correct": false
+    },
+    {
+      "qid": "Q03",
+      "kind": "gold_positive",
+      "question": "Ist die andere Tochter faul?",
+      "target": "WORLD:PROPERTY('lazy_daughter', 'LAZY')",
+      "state": 0,
+      "expected": 1,
+      "category": "REFERENCE",
+      "correct": false
+    },
+    {
+      "qid": "Q04",
+      "kind": "gold_positive",
+      "question": "Muss das arme Mädchen täglich spinnen?",
+      "target": "WORLD:SPIN('good_daughter',)",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q05",
+      "kind": "gold_positive",
+      "question": "Fällt die Spule in den Brunnen?",
+      "target": "WORLD:FALL('SPOOL', 'WELL')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q06",
+      "kind": "gold_positive",
+      "question": "Springt das Mädchen in den Brunnen?",
+      "target": "WORLD:JUMP('good_daughter', 'WELL')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q07",
+      "kind": "gold_positive",
+      "question": "Erwacht das Mädchen auf einer Wiese?",
+      "target": "WORLD:AT('good_daughter', 'MEADOW')",
+      "state": 0,
+      "expected": 1,
+      "category": "STATE",
+      "correct": false
+    },
+    {
+      "qid": "Q08",
+      "kind": "gold_positive",
+      "question": "Bittet das Brot darum, herausgezogen zu werden?",
+      "target": "CLAIM:BREAD:REQUEST('BREAD', 'PULL_OUT')",
+      "state": 0,
+      "expected": 1,
+      "category": "CONTEXT",
+      "correct": false
+    },
+    {
+      "qid": "Q09",
+      "kind": "gold_positive",
+      "question": "Holt das Mädchen das Brot heraus?",
+      "target": "WORLD:PULL_OUT('good_daughter', 'BREAD')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q10",
+      "kind": "gold_positive",
+      "question": "Bittet der Apfelbaum darum, geschüttelt zu werden?",
+      "target": "CLAIM:TREE:REQUEST('TREE', 'SHAKE')",
+      "state": 0,
+      "expected": 1,
+      "category": "CONTEXT",
+      "correct": false
+    },
+    {
+      "qid": "Q11",
+      "kind": "gold_positive",
+      "question": "Schüttelt das Mädchen den Apfelbaum?",
+      "target": "WORLD:SHAKE('good_daughter', 'TREE')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q12",
+      "kind": "gold_positive",
+      "question": "Geht das Mädchen in Frau Holles Dienst?",
+      "target": "WORLD:SERVE('good_daughter', 'frau_holle')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q13",
+      "kind": "gold_positive",
+      "question": "Soll das Mädchen Frau Holles Bett aufschütteln?",
+      "target": "CLAIM:frau_holle:REQUEST('frau_holle', 'SHAKE_BED')",
+      "state": 0,
+      "expected": 1,
+      "category": "CONTEXT",
+      "correct": false
+    },
+    {
+      "qid": "Q14",
+      "kind": "gold_positive",
+      "question": "Wird das Mädchen bei Frau Holle traurig und heimwehkrank?",
+      "target": "WORLD:WANT_HOME('good_daughter',)",
+      "state": 0,
+      "expected": 1,
+      "category": "STATE",
+      "correct": false
+    },
+    {
+      "qid": "Q15",
+      "kind": "gold_positive",
+      "question": "Führt Frau Holle das Mädchen zum Tor?",
+      "target": "WORLD:LEAD('frau_holle', 'good_daughter', 'GATE')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q16",
+      "kind": "gold_positive",
+      "question": "Wird das fleißige Mädchen mit Gold bedeckt?",
+      "target": "WORLD:COVER('good_daughter', 'GOLD')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q17",
+      "kind": "gold_positive",
+      "question": "Gibt Frau Holle dem Mädchen die Spule zurück?",
+      "target": "WORLD:GIVE('frau_holle', 'good_daughter', 'SPOOL')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q18",
+      "kind": "gold_positive",
+      "question": "Kehrt das fleißige Mädchen nach Hause zurück?",
+      "target": "WORLD:RETURN_HOME('good_daughter',)",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q19",
+      "kind": "gold_positive",
+      "question": "Will die Mutter der faulen Tochter dasselbe Glück verschaffen?",
+      "target": "WORLD:INTEND('mother', 'lazy_daughter', 'SAME_LUCK')",
+      "state": 0,
+      "expected": 1,
+      "category": "STATE",
+      "correct": false
+    },
+    {
+      "qid": "Q20",
+      "kind": "gold_positive",
+      "question": "Wirft die faule Tochter ihre Spule in den Brunnen?",
+      "target": "WORLD:THROW('lazy_daughter', 'SPOOL', 'WELL')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q21",
+      "kind": "gold_positive",
+      "question": "Lehnt die faule Tochter die Bitte des Brotes ab?",
+      "target": "WORLD:REFUSE('lazy_daughter', 'BREAD')",
+      "state": 0,
+      "expected": 1,
+      "category": "CONTEXT",
+      "correct": false
+    },
+    {
+      "qid": "Q22",
+      "kind": "gold_positive",
+      "question": "Lehnt die faule Tochter die Bitte des Apfelbaums ab?",
+      "target": "WORLD:REFUSE('lazy_daughter', 'TREE')",
+      "state": 0,
+      "expected": 1,
+      "category": "CONTEXT",
+      "correct": false
+    },
+    {
+      "qid": "Q23",
+      "kind": "gold_positive",
+      "question": "Vernachlässigt die faule Tochter Frau Holles Bett?",
+      "target": "WORLD:NEGLECT('lazy_daughter', 'BED')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q24",
+      "kind": "gold_positive",
+      "question": "Beendet Frau Holle den Dienst der faulen Tochter?",
+      "target": "WORLD:DISMISS('frau_holle', 'lazy_daughter')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q25",
+      "kind": "gold_positive",
+      "question": "Wird über die faule Tochter Pech ausgeschüttet?",
+      "target": "WORLD:COVER('lazy_daughter', 'PITCH')",
+      "state": 0,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": false
+    },
+    {
+      "qid": "Q26",
+      "kind": "gold_positive",
+      "question": "Bleibt das Pech an ihr hängen?",
+      "target": "WORLD:REMAIN_ATTACHED('PITCH', 'lazy_daughter')",
+      "state": 0,
+      "expected": 1,
+      "category": "STATE",
+      "correct": false
+    },
+    {
+      "qid": "A01",
+      "kind": "adversarial_absent",
+      "question": "Wird die faule Tochter mit Gold bedeckt?",
+      "target": "WORLD:COVER('lazy_daughter', 'GOLD')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "A02",
+      "kind": "adversarial_absent",
+      "question": "Zieht die faule Tochter das Brot heraus?",
+      "target": "WORLD:PULL_OUT('lazy_daughter', 'BREAD')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "A03",
+      "kind": "adversarial_absent",
+      "question": "Schüttelt die faule Tochter den Apfelbaum?",
+      "target": "WORLD:SHAKE('lazy_daughter', 'TREE')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "A04",
+      "kind": "adversarial_absent",
+      "question": "Wird das fleißige Mädchen mit Pech bedeckt?",
+      "target": "WORLD:COVER('good_daughter', 'PITCH')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "A05",
+      "kind": "adversarial_absent",
+      "question": "Springt Frau Holle in den Brunnen?",
+      "target": "WORLD:JUMP('frau_holle', 'WELL')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "A06",
+      "kind": "adversarial_absent",
+      "question": "Gibt die Mutter dem fleißigen Mädchen Gold?",
+      "target": "WORLD:GIVE('mother', 'good_daughter', 'GOLD')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    }
+  ],
+  "coverage_by_category": {
+    "CLAUSE": {
+      "gold": 1,
+      "proved": 1
+    },
+    "REFERENCE": {
+      "gold": 2,
+      "proved": 0
+    },
+    "EVENT": {
+      "gold": 14,
+      "proved": 0
+    },
+    "STATE": {
+      "gold": 4,
+      "proved": 0
+    },
+    "CONTEXT": {
+      "gold": 5,
+      "proved": 0
+    }
+  },
+  "unknown_token_counts": [
+    [
+      "es",
+      40
+    ],
+    [
+      "die",
+      35
+    ],
+    [
+      "das",
+      22
+    ],
+    [
+      "zu",
+      20
+    ],
+    [
+      "so",
+      17
+    ],
+    [
+      "war",
+      16
+    ],
+    [
+      "der",
+      16
+    ],
+    [
+      "sich",
+      13
+    ],
+    [
+      "aber",
+      12
+    ],
+    [
+      "daß",
+      11
+    ],
+    [
+      "den",
+      11
+    ],
+    [
+      "in",
+      11
+    ],
+    [
+      "auf",
+      10
+    ],
+    [
+      "du",
+      10
+    ],
+    [
+      "wieder",
+      10
+    ],
+    [
+      "ich",
+      10
+    ],
+    [
+      "da",
+      9
+    ],
+    [
+      "nicht",
+      9
+    ],
+    [
+      "als",
+      9
+    ],
+    [
+      "mich",
+      9
+    ],
+    [
+      "ward",
+      8
+    ],
+    [
+      "weil",
+      7
+    ],
+    [
+      "auch",
+      7
+    ],
+    [
+      "dem",
+      7
+    ],
+    [
+      "ein",
+      7
+    ],
+    [
+      "alle",
+      6
+    ],
+    [
+      "mir",
+      6
+    ],
+    [
+      "gut",
+      6
+    ],
+    [
+      "bei",
+      5
+    ],
+    [
+      "wollte",
+      5
+    ],
+    [
+      "mit",
+      5
+    ],
+    [
+      "nach",
+      5
+    ],
+    [
+      "wie",
+      5
+    ],
+    [
+      "eine",
+      4
+    ],
+    [
+      "faule",
+      4
+    ],
+    [
+      "viel",
+      4
+    ],
+    [
+      "mußte",
+      4
+    ],
+    [
+      "einem",
+      4
+    ],
+    [
+      "was",
+      4
+    ],
+    [
+      "ach",
+      4
+    ],
+    [
+      "raus",
+      4
+    ],
+    [
+      "schon",
+      4
+    ],
+    [
+      "alles",
+      4
+    ],
+    [
+      "wenn",
+      4
+    ],
+    [
+      "andere",
+      3
+    ],
+    [
+      "nun",
+      3
+    ],
+    [
+      "damit",
+      3
+    ],
+    [
+      "seiner",
+      3
+    ],
+    [
+      "hinein",
+      3
+    ],
+    [
+      "bin",
+      3
+    ],
+    [
+      "einander",
+      3
+    ],
+    [
+      "endlich",
+      3
+    ],
+    [
+      "alte",
+      3
+    ],
+    [
+      "ist",
+      3
+    ],
+    [
+      "am",
+      3
+    ],
+    [
+      "ihre",
+      2
+    ],
+    [
+      "arbeit",
+      2
+    ],
+    [
+      "thun",
+      2
+    ],
+    [
+      "im",
+      2
+    ],
+    [
+      "große",
+      2
+    ],
+    [
+      "setzen",
+      2
+    ],
+    [
+      "aus",
+      2
+    ],
+    [
+      "ganz",
+      2
+    ],
+    [
+      "zur",
+      2
+    ],
+    [
+      "hast",
+      2
+    ],
+    [
+      "wußte",
+      2
+    ],
+    [
+      "selber",
+      2
+    ],
+    [
+      "einer",
+      2
+    ],
+    [
+      "fort",
+      2
+    ],
+    [
+      "sonst",
+      2
+    ],
+    [
+      "verbrenn",
+      2
+    ],
+    [
+      "längst",
+      2
+    ],
+    [
+      "ausgebacken",
+      2
+    ],
+    [
+      "voll",
+      2
+    ],
+    [
+      "wir",
+      2
+    ],
+    [
+      "sind",
+      2
+    ],
+    [
+      "mehr",
+      2
+    ],
+    [
+      "oben",
+      2
+    ],
+    [
+      "dich",
+      2
+    ],
+    [
+      "dann",
+      2
+    ],
+    [
+      "schneit",
+      2
+    ],
+    [
+      "welt",
+      2
+    ],
+    [
+      "ihren",
+      2
+    ],
+    [
+      "selbst",
+      2
+    ],
+    [
+      "hier",
+      2
+    ],
+    [
+      "gleich",
+      2
+    ],
+    [
+      "doch",
+      2
+    ],
+    [
+      "hinauf",
+      2
+    ],
+    [
+      "darauf",
+      2
+    ],
+    [
+      "vor",
+      2
+    ],
+    [
+      "darunter",
+      2
+    ],
+    [
+      "stand",
+      2
+    ],
+    [
+      "hängen",
+      2
+    ],
+    [
+      "über",
+      2
+    ],
+    [
+      "kikeriki",
+      2
+    ],
+    [
+      "unsere",
+      2
+    ],
+    [
+      "jungfrau",
+      2
+    ],
+    [
+      "hie",
+      2
+    ],
+    [
+      "großen",
+      2
+    ],
+    [
+      "bald",
+      2
+    ]
+  ],
+  "diagnosis": {
+    "primary": "EVENT/CLAUSE semantic bridge",
+    "secondary": [
+      "persistent entity/re-description resolution for the two daughters",
+      "generic action/event extraction",
+      "archaic/free German clause structure",
+      "speech attribution without modern 'Name sagt:' quotation syntax",
+      "state/property extraction",
+      "causal/intent/request/refusal semantics"
+    ],
+    "not_primary": [
+      "numeric Recursive-U",
+      "adaptive anonymous relation learning",
+      "versioning/revision"
+    ]
+  },
+  "invariants": [
+    "No Frau-Holle-specific parser rule was added.",
+    "Only dictionary/ontology entries were added before the frozen parse.",
+    "Gold questions were not fed as evidence.",
+    "UNKNOWN is not scored as FALSE; missing positive propositions count as misses.",
+    "Adversarial absent propositions are checked for false positive commits."
+  ]
+}

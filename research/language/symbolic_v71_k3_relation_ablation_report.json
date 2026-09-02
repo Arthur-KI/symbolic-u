@@ -1,0 +1,155 @@
+{
+  "version": "v7.1-K3-primitive-relation-head-ablation",
+  "result": "PASS",
+  "checks": {
+    "frozen_K2_report_is_green": true,
+    "K3_four_relation_heads_are_anonymous_P_symbols": true,
+    "K3_no_human_relation_name_is_a_learned_head": true,
+    "K3_relation_schemas_are_learned_from_recurrent_transition_behavior": true,
+    "K3_four_normal_relation_schemas_are_identifiable": true,
+    "K3_K1_deltas_compile_to_anonymous_relations": true,
+    "K3_state_updates_work_only_with_P_relations": true,
+    "K3_new_family_miner_invents_seven_P_based_transition_families": true,
+    "K3_process_vs_attribute_survive_coarse_same_port_types_via_dynamics": true,
+    "K3_pure_transition_topology_detects_process_location_collision": true,
+    "K3_collision_without_type_or_surface_evidence_stays_UNKNOWN": true,
+    "K3_formal_surface_provenance_can_rescue_process_without_semantic_types": true,
+    "K3_formal_surface_provenance_can_rescue_location_without_semantic_types": true,
+    "K3_isolated_same_coarse_type_pair_without_history_is_UNKNOWN": true,
+    "K3_Grimm_steh_path_works_with_P_relation_and_A_action": true,
+    "K3_Grimm_steh_reuse_contains_no_human_relation_or_action_name": true
+  },
+  "learned_relations": {
+    "C_ATTR": {
+      "head": "P2",
+      "port_types": [
+        "ENTITY",
+        "STATE"
+      ],
+      "motifs": [
+        "REPLACE_SECOND"
+      ],
+      "support": 3,
+      "source_forms": [
+        "COPULAR_ATTR"
+      ]
+    },
+    "C_LOC": {
+      "head": "P4",
+      "port_types": [
+        "PERSON",
+        "PLACE"
+      ],
+      "motifs": [
+        "ADD_PAIR",
+        "REMOVE_PAIR"
+      ],
+      "support": 4,
+      "source_forms": [
+        "LOC_PP"
+      ]
+    },
+    "C_POS": {
+      "head": "P3",
+      "port_types": [
+        "PERSON",
+        "OBJECT"
+      ],
+      "motifs": [
+        "ADD_PAIR",
+        "TRANSFER_FIRST"
+      ],
+      "support": 4,
+      "source_forms": [
+        "HAVE_FORM"
+      ]
+    },
+    "C_PROC": {
+      "head": "P1",
+      "port_types": [
+        "ENTITY",
+        "ACTION"
+      ],
+      "motifs": [
+        "ADD_PAIR",
+        "REMOVE_PAIR"
+      ],
+      "support": 4,
+      "source_forms": [
+        "VERBAL_PRED"
+      ]
+    }
+  },
+  "evaluator_only_mapping": {
+    "PROCESS": "P1",
+    "LOCATION": "P4",
+    "POSSESSION": "P3",
+    "ATTRIBUTE": "P2"
+  },
+  "anonymous_transition_families": {
+    "ADD_PROCESS": "R29",
+    "REMOVE_PROCESS": "R25",
+    "ADD_LOCATION": "R31",
+    "REMOVE_LOCATION": "R28",
+    "ADD_POSSESSION": "R30",
+    "TRANSFER_POSSESSION": "R27",
+    "REPLACE_ATTRIBUTE": "R26"
+  },
+  "identifiability": {
+    "process_attribute_coarse_same_types_still_distinct": true,
+    "pure_topology_process_location_collision": true,
+    "pure_topology_resolution": null,
+    "surface_rescue_process": "P1",
+    "surface_rescue_location": "P4",
+    "finding": "ADD/REMOVE topology alone cannot identify two behaviorally isomorphic binary relations when both port-type and surface provenance distinctions are removed."
+  },
+  "grimm": {
+    "process_relation": "P1",
+    "kochen_action": "A2",
+    "remove_process_family": "R25",
+    "steh_support": [
+      [
+        "q1",
+        "R25",
+        "P1",
+        "A2"
+      ],
+      [
+        "q3",
+        "R25",
+        "P1",
+        "A2"
+      ]
+    ],
+    "active": true,
+    "reuse": [
+      "R25",
+      "P1",
+      [
+        "LAMP",
+        "A4"
+      ]
+    ],
+    "trace": [
+      "(0, 'KNOWN', Atom(rel='P1', args=('POT', 'A2')), [\"Atom(rel='P1', args=('POT', 'A2'))\"])",
+      "(1, 'OPAQUE', Atom(rel='P1', args=('POT', 'A2')), 'R25', [])",
+      "(2, 'KNOWN', Atom(rel='P1', args=('POT', 'A2')), [\"Atom(rel='P1', args=('POT', 'A2'))\"])",
+      "(3, 'OPAQUE', Atom(rel='P1', args=('POT', 'A2')), 'R25', [])"
+    ]
+  },
+  "interpretation": [
+    "Human-readable primitive relation heads ACTIVE/AT/HAVE/STATE are unnecessary in the K3 branch; recurrent port/transition behavior can assign anonymous P-heads.",
+    "Upper state update and transition-family machinery can operate on P-head identity rather than human semantic names.",
+    "Dynamics can distinguish relations even after some semantic port typing is coarsened: process-like add/remove behavior differs from attribute-like replace behavior.",
+    "A genuine identifiability limit appears when two relations have the same coarse arity/types and the same add/remove topology: process and location become observationally equivalent if both port-type and surface provenance distinctions are removed.",
+    "The safe response to that information loss is UNKNOWN, not arbitrary P-head assignment.",
+    "Purely formal surface provenance such as verbal-predicate versus locative-PP structure is enough to restore the distinction without reintroducing human relation names.",
+    "The Grimm steh path continues with anonymous P relation and anonymous A action."
+  ],
+  "caveats": [
+    "K3 still receives stable entity identities, anonymous action identities from K2, transition motifs, and port-type information in the normal condition.",
+    "Opaque source channels are used to accumulate relation behavior during curriculum learning; fully discovering those channels from unrestricted raw text is a later problem.",
+    "The P-head learner clusters recurrent schemas rather than searching an unrestricted relational-program space.",
+    "The identifiability collision is a structural result of this experiment: without any distinguishing type, form, context, or grounding evidence, two isomorphic relations cannot be uniquely named from topology alone."
+  ]
+}

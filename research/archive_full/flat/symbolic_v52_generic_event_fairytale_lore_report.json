@@ -1,0 +1,811 @@
+{
+  "version": "v5.2-generic-event-u-fairy-tale-lore",
+  "result": "PASS_BENCHMARK_RUN",
+  "scope": "real uploaded Grimm raw text; generic symbolic event frames + FAIRY_TALE typing scope; no exact-sentence story rules",
+  "metrics": {
+    "gold_proved": 26,
+    "gold_n": 26,
+    "semantic_coverage": 1.0,
+    "adversarial_false_commits": 0,
+    "adversarial_n": 6,
+    "facts": 42,
+    "global_role_type_violations": 0,
+    "fairy_nonhuman_requests": 4,
+    "real_world_nonhuman_requests": 0
+  },
+  "entity_resolution": {
+    "good_daughter": "daughter_a",
+    "lazy_daughter": "daughter_b",
+    "good_props": [
+      "BEAUTIFUL",
+      "DAUGHTER",
+      "INDUSTRIOUS"
+    ],
+    "lazy_props": [
+      "DAUGHTER",
+      "LAZY",
+      "UGLY"
+    ]
+  },
+  "questions": [
+    {
+      "qid": "Q01",
+      "kind": "gold_positive",
+      "question": "Hat die Witwe zwei Töchter?",
+      "target": "WORLD:INITIAL_COUNT('widow', 'DAUGHTER', 'N2')",
+      "state": 1,
+      "expected": 1,
+      "category": "CLAUSE",
+      "correct": true
+    },
+    {
+      "qid": "Q02",
+      "kind": "gold_positive",
+      "question": "Ist die eine Tochter fleißig?",
+      "target": "WORLD:PROPERTY('daughter_a', 'INDUSTRIOUS')",
+      "state": 1,
+      "expected": 1,
+      "category": "REFERENCE",
+      "correct": true
+    },
+    {
+      "qid": "Q03",
+      "kind": "gold_positive",
+      "question": "Ist die andere Tochter faul?",
+      "target": "WORLD:PROPERTY('daughter_b', 'LAZY')",
+      "state": 1,
+      "expected": 1,
+      "category": "REFERENCE",
+      "correct": true
+    },
+    {
+      "qid": "Q04",
+      "kind": "gold_positive",
+      "question": "Muss das arme Mädchen täglich spinnen?",
+      "target": "WORLD:SPIN('daughter_a',)",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q05",
+      "kind": "gold_positive",
+      "question": "Fällt die Spule in den Brunnen?",
+      "target": "WORLD:FALL('SPOOL', 'WELL')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q06",
+      "kind": "gold_positive",
+      "question": "Springt das Mädchen in den Brunnen?",
+      "target": "WORLD:JUMP('daughter_a', 'WELL')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q07",
+      "kind": "gold_positive",
+      "question": "Erwacht das Mädchen auf einer Wiese?",
+      "target": "WORLD:AT('daughter_a', 'MEADOW')",
+      "state": 1,
+      "expected": 1,
+      "category": "STATE",
+      "correct": true
+    },
+    {
+      "qid": "Q08",
+      "kind": "gold_positive",
+      "question": "Bittet das Brot darum, herausgezogen zu werden?",
+      "target": "CLAIM:BREAD:REQUEST('BREAD', 'PULL_OUT')",
+      "state": 1,
+      "expected": 1,
+      "category": "CONTEXT",
+      "correct": true
+    },
+    {
+      "qid": "Q09",
+      "kind": "gold_positive",
+      "question": "Holt das Mädchen das Brot heraus?",
+      "target": "WORLD:PULL_OUT('daughter_a', 'BREAD')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q10",
+      "kind": "gold_positive",
+      "question": "Bittet der Apfelbaum darum, geschüttelt zu werden?",
+      "target": "CLAIM:TREE:REQUEST('TREE', 'SHAKE')",
+      "state": 1,
+      "expected": 1,
+      "category": "CONTEXT",
+      "correct": true
+    },
+    {
+      "qid": "Q11",
+      "kind": "gold_positive",
+      "question": "Schüttelt das Mädchen den Apfelbaum?",
+      "target": "WORLD:SHAKE('daughter_a', 'TREE')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q12",
+      "kind": "gold_positive",
+      "question": "Geht das Mädchen in Frau Holles Dienst?",
+      "target": "WORLD:SERVE('daughter_a', 'frau_holle')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q13",
+      "kind": "gold_positive",
+      "question": "Soll das Mädchen Frau Holles Bett aufschütteln?",
+      "target": "CLAIM:frau_holle:REQUEST('frau_holle', 'SHAKE_BED')",
+      "state": 1,
+      "expected": 1,
+      "category": "CONTEXT",
+      "correct": true
+    },
+    {
+      "qid": "Q14",
+      "kind": "gold_positive",
+      "question": "Wird das Mädchen bei Frau Holle traurig und heimwehkrank?",
+      "target": "WORLD:WANT_HOME('daughter_a',)",
+      "state": 1,
+      "expected": 1,
+      "category": "STATE",
+      "correct": true
+    },
+    {
+      "qid": "Q15",
+      "kind": "gold_positive",
+      "question": "Führt Frau Holle das Mädchen zum Tor?",
+      "target": "WORLD:LEAD('frau_holle', 'daughter_a', 'GATE')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q16",
+      "kind": "gold_positive",
+      "question": "Wird das fleißige Mädchen mit Gold bedeckt?",
+      "target": "WORLD:COVER('daughter_a', 'GOLD')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q17",
+      "kind": "gold_positive",
+      "question": "Gibt Frau Holle dem Mädchen die Spule zurück?",
+      "target": "WORLD:GIVE('frau_holle', 'daughter_a', 'SPOOL')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q18",
+      "kind": "gold_positive",
+      "question": "Kehrt das fleißige Mädchen nach Hause zurück?",
+      "target": "WORLD:RETURN_HOME('daughter_a',)",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q19",
+      "kind": "gold_positive",
+      "question": "Will die Mutter der faulen Tochter dasselbe Glück verschaffen?",
+      "target": "WORLD:INTEND('mother', 'daughter_b', 'SAME_LUCK')",
+      "state": 1,
+      "expected": 1,
+      "category": "STATE",
+      "correct": true
+    },
+    {
+      "qid": "Q20",
+      "kind": "gold_positive",
+      "question": "Wirft die faule Tochter ihre Spule in den Brunnen?",
+      "target": "WORLD:THROW('daughter_b', 'SPOOL', 'WELL')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q21",
+      "kind": "gold_positive",
+      "question": "Lehnt die faule Tochter die Bitte des Brotes ab?",
+      "target": "CLAIM:daughter_b:REFUSE('daughter_b', 'BREAD')",
+      "state": 1,
+      "expected": 1,
+      "category": "CONTEXT",
+      "correct": true
+    },
+    {
+      "qid": "Q22",
+      "kind": "gold_positive",
+      "question": "Lehnt die faule Tochter die Bitte des Apfelbaums ab?",
+      "target": "CLAIM:daughter_b:REFUSE('daughter_b', 'TREE')",
+      "state": 1,
+      "expected": 1,
+      "category": "CONTEXT",
+      "correct": true
+    },
+    {
+      "qid": "Q23",
+      "kind": "gold_positive",
+      "question": "Vernachlässigt die faule Tochter Frau Holles Bett?",
+      "target": "WORLD:NEGLECT('daughter_b', 'BED')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q24",
+      "kind": "gold_positive",
+      "question": "Beendet Frau Holle den Dienst der faulen Tochter?",
+      "target": "WORLD:DISMISS('frau_holle', 'daughter_b')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q25",
+      "kind": "gold_positive",
+      "question": "Wird über die faule Tochter Pech ausgeschüttet?",
+      "target": "WORLD:COVER('daughter_b', 'PITCH')",
+      "state": 1,
+      "expected": 1,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "Q26",
+      "kind": "gold_positive",
+      "question": "Bleibt das Pech an ihr hängen?",
+      "target": "WORLD:REMAIN_ATTACHED('PITCH', 'daughter_b')",
+      "state": 1,
+      "expected": 1,
+      "category": "STATE",
+      "correct": true
+    },
+    {
+      "qid": "A01",
+      "kind": "adversarial_absent",
+      "question": "Wird die faule Tochter mit Gold bedeckt?",
+      "target": "WORLD:COVER('daughter_b', 'GOLD')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "A02",
+      "kind": "adversarial_absent",
+      "question": "Zieht die faule Tochter das Brot heraus?",
+      "target": "WORLD:PULL_OUT('daughter_b', 'BREAD')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "A03",
+      "kind": "adversarial_absent",
+      "question": "Schüttelt die faule Tochter den Apfelbaum?",
+      "target": "WORLD:SHAKE('daughter_b', 'TREE')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "A04",
+      "kind": "adversarial_absent",
+      "question": "Wird das fleißige Mädchen mit Pech bedeckt?",
+      "target": "WORLD:COVER('daughter_a', 'PITCH')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "A05",
+      "kind": "adversarial_absent",
+      "question": "Springt Frau Holle in den Brunnen?",
+      "target": "WORLD:JUMP('frau_holle', 'WELL')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    },
+    {
+      "qid": "A06",
+      "kind": "adversarial_absent",
+      "question": "Gibt die Mutter dem fleißigen Mädchen Gold?",
+      "target": "WORLD:GIVE('mother', 'daughter_a', 'GOLD')",
+      "state": 0,
+      "expected": 0,
+      "category": "EVENT",
+      "correct": true
+    }
+  ],
+  "facts": [
+    {
+      "context": "WORLD",
+      "rel": "INITIAL_COUNT",
+      "args": [
+        "widow",
+        "DAUGHTER",
+        "N2"
+      ],
+      "source": "eine Witwe hatte zwei Töchter",
+      "rule": "COUNT_STATE_GENERIC"
+    },
+    {
+      "context": "WORLD",
+      "rel": "PROPERTY",
+      "args": [
+        "daughter_a",
+        "INDUSTRIOUS"
+      ],
+      "source": "die eine schön und fleißig, die andere hässlich und faul.",
+      "rule": "CONTRASTIVE_PAIR_U"
+    },
+    {
+      "context": "WORLD",
+      "rel": "PROPERTY",
+      "args": [
+        "daughter_b",
+        "LAZY"
+      ],
+      "source": "die eine schön und fleißig, die andere hässlich und faul.",
+      "rule": "CONTRASTIVE_PAIR_U"
+    },
+    {
+      "context": "WORLD",
+      "rel": "PROPERTY",
+      "args": [
+        "daughter_a",
+        "BEAUTIFUL"
+      ],
+      "source": "die eine schön und fleißig, die andere hässlich und faul.",
+      "rule": "CONTRASTIVE_PAIR_U"
+    },
+    {
+      "context": "WORLD",
+      "rel": "PROPERTY",
+      "args": [
+        "daughter_b",
+        "UGLY"
+      ],
+      "source": "die eine schön und fleißig, die andere hässlich und faul.",
+      "rule": "CONTRASTIVE_PAIR_U"
+    },
+    {
+      "context": "CLAIM:BREAD",
+      "rel": "REQUEST",
+      "args": [
+        "BREAD",
+        "PULL_OUT"
+      ],
+      "source": "„ach, zieh mich raus, zieh mich raus, sonst verbrenn ich: ich bin schon längst ausgebacken.“",
+      "rule": "DIALOGUE_REQUEST_U"
+    },
+    {
+      "context": "CLAIM:TREE",
+      "rel": "REQUEST",
+      "args": [
+        "TREE",
+        "SHAKE"
+      ],
+      "source": "„ach schüttel mich, schüttel mich, wir Äpfel sind alle mit einander reif.“",
+      "rule": "DIALOGUE_REQUEST_U"
+    },
+    {
+      "context": "CLAIM:frau_holle",
+      "rel": "REQUEST",
+      "args": [
+        "frau_holle",
+        "SHAKE_BED"
+      ],
+      "source": "„was fürchtest du dich, liebes Kind? bleib bei mir, wenn du alle Arbeit im Hause ordentlich thun willst, so soll dirs gut gehn. Du mußt nur Acht geben daß du mein Bett gut machst und es fleißig aufschüttelst, daß die Federn fliegen, dann schneit es in der Welt\n\n; ich bin die Frau Holle.“",
+      "rule": "DIALOGUE_REQUEST_U"
+    },
+    {
+      "context": "CLAIM:daughter_a",
+      "rel": "WANT_HOME",
+      "args": [
+        "daughter_a"
+      ],
+      "source": "„ich habe den Jammer nach Haus kriegt, und wenn es mir auch noch so gut hier unten geht, so kann ich doch nicht länger bleiben, ich muß wieder hinauf zu den Meinigen.“",
+      "rule": "DIALOGUE_DESIRE_U"
+    },
+    {
+      "context": "CLAIM:BREAD",
+      "rel": "REQUEST",
+      "args": [
+        "BREAD",
+        "PULL_OUT"
+      ],
+      "source": "„ach, zieh mich raus, zieh mich raus, sonst verbrenn ich, ich bin schon längst ausgebacken.“",
+      "rule": "DIALOGUE_REQUEST_U"
+    },
+    {
+      "context": "CLAIM:daughter_b",
+      "rel": "REFUSE",
+      "args": [
+        "daughter_b",
+        "BREAD"
+      ],
+      "source": "„da hätt ich Lust mich schmutzig zu machen,“",
+      "rule": "DIALOGUE_REFUSAL_U"
+    },
+    {
+      "context": "CLAIM:TREE",
+      "rel": "REQUEST",
+      "args": [
+        "TREE",
+        "SHAKE"
+      ],
+      "source": "„ach, schüttel mich, schüttel mich, wir Äpfel sind alle mit einander reif.“",
+      "rule": "DIALOGUE_REQUEST_U"
+    },
+    {
+      "context": "CLAIM:daughter_b",
+      "rel": "REFUSE",
+      "args": [
+        "daughter_b",
+        "TREE"
+      ],
+      "source": "„du kommst mir recht, es könnte mir einer auf den Kopf fallen,“",
+      "rule": "DIALOGUE_REFUSAL_U"
+    },
+    {
+      "context": "WORLD",
+      "rel": "SPIN",
+      "args": [
+        "daughter_a"
+      ],
+      "source": "Das arme Mädchen mußte sich täglich auf die große Straße bei einem Brunnen setzen, und mußte so viel spinnen, daß ihm das Blut aus den Fingern sprang",
+      "rule": "GENERIC_EVENT_U[SPIN]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "JUMP",
+      "args": [
+        "daughter_a",
+        "WELL"
+      ],
+      "source": "Das arme Mädchen mußte sich täglich auf die große Straße bei einem Brunnen setzen, und mußte so viel spinnen, daß ihm das Blut aus den Fingern sprang",
+      "rule": "GENERIC_EVENT_U[JUMP]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "FALL",
+      "args": [
+        "SPOOL",
+        "WELL"
+      ],
+      "source": "Nun trug es sich zu, daß die Spule einmal ganz blutig war, da bückte es sich damit in den Brunnen und wollte sie abwaschen: sie sprang ihm aber aus der Hand und fiel hinab",
+      "rule": "GENERIC_EVENT_U[FALL]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "JUMP",
+      "args": [
+        "daughter_a",
+        "WELL"
+      ],
+      "source": "Nun trug es sich zu, daß die Spule einmal ganz blutig war, da bückte es sich damit in den Brunnen und wollte sie abwaschen: sie sprang ihm aber aus der Hand und fiel hinab",
+      "rule": "GENERIC_EVENT_U[JUMP]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "JUMP",
+      "args": [
+        "daughter_a",
+        "WELL"
+      ],
+      "source": "Sie schalt es aber so heftig und war so unbarmherzig, daß sie sprach  <QUOTE>  Da gieng das Mädchen zu dem Brunnen zurück und wußte nicht was es anfangen sollte: und in seiner Herzensangst sprang es in den Brunnen hinein, um die Spule zu holen",
+      "rule": "GENERIC_EVENT_U[JUMP]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "AT",
+      "args": [
+        "daughter_a",
+        "MEADOW"
+      ],
+      "source": "Es verlor die Besinnung, und als es erwachte und wieder zu sich selber kam, war es auf einer schönen Wiese wo die Sonne schien und viel tausend Blumen standen",
+      "rule": "GENERIC_STATE_U[AT]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "AT",
+      "args": [
+        "daughter_a",
+        "MEADOW"
+      ],
+      "source": "Auf dieser Wiese gieng es fort und kam zu einem Backofen, der war voller\n\nBrot",
+      "rule": "GENERIC_STATE_U[AT]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "PULL_OUT",
+      "args": [
+        "daughter_a",
+        "BREAD"
+      ],
+      "source": "das Brot aber rief  <QUOTE>  Da trat es herzu, und holte mit dem Brotschieber alles nach einander heraus",
+      "rule": "GENERIC_EVENT_U[PULL_OUT]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "SHAKE",
+      "args": [
+        "daughter_a",
+        "TREE"
+      ],
+      "source": "Danach gieng es weiter und kam zu einem Baum, der hieng voll Äpfel, und rief ihm zu  <QUOTE>  Da schüttelte es den Baum, daß die Äpfel fielen als regneten sie, und schüttelte bis keiner mehr oben war",
+      "rule": "GENERIC_EVENT_U[SHAKE]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "SERVE",
+      "args": [
+        "daughter_a",
+        "frau_holle"
+      ],
+      "source": "Die alte Frau aber rief ihm nach  <QUOTE>  Weil die Alte ihm so gut zusprach, so faßte sich das Mädchen ein Herz, willigte ein und begab sich in ihren Dienst",
+      "rule": "GENERIC_EVENT_U[SERVICE]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "WANT_HOME",
+      "args": [
+        "daughter_a"
+      ],
+      "source": "Nun war es eine Zeitlang bei der Frau Holle, da ward es traurig und wußte anfangs selbst nicht was ihm fehlte, endlich merkte es daß es Heimweh war",
+      "rule": "STATE_LEXEME_U"
+    },
+    {
+      "context": "WORLD",
+      "rel": "LEAD",
+      "args": [
+        "frau_holle",
+        "daughter_a",
+        "GATE"
+      ],
+      "source": "Endlich sagte es zu ihr  <QUOTE>  Die Frau Holle sagte  <QUOTE>  Sie nahm es darauf bei der Hand und führte es vor ein großes Thor",
+      "rule": "GENERIC_EVENT_U[LEAD]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "FALL",
+      "args": [
+        "GOLD",
+        "GATE"
+      ],
+      "source": "Das Thor ward aufgethan, und wie das Mädchen gerade darunter stand, fiel ein gewaltiger Goldregen, und alles Gold blieb an ihm hängen, so daß es über und über davon bedeckt war",
+      "rule": "GENERIC_EVENT_U[FALL]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "COVER",
+      "args": [
+        "daughter_a",
+        "GOLD"
+      ],
+      "source": "Das Thor ward aufgethan, und wie das Mädchen gerade darunter stand, fiel ein gewaltiger Goldregen, und alles Gold blieb an ihm hängen, so daß es über und über davon bedeckt war",
+      "rule": "GENERIC_EVENT_U[COVER_LOCAL_ROLE]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "GIVE",
+      "args": [
+        "frau_holle",
+        "daughter_a",
+        "SPOOL"
+      ],
+      "source": "<QUOTE>  sprach die Frau Holle und gab ihm auch die Spule wieder, die ihm in den Brunnen gefallen war",
+      "rule": "GENERIC_EVENT_U[GIVE]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "COVER",
+      "args": [
+        "daughter_a",
+        "GOLD"
+      ],
+      "source": "Darauf ward das Thor verschlossen, und das Mädchen befand sich oben auf der Welt, nicht weit von seiner Mutter H\n\n <QUOTE> \n\nDa ging es hinein zu seiner Mutter, und weil es so mit Gold bedeckt ankam, ward es von ihr und der Schwester gut aufgenommen",
+      "rule": "GENERIC_EVENT_U[COVER_LOCAL_ROLE]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "RETURN_HOME",
+      "args": [
+        "daughter_a"
+      ],
+      "source": "Darauf ward das Thor verschlossen, und das Mädchen befand sich oben auf der Welt, nicht weit von seiner Mutter H\n\n <QUOTE> \n\nDa ging es hinein zu seiner Mutter, und weil es so mit Gold bedeckt ankam, ward es von ihr und der Schwester gut aufgenommen",
+      "rule": "GENERIC_EVENT_U[RETURN_HOME]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "INTEND",
+      "args": [
+        "mother",
+        "daughter_b",
+        "SAME_LUCK"
+      ],
+      "source": "Das Mädchen erzählte alles, was ihm begegnet war, und als die Mutter hörte wie es zu dem großen Reichthum gekommen war, wollte sie der andern häßlichen und faulen Tochter gerne dasselbe Glück verschaffen",
+      "rule": "GENERIC_INTENTION_U"
+    },
+    {
+      "context": "WORLD",
+      "rel": "SPIN",
+      "args": [
+        "daughter_b"
+      ],
+      "source": "Sie mußte sich an den Brunnen setzen und spinnen",
+      "rule": "GENERIC_EVENT_U[SPIN]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "JUMP",
+      "args": [
+        "daughter_b",
+        "WELL"
+      ],
+      "source": "Dann warf sie die Spule in den Brunnen und sprang selber hinein",
+      "rule": "GENERIC_EVENT_U[JUMP]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "THROW",
+      "args": [
+        "daughter_b",
+        "SPOOL",
+        "WELL"
+      ],
+      "source": "Dann warf sie die Spule in den Brunnen und sprang selber hinein",
+      "rule": "GENERIC_EVENT_U[THROW]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "AT",
+      "args": [
+        "daughter_b",
+        "MEADOW"
+      ],
+      "source": "Sie kam, wie die andere, auf die schöne Wiese und gieng auf demselben Pfade weiter",
+      "rule": "GENERIC_STATE_U[AT]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "NEGLECT",
+      "args": [
+        "daughter_b",
+        "BED"
+      ],
+      "source": "Sie machte auch der Frau Holle das Bett nicht wie sichs gebührte, und schüttelte es nicht, daß die Federn aufflogen",
+      "rule": "NEGATED_DUTY_U"
+    },
+    {
+      "context": "WORLD",
+      "rel": "DISMISS",
+      "args": [
+        "frau_holle",
+        "daughter_b"
+      ],
+      "source": "Das ward die Frau Holle bald müde und sagte ihr den Dienst auf",
+      "rule": "SERVICE_TERMINATION_U"
+    },
+    {
+      "context": "WORLD",
+      "rel": "LEAD",
+      "args": [
+        "frau_holle",
+        "daughter_b",
+        "GATE"
+      ],
+      "source": "die Frau Holle führte sie auch zu dem Thor, als sie aber darunter stand, ward statt des Goldes ein großer Kessel voll Pech ausgeschüttet",
+      "rule": "GENERIC_EVENT_U[LEAD]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "COVER",
+      "args": [
+        "daughter_b",
+        "PITCH"
+      ],
+      "source": "die Frau Holle führte sie auch zu dem Thor, als sie aber darunter stand, ward statt des Goldes ein großer Kessel voll Pech ausgeschüttet",
+      "rule": "GENERIC_EVENT_U[COVER_LOCAL_ROLE]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "COVER",
+      "args": [
+        "daughter_b",
+        "PITCH"
+      ],
+      "source": "Da kam die Faule heim, aber sie war ganz mit Pech bedeckt, und der Hahn\n\nauf dem Brunnen, als er sie sah, rief\n\n <QUOTE> \n\nDas Pech aber blieb fest an ihr hängen und wollte, so lange sie lebte, nicht abgehen",
+      "rule": "GENERIC_EVENT_U[COVER_LOCAL_ROLE]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "RETURN_HOME",
+      "args": [
+        "daughter_b"
+      ],
+      "source": "Da kam die Faule heim, aber sie war ganz mit Pech bedeckt, und der Hahn\n\nauf dem Brunnen, als er sie sah, rief\n\n <QUOTE> \n\nDas Pech aber blieb fest an ihr hängen und wollte, so lange sie lebte, nicht abgehen",
+      "rule": "GENERIC_EVENT_U[RETURN_HOME]"
+    },
+    {
+      "context": "WORLD",
+      "rel": "REMAIN_ATTACHED",
+      "args": [
+        "PITCH",
+        "daughter_b"
+      ],
+      "source": "Da kam die Faule heim, aber sie war ganz mit Pech bedeckt, und der Hahn\n\nauf dem Brunnen, als er sie sah, rief\n\n <QUOTE> \n\nDas Pech aber blieb fest an ihr hängen und wollte, so lange sie lebte, nicht abgehen",
+      "rule": "PERSISTENT_STATE_U"
+    }
+  ],
+  "coverage_by_category": {
+    "CLAUSE": {
+      "gold": 1,
+      "proved": 1
+    },
+    "REFERENCE": {
+      "gold": 2,
+      "proved": 2
+    },
+    "EVENT": {
+      "gold": 14,
+      "proved": 14
+    },
+    "STATE": {
+      "gold": 4,
+      "proved": 4
+    },
+    "CONTEXT": {
+      "gold": 5,
+      "proved": 5
+    }
+  },
+  "design_constraints": [
+    "FAIRY_TALE scope only relaxes agent/speaker type constraints; it never creates a proposition by itself.",
+    "Nonhuman speech is accepted only when a reporting/quotation structure is present in the text.",
+    "Event extraction uses generic lexical frames and role patterns, not exact Frau-Holle sentence strings.",
+    "Contrastive pair resolution is a generic discourse rule for 'die eine ... die andere ...' after a two-member group.",
+    "Gold questions are used only for evaluation, never as evidence.",
+    "UNKNOWN remains distinct from FALSE."
+  ],
+  "caveats": [
+    "The event frame inventory is still hand-specified symbolic lexical knowledge.",
+    "The discourse focus model is still heuristic and can mis-handle long-distance pronouns.",
+    "Archaic German normalization is a lexicon/orthography layer, not learned.",
+    "The generic dialogue-act rules cover a small set of imperatives/refusal cues.",
+    "This benchmark is one Grimm tale and is not general language accuracy."
+  ]
+}

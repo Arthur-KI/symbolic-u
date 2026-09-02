@@ -1,0 +1,869 @@
+{
+  "build_us": 1984.549,
+  "entities": {
+    "girl": {
+      "types": [
+        "CHILD",
+        "PERSON"
+      ],
+      "genders": [
+        "NEUTER"
+      ],
+      "attrs": [
+        "FEMALE",
+        "PIOUS",
+        "POOR"
+      ],
+      "introduced_pos": 18
+    },
+    "mother": {
+      "types": [
+        "ADULT",
+        "PERSON"
+      ],
+      "genders": [
+        "FEM"
+      ],
+      "attrs": [
+        "FEMALE",
+        "MOTHER"
+      ],
+      "introduced_pos": 55
+    },
+    "girl_mother_group": {
+      "types": [
+        "PERSON_GROUP"
+      ],
+      "genders": [
+        "PLURAL"
+      ],
+      "attrs": [
+        "FAMILY_GROUP"
+      ],
+      "introduced_pos": 0
+    },
+    "porridge": {
+      "types": [
+        "FOOD"
+      ],
+      "genders": [
+        "MASC"
+      ],
+      "attrs": [],
+      "introduced_pos": 315
+    },
+    "forest": {
+      "types": [
+        "PLACE"
+      ],
+      "genders": [],
+      "attrs": [],
+      "introduced_pos": 146
+    },
+    "kitchen": {
+      "types": [
+        "PLACE"
+      ],
+      "genders": [],
+      "attrs": [],
+      "introduced_pos": 825
+    },
+    "house": {
+      "types": [
+        "PLACE"
+      ],
+      "genders": [],
+      "attrs": [],
+      "introduced_pos": 845
+    },
+    "street": {
+      "types": [
+        "PLACE"
+      ],
+      "genders": [],
+      "attrs": [],
+      "introduced_pos": 889
+    },
+    "city": {
+      "types": [
+        "PLACE"
+      ],
+      "genders": [],
+      "attrs": [],
+      "introduced_pos": 1167
+    },
+    "world": {
+      "types": [
+        "PLACE"
+      ],
+      "genders": [],
+      "attrs": [],
+      "introduced_pos": 918
+    },
+    "second_house": {
+      "types": [
+        "PLACE"
+      ],
+      "genders": [],
+      "attrs": [
+        "SECOND"
+      ],
+      "introduced_pos": 864
+    },
+    "stop_word": {
+      "types": [
+        "COMMAND",
+        "WORD"
+      ],
+      "genders": [],
+      "attrs": [
+        "STOP_COMMAND"
+      ],
+      "introduced_pos": 0
+    },
+    "old_woman": {
+      "types": [
+        "ADULT",
+        "PERSON"
+      ],
+      "genders": [
+        "FEM"
+      ],
+      "attrs": [
+        "FEMALE",
+        "OLD"
+      ],
+      "introduced_pos": 156
+    },
+    "pot": {
+      "types": [
+        "COOK_DEVICE",
+        "OBJECT",
+        "VESSEL"
+      ],
+      "genders": [
+        "MASC",
+        "NEUTER"
+      ],
+      "attrs": [
+        "MAGICAL"
+      ],
+      "introduced_pos": 223
+    }
+  },
+  "facts": [
+    {
+      "t": 1,
+      "pos": 18,
+      "prop": "AT(girl, HOME)",
+      "evidence": "initial local context",
+      "source": "Mädchen"
+    },
+    {
+      "t": 2,
+      "pos": 55,
+      "prop": "AT(mother, HOME)",
+      "evidence": "lives with girl",
+      "source": "Mutter"
+    },
+    {
+      "t": 2,
+      "pos": 55,
+      "prop": "LIVE_WITH(girl, mother)",
+      "evidence": "surface relation: mit seiner Mutter",
+      "source": "Mutter"
+    },
+    {
+      "t": 3,
+      "pos": 81,
+      "prop": "LACK_FOOD(girl_mother_group)",
+      "evidence": "plural morphology + family group",
+      "source": "sie hatten nichts mehr zu essen"
+    },
+    {
+      "t": 4,
+      "pos": 127,
+      "prop": "AT(girl, FOREST)",
+      "evidence": "MOVE/TO place cue",
+      "source": "hinaus in den Wald"
+    },
+    {
+      "t": 4,
+      "pos": 127,
+      "prop": "MOVE_TO(girl, FOREST)",
+      "evidence": "movement event",
+      "source": "hinaus in den Wald"
+    },
+    {
+      "t": 5,
+      "pos": 156,
+      "prop": "AT(old_woman, FOREST)",
+      "evidence": "introduced in encounter scene",
+      "source": "alte Frau"
+    },
+    {
+      "t": 5,
+      "pos": 156,
+      "prop": "MEET(girl, old_woman)",
+      "evidence": "dative reference + encounter cue",
+      "source": "begegnete ihm eine alte Frau"
+    },
+    {
+      "t": 6,
+      "pos": 223,
+      "prop": "AT(pot, FOREST)",
+      "evidence": "introduced in forest gift scene",
+      "source": "Töpfchen"
+    },
+    {
+      "t": 6,
+      "pos": 223,
+      "prop": "GIVE(old_woman, pot, girl)",
+      "evidence": "GIVE role ports",
+      "source": "schenkte ihm ein Töpfchen"
+    },
+    {
+      "t": 7,
+      "pos": 272,
+      "prop": "COMMAND_RULE(koche, START_COOK)",
+      "evidence": "instructional/conditional clause; rule, not event",
+      "source": "„Töpfchen koche,“"
+    },
+    {
+      "t": 8,
+      "pos": 345,
+      "prop": "COMMAND_RULE(steh, STOP_COOK)",
+      "evidence": "instructional/conditional clause; rule, not event",
+      "source": "„Töpfchen steh,“"
+    },
+    {
+      "t": 9,
+      "pos": 396,
+      "prop": "AT(girl, HOME)",
+      "evidence": "heim closes previous scene",
+      "source": "heim"
+    },
+    {
+      "t": 9,
+      "pos": 396,
+      "prop": "AT(pot, HOME)",
+      "evidence": "carried object inherits destination",
+      "source": "heim"
+    },
+    {
+      "t": 9,
+      "pos": 396,
+      "prop": "BRING_HOME(girl, pot)",
+      "evidence": "actor/object + heim cue",
+      "source": "Das Mädchen brachte den Topf seiner Mutter heim"
+    },
+    {
+      "t": 10,
+      "pos": 504,
+      "prop": "EAT(girl_mother_group, porridge)",
+      "evidence": "plural subject continuity",
+      "source": "aßen süßen Brei ... sie wollten"
+    },
+    {
+      "t": 11,
+      "pos": 558,
+      "prop": "AT(girl, AWAY_HOME)",
+      "evidence": "ausgegangen = leaves local home scene",
+      "source": "das Mädchen ausgegangen"
+    },
+    {
+      "t": 12,
+      "pos": 604,
+      "prop": "COOKING(pot)",
+      "evidence": "asserted start command applies learned command rule",
+      "source": "„Töpfchen koche,“"
+    },
+    {
+      "t": 12,
+      "pos": 604,
+      "prop": "SAY_COMMAND(mother, pot, START_COOK)",
+      "evidence": "explicit asserted subject Mutter",
+      "source": "„Töpfchen koche,“"
+    },
+    {
+      "t": 13,
+      "pos": 622,
+      "prop": "COOK(pot)",
+      "evidence": "Role-U COOK resolves neuter pronoun in asserted scene",
+      "source": "da kocht es"
+    },
+    {
+      "t": 14,
+      "pos": 639,
+      "prop": "EAT(mother, porridge)",
+      "evidence": "Role-U EAT + HOME scene",
+      "source": "sie ißt sich satt"
+    },
+    {
+      "t": 15,
+      "pos": 658,
+      "prop": "WANTS_STOP(mother, pot)",
+      "evidence": "finite singular + HOME scene",
+      "source": "nun will sie daß das Töpfchen wieder aufhören soll"
+    },
+    {
+      "t": 16,
+      "pos": 710,
+      "prop": "NOT KNOW(mother, stop_word)",
+      "evidence": "explicit nicht scope over KNOW",
+      "source": "aber sie weiß das Wort nicht"
+    },
+    {
+      "t": 17,
+      "pos": 740,
+      "prop": "CONTINUE_COOK(pot)",
+      "evidence": "Role-U COOK resolves neuter pronoun in asserted scene",
+      "source": "Also kocht es"
+    },
+    {
+      "t": 18,
+      "pos": 825,
+      "prop": "FILLS(porridge, kitchen)",
+      "evidence": "Clause-U coordinated elliptical fill chain",
+      "source": "Küche"
+    },
+    {
+      "t": 19,
+      "pos": 839,
+      "prop": "FILLS(porridge, house)",
+      "evidence": "Clause-U coordinated elliptical fill chain",
+      "source": "ganze Haus"
+    },
+    {
+      "t": 20,
+      "pos": 864,
+      "prop": "FILLS(porridge, second_house)",
+      "evidence": "Clause-U coordinated elliptical fill chain",
+      "source": "zweite Haus"
+    },
+    {
+      "t": 21,
+      "pos": 889,
+      "prop": "FILLS(porridge, street)",
+      "evidence": "Clause-U coordinated elliptical fill chain",
+      "source": "Straße"
+    },
+    {
+      "t": 22,
+      "pos": 1052,
+      "prop": "AT(girl, HOME)",
+      "evidence": "kommt ... heim",
+      "source": "da kommt das Kind heim"
+    },
+    {
+      "t": 22,
+      "pos": 1052,
+      "prop": "RETURN_HOME(girl)",
+      "evidence": "explicit kommt ... heim event",
+      "source": "da kommt das Kind heim"
+    },
+    {
+      "t": 23,
+      "pos": 1092,
+      "prop": "KNOW(girl, stop_word)",
+      "evidence": "successful asserted production of stop command",
+      "source": "„Töpfchen steh,“"
+    },
+    {
+      "t": 23,
+      "pos": 1092,
+      "prop": "NOT COOKING(pot)",
+      "evidence": "asserted stop command applies learned command rule",
+      "source": "„Töpfchen steh,“"
+    },
+    {
+      "t": 23,
+      "pos": 1092,
+      "prop": "SAY_COMMAND(girl, pot, STOP_COOK)",
+      "evidence": "Clause-U shared/continued subject Kind in asserted clause",
+      "source": "„Töpfchen steh,“"
+    }
+  ],
+  "reference_log": [
+    {
+      "surface": "Kind",
+      "pos": 127,
+      "candidates": [
+        "girl"
+      ],
+      "chosen": "girl",
+      "state": "+1",
+      "cap": null,
+      "location": null
+    },
+    {
+      "surface": "ihm",
+      "pos": 156,
+      "candidates": [
+        "girl"
+      ],
+      "chosen": "girl",
+      "state": "+1",
+      "cap": null,
+      "location": "FOREST"
+    },
+    {
+      "surface": "ihm",
+      "pos": 223,
+      "candidates": [
+        "girl"
+      ],
+      "chosen": "girl",
+      "state": "+1",
+      "cap": null,
+      "location": "FOREST"
+    },
+    {
+      "surface": "Mädchen",
+      "pos": 396,
+      "candidates": [
+        "girl"
+      ],
+      "chosen": "girl",
+      "state": "+1",
+      "cap": null,
+      "location": null
+    },
+    {
+      "surface": "Topf",
+      "pos": 396,
+      "candidates": [
+        "pot"
+      ],
+      "chosen": "pot",
+      "state": "+1",
+      "cap": null,
+      "location": null
+    },
+    {
+      "surface": "Kind",
+      "pos": 1052,
+      "candidates": [
+        "girl"
+      ],
+      "chosen": "girl",
+      "state": "+1",
+      "cap": null,
+      "location": null
+    },
+    {
+      "surface": "es",
+      "pos": 622,
+      "candidates": [
+        "pot"
+      ],
+      "chosen": "pot",
+      "state": "+1",
+      "cap": "COOK",
+      "location": "HOME"
+    },
+    {
+      "surface": "es",
+      "pos": 740,
+      "candidates": [
+        "pot"
+      ],
+      "chosen": "pot",
+      "state": "+1",
+      "cap": "COOK",
+      "location": "HOME"
+    },
+    {
+      "surface": "sie",
+      "pos": 639,
+      "candidates": [
+        "mother"
+      ],
+      "chosen": "mother",
+      "state": "+1",
+      "cap": "EAT",
+      "location": "HOME"
+    },
+    {
+      "surface": "sie",
+      "pos": 658,
+      "candidates": [
+        "mother"
+      ],
+      "chosen": "mother",
+      "state": "+1",
+      "cap": null,
+      "location": "HOME"
+    },
+    {
+      "surface": "sie",
+      "pos": 710,
+      "candidates": [
+        "mother"
+      ],
+      "chosen": "mother",
+      "state": "+1",
+      "cap": "KNOW",
+      "location": "HOME"
+    }
+  ],
+  "command_semantics": {
+    "koche": "START_COOK",
+    "steh": "STOP_COOK"
+  },
+  "questions": [
+    {
+      "qid": "Q01",
+      "question": "Wer lebt mit der Mutter?",
+      "expected": "girl",
+      "got": "girl",
+      "passed": true,
+      "micros": 8.012,
+      "trace": [
+        "unique proven binding girl from t2: LIVE_WITH(girl, mother) | surface relation: mit seiner Mutter"
+      ]
+    },
+    {
+      "qid": "Q02",
+      "question": "Wer geht in den Wald?",
+      "expected": "girl",
+      "got": "girl",
+      "passed": true,
+      "micros": 5.528,
+      "trace": [
+        "unique proven binding girl from t4: MOVE_TO(girl, FOREST) | movement event"
+      ]
+    },
+    {
+      "qid": "Q03",
+      "question": "Wer begegnet der alten Frau?",
+      "expected": "girl",
+      "got": "girl",
+      "passed": true,
+      "micros": 3.575,
+      "trace": [
+        "unique proven binding girl from t5: MEET(girl, old_woman) | dative reference + encounter cue"
+      ]
+    },
+    {
+      "qid": "Q04",
+      "question": "Wer schenkt das Töpfchen?",
+      "expected": "old_woman",
+      "got": "old_woman",
+      "passed": true,
+      "micros": 3.325,
+      "trace": [
+        "unique proven binding old_woman from t6: GIVE(old_woman, pot, girl) | GIVE role ports"
+      ]
+    },
+    {
+      "qid": "Q05",
+      "question": "Wer bekommt das Töpfchen?",
+      "expected": "girl",
+      "got": "girl",
+      "passed": true,
+      "micros": 2.755,
+      "trace": [
+        "unique proven binding girl from t6: GIVE(old_woman, pot, girl) | GIVE role ports"
+      ]
+    },
+    {
+      "qid": "Q06",
+      "question": "Bedeutet „Töpfchen koche“ START_COOK?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 1.552,
+      "trace": [
+        "learned command mapping koche -> START_COOK"
+      ]
+    },
+    {
+      "qid": "Q07",
+      "question": "Bedeutet „Töpfchen steh“ STOP_COOK?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 1.242,
+      "trace": [
+        "learned command mapping steh -> STOP_COOK"
+      ]
+    },
+    {
+      "qid": "Q08",
+      "question": "Wer bringt den Topf heim?",
+      "expected": "girl",
+      "got": "girl",
+      "passed": true,
+      "micros": 2.804,
+      "trace": [
+        "unique proven binding girl from t9: BRING_HOME(girl, pot) | actor/object + heim cue"
+      ]
+    },
+    {
+      "qid": "Q09",
+      "question": "Ist der Topf danach zuhause?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 8.263,
+      "trace": [
+        "stale location path t6: AT(pot, FOREST)",
+        "latest exclusive location is HOME at t9"
+      ]
+    },
+    {
+      "qid": "Q10",
+      "question": "Ist das Mädchen beim Kochbefehl der Mutter zuhause?",
+      "expected": "-1",
+      "got": "-1",
+      "passed": true,
+      "micros": 6.871,
+      "trace": [
+        "stale location path t1: AT(girl, HOME)",
+        "stale location path t4: AT(girl, FOREST)",
+        "stale location path t9: AT(girl, HOME)",
+        "latest exclusive location is AWAY_HOME, therefore not HOME"
+      ]
+    },
+    {
+      "qid": "Q11",
+      "question": "Wer sagt den späteren Kochbefehl?",
+      "expected": "mother",
+      "got": "mother",
+      "passed": true,
+      "micros": 8.212,
+      "trace": [
+        "latest temporal binding mother at t12: SAY_COMMAND(mother, pot, START_COOK)"
+      ]
+    },
+    {
+      "qid": "Q12",
+      "question": "Kocht das Töpfchen nach dem Befehl der Mutter?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 184.348,
+      "trace": [
+        "latest state +1 at t12: asserted start command applies learned command rule"
+      ]
+    },
+    {
+      "qid": "Q13",
+      "question": "Wer isst sich in der Mutterszene satt?",
+      "expected": "mother",
+      "got": "mother",
+      "passed": true,
+      "micros": 6.68,
+      "trace": [
+        "latest temporal binding mother at t14: EAT(mother, porridge)"
+      ]
+    },
+    {
+      "qid": "Q14",
+      "question": "Kennt die Mutter das Stoppwort?",
+      "expected": "-1",
+      "got": "-1",
+      "passed": true,
+      "micros": 22.184,
+      "trace": [
+        "- proof t16: NOT KNOW(mother, stop_word) | explicit nicht scope over KNOW"
+      ]
+    },
+    {
+      "qid": "Q15",
+      "question": "Kocht das Töpfchen weiter?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 33.2,
+      "trace": [
+        "+ proof t17: CONTINUE_COOK(pot) | Role-U COOK resolves neuter pronoun in asserted scene"
+      ]
+    },
+    {
+      "qid": "Q16",
+      "question": "Füllt der Brei die Küche?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 18.147,
+      "trace": [
+        "+ proof t18: FILLS(porridge, kitchen) | Clause-U coordinated elliptical fill chain"
+      ]
+    },
+    {
+      "qid": "Q17",
+      "question": "Füllt der Brei das ganze Haus?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 17.487,
+      "trace": [
+        "+ proof t19: FILLS(porridge, house) | Clause-U coordinated elliptical fill chain"
+      ]
+    },
+    {
+      "qid": "Q18",
+      "question": "Füllt der Brei das zweite Haus?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 16.846,
+      "trace": [
+        "+ proof t20: FILLS(porridge, second_house) | Clause-U coordinated elliptical fill chain"
+      ]
+    },
+    {
+      "qid": "Q19",
+      "question": "Füllt der Brei die Straße?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 17.267,
+      "trace": [
+        "+ proof t21: FILLS(porridge, street) | Clause-U coordinated elliptical fill chain"
+      ]
+    },
+    {
+      "qid": "Q20",
+      "question": "Füllt der Brei tatsächlich die ganze Welt?",
+      "expected": "0",
+      "got": "0",
+      "passed": true,
+      "micros": 16.566,
+      "trace": [
+        "no proof and no explicit opposite -> UNKNOWN"
+      ]
+    },
+    {
+      "qid": "Q21",
+      "question": "Wer kommt am Ende heim?",
+      "expected": "girl",
+      "got": "girl",
+      "passed": true,
+      "micros": 3.365,
+      "trace": [
+        "unique proven binding girl from t22: RETURN_HOME(girl) | explicit kommt ... heim event"
+      ]
+    },
+    {
+      "qid": "Q22",
+      "question": "Kennt das Mädchen am Ende das Stoppwort?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 17.246,
+      "trace": [
+        "+ proof t23: KNOW(girl, stop_word) | successful asserted production of stop command"
+      ]
+    },
+    {
+      "qid": "Q23",
+      "question": "Kocht das Töpfchen nach dem letzten Stoppbefehl?",
+      "expected": "-1",
+      "got": "-1",
+      "passed": true,
+      "micros": 4.997,
+      "trace": [
+        "stale state path t12: COOKING(pot)",
+        "latest state -1 at t23: asserted stop command applies learned command rule"
+      ]
+    },
+    {
+      "qid": "Q24",
+      "question": "Hatten Mädchen und Mutter anfangs kein Essen?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 17.046,
+      "trace": [
+        "+ proof t3: LACK_FOOD(girl_mother_group) | plural morphology + family group"
+      ]
+    },
+    {
+      "qid": "Q25",
+      "question": "Hat die alte Frau den Brei gegessen?",
+      "expected": "0",
+      "got": "0",
+      "passed": true,
+      "micros": 17.076,
+      "trace": [
+        "no proof and no explicit opposite -> UNKNOWN"
+      ]
+    },
+    {
+      "qid": "Q26",
+      "question": "Füllt der Brei die Stadt?",
+      "expected": "0",
+      "got": "0",
+      "passed": true,
+      "micros": 16.675,
+      "trace": [
+        "no proof and no explicit opposite -> UNKNOWN"
+      ]
+    },
+    {
+      "qid": "Q27",
+      "question": "Hat die Mutter das Töpfchen dem Mädchen geschenkt?",
+      "expected": "0",
+      "got": "0",
+      "passed": true,
+      "micros": 16.766,
+      "trace": [
+        "no proof and no explicit opposite -> UNKNOWN"
+      ]
+    },
+    {
+      "qid": "Q28",
+      "question": "Ist das Mädchen am Ende wieder zuhause?",
+      "expected": "+1",
+      "got": "+1",
+      "passed": true,
+      "micros": 6.59,
+      "trace": [
+        "stale location path t1: AT(girl, HOME)",
+        "stale location path t4: AT(girl, FOREST)",
+        "stale location path t9: AT(girl, HOME)",
+        "stale location path t11: AT(girl, AWAY_HOME)",
+        "latest exclusive location is HOME at t22"
+      ]
+    },
+    {
+      "qid": "Q29",
+      "question": "Hat das Mädchen vor dem Heimweg den Stoppbefehl tatsächlich ausgeführt?",
+      "expected": "0",
+      "got": "0",
+      "passed": true,
+      "micros": 18.678,
+      "trace": [
+        "no asserted bounded proof; instructional rules do not count -> UNKNOWN"
+      ]
+    },
+    {
+      "qid": "Q30",
+      "question": "Kocht das Töpfchen vor dem Heimweg tatsächlich schon als Story-Zustand?",
+      "expected": "0",
+      "got": "0",
+      "passed": true,
+      "micros": 2.424,
+      "trace": [
+        "no prior state event -> UNKNOWN"
+      ]
+    }
+  ],
+  "summary": {
+    "passed": 30,
+    "n": 30,
+    "accuracy": 1.0,
+    "wrong_commits": 0,
+    "failures": []
+  },
+  "caveats": [
+    "Raw story text is processed automatically before questions; no per-question scene sets or mention features are supplied.",
+    "The dictionary/ontology and the small Clause-/Role-U recognizers are hand-specified symbolic priors.",
+    "Natural-language benchmark questions are mapped to symbolic query specs by the test harness; a general question parser is not tested here.",
+    "The source is one Grimm tale; this does not measure general German-language accuracy.",
+    "UNKNOWN is preferred over guessing when no symbolic proof exists."
+  ]
+}

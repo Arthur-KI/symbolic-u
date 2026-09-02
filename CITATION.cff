@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use Symbolic-U in research, please cite the repository version or commit used."
+title: "Symbolic-U"
+authors:
+  - name: "Arthur-KI"
+version: "0.25.0"
+date-released: "2026-09-02"
+repository-code: "https://github.com/Arthur-KI/symbolic-u"
+url: "https://github.com/Arthur-KI/symbolic-u"
+license: Apache-2.0
+type: software
+abstract: >-
+  A non-neural symbolic learning and reasoning research prototype using a small
+  Key/U substrate, ternary proposition and derivation states, explicit opposition,
+  query-guided backward proof, temporal/arithmetic reasoning, decomposable
+  Macro-U compilation, classical visual tokenization and learned sensor selection.
+keywords:
+  - symbolic AI
+  - reasoning
+  - knowledge representation
+  - inductive logic programming
+  - program synthesis
+  - computer vision
+  - robotics
+  - explainable AI

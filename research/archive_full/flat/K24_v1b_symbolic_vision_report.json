@@ -1,0 +1,336 @@
+{
+  "version": "K24-v1b-symbolic-vision",
+  "result": "PASS",
+  "first_attempt_failure": "Exact color-signature induction could not identify red because training contained both RGB(220,40,40) and RGB(240,40,40).",
+  "generic_fix": "Learn maximum within-class measurement distance as visual tolerance; verify it remains below inter-class distance.",
+  "learned": {
+    "background_prototypes": {
+      "white": [
+        255.0,
+        255.0,
+        255.0
+      ],
+      "lightgray": [
+        225.0,
+        225.0,
+        225.0
+      ]
+    },
+    "color_prototypes": {
+      "red": [
+        226.66666666666666,
+        40.0,
+        40.0
+      ],
+      "blue": [
+        40.0,
+        80.0,
+        220.0
+      ],
+      "green": [
+        40.0,
+        180.0,
+        70.0
+      ]
+    },
+    "color_radius": {
+      "red": 13.333333333333343,
+      "blue": 0.0,
+      "green": 0.0
+    },
+    "color_tolerance": 20.0,
+    "minimum_between_class_distance": 180.27756377319946,
+    "shape_map": {
+      "3": "triangle",
+      "4": "quadrilateral"
+    },
+    "count_rule": true
+  },
+  "blind_tests": {
+    "1": {
+      "background": "white",
+      "background_state": 1,
+      "count": 2,
+      "count_state": 1,
+      "objects": [
+        {
+          "region": "R1",
+          "color": "green",
+          "color_state": 1,
+          "shape": "quadrilateral",
+          "shape_state": 1,
+          "corners": 4,
+          "color_distance": 0.0,
+          "centroid": [
+            79.5,
+            99.5
+          ]
+        },
+        {
+          "region": "R2",
+          "color": "red",
+          "color_state": 1,
+          "shape": "triangle",
+          "shape_state": 1,
+          "corners": 3,
+          "color_distance": 6.667,
+          "centroid": [
+            257.0,
+            257.8
+          ]
+        }
+      ]
+    },
+    "2": {
+      "background": "white",
+      "background_state": 1,
+      "count": 3,
+      "count_state": 1,
+      "objects": [
+        {
+          "region": "R1",
+          "color": "blue",
+          "color_state": 1,
+          "shape": "quadrilateral",
+          "shape_state": 1,
+          "corners": 4,
+          "color_distance": 0.0,
+          "centroid": [
+            96.5,
+            124.5
+          ]
+        },
+        {
+          "region": "R2",
+          "color": "blue",
+          "color_state": 1,
+          "shape": "quadrilateral",
+          "shape_state": 1,
+          "corners": 4,
+          "color_distance": 0.0,
+          "centroid": [
+            358.5,
+            153.5
+          ]
+        },
+        {
+          "region": "R3",
+          "color": "blue",
+          "color_state": 1,
+          "shape": "quadrilateral",
+          "shape_state": 1,
+          "corners": 4,
+          "color_distance": 0.0,
+          "centroid": [
+            183.5,
+            306.5
+          ]
+        }
+      ]
+    },
+    "3": {
+      "background": "white",
+      "background_state": 1,
+      "count": 4,
+      "count_state": 1,
+      "objects": [
+        {
+          "region": "R1",
+          "color": "blue",
+          "color_state": 1,
+          "shape": "triangle",
+          "shape_state": 1,
+          "corners": 3,
+          "color_distance": 0.0,
+          "centroid": [
+            349.0,
+            182.5
+          ]
+        },
+        {
+          "region": "R2",
+          "color": "red",
+          "color_state": 1,
+          "shape": "quadrilateral",
+          "shape_state": 1,
+          "corners": 4,
+          "color_distance": 6.667,
+          "centroid": [
+            84.5,
+            161.5
+          ]
+        },
+        {
+          "region": "R3",
+          "color": "green",
+          "color_state": 1,
+          "shape": "quadrilateral",
+          "shape_state": 1,
+          "corners": 4,
+          "color_distance": 0.0,
+          "centroid": [
+            388.0,
+            379.0
+          ]
+        },
+        {
+          "region": "R4",
+          "color": "blue",
+          "color_state": 1,
+          "shape": "quadrilateral",
+          "shape_state": 1,
+          "corners": 4,
+          "color_distance": 0.0,
+          "centroid": [
+            206.5,
+            399.5
+          ]
+        }
+      ]
+    },
+    "4": {
+      "background": "white",
+      "background_state": 1,
+      "count": 2,
+      "count_state": 1,
+      "objects": [
+        {
+          "region": "R1",
+          "color": "red",
+          "color_state": 1,
+          "shape": "quadrilateral",
+          "shape_state": 1,
+          "corners": 4,
+          "color_distance": 6.667,
+          "centroid": [
+            113.0,
+            197.0
+          ]
+        },
+        {
+          "region": "R2",
+          "color": "red",
+          "color_state": 1,
+          "shape": "triangle",
+          "shape_state": 1,
+          "corners": 3,
+          "color_distance": 6.667,
+          "centroid": [
+            367.5,
+            299.5
+          ]
+        }
+      ]
+    }
+  },
+  "composed_reasoning": {
+    "1": {
+      "red_quadrilaterals": [
+        0,
+        []
+      ],
+      "blue_quadrilaterals": [
+        0,
+        []
+      ],
+      "blue_triangles": [
+        0,
+        []
+      ],
+      "green_quadrilaterals": [
+        1,
+        [
+          "R1"
+        ]
+      ]
+    },
+    "2": {
+      "red_quadrilaterals": [
+        0,
+        []
+      ],
+      "blue_quadrilaterals": [
+        3,
+        [
+          "R1",
+          "R2",
+          "R3"
+        ]
+      ],
+      "blue_triangles": [
+        0,
+        []
+      ],
+      "green_quadrilaterals": [
+        0,
+        []
+      ]
+    },
+    "3": {
+      "red_quadrilaterals": [
+        1,
+        [
+          "R2"
+        ]
+      ],
+      "blue_quadrilaterals": [
+        1,
+        [
+          "R4"
+        ]
+      ],
+      "blue_triangles": [
+        1,
+        [
+          "R1"
+        ]
+      ],
+      "green_quadrilaterals": [
+        1,
+        [
+          "R3"
+        ]
+      ]
+    },
+    "4": {
+      "red_quadrilaterals": [
+        1,
+        [
+          "R1"
+        ]
+      ],
+      "blue_quadrilaterals": [
+        0,
+        []
+      ],
+      "blue_triangles": [
+        0,
+        []
+      ],
+      "green_quadrilaterals": [
+        0,
+        []
+      ]
+    }
+  },
+  "checks": {
+    "all_training_regions_counted": true,
+    "color_tolerance_is_learned_from_training_variation": true,
+    "color_classes_remain_separable": true,
+    "three_color_labels_now_learned": true,
+    "shape_from_corner_U_learned": true,
+    "count_from_region_membership_learned": true,
+    "all_test_regions_receive_learned_color": true,
+    "all_test_regions_receive_learned_shape": true,
+    "unknown_background_stays_KEY_0": true,
+    "unknown_color_stays_KEY_0": true,
+    "unknown_5corner_shape_stays_KEY_0": true,
+    "no_unknown_visual_U_becomes_KEY_minus1": true
+  },
+  "caveats": [
+    "Classical vision provides connected components, RGB means, and contour corner counts.",
+    "The semantic mappings to color names and shapes are learned from the supplied curriculum.",
+    "This run uses clean synthetic images, not natural photographs.",
+    "Mixed-color/mixed-shape test scenes are novel compositions relative to the single-class training images."
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "version": "v4.4b-recursive-u-verifier",
+  "result": "PASS for the four recursive targets tested",
+  "recursive_targets": {
+    "SUB": {
+      "target": "SUB",
+      "base_candidates": 55,
+      "recursive_candidates_before_verifier": 3026,
+      "pair_total": 18156,
+      "verifier_rejected": 17168,
+      "verifier_accepted": 988,
+      "verifier_modes": {
+        "WELL_FOUNDED_DECREASE": 988
+      },
+      "full_evaluated": 24,
+      "support": 36,
+      "conflict": 0,
+      "local_step_support": 9,
+      "local_step_conflict": 0,
+      "certificate": {
+        "mode": "WELL_FOUNDED_DECREASE",
+        "measure": "Y",
+        "via": "PRED",
+        "base_anchor": "Y"
+      },
+      "base_rule": "EQ(Z,X) + ZERO(Y) -> SUB(X,Y,Z)",
+      "recursive_rule": "PRED(Y,_NUM1) + SUB(X,_NUM1,_NUM0) + SUCC(Z,_NUM0) -> SUB(X,Y,Z)",
+      "unseen_passed": 12,
+      "unseen_n": 12,
+      "seconds": 10.441319503999921
+    },
+    "MUL": {
+      "target": "MUL",
+      "base_candidates": 1160,
+      "recursive_candidates_before_verifier": 1428,
+      "pair_total": 19992,
+      "verifier_rejected": 19800,
+      "verifier_accepted": 192,
+      "verifier_modes": {
+        "WELL_FOUNDED_DECREASE": 192
+      },
+      "full_evaluated": 24,
+      "support": 49,
+      "conflict": 0,
+      "local_step_support": 8,
+      "local_step_conflict": 0,
+      "certificate": {
+        "mode": "WELL_FOUNDED_DECREASE",
+        "measure": "Y",
+        "via": "SUCC",
+        "base_anchor": "Y"
+      },
+      "base_rule": "ADD(Z,X,X) + ZERO(Y) -> MUL(X,Y,Z)",
+      "recursive_rule": "ADD(X,_NUM1,Z) + MUL(X,_NUM0,_NUM1) + SUCC(_NUM0,Y) -> MUL(X,Y,Z)",
+      "unseen_passed": 10,
+      "unseen_n": 10,
+      "seconds": 41.52625722500011
+    },
+    "PATH": {
+      "target": "PATH",
+      "base_candidates": 1,
+      "recursive_candidates_before_verifier": 4,
+      "pair_total": 4,
+      "verifier_rejected": 0,
+      "verifier_accepted": 4,
+      "verifier_modes": {
+        "FINITE_TRAVERSAL": 4
+      },
+      "full_evaluated": 4,
+      "support": 32,
+      "conflict": 0,
+      "local_step_support": 9,
+      "local_step_conflict": 0,
+      "certificate": {
+        "mode": "FINITE_TRAVERSAL",
+        "measure": "visited(1)",
+        "via": "EDGE",
+        "port": 1,
+        "base_anchor": "finite-domain+visited"
+      },
+      "base_rule": "EDGE(X,Y) -> PATH(X,Y)",
+      "recursive_rule": "EDGE(_NODE0,Y) + PATH(X,_NODE0) -> PATH(X,Y)",
+      "unseen_passed": 168,
+      "unseen_n": 168,
+      "seconds": 0.2598325120000027
+    },
+    "PATH_COST": {
+      "target": "PATH_COST",
+      "base_candidates": 1,
+      "recursive_candidates_before_verifier": 19,
+      "pair_total": 19,
+      "verifier_rejected": 5,
+      "verifier_accepted": 14,
+      "verifier_modes": {
+        "FINITE_TRAVERSAL": 14
+      },
+      "full_evaluated": 14,
+      "support": 32,
+      "conflict": 0,
+      "local_step_support": 9,
+      "local_step_conflict": 0,
+      "certificate": {
+        "mode": "FINITE_TRAVERSAL",
+        "measure": "visited(1)",
+        "via": "EDGE_COST",
+        "port": 1,
+        "base_anchor": "finite-domain+visited"
+      },
+      "base_rule": "EDGE_COST(X,Y,C) -> PATH_COST(X,Y,C)",
+      "recursive_rule": "ADD(_NUM0,_NUM1,C) + EDGE_COST(_NODE0,Y,_NUM0) + PATH_COST(X,_NODE0,_NUM1) -> PATH_COST(X,Y,C)",
+      "unseen_passed": 80,
+      "unseen_n": 80,
+      "seconds": 5.341560956000194
+    }
+  },
+  "nonrecursive_control": {
+    "target": "DIVMOD",
+    "role": "nonrecursive regression control for v4.4b",
+    "rule": "MUL(D,Q,P) + ADD(P,R,N) + LT(R,D) -> DIVMOD(N,D,Q,R)",
+    "passed": 15,
+    "n": 15,
+    "rows": [
+      {
+        "n": 37,
+        "d": 7,
+        "q": 5,
+        "r": 2,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 41,
+        "d": 8,
+        "q": 5,
+        "r": 1,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 53,
+        "d": 9,
+        "q": 5,
+        "r": 8,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 68,
+        "d": 11,
+        "q": 6,
+        "r": 2,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 79,
+        "d": 12,
+        "q": 6,
+        "r": 7,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 64,
+        "d": 10,
+        "q": 6,
+        "r": 4,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 82,
+        "d": 9,
+        "q": 9,
+        "r": 1,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 54,
+        "d": 9,
+        "q": 6,
+        "r": 0,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 42,
+        "d": 12,
+        "q": 3,
+        "r": 6,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 76,
+        "d": 11,
+        "q": 6,
+        "r": 10,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 31,
+        "d": 7,
+        "q": 4,
+        "r": 3,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 59,
+        "d": 8,
+        "q": 7,
+        "r": 3,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 71,
+        "d": 10,
+        "q": 7,
+        "r": 1,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 88,
+        "d": 12,
+        "q": 7,
+        "r": 4,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      },
+      {
+        "n": 90,
+        "d": 11,
+        "q": 8,
+        "r": 2,
+        "good": "+1",
+        "wrong_r": "0",
+        "noncanonical": "0",
+        "passed": true
+      }
+    ],
+    "note": "The new Recursive-U verifier is not used for DIVMOD because this rule has no self-recursive DIVMOD call."
+  },
+  "verifier": {
+    "numeric_well_founded": {
+      "rule": "A recursive numeric port must decrease directly through ontology-marked PRED/SUCC and the chosen base rule must anchor that same head variable at ZERO.",
+      "purpose": "Provides a concrete well-founded measure before recursive execution."
+    },
+    "finite_structural_traversal": {
+      "rule": "A changed NODE recursive port must be connected to its previous value by a finite background relation such as EDGE/EDGE_COST; runtime visited-state prevents revisits.",
+      "purpose": "Allows graph-style recursion without pretending NODEs have a numeric order."
+    }
+  },
+  "executor": {
+    "type": "least-fixed-point recursive U execution",
+    "reason": "Avoid repeated top-down expansion after the verifier has accepted a finite/terminating recursive template.",
+    "bug_fixed": "Temporary join-index cache keyed by short-lived dict id could be reused by Python and omit valid PATH_COST derivations; temporary indexes are now invalidated."
+  },
+  "key_results": {
+    "SUB": {
+      "pair_reduction": "18156 -> 988 -> 24 full executions",
+      "unseen": "12/12"
+    },
+    "MUL": {
+      "pair_reduction": "19992 -> 192 -> 24 full executions",
+      "unseen": "10/10"
+    },
+    "PATH": {
+      "unseen": "168/168"
+    },
+    "PATH_COST": {
+      "unseen": "80/80"
+    },
+    "DIVMOD_control": {
+      "unseen": "15/15"
+    }
+  },
+  "invariants": [
+    "Rejected recursive U paths do not imply Key -1.",
+    "Wrong arithmetic outputs and unreachable/wrong-cost graph queries remain UNKNOWN (0).",
+    "Support/conflict is evaluated only after termination/progress verification.",
+    "No SUB/MUL/PATH/PATH_COST formula is hard-coded as a named candidate menu in v4.4b.",
+    "Numeric progress metadata is relation-level ontology metadata (PRED/SUCC), not target-specific arithmetic code.",
+    "Structural traversal relies on finite-domain + visited-state rather than a fake numeric ordering of graph nodes."
+  ],
+  "caveats": [
+    "This is not a complete automatic termination prover; it recognizes two generic verifier families: well-founded numeric decrease and finite structural traversal.",
+    "Generic U generation still uses bounded body size, bounded hidden variables, typed ports, connectedness and query-local witness mining.",
+    "For MUL, recursive candidate mining intentionally uses a very small witness sample (one evenly selected positive example) as a search-budget measure; full training support/conflict and unseen validation are still evaluated afterward.",
+    "DIVMOD is only a frozen nonrecursive regression control in v4.4b. Generic DIVMOD re-synthesis from the full relation vocabulary still has search-explosion issues and is not claimed solved here.",
+    "PATH/PATH_COST benchmarks remain finite directed tree/DAG-like graphs rather than arbitrary cyclic weighted networks."
+  ]
+}

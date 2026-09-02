@@ -1,0 +1,42 @@
+{
+  "K14b": {
+    "pass": 12,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K14": {
+    "pass": 15,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K13": {
+    "pass": 14,
+    "fail": 0,
+    "returncode": 0
+  },
+  "K12": {
+    "pass": 21,
+    "fail": 0,
+    "returncode": 0
+  },
+  "fresh_runs": [
+    {
+      "stage": "K12",
+      "returncode": 0,
+      "pass": 21,
+      "fail": 0
+    },
+    {
+      "stage": "K13",
+      "returncode": 0,
+      "pass": 14,
+      "fail": 0
+    },
+    {
+      "stage": "K14",
+      "returncode": 0,
+      "pass": 15,
+      "fail": 0
+    }
+  ]
+}

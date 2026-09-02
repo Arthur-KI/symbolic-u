@@ -1,0 +1,32 @@
+name: Research experiment
+description: Propose a numbered experiment or ablation
+title: "[experiment] "
+labels: ["research"]
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+      description: What should the experiment distinguish?
+    validations:
+      required: true
+  - type: textarea
+    id: fixed
+    attributes:
+      label: What remains fixed?
+    validations:
+      required: true
+  - type: textarea
+    id: learned
+    attributes:
+      label: What should be learned?
+    validations:
+      required: true
+  - type: textarea
+    id: blind
+    attributes:
+      label: Blind evaluation design
+  - type: textarea
+    id: failure
+    attributes:
+      label: What result would falsify the hypothesis?

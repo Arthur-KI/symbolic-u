@@ -1,0 +1,26 @@
+[
+  {
+    "module": "v67",
+    "returncode": 0,
+    "pass": 20,
+    "fail": 0
+  },
+  {
+    "module": "v66",
+    "returncode": 0,
+    "pass": 17,
+    "fail": 0
+  },
+  {
+    "module": "v65",
+    "returncode": 0,
+    "pass": 20,
+    "fail": 0
+  },
+  {
+    "module": "v64",
+    "returncode": 0,
+    "pass": 19,
+    "fail": 0
+  }
+]

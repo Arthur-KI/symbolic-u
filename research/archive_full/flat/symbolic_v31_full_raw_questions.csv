@@ -1,0 +1,29 @@
+qid,question,expected,got,passed,micros
+Q01,Wer lebt mit der Mutter?,girl,girl,True,8.392
+Q02,Wer geht in den Wald?,girl,girl,True,5.899
+Q03,Wer begegnet der alten Frau?,girl,girl,True,3.695
+Q04,Wer schenkt das Töpfchen?,old_woman,old_woman,True,3.235
+Q05,Wer bekommt das Töpfchen?,girl,girl,True,2.734
+Q06,Bedeutet „Töpfchen koche“ START_COOK?,+1,+1,True,1.793
+Q07,Bedeutet „Töpfchen steh“ STOP_COOK?,+1,+1,True,1.272
+Q08,Wer bringt den Topf heim?,girl,girl,True,3.004
+Q09,Ist der Topf danach zuhause?,+1,+1,True,9.404
+Q10,Ist das Mädchen beim Kochbefehl der Mutter zuhause?,-1,-1,True,7.121
+Q11,Wer sagt den späteren Kochbefehl?,mother,mother,True,10.326
+Q12,Kocht das Töpfchen nach dem Befehl der Mutter?,+1,+1,True,7.702
+Q13,Wer isst sich in der Mutterszene satt?,mother,mother,True,5.578
+Q14,Kennt die Mutter das Stoppwort?,-1,-1,True,22.915
+Q15,Kocht das Töpfchen weiter?,+1,+1,True,19.299
+Q16,Füllt der Brei die Küche?,+1,+1,True,19.991
+Q17,Füllt der Brei das ganze Haus?,+1,+1,True,18.778
+Q18,Füllt der Brei das zweite Haus?,+1,+1,True,18.017
+Q19,Füllt der Brei die Straße?,+1,+1,True,18.168
+Q20,Füllt der Brei tatsächlich die ganze Welt?,0,0,True,18.247
+Q21,Wer kommt am Ende heim?,UNKNOWN,UNKNOWN,True,9.454
+Q22,Kennt das Mädchen am Ende das Stoppwort?,+1,+1,True,21.483
+Q23,Kocht das Töpfchen nach dem letzten Stoppbefehl?,-1,-1,True,6.74
+Q24,Hatten Mädchen und Mutter anfangs kein Essen?,+1,+1,True,18.448
+Q25,Hat die alte Frau den Brei gegessen?,0,0,True,49.414
+Q26,Füllt der Brei die Stadt?,0,0,True,17.897
+Q27,Hat die Mutter das Töpfchen dem Mädchen geschenkt?,0,0,True,17.507
+Q28,Ist das Mädchen am Ende wieder zuhause?,+1,+1,True,6.48

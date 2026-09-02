@@ -1,0 +1,549 @@
+{
+  "version": "math-v4.2-solver-optimization",
+  "frozen_templates": {
+    "add": "Y0_ZX__DEC_Y_DEC_Z",
+    "mul": "Y0_Z0__DEC_Y_ADD_X",
+    "divmod": "D_Q_PLUS_R_EQ_N__R_LT_D"
+  },
+  "correctness": {
+    "baseline_passed": 12,
+    "optimized_passed": 12,
+    "n": 12,
+    "heldout_divmod_passed": 30,
+    "heldout_divmod_n": 30
+  },
+  "u_audit": {
+    "baseline": {
+      "total_u": 2371,
+      "pred_u": 1815,
+      "lt_u": 7,
+      "add_u": 481,
+      "mul_u": 53,
+      "div_u": 5,
+      "semantic_u": 10
+    },
+    "optimized": {
+      "total_u": 470,
+      "pred_u": 96,
+      "lt_u": 7,
+      "add_u": 311,
+      "mul_u": 41,
+      "div_u": 5,
+      "semantic_u": 10
+    },
+    "baseline_duplicate_signatures": 2511,
+    "optimized_duplicate_signatures": 0,
+    "baseline_warm_new_u": 610,
+    "optimized_warm_new_u": 0
+  },
+  "timing_us": {
+    "baseline_cold_total": 336159.318,
+    "optimized_cold_total": 3851.518,
+    "baseline_warm_total": 82129.422,
+    "optimized_warm_total": 30.532999999999998,
+    "cold_speedup": 87.2796954343716,
+    "warm_speedup": 2689.857596698654,
+    "note": "Python microbenchmark; use directionally, not as production performance claim."
+  },
+  "optimizations": [
+    "indexed direct-fact access",
+    "PRED proof/materialization cache",
+    "LT proof cache",
+    "record-mode ADD/MUL/DIVMOD intermediate proof caches",
+    "backward ADD solve cache",
+    "UInstance signature dedupe",
+    "shared positive proof cache"
+  ],
+  "semantic_ablations": {
+    "without_div": "0",
+    "without_mul": "0",
+    "without_add": "0",
+    "without_number_structure": "0",
+    "without_lt": "0"
+  },
+  "comparison": [
+    {
+      "query": "PACKING_PLAN(apples, N4, N3)",
+      "expected": "+1",
+      "baseline": "+1",
+      "optimized": "+1",
+      "baseline_cold_us": 19132.142,
+      "optimized_cold_us": 815.573,
+      "same_semantics": true
+    },
+    {
+      "query": "HAS_LEFTOVER(apples, N4, N3)",
+      "expected": "+1",
+      "baseline": "+1",
+      "optimized": "+1",
+      "baseline_cold_us": 1072.236,
+      "optimized_cold_us": 22.634,
+      "same_semantics": true
+    },
+    {
+      "query": "PACKING_PLAN(oranges, N4, N0)",
+      "expected": "+1",
+      "baseline": "+1",
+      "optimized": "+1",
+      "baseline_cold_us": 18576.872,
+      "optimized_cold_us": 205.137,
+      "same_semantics": true
+    },
+    {
+      "query": "EXACT_PACKING(oranges, N4)",
+      "expected": "+1",
+      "baseline": "+1",
+      "optimized": "+1",
+      "baseline_cold_us": 87.519,
+      "optimized_cold_us": 7.699,
+      "same_semantics": true
+    },
+    {
+      "query": "PACKING_PLAN(bolts, N12, N0)",
+      "expected": "+1",
+      "baseline": "+1",
+      "optimized": "+1",
+      "baseline_cold_us": 66856.352,
+      "optimized_cold_us": 1156.994,
+      "same_semantics": true
+    },
+    {
+      "query": "EXACT_PACKING(bolts, N12)",
+      "expected": "+1",
+      "baseline": "+1",
+      "optimized": "+1",
+      "baseline_cold_us": 86.971,
+      "optimized_cold_us": 9.383,
+      "same_semantics": true
+    },
+    {
+      "query": "PACKING_PLAN(stones, N8, N1)",
+      "expected": "+1",
+      "baseline": "+1",
+      "optimized": "+1",
+      "baseline_cold_us": 66810.338,
+      "optimized_cold_us": 579.921,
+      "same_semantics": true
+    },
+    {
+      "query": "HAS_LEFTOVER(stones, N8, N1)",
+      "expected": "+1",
+      "baseline": "+1",
+      "optimized": "+1",
+      "baseline_cold_us": 406.092,
+      "optimized_cold_us": 19.042,
+      "same_semantics": true
+    },
+    {
+      "query": "PACKING_PLAN(beads, N8, N0)",
+      "expected": "+1",
+      "baseline": "+1",
+      "optimized": "+1",
+      "baseline_cold_us": 78509.387,
+      "optimized_cold_us": 954.334,
+      "same_semantics": true
+    },
+    {
+      "query": "EXACT_PACKING(beads, N8)",
+      "expected": "+1",
+      "baseline": "+1",
+      "optimized": "+1",
+      "baseline_cold_us": 80.172,
+      "optimized_cold_us": 9.469,
+      "same_semantics": true
+    },
+    {
+      "query": "PACKING_PLAN(apples, N3, N8)",
+      "expected": "0",
+      "baseline": "0",
+      "optimized": "0",
+      "baseline_cold_us": 17771.346,
+      "optimized_cold_us": 42.234,
+      "same_semantics": true
+    },
+    {
+      "query": "PACKING_PLAN(stones, N7, N12)",
+      "expected": "0",
+      "baseline": "0",
+      "optimized": "0",
+      "baseline_cold_us": 66769.891,
+      "optimized_cold_us": 29.098,
+      "same_semantics": true
+    }
+  ],
+  "heldout": [
+    {
+      "n": 71,
+      "d": 7,
+      "q": 10,
+      "r": 1,
+      "good": "+1",
+      "wrong_r": 2,
+      "wrong_state": "0",
+      "alt": "(9, 8)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 32,
+      "d": 12,
+      "q": 2,
+      "r": 8,
+      "good": "+1",
+      "wrong_r": 9,
+      "wrong_state": "0",
+      "alt": "(1, 20)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 48,
+      "d": 8,
+      "q": 6,
+      "r": 0,
+      "good": "+1",
+      "wrong_r": 1,
+      "wrong_state": "0",
+      "alt": "(5, 8)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 45,
+      "d": 8,
+      "q": 5,
+      "r": 5,
+      "good": "+1",
+      "wrong_r": 6,
+      "wrong_state": "0",
+      "alt": "(4, 13)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 78,
+      "d": 7,
+      "q": 11,
+      "r": 1,
+      "good": "+1",
+      "wrong_r": 2,
+      "wrong_state": "0",
+      "alt": "(10, 8)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 74,
+      "d": 12,
+      "q": 6,
+      "r": 2,
+      "good": "+1",
+      "wrong_r": 3,
+      "wrong_state": "0",
+      "alt": "(5, 14)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 88,
+      "d": 11,
+      "q": 8,
+      "r": 0,
+      "good": "+1",
+      "wrong_r": 1,
+      "wrong_state": "0",
+      "alt": "(7, 11)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 36,
+      "d": 11,
+      "q": 3,
+      "r": 3,
+      "good": "+1",
+      "wrong_r": 4,
+      "wrong_state": "0",
+      "alt": "(2, 14)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 58,
+      "d": 7,
+      "q": 8,
+      "r": 2,
+      "good": "+1",
+      "wrong_r": 3,
+      "wrong_state": "0",
+      "alt": "(7, 9)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 32,
+      "d": 7,
+      "q": 4,
+      "r": 4,
+      "good": "+1",
+      "wrong_r": 5,
+      "wrong_state": "0",
+      "alt": "(3, 11)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 44,
+      "d": 8,
+      "q": 5,
+      "r": 4,
+      "good": "+1",
+      "wrong_r": 5,
+      "wrong_state": "0",
+      "alt": "(4, 12)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 63,
+      "d": 11,
+      "q": 5,
+      "r": 8,
+      "good": "+1",
+      "wrong_r": 9,
+      "wrong_state": "0",
+      "alt": "(4, 19)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 32,
+      "d": 11,
+      "q": 2,
+      "r": 10,
+      "good": "+1",
+      "wrong_r": 11,
+      "wrong_state": "0",
+      "alt": "(1, 21)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 43,
+      "d": 12,
+      "q": 3,
+      "r": 7,
+      "good": "+1",
+      "wrong_r": 8,
+      "wrong_state": "0",
+      "alt": "(2, 19)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 72,
+      "d": 12,
+      "q": 6,
+      "r": 0,
+      "good": "+1",
+      "wrong_r": 1,
+      "wrong_state": "0",
+      "alt": "(5, 12)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 65,
+      "d": 10,
+      "q": 6,
+      "r": 5,
+      "good": "+1",
+      "wrong_r": 6,
+      "wrong_state": "0",
+      "alt": "(5, 15)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 45,
+      "d": 10,
+      "q": 4,
+      "r": 5,
+      "good": "+1",
+      "wrong_r": 6,
+      "wrong_state": "0",
+      "alt": "(3, 15)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 68,
+      "d": 9,
+      "q": 7,
+      "r": 5,
+      "good": "+1",
+      "wrong_r": 6,
+      "wrong_state": "0",
+      "alt": "(6, 14)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 82,
+      "d": 7,
+      "q": 11,
+      "r": 5,
+      "good": "+1",
+      "wrong_r": 6,
+      "wrong_state": "0",
+      "alt": "(10, 12)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 79,
+      "d": 8,
+      "q": 9,
+      "r": 7,
+      "good": "+1",
+      "wrong_r": 8,
+      "wrong_state": "0",
+      "alt": "(8, 15)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 75,
+      "d": 10,
+      "q": 7,
+      "r": 5,
+      "good": "+1",
+      "wrong_r": 6,
+      "wrong_state": "0",
+      "alt": "(6, 15)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 52,
+      "d": 9,
+      "q": 5,
+      "r": 7,
+      "good": "+1",
+      "wrong_r": 8,
+      "wrong_state": "0",
+      "alt": "(4, 16)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 40,
+      "d": 8,
+      "q": 5,
+      "r": 0,
+      "good": "+1",
+      "wrong_r": 1,
+      "wrong_state": "0",
+      "alt": "(4, 8)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 79,
+      "d": 9,
+      "q": 8,
+      "r": 7,
+      "good": "+1",
+      "wrong_r": 8,
+      "wrong_state": "0",
+      "alt": "(7, 16)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 37,
+      "d": 7,
+      "q": 5,
+      "r": 2,
+      "good": "+1",
+      "wrong_r": 3,
+      "wrong_state": "0",
+      "alt": "(4, 9)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 55,
+      "d": 7,
+      "q": 7,
+      "r": 6,
+      "good": "+1",
+      "wrong_r": 7,
+      "wrong_state": "0",
+      "alt": "(6, 13)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 53,
+      "d": 9,
+      "q": 5,
+      "r": 8,
+      "good": "+1",
+      "wrong_r": 9,
+      "wrong_state": "0",
+      "alt": "(4, 17)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 69,
+      "d": 9,
+      "q": 7,
+      "r": 6,
+      "good": "+1",
+      "wrong_r": 7,
+      "wrong_state": "0",
+      "alt": "(6, 15)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 82,
+      "d": 7,
+      "q": 11,
+      "r": 5,
+      "good": "+1",
+      "wrong_r": 6,
+      "wrong_state": "0",
+      "alt": "(10, 12)",
+      "alt_state": "0",
+      "passed": true
+    },
+    {
+      "n": 77,
+      "d": 10,
+      "q": 7,
+      "r": 7,
+      "good": "+1",
+      "wrong_r": 8,
+      "wrong_state": "0",
+      "alt": "(6, 17)",
+      "alt_state": "0",
+      "passed": true
+    }
+  ],
+  "invariants": [
+    "No mathematical U template changed between baseline and optimized solver.",
+    "Wrong/noncanonical arithmetic propositions remain UNKNOWN (0).",
+    "No optimization turns U path failure into Key FALSE (-1).",
+    "Warm repeated queries materialize no new UInstances in v4.2.",
+    "DIVMOD still depends on MUL, ADD, LT, and Standard-U number structure."
+  ],
+  "caveats": [
+    "The benchmark is a Python prototype, not a production systems benchmark.",
+    "Number ontology is static during a benchmark run; UNKNOWN proofs are intentionally not cached.",
+    "Learned recursive candidate families remain hand-bounded priors.",
+    "Language parsing is excluded here so solver optimization can be measured independently."
+  ]
+}

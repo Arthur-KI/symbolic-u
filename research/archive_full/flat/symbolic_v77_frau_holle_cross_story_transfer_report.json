@@ -1,0 +1,207 @@
+{
+  "version": "v7.7-frozen-frau-holle-cross-story-transfer",
+  "result": "SAFE_BUT_NO_ZERO_SHOT_TRANSFER",
+  "source_library": "v7.6 Frau-Holle curriculum library frozen",
+  "target_story": "Der süße Brei",
+  "strict": {
+    "surface_hits": [],
+    "surface_hit_count": 0,
+    "overlap_target_facts": [
+      "GIVE(old_woman, pot, girl)",
+      "RETURN_HOME(girl)"
+    ],
+    "proved_overlap_facts": [],
+    "overlap_recall": "0/2",
+    "false_commits": 0
+  },
+  "concept_overlap": {
+    "relations": [
+      "GIVE",
+      "RETURN_HOME"
+    ],
+    "n": 2
+  },
+  "diagnostic_not_model_scores": {
+    "surface_bridge_only": {
+      "proved": [
+        "RETURN_HOME(girl)"
+      ],
+      "interpretation": "If missing paraphrase bridges were supplied but Frau-Holle binders stayed frozen, RETURN_HOME would transfer; GIVE would remain unresolved because its binder is story-specific."
+    },
+    "surface_plus_generic_role_binder_oracle": {
+      "proved": [
+        "GIVE(old_woman, pot, girl)",
+        "RETURN_HOME(girl)"
+      ],
+      "ceiling": "2/2",
+      "interpretation": "If both missing surface paraphrases and a generic actor/recipient/theme binder were supplied, the two overlapping concept heads are sufficient. This is an evaluator-side ceiling, not achieved frozen transfer."
+    }
+  },
+  "binder_portability": {
+    "portable_genericish_count": 3,
+    "total_rules": 23,
+    "rows": [
+      {
+        "family": "G01",
+        "relation": "SPIN",
+        "binder": "PROTAG",
+        "portable_without_story_constants": true
+      },
+      {
+        "family": "G02",
+        "relation": "FALL",
+        "binder": "SPOOL_WELL",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G03",
+        "relation": "JUMP",
+        "binder": "PROTAG_WELL",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G04",
+        "relation": "AT",
+        "binder": "PROTAG_MEADOW",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G05",
+        "relation": "REQUEST",
+        "binder": "SPEAKER_REQUEST_PULL",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G06",
+        "relation": "PULL_OUT",
+        "binder": "PROTAG_BREAD",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G07",
+        "relation": "SHAKE_REQUEST",
+        "binder": "SPEAKER_REQUEST_SHAKE",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G08",
+        "relation": "SHAKE",
+        "binder": "PROTAG_TREE",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G09",
+        "relation": "SERVE",
+        "binder": "PROTAG_HOLLE",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G10",
+        "relation": "REQUEST",
+        "binder": "HOLLE_REQUEST_BED",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G11",
+        "relation": "WANT_HOME",
+        "binder": "PROTAG",
+        "portable_without_story_constants": true
+      },
+      {
+        "family": "G12",
+        "relation": "LEAD",
+        "binder": "HOLLE_PROTAG_GATE",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G13",
+        "relation": "COVER",
+        "binder": "PROTAG_GOLD",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G14",
+        "relation": "GIVE",
+        "binder": "HOLLE_PROTAG_SPOOL",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G15",
+        "relation": "RETURN_HOME",
+        "binder": "PROTAG",
+        "portable_without_story_constants": true
+      },
+      {
+        "family": "G16",
+        "relation": "INTEND",
+        "binder": "MOTHER_LAZY",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G17",
+        "relation": "THROW",
+        "binder": "PROTAG_SPOOL_WELL",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G18",
+        "relation": "REFUSE",
+        "binder": "PROTAG_REFUSE_REQUESTER",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G19",
+        "relation": "REFUSE",
+        "binder": "PROTAG_REFUSE_REQUESTER",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G20",
+        "relation": "NEGLECT",
+        "binder": "PROTAG_BED",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G21",
+        "relation": "DISMISS",
+        "binder": "HOLLE_PROTAG",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G22",
+        "relation": "COVER",
+        "binder": "PROTAG_PITCH",
+        "portable_without_story_constants": false
+      },
+      {
+        "family": "G23",
+        "relation": "REMAIN_ATTACHED",
+        "binder": "PITCH_PROTAG",
+        "portable_without_story_constants": false
+      }
+    ]
+  },
+  "checks": {
+    "foreign_story_is_not_used_in_FrauHolle_training": true,
+    "strict_frozen_library_has_no_online_learning": true,
+    "strict_surface_transfer_hits_zero": true,
+    "strict_transfer_has_zero_false_commits": true,
+    "target_has_existing_concept_head_overlap": true,
+    "strict_overlap_recall_is_zero_of_two": true,
+    "surface_bridge_only_would_recover_return_home_but_not_specialized_give_binder": true,
+    "generic_role_binding_plus_surface_bridge_oracle_ceiling_is_two_of_two": true
+  },
+  "interpretation": [
+    "The Frau-Holle curriculum proves that one story can be learned incrementally, but the resulting surface library is not yet a general cross-story German semantic library.",
+    "On the unchanged Der süße Brei text, no frozen Frau-Holle Surface-U fires. This yields zero false commits but also zero useful zero-shot transfer.",
+    "The target contains two relations for which the Frau library already has concept heads: GIVE and RETURN_HOME. Neither is reached in strict transfer because the target uses different surface realizations ('schenken' instead of the trained 'geben', and 'kommt ... heim' instead of the trained 'gehen ... Mutter').",
+    "Even after an evaluator-side surface bridge, the Frau GIVE rule is blocked by its story-specific HOLLE_PROTAG_SPOOL binder. RETURN_HOME's generic PROTAG binder would transfer.",
+    "Therefore the next bottlenecks are cross-lexeme Surface-U abstraction and, more importantly, replacing story-specific binders with generic Clause-/Role-U programs."
+  ],
+  "caveats": [
+    "This cross-story test freezes only the Frau-Holle learned library; it intentionally does not import Sweet-Porridge-specific semantic rules from older experiments.",
+    "The 2/2 oracle ceiling is diagnostic only and must not be reported as model accuracy.",
+    "Natural-language question parsing is not part of this transfer test.",
+    "Der süße Brei has limited lexical overlap with Frau Holle, so a second foreign story with more shared surface vocabulary would be useful after binder abstraction."
+  ]
+}

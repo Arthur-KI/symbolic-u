@@ -1,0 +1,731 @@
+{
+  "version": "v7.6-frau-holle-curriculum-learnability",
+  "result": "PASS_CURRICULUM_LEARNABILITY",
+  "source_file": "grimm_frau_holle.txt",
+  "scope": "unchanged full Grimm text; curriculum-trained symbolic cue U; frozen evaluation",
+  "historical_baseline": {
+    "v5.1_frozen_zero_shot": "1/26",
+    "note": "Earlier frozen raw-text transfer failed primarily at the event/clause semantic bridge."
+  },
+  "curriculum_progression": {
+    "0": {
+      "proved": 3,
+      "gold": 26,
+      "adversarial_false_commits": 0,
+      "facts": 3
+    },
+    "1": {
+      "proved": 7,
+      "gold": 26,
+      "adversarial_false_commits": 0,
+      "facts": 9
+    },
+    "2": {
+      "proved": 13,
+      "gold": 26,
+      "adversarial_false_commits": 0,
+      "facts": 16
+    },
+    "3": {
+      "proved": 18,
+      "gold": 26,
+      "adversarial_false_commits": 0,
+      "facts": 22
+    },
+    "4": {
+      "proved": 26,
+      "gold": 26,
+      "adversarial_false_commits": 0,
+      "facts": 31
+    }
+  },
+  "final": {
+    "gold_proved": 26,
+    "gold_n": 26,
+    "semantic_coverage": 1.0,
+    "adversarial_false_commits": 0,
+    "adversarial_n": 6,
+    "learned_surface_rules": 23
+  },
+  "learned_rules": [
+    {
+      "family_id": "G01",
+      "anonymous_head": "H21",
+      "evaluator_relation": "SPIN",
+      "stage": 1,
+      "scope": "ROOT",
+      "binder": "PROTAG",
+      "required": [
+        "U:spinnen"
+      ]
+    },
+    {
+      "family_id": "G02",
+      "anonymous_head": "H6",
+      "evaluator_relation": "FALL",
+      "stage": 1,
+      "scope": "ROOT",
+      "binder": "SPOOL_WELL",
+      "required": [
+        "U:fallen",
+        "U:spule"
+      ]
+    },
+    {
+      "family_id": "G03",
+      "anonymous_head": "H9",
+      "evaluator_relation": "JUMP",
+      "stage": 1,
+      "scope": "ROOT",
+      "binder": "PROTAG_WELL",
+      "required": [
+        "U:brunnen",
+        "U:springen"
+      ]
+    },
+    {
+      "family_id": "G04",
+      "anonymous_head": "H1",
+      "evaluator_relation": "AT_MEADOW",
+      "stage": 1,
+      "scope": "ROOT",
+      "binder": "PROTAG_MEADOW",
+      "required": [
+        "U:auf",
+        "U:wiese"
+      ]
+    },
+    {
+      "family_id": "G05",
+      "anonymous_head": "H13",
+      "evaluator_relation": "PULL_OUT_REQUEST",
+      "stage": 2,
+      "scope": "QUOTE",
+      "binder": "SPEAKER_REQUEST_PULL",
+      "required": [
+        "U:raus"
+      ]
+    },
+    {
+      "family_id": "G06",
+      "anonymous_head": "H12",
+      "evaluator_relation": "PULL_OUT",
+      "stage": 2,
+      "scope": "ROOT",
+      "binder": "PROTAG_BREAD",
+      "required": [
+        "U:heraus",
+        "U:holen"
+      ]
+    },
+    {
+      "family_id": "G07",
+      "anonymous_head": "H20",
+      "evaluator_relation": "SHAKE_REQUEST",
+      "stage": 2,
+      "scope": "QUOTE",
+      "binder": "SPEAKER_REQUEST_SHAKE",
+      "required": [
+        "U:schütteln"
+      ]
+    },
+    {
+      "family_id": "G08",
+      "anonymous_head": "H19",
+      "evaluator_relation": "SHAKE",
+      "stage": 2,
+      "scope": "ROOT",
+      "binder": "PROTAG_TREE",
+      "required": [
+        "U:baum",
+        "U:schütteln"
+      ]
+    },
+    {
+      "family_id": "G09",
+      "anonymous_head": "H18",
+      "evaluator_relation": "SERVE",
+      "stage": 2,
+      "scope": "ROOT",
+      "binder": "PROTAG_HOLLE",
+      "required": [
+        "U:dienst",
+        "U:in"
+      ]
+    },
+    {
+      "family_id": "G10",
+      "anonymous_head": "H2",
+      "evaluator_relation": "BED_REQUEST",
+      "stage": 2,
+      "scope": "QUOTE",
+      "binder": "HOLLE_REQUEST_BED",
+      "required": [
+        "U:bett"
+      ]
+    },
+    {
+      "family_id": "G11",
+      "anonymous_head": "H23",
+      "evaluator_relation": "WANT_HOME",
+      "stage": 3,
+      "scope": "ROOT",
+      "binder": "PROTAG",
+      "required": [
+        "U:heimweh"
+      ]
+    },
+    {
+      "family_id": "G12",
+      "anonymous_head": "H10",
+      "evaluator_relation": "LEAD",
+      "stage": 3,
+      "scope": "ROOT",
+      "binder": "HOLLE_PROTAG_GATE",
+      "required": [
+        "U:führen",
+        "U:tor"
+      ]
+    },
+    {
+      "family_id": "G13",
+      "anonymous_head": "H3",
+      "evaluator_relation": "COVER",
+      "stage": 3,
+      "scope": "ROOT",
+      "binder": "PROTAG_GOLD",
+      "required": [
+        "U:bedecken"
+      ]
+    },
+    {
+      "family_id": "G14",
+      "anonymous_head": "H7",
+      "evaluator_relation": "GIVE_SPOOL",
+      "stage": 3,
+      "scope": "ROOT",
+      "binder": "HOLLE_PROTAG_SPOOL",
+      "required": [
+        "U:geben"
+      ]
+    },
+    {
+      "family_id": "G15",
+      "anonymous_head": "H17",
+      "evaluator_relation": "RETURN_HOME",
+      "stage": 3,
+      "scope": "ROOT",
+      "binder": "PROTAG",
+      "required": [
+        "U:gehen",
+        "U:mutter"
+      ]
+    },
+    {
+      "family_id": "G16",
+      "anonymous_head": "H8",
+      "evaluator_relation": "INTEND_SAME_LUCK",
+      "stage": 4,
+      "scope": "ROOT",
+      "binder": "MOTHER_LAZY",
+      "required": [
+        "U:verschaffen"
+      ]
+    },
+    {
+      "family_id": "G17",
+      "anonymous_head": "H22",
+      "evaluator_relation": "THROW_SPOOL",
+      "stage": 4,
+      "scope": "ROOT",
+      "binder": "PROTAG_SPOOL_WELL",
+      "required": [
+        "U:spule",
+        "U:werfen"
+      ]
+    },
+    {
+      "family_id": "G18",
+      "anonymous_head": "H15",
+      "evaluator_relation": "REFUSE_DIRTY",
+      "stage": 4,
+      "scope": "QUOTE",
+      "binder": "PROTAG_REFUSE_REQUESTER",
+      "required": [
+        "B:schmutzig>zu"
+      ]
+    },
+    {
+      "family_id": "G19",
+      "anonymous_head": "H14",
+      "evaluator_relation": "REFUSE_DANGER",
+      "stage": 4,
+      "scope": "QUOTE",
+      "binder": "PROTAG_REFUSE_REQUESTER",
+      "required": [
+        "B:kommst>mir"
+      ]
+    },
+    {
+      "family_id": "G20",
+      "anonymous_head": "H11",
+      "evaluator_relation": "NEGLECT_BED",
+      "stage": 4,
+      "scope": "ROOT",
+      "binder": "PROTAG_BED",
+      "required": [
+        "B:bett>nicht"
+      ]
+    },
+    {
+      "family_id": "G21",
+      "anonymous_head": "H5",
+      "evaluator_relation": "DISMISS",
+      "stage": 4,
+      "scope": "ROOT",
+      "binder": "HOLLE_PROTAG",
+      "required": [
+        "B:dienst>auf"
+      ]
+    },
+    {
+      "family_id": "G22",
+      "anonymous_head": "H4",
+      "evaluator_relation": "COVER_PITCH",
+      "stage": 4,
+      "scope": "ROOT",
+      "binder": "PROTAG_PITCH",
+      "required": [
+        "U:ausschütten"
+      ]
+    },
+    {
+      "family_id": "G23",
+      "anonymous_head": "H16",
+      "evaluator_relation": "REMAIN_ATTACHED",
+      "stage": 4,
+      "scope": "ROOT",
+      "binder": "PITCH_PROTAG",
+      "required": [
+        "U:an",
+        "U:bleiben"
+      ]
+    }
+  ],
+  "failures": [],
+  "surface_challenge_audit": [
+    {
+      "family_id": "G05",
+      "text": "Ich ziehe nach Hause.",
+      "passed": true
+    },
+    {
+      "family_id": "G06",
+      "text": "Anna ging heraus.",
+      "passed": true
+    },
+    {
+      "family_id": "G08",
+      "text": "Anna schüttelte den Teppich.",
+      "passed": true
+    },
+    {
+      "family_id": "G12",
+      "text": "Die Frau führte Anna zur Wiese.",
+      "passed": true
+    },
+    {
+      "family_id": "G15",
+      "text": "Anna sprach zu ihrer Mutter.",
+      "passed": true
+    },
+    {
+      "family_id": "G18",
+      "text": "Ich gehe zu dir.",
+      "passed": true
+    },
+    {
+      "family_id": "G20",
+      "text": "Anna ging nicht hinaus.",
+      "passed": true
+    },
+    {
+      "family_id": "G21",
+      "text": "Die Frau sagte einen Spruch auf.",
+      "passed": true
+    },
+    {
+      "family_id": "G23",
+      "text": "Pech blieb im Kessel.",
+      "passed": true
+    }
+  ],
+  "gold": [
+    {
+      "qid": "Q01",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "INITIAL_COUNT",
+      "args": [
+        "widow",
+        "DAUGHTER",
+        "N2"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q02",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "PROPERTY",
+      "args": [
+        "good_daughter",
+        "INDUSTRIOUS"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q03",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "PROPERTY",
+      "args": [
+        "lazy_daughter",
+        "LAZY"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q04",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "SPIN",
+      "args": [
+        "good_daughter"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q05",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "FALL",
+      "args": [
+        "SPOOL",
+        "WELL"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q06",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "JUMP",
+      "args": [
+        "good_daughter",
+        "WELL"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q07",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "AT",
+      "args": [
+        "good_daughter",
+        "MEADOW"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q08",
+      "passed": true,
+      "scope": "ACTOR",
+      "relation": "REQUEST",
+      "args": [
+        "BREAD",
+        "PULL_OUT"
+      ],
+      "actor": "BREAD"
+    },
+    {
+      "qid": "Q09",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "PULL_OUT",
+      "args": [
+        "good_daughter",
+        "BREAD"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q10",
+      "passed": true,
+      "scope": "ACTOR",
+      "relation": "REQUEST",
+      "args": [
+        "TREE",
+        "SHAKE"
+      ],
+      "actor": "TREE"
+    },
+    {
+      "qid": "Q11",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "SHAKE",
+      "args": [
+        "good_daughter",
+        "TREE"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q12",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "SERVE",
+      "args": [
+        "good_daughter",
+        "frau_holle"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q13",
+      "passed": true,
+      "scope": "ACTOR",
+      "relation": "REQUEST",
+      "args": [
+        "frau_holle",
+        "SHAKE_BED"
+      ],
+      "actor": "frau_holle"
+    },
+    {
+      "qid": "Q14",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "WANT_HOME",
+      "args": [
+        "good_daughter"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q15",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "LEAD",
+      "args": [
+        "frau_holle",
+        "good_daughter",
+        "GATE"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q16",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "COVER",
+      "args": [
+        "good_daughter",
+        "GOLD"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q17",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "GIVE",
+      "args": [
+        "frau_holle",
+        "good_daughter",
+        "SPOOL"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q18",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "RETURN_HOME",
+      "args": [
+        "good_daughter"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q19",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "INTEND",
+      "args": [
+        "mother",
+        "lazy_daughter",
+        "SAME_LUCK"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q20",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "THROW",
+      "args": [
+        "lazy_daughter",
+        "SPOOL",
+        "WELL"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q21",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "REFUSE",
+      "args": [
+        "lazy_daughter",
+        "BREAD"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q22",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "REFUSE",
+      "args": [
+        "lazy_daughter",
+        "TREE"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q23",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "NEGLECT",
+      "args": [
+        "lazy_daughter",
+        "BED"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q24",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "DISMISS",
+      "args": [
+        "frau_holle",
+        "lazy_daughter"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q25",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "COVER",
+      "args": [
+        "lazy_daughter",
+        "PITCH"
+      ],
+      "actor": null
+    },
+    {
+      "qid": "Q26",
+      "passed": true,
+      "scope": "ROOT",
+      "relation": "REMAIN_ATTACHED",
+      "args": [
+        "PITCH",
+        "lazy_daughter"
+      ],
+      "actor": null
+    }
+  ],
+  "adversarial": [
+    {
+      "qid": "A01",
+      "passed": true,
+      "false_commit": false,
+      "relation": "COVER",
+      "args": [
+        "lazy_daughter",
+        "GOLD"
+      ]
+    },
+    {
+      "qid": "A02",
+      "passed": true,
+      "false_commit": false,
+      "relation": "PULL_OUT",
+      "args": [
+        "lazy_daughter",
+        "BREAD"
+      ]
+    },
+    {
+      "qid": "A03",
+      "passed": true,
+      "false_commit": false,
+      "relation": "SHAKE",
+      "args": [
+        "lazy_daughter",
+        "TREE"
+      ]
+    },
+    {
+      "qid": "A04",
+      "passed": true,
+      "false_commit": false,
+      "relation": "COVER",
+      "args": [
+        "good_daughter",
+        "PITCH"
+      ]
+    },
+    {
+      "qid": "A05",
+      "passed": true,
+      "false_commit": false,
+      "relation": "JUMP",
+      "args": [
+        "frau_holle",
+        "WELL"
+      ]
+    },
+    {
+      "qid": "A06",
+      "passed": true,
+      "false_commit": false,
+      "relation": "GIVE",
+      "args": [
+        "mother",
+        "good_daughter",
+        "GOLD"
+      ]
+    }
+  ],
+  "interpretation": [
+    "The experiment supports the claim that Frau Holle is learnable by the curriculum method in a controlled symbolic sense: short positive/negative examples induce surface-semantic U, which are then frozen on the unchanged Grimm text.",
+    "This is not zero-shot understanding. The earlier v5.1 frozen transfer baseline remained 1/26 because the language bridge had not learned the required event/idiom families.",
+    "The curriculum grows monotonically from structural reference/property facts through simple events, dialogue requests, service/reward/home relations, and finally the second-daughter episode.",
+    "K7 anonymous context behavior prevents spoken requests from becoming root/world actions; actual narrative actions require independent root evidence.",
+    "Adversarial absent facts are checked separately so success cannot come from indiscriminate protagonist/action completion."
+  ],
+  "caveats": [
+    "Generic Role-/Reference-U, quote boundaries, dialogue locality, entity identity and formal lemmatization are frozen substrate; this experiment does not relearn them from raw characters.",
+    "The curriculum is supervised at the anonymous concept-family level: positives/negatives are grouped as examples of the same hidden H-family.",
+    "Binder templates such as current protagonist, quote speaker, requester and local object are treated as previously learned structural U.",
+    "The test uses the same lexical/idiomatic families needed by Frau Holle, learned from simpler sentences with different fillers. Therefore it demonstrates curriculum learnability, not unseen lexical generalization.",
+    "Natural-language question parsing is not evaluated; symbolic benchmark targets are evaluator-side.",
+    "A score below 26/26 should be read as the remaining raw bridge gap, not patched silently."
+  ]
+}

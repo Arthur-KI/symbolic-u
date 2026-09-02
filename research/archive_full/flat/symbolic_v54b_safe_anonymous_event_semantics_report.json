@@ -1,0 +1,236 @@
+{
+  "version": "v5.4b-safe-anonymous-event-semantics",
+  "result": "PASS",
+  "checks": {
+    "three_anonymous_relations_retained": true,
+    "no_semantic_event_heads": true,
+    "safe_rules_full_support_zero_conflict": true,
+    "possession_rule_not_generic_action_clause": true,
+    "slot_type_signature_inferred_and_enforced": true,
+    "frozen_5of5": true,
+    "nontransfer_attack_rejected": true,
+    "unverified_directive_relation_detected": true,
+    "unverified_directive_world_action_not_committed": true,
+    "independent_execution_evidence_unlocks_action": true,
+    "underspecified_speech_unknown": true,
+    "directive_assertion_same_types_still_separated": true,
+    "story_isolation": true,
+    "sweet_porridge_reuses_same_anonymous_relation": true,
+    "sweet_porridge_effects_require_and_have_independent_support": true,
+    "versioned_active": true
+  },
+  "anonymous_relations": {
+    "R1": {
+      "version": 1,
+      "status": "ACTIVE",
+      "surface_rule": [
+        "IMPERATIVE_OR_DIRECTIVE"
+      ],
+      "slot_types": [
+        [
+          "S0",
+          "PERSON"
+        ],
+        [
+          "S1",
+          "ENTITY"
+        ],
+        [
+          "S2",
+          "SYMBOL"
+        ]
+      ],
+      "effect_signature": [
+        [
+          "ACTION",
+          [
+            "S1",
+            "S2"
+          ]
+        ]
+      ],
+      "support": 3,
+      "conflict": 0
+    },
+    "R2": {
+      "version": 1,
+      "status": "ACTIVE",
+      "surface_rule": [
+        "DECLARATIVE_COMPLEMENT"
+      ],
+      "slot_types": [
+        [
+          "S0",
+          "PERSON"
+        ],
+        [
+          "S1",
+          "ENTITY"
+        ],
+        [
+          "S2",
+          "SYMBOL"
+        ]
+      ],
+      "effect_signature": [
+        [
+          "CLAIM",
+          [
+            "S0",
+            "S1",
+            "S2"
+          ]
+        ]
+      ],
+      "support": 3,
+      "conflict": 0
+    },
+    "R3": {
+      "version": 1,
+      "status": "ACTIVE",
+      "surface_rule": [
+        "POSSESSION_CHANGE"
+      ],
+      "slot_types": [
+        [
+          "S0",
+          "PERSON"
+        ],
+        [
+          "S1",
+          "PERSON"
+        ],
+        [
+          "S2",
+          "OBJECT"
+        ]
+      ],
+      "effect_signature": [
+        [
+          "HAVE",
+          [
+            "S1",
+            "S2"
+          ]
+        ],
+        [
+          "NOT_HAVE",
+          [
+            "S0",
+            "S2"
+          ]
+        ]
+      ],
+      "support": 3,
+      "conflict": 0
+    }
+  },
+  "attacks": {
+    "nontransfer_action": {
+      "surface": "Lina zeigte Ben die Lampe.",
+      "relation": null,
+      "facts": []
+    },
+    "unverified_directive": {
+      "surface": "Anna befahl Paul zu gehen.",
+      "relation": "R1",
+      "potential": [
+        "('ACTION', ('paul', 'GO'))"
+      ],
+      "committed_without_support": [],
+      "committed_with_support": [
+        "('ACTION', ('paul', 'GO'))"
+      ]
+    }
+  },
+  "frozen": [
+    {
+      "text": "Tom forderte den Kristall auf, zu leuchten. Danach leuchtete der Kristall.",
+      "relation": "R1",
+      "facts": [
+        "('ACTION', ('CRYSTAL', 'LIGHT'))"
+      ],
+      "passed": true
+    },
+    {
+      "text": "Tom meldete, der Kristall leuchte.",
+      "relation": "R2",
+      "facts": [
+        "('CLAIM', ('tom', 'CRYSTAL', 'LIGHT'))"
+      ],
+      "passed": true
+    },
+    {
+      "text": "Mia reichte Paul den Schlüssel.",
+      "relation": "R3",
+      "facts": [
+        "('HAVE', ('paul', 'KEY'))",
+        "('NOT_HAVE', ('mia', 'KEY'))"
+      ],
+      "passed": true
+    },
+    {
+      "text": "Die Hexe befahl dem Drachen zu fliegen. Danach flog der Drache.",
+      "relation": "R1",
+      "facts": [
+        "('ACTION', ('DRAGON', 'FLY'))"
+      ],
+      "passed": true
+    },
+    {
+      "text": "Die Hexe sagte, der Drache fliege.",
+      "relation": "R2",
+      "facts": [
+        "('CLAIM', ('witch', 'DRAGON', 'FLY'))"
+      ],
+      "passed": true
+    }
+  ],
+  "sweet_porridge": [
+    {
+      "story": "sweet-girl-cook",
+      "relation": "R1",
+      "potential": [
+        "('ACTION', ('POT', 'COOK'))"
+      ],
+      "committed": [
+        "('ACTION', ('POT', 'COOK'))"
+      ]
+    },
+    {
+      "story": "sweet-mother-cook",
+      "relation": "R1",
+      "potential": [
+        "('ACTION', ('POT', 'COOK'))"
+      ],
+      "committed": [
+        "('ACTION', ('POT', 'COOK'))"
+      ]
+    },
+    {
+      "story": "sweet-girl-stop",
+      "relation": "R1",
+      "potential": [
+        "('ACTION', ('POT', 'STOP'))"
+      ],
+      "committed": [
+        "('ACTION', ('POT', 'STOP'))"
+      ]
+    }
+  ],
+  "design": [
+    "Anonymous heads remain R1/R2/R3; no COMMAND/SAY/TRANSFER head is installed.",
+    "Each R infers an immutable slot-type signature from its positive examples.",
+    "Surface-rule learning includes hard negative controls, preventing over-broad MDL rules such as ACTION_CLAUSE alone.",
+    "Speech/directive-derived external ACTION is a potential consequence, not WORLD evidence by itself.",
+    "Independent execution evidence is required before ACTION is committed.",
+    "Relation recognition and consequence commitment are separate symbolic states."
+  ],
+  "caveats": [
+    "Primitive effect relations ACTION/CLAIM/HAVE/NOT_HAVE remain fixed ontology.",
+    "The distinction between speech-caused external effects and directly asserted proposition effects is an OS-level proof policy.",
+    "Hard negative surface controls are supplied training data; discovering useful counterexamples autonomously remains open.",
+    "Sweet-porridge execution support is independently read from its narrative in this experiment, not induced from the directive alone.",
+    "No general NLP accuracy claim."
+  ]
+}

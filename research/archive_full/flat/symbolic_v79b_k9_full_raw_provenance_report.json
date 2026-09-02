@@ -1,0 +1,60 @@
+{
+  "version": "v7.9b-K9-full-raw-provenance-audit",
+  "result": "PASS",
+  "events": [
+    "Event(head='E21', args=('OLD_WOMAN', 'GIRL', 'POT'), evidence='raw-k9-give@223', source_lexeme='schenken')",
+    "Event(head='E11', args=('GIRL',), evidence='raw-k9-home@1055', source_lexeme='kommen_heim')"
+  ],
+  "expected": [
+    [
+      "E11",
+      [
+        "GIRL"
+      ]
+    ],
+    [
+      "E21",
+      [
+        "OLD_WOMAN",
+        "GIRL",
+        "POT"
+      ]
+    ]
+  ],
+  "provenance": {
+    "remote_delta": "DeltaBinding(relation='P3', op_id='O2', values=('ANNA', 'BEN', 'COIN'))",
+    "remote_fitting_binders": 0,
+    "remote_participant_coverage": false,
+    "remote_same_theme_fitting_binders": 0,
+    "valid_participant_coverage": true
+  },
+  "remaining_binder_predictions": [
+    [
+      "OLD_WOMAN",
+      "GIRL",
+      "POT"
+    ]
+  ],
+  "checks": {
+    "K9b_full_raw_SweetPorridge_finds_exact_two_portable_events": true,
+    "K9b_full_raw_transfer_has_no_extra_portable_event": true,
+    "K9b_remote_unmentioned_transfer_cannot_train_local_binder": true,
+    "K9b_remote_same_theme_transfer_cannot_train_local_binder": true,
+    "K9b_valid_training_delta_is_locally_participant_grounded": true,
+    "K9b_remote_delta_fails_local_participant_coverage": true,
+    "K9b_no_state_change_provides_no_transfer_training_signal": true,
+    "K9b_all_remaining_equivalent_binders_agree_on_foreign_target": true,
+    "K9b_no_online_learning": true
+  },
+  "interpretation": [
+    "The full unchanged Sweet-Porridge text still yields exactly the two portable events after K9 removes explicit event-tuple supervision.",
+    "A temporally adjacent possession transfer involving entities not grounded in the local clause cannot train the local event binder, even if its anonymous P3/O2 topology is otherwise correct.",
+    "Sharing only the transferred object is also insufficient; old/new owners must be locally groundable.",
+    "No-change episodes provide no transfer signal, preventing lexical occurrence alone from becoming evidence for GIVE."
+  ],
+  "caveats": [
+    "The participant-coverage/locality gate is a generic symbolic prior: consequences must be locally groundable in the clause/reference context.",
+    "Reference resolution and local clause segmentation remain frozen substrate.",
+    "Only the generalized GIVE and RETURN_HOME families are scanned."
+  ]
+}

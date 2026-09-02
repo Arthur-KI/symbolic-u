@@ -1,0 +1,12 @@
+[
+  {
+    "target": "SUB",
+    "returncode": 0,
+    "stdout_tail": "{\n  \"target\": \"SUB\",\n  \"base_candidates\": 55,\n  \"recursive_candidates_before_verifier\": 3026,\n  \"pair_total\": 18156,\n  \"verifier_rejected\": 17168,\n  \"verifier_accepted\": 988,\n  \"verifier_modes\": {\n    \"WELL_FOUNDED_DECREASE\": 988\n  },\n  \"full_evaluated\": 24,\n  \"support\": 36,\n  \"conflict\": 0,\n  \"local_step_support\": 9,\n  \"local_step_conflict\": 0,\n  \"certificate\": {\n    \"mode\": \"WELL_FOUNDED_DECREASE\",\n    \"measure\": \"Y\",\n    \"via\": \"SUCC\",\n    \"base_anchor\": \"Y\"\n  },\n  \"base_rule\": \"EQ(X,Z) + ZERO(Y) -> SUB(X,Y,Z)\",\n  \"recursive_rule\": \"SUB(X,_NUM0,_NUM1) + SUCC(Z,_NUM1) + SUCC(_NUM0,Y) -> SUB(X,Y,Z)\",\n  \"unseen_passed\": 12,\n  \"unseen_n\": 12,\n  \"seconds\": 8.226800217000346\n}\n"
+  },
+  {
+    "target": "MUL",
+    "returncode": 0,
+    "stdout_tail": "{\n  \"target\": \"MUL\",\n  \"base_candidates\": 1160,\n  \"recursive_candidates_before_verifier\": 1428,\n  \"pair_total\": 19992,\n  \"verifier_rejected\": 19800,\n  \"verifier_accepted\": 192,\n  \"verifier_modes\": {\n    \"WELL_FOUNDED_DECREASE\": 192\n  },\n  \"full_evaluated\": 24,\n  \"support\": 49,\n  \"conflict\": 0,\n  \"local_step_support\": 8,\n  \"local_step_conflict\": 0,\n  \"certificate\": {\n    \"mode\": \"WELL_FOUNDED_DECREASE\",\n    \"measure\": \"Y\",\n    \"via\": \"PRED\",\n    \"base_anchor\": \"Y\"\n  },\n  \"base_rule\": \"ADD(X,Z,X) + ZERO(Y) -> MUL(X,Y,Z)\",\n  \"recursive_rule\": \"MUL(X,_NUM0,_NUM1) + PRED(Y,_NUM0) + SUB(Z,_NUM1,X) -> MUL(X,Y,Z)\",\n  \"unseen_passed\": 10,\n  \"unseen_n\": 10,\n  \"seconds\": 28.75047750900012\n}\n"
+  }
+]

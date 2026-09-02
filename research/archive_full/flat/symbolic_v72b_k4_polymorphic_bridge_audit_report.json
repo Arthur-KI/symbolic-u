@@ -1,0 +1,60 @@
+{
+  "version": "v7.2b-K4-polymorphic-bridge-audit",
+  "result": "PASS",
+  "checks": {
+    "K4b_broad_overlap_can_form_candidate_bridge": true,
+    "K4b_sparse_polymorphic_overlap_is_rejected": true,
+    "K4b_one_symbol_overlap_is_rejected": true,
+    "K4b_partial_overlap_fails_closed": true,
+    "K4b_exact_coextensive_types_are_not_identifiable_from_incidence_alone": true,
+    "K4b_open_world_absence_does_not_challenge_type_bridge": true
+  },
+  "sparse_poison": {
+    "intersection": [
+      "POLY1",
+      "POLY2"
+    ],
+    "coverage_a": 0.3333333333333333,
+    "coverage_b": 0.3333333333333333,
+    "accepted": false
+  },
+  "coextension": {
+    "accepted_as_minimal_merge_candidate": true,
+    "alternative_models": {
+      "MERGE_ONE_TYPE": {
+        "portA": "T1",
+        "portB": "T1",
+        "members": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "TWO_COEXTENSIVE_TYPES": {
+        "portA": "T1",
+        "portB": "T2",
+        "T1_members": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "T2_members": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "observationally_distinguishable": false,
+    "finding": "With only positive port-incidence data, one shared latent type and two perfectly coextensive latent types make identical observations. This distinction is not identifiable until some additional constraint or explicit counterevidence appears."
+  },
+  "interpretation": [
+    "The original two-shared-symbol gate was unsafe: sparse polymorphic symbols could falsely bridge otherwise different port types.",
+    "A conservative symmetric coverage gate rejects sparse overlap while preserving the strong bridges in the K4 curriculum.",
+    "Exact coextension remains fundamentally non-identifiable from positive incidence alone. Treating it as one type is a minimal compression hypothesis, not proof that two semantic categories are metaphysically identical.",
+    "Open-world absence cannot be used as negative type evidence."
+  ]
+}

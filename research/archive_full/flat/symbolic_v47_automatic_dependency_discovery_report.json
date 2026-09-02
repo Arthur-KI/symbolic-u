@@ -1,0 +1,7068 @@
+{
+  "version": "v4.7-automatic-dependency-discovery",
+  "checks": {
+    "semantic_query_succeeds": true,
+    "dependency_discovered_from_candidate_body": true,
+    "child_committed_before_parent": true,
+    "no_manual_dependency_metadata": true,
+    "second_query_reuses_library": true,
+    "wrong_route_cost_stays_unknown": true,
+    "unavailable_dependency_rejected": true,
+    "unused_staged_children_not_committed": true,
+    "dependency_cost_penalizes_extra_dependencies": true,
+    "poisoned_child_blocks_parent": true,
+    "candidate_dependency_cycle_aborts": true
+  },
+  "query_results": {
+    "pkg1_route_cost_N9": "+1",
+    "pkg2_route_cost_N5": "+1",
+    "pkg1_wrong_route_cost_N10": "0"
+  },
+  "discovered_dependency": [
+    "ADD"
+  ],
+  "install_order": [
+    "ADD",
+    "PATH_COST"
+  ],
+  "attempts": {
+    "PATH_COST": 1,
+    "ADD": 1
+  },
+  "path_cost_meta": {
+    "support": 32,
+    "positive_n": 32,
+    "conflict": 0,
+    "selftest_passed": 80,
+    "selftest_n": 80,
+    "certificate": {
+      "mode": "FINITE_TRAVERSAL",
+      "measure": "visited(1)",
+      "via": "EDGE_COST",
+      "port": 1,
+      "base_anchor": "finite-domain+visited"
+    },
+    "base_rule": "EDGE_COST(X,Y,C) -> PATH_COST(X,Y,C)",
+    "recursive_rule": "ADD(_NUM0,_NUM1,C) + EDGE_COST(_NODE0,Y,_NUM0) + PATH_COST(X,_NODE0,_NUM1) -> PATH_COST(X,Y,C)",
+    "discovered_dependencies": [
+      "ADD"
+    ],
+    "derived_dependency_keys": {
+      "ADD": 1668
+    },
+    "dependency_cost": 2.0,
+    "syntax_cost": 4.6,
+    "valid_candidate_count": 4,
+    "multi_dependency_valid_count": 0,
+    "best_single_objective": 313.354,
+    "best_multi_objective": null,
+    "partial_recursive_candidates": 30,
+    "completed_hole_candidates": 1008,
+    "accepted": true
+  },
+  "top_alternatives": [
+    {
+      "deps": [
+        "ADD"
+      ],
+      "objective": 313.354,
+      "dependency_cost": 2.0,
+      "syntax_cost": 4.6,
+      "recursive_rule": "ADD(_NUM0,_NUM1,C) + EDGE_COST(_NODE0,Y,_NUM0) + PATH_COST(X,_NODE0,_NUM1) -> PATH_COST(X,Y,C)"
+    },
+    {
+      "deps": [
+        "ADD"
+      ],
+      "objective": 313.354,
+      "dependency_cost": 2.0,
+      "syntax_cost": 4.6,
+      "recursive_rule": "ADD(_NUM1,_NUM0,C) + EDGE_COST(_NODE0,Y,_NUM0) + PATH_COST(X,_NODE0,_NUM1) -> PATH_COST(X,Y,C)"
+    },
+    {
+      "deps": [
+        "ADD"
+      ],
+      "objective": 313.354,
+      "dependency_cost": 2.0,
+      "syntax_cost": 4.6,
+      "recursive_rule": "ADD(_NUM0,_NUM1,C) + EDGE_COST(X,_NODE0,_NUM0) + PATH_COST(_NODE0,Y,_NUM1) -> PATH_COST(X,Y,C)"
+    },
+    {
+      "deps": [
+        "ADD"
+      ],
+      "objective": 313.354,
+      "dependency_cost": 2.0,
+      "syntax_cost": 4.6,
+      "recursive_rule": "ADD(_NUM1,_NUM0,C) + EDGE_COST(X,_NODE0,_NUM0) + PATH_COST(_NODE0,Y,_NUM1) -> PATH_COST(X,Y,C)"
+    }
+  ],
+  "lifecycle": [
+    {
+      "event": "stage_start",
+      "relation": "PATH_COST",
+      "stack": []
+    },
+    {
+      "event": "dependency_candidates_generated",
+      "relation": "PATH_COST",
+      "base_candidates": 1,
+      "partial_recursive": 30,
+      "completed_candidates": 1008
+    },
+    {
+      "event": "stage_start",
+      "relation": "ADD",
+      "stack": [
+        "PATH_COST"
+      ]
+    },
+    {
+      "event": "staged",
+      "relation": "ADD",
+      "meta": {
+        "support": 36,
+        "positive_n": 36,
+        "conflict": 0,
+        "selftest_passed": 10,
+        "selftest_n": 10,
+        "certificate": {
+          "mode": "WELL_FOUNDED_DECREASE",
+          "measure": "X",
+          "via": "PRED",
+          "base_anchor": "X"
+        },
+        "base_rule": "EQ(Z,Y) + ZERO(X) -> ADD(X,Y,Z)",
+        "recursive_rule": "ADD(_NUM0,_NUM1,Z) + PRED(X,_NUM0) + SUCC(Y,_NUM1) -> ADD(X,Y,Z)",
+        "candidate_pairs": 6354,
+        "verifier_accepted": 648,
+        "full_evaluated": 24,
+        "accepted": true,
+        "seconds": 6.344275869000057,
+        "discovered_dependencies": []
+      }
+    },
+    {
+      "event": "unavailable_dependency",
+      "relation": "SUB",
+      "stack": [
+        "PATH_COST"
+      ]
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "unavailable_dependency",
+      "relation": "FOO3",
+      "stack": [
+        "PATH_COST"
+      ]
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "SUB"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "candidate_dependency_reject",
+      "relation": "PATH_COST",
+      "dependency": "FOO3"
+    },
+    {
+      "event": "staged",
+      "relation": "PATH_COST",
+      "meta": {
+        "support": 32,
+        "positive_n": 32,
+        "conflict": 0,
+        "selftest_passed": 80,
+        "selftest_n": 80,
+        "certificate": {
+          "mode": "FINITE_TRAVERSAL",
+          "measure": "visited(1)",
+          "via": "EDGE_COST",
+          "port": 1,
+          "base_anchor": "finite-domain+visited"
+        },
+        "base_rule": "EDGE_COST(X,Y,C) -> PATH_COST(X,Y,C)",
+        "recursive_rule": "ADD(_NUM0,_NUM1,C) + EDGE_COST(_NODE0,Y,_NUM0) + PATH_COST(X,_NODE0,_NUM1) -> PATH_COST(X,Y,C)",
+        "discovered_dependencies": [
+          "ADD"
+        ],
+        "derived_dependency_keys": {
+          "ADD": 1668
+        },
+        "dependency_cost": 2.0,
+        "syntax_cost": 4.6,
+        "valid_candidate_count": 4,
+        "multi_dependency_valid_count": 0,
+        "best_single_objective": 313.354,
+        "best_multi_objective": null,
+        "partial_recursive_candidates": 30,
+        "completed_hole_candidates": 1008,
+        "accepted": true
+      }
+    },
+    {
+      "event": "installed",
+      "relation": "ADD",
+      "dependencies": []
+    },
+    {
+      "event": "installed",
+      "relation": "PATH_COST",
+      "dependencies": [
+        "ADD"
+      ]
+    }
+  ],
+  "bad_child_test": {
+    "query": false,
+    "install_order": [],
+    "states": {
+      "PATH_COST": "ABSENT",
+      "ADD": "ABSENT",
+      "FOO3": "ABSENT"
+    },
+    "events": [
+      {
+        "event": "stage_start",
+        "relation": "PATH_COST",
+        "stack": []
+      },
+      {
+        "event": "dependency_candidates_generated",
+        "relation": "PATH_COST",
+        "base_candidates": 1,
+        "partial_recursive": 30,
+        "completed_candidates": 384
+      },
+      {
+        "event": "stage_start",
+        "relation": "ADD",
+        "stack": [
+          "PATH_COST"
+        ]
+      },
+      {
+        "event": "stage_reject_gate",
+        "relation": "ADD",
+        "meta": {
+          "support": 36,
+          "positive_n": 36,
+          "conflict": 1,
+          "selftest_passed": 10,
+          "selftest_n": 10,
+          "certificate": {
+            "mode": "WELL_FOUNDED_DECREASE",
+            "measure": "X",
+            "via": "PRED",
+            "base_anchor": "X"
+          },
+          "base_rule": "EQ(Z,Y) + ZERO(X) -> ADD(X,Y,Z)",
+          "recursive_rule": "ADD(_NUM0,_NUM1,Z) + PRED(X,_NUM0) + SUCC(Y,_NUM1) -> ADD(X,Y,Z)",
+          "candidate_pairs": 6354,
+          "verifier_accepted": 648,
+          "full_evaluated": 24,
+          "accepted": false,
+          "seconds": 5.509471301000076,
+          "discovered_dependencies": []
+        }
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "unavailable_dependency",
+        "relation": "FOO3",
+        "stack": [
+          "PATH_COST"
+        ]
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "FOO3"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "candidate_dependency_reject",
+        "relation": "PATH_COST",
+        "dependency": "ADD"
+      },
+      {
+        "event": "stage_reject_no_valid_dependency_candidate",
+        "relation": "PATH_COST"
+      }
+    ],
+    "meta": {
+      "ADD": {
+        "support": 36,
+        "positive_n": 36,
+        "conflict": 1,
+        "selftest_passed": 10,
+        "selftest_n": 10,
+        "certificate": {
+          "mode": "WELL_FOUNDED_DECREASE",
+          "measure": "X",
+          "via": "PRED",
+          "base_anchor": "X"
+        },
+        "base_rule": "EQ(Z,Y) + ZERO(X) -> ADD(X,Y,Z)",
+        "recursive_rule": "ADD(_NUM0,_NUM1,Z) + PRED(X,_NUM0) + SUCC(Y,_NUM1) -> ADD(X,Y,Z)",
+        "candidate_pairs": 6354,
+        "verifier_accepted": 648,
+        "full_evaluated": 24,
+        "accepted": false,
+        "seconds": 5.509471301000076,
+        "discovered_dependencies": []
+      }
+    }
+  },
+  "cycle_test": {
+    "result": false,
+    "events": [
+      {
+        "event": "generated_candidate_body",
+        "relation": "A",
+        "body_relation": "B"
+      },
+      {
+        "event": "generated_candidate_body",
+        "relation": "B",
+        "body_relation": "A"
+      },
+      {
+        "event": "dependency_cycle",
+        "relation": "A",
+        "cycle": [
+          "A",
+          "B",
+          "A"
+        ]
+      }
+    ]
+  },
+  "architecture": [
+    "PATH_COST task has no dependency list.",
+    "Generic partial recursive witnesses may leave one typed head port unresolved.",
+    "Candidate relation signatures fill the unresolved typed hole.",
+    "Body relations absent from the current world become dependency hypotheses.",
+    "Dependencies are learned in a staging area, not immediately committed.",
+    "Dependency-derived Keys are materialized only in cloned candidate-evaluation worlds.",
+    "Parent candidates are scored on support/conflict, frozen self-test, syntax/MDL and dependency cost.",
+    "Only dependencies of the winning parent candidate are committed, child-first.",
+    "Unavailable, poisoned, cyclic and losing speculative dependencies leave no persistent U."
+  ],
+  "invariants": [
+    "The semantic query is never added to training evidence.",
+    "PATH_COST has no manually declared ADD/SUB dependency.",
+    "A missing relation is learned only if a generated candidate body actually references it.",
+    "Wrong route costs remain UNKNOWN (0), not FALSE (-1).",
+    "Speculative child U are transactional: unused candidates do not permanently expand the library.",
+    "Dependency cycles abort before installation."
+  ],
+  "caveats": [
+    "The candidate relation vocabulary is still supplied as a domain/search prior; dependency edges are discovered, but the global vocabulary itself is not autonomous.",
+    "v4.7 hole filling handles one unresolved head port and candidate atoms over already introduced variables.",
+    "Child relation materialization currently supports numeric learned relations only.",
+    "The benchmark allows ADD and SUB as mathematically equivalent ways to express cost accumulation; either is considered a valid discovered dependency.",
+    "Only one-level real dependency discovery (PATH_COST -> numeric relation) is benchmarked; the cycle test is synthetic.",
+    "Raw-language parsing remains outside this benchmark."
+  ]
+}

@@ -1,0 +1,14 @@
+name,category,status,seconds,file
+TERNARY_U_KEY,core,PASS,0.622,ternary_u_key_negative_full.py
+TEMPORAL_STATE,core,PASS,0.597,temporal_mini_lm_v02.py
+CORE_V1,core,PASS,0.615,symbolic_mini_lm_v1.py
+DICTIONARY_ONTOLOGY,language,PASS,0.584,symbolic_mini_lm_v11_dictionary_test.py
+CONTROLLED_E2E_V12,language,PASS,0.581,symbolic_mini_lm_v12_end_to_end.py
+REFERENCE_U,language,PASS,0.575,symbolic_mini_lm_v13_reference_u.py
+CLAUSE_U,language,PASS,0.553,symbolic_v27_clause_u_ablation.py
+RAW_SWEET_PORRIDGE,language,PASS,0.601,symbolic_v32_full_raw_end_to_end.py
+CLAIM_WORLD_CONTEXT,language,PASS,0.593,symbolic_v38_context_clause_ports.py
+QUOTE_BINDING,language,PASS,0.622,frau_holle_v35_quote_binding_test.py
+SHARED_RECURSIVE_V39,reasoning,PASS,0.718,symbolic_v39_shared_recursive_u.py
+MATH_OPT_V42,reasoning,PASS,13.076,symbolic_math_v42_solver_optimization.py
+REC_SUB,recursive_verifier,PASS,8.272,symbolic_v44b_recursive_u_verifier.py

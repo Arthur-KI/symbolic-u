@@ -1,0 +1,194 @@
+{
+  "version": "v8.2-K12-productive-morph-u",
+  "result": "PASS",
+  "dictionary_assumed": {
+    "provides": [
+      "raw token identity",
+      "coarse token category such as DET/VERB/NOUN/PRON",
+      "entity lexical identity and already-learned anonymous T-type where applicable"
+    ],
+    "does_not_provide": [
+      "lemma",
+      "NOM/DAT/ACC",
+      "declension class",
+      "conjugation class",
+      "event semantics for unseen forms"
+    ]
+  },
+  "determiner_morph": {
+    "rules": [
+      {
+        "from_role": "C1",
+        "to_role": "C2",
+        "extension": "em",
+        "supports": [
+          "dein",
+          "kein",
+          "mein"
+        ]
+      },
+      {
+        "from_role": "C1",
+        "to_role": "C3",
+        "extension": "en",
+        "supports": [
+          "dein",
+          "ein",
+          "kein",
+          "mein"
+        ]
+      }
+    ],
+    "held_out": {
+      "einem_roles": [
+        "C2"
+      ],
+      "without_partial_base_roles": [],
+      "fake_xem_roles": []
+    }
+  },
+  "verb_morph": {
+    "paradigms": [
+      {
+        "semantic_head": "Z_GIVE",
+        "stem": "schenk",
+        "endings": [
+          "en",
+          "t",
+          "te"
+        ],
+        "forms": [
+          "schenken",
+          "schenkt",
+          "schenkte"
+        ]
+      },
+      {
+        "semantic_head": "Z_R1",
+        "stem": "dreh",
+        "endings": [
+          "en",
+          "t",
+          "te",
+          "ten"
+        ],
+        "forms": [
+          "drehen",
+          "dreht",
+          "drehte",
+          "drehten"
+        ]
+      },
+      {
+        "semantic_head": "Z_R2",
+        "stem": "öffne",
+        "endings": [
+          "n",
+          "t",
+          "te",
+          "ten"
+        ],
+        "forms": [
+          "öffnen",
+          "öffnet",
+          "öffnete",
+          "öffneten"
+        ]
+      },
+      {
+        "semantic_head": "Z_R3",
+        "stem": "mach",
+        "endings": [
+          "en",
+          "t",
+          "te",
+          "ten"
+        ],
+        "forms": [
+          "machen",
+          "macht",
+          "machte",
+          "machten"
+        ]
+      }
+    ],
+    "productive_endings": [
+      "en",
+      "t",
+      "te",
+      "ten"
+    ],
+    "held_out": {
+      "schenkten_head": "Z_GIVE",
+      "gaebe_head": null,
+      "gaeben_head": null,
+      "denkenten_head": null
+    }
+  },
+  "end_to_end": {
+    "unseen_marker": [
+      "Z_GIVE",
+      "WOMAN",
+      "BOY",
+      "BOOK"
+    ],
+    "unseen_verb": [
+      "Z_GIVE",
+      "WOMEN",
+      "BOY",
+      "BOOK"
+    ],
+    "double_unseen": [
+      "Z_GIVE",
+      "WOMEN",
+      "BOY",
+      "BOOK"
+    ],
+    "unknown_irregular": null,
+    "unknown_marker": null,
+    "ambiguous": null
+  },
+  "checks": {
+    "K12_K11_and_K11b_bases_green": true,
+    "K12_no_case_labels_or_lemma_table_in_new_layer": true,
+    "K12_C1_to_C2_em_rule_learned_from_three_independent_bases": true,
+    "K12_C1_to_C3_en_rule_learned_from_three_independent_bases": true,
+    "K12_unseen_einem_productively_maps_to_C2": true,
+    "K12_fake_em_without_known_base_is_not_generalized": true,
+    "K12_syncretic_die_remains_multi_role": true,
+    "K12_regular_verb_endings_learned_from_multiple_paradigms": true,
+    "K12_unseen_schenkten_inherits_semantic_head_productively": true,
+    "K12_irregular_unseen_gaebe_is_not_guessed": true,
+    "K12_unrelated_stem_plus_regular_looking_suffix_is_not_guessed": true,
+    "K12_end_to_end_unseen_marker_works": true,
+    "K12_end_to_end_unseen_verb_form_works": true,
+    "K12_end_to_end_both_unseen_morph_forms_work_together": true,
+    "K12_unknown_irregular_form_keeps_event_UNKNOWN": true,
+    "K12_unknown_marker_keeps_event_UNKNOWN": true,
+    "K12_multiple_recipient_candidates_keep_event_UNKNOWN": true,
+    "K12_known_form_regression": true,
+    "K12_without_partial_target_paradigm_einem_is_not_identifiable": true,
+    "K12_without_target_verb_paradigm_semantic_evidence_schenkten_is_not_identifiable": true,
+    "K12_semantic_synonymy_does_not_imply_same_morphological_paradigm": true
+  },
+  "interpretation": [
+    "K12 demonstrates limited productive morphology without a lemma table or case labels. Raw role observations learned from consequences support cross-paradigm character transformations.",
+    "The held-out determiner 'einem' is assigned to anonymous recipient role C2 because three independent paradigms support base->base+em for C1->C2 and the partial target paradigm already establishes 'ein' as a C1 base. Suffix -em alone is insufficient.",
+    "The unseen verb form 'schenkten' inherits the learned GIVE semantic head because the known schenken forms constitute a regular character paradigm and the missing ending 'ten' is independently supported by several other paradigms.",
+    "Both productive inferences compose in the unseen clause 'Die Frauen schenkten einem Jungen das Buch.' without a lemma lookup or case label.",
+    "Irregular unseen forms such as 'gäbe/gäben' remain UNKNOWN because the available paradigm evidence does not license them.",
+    "Semantic synonymy and morphological identity remain separate: geben and schenken share event semantics, but only the character-coherent schenken subfamily supports the tested regular productive paradigm."
+  ],
+  "boundaries": [
+    "Productive morphology requires a known partial target paradigm plus independently repeated transformation evidence. Removing the target base evidence makes 'einem' non-identifiable.",
+    "Removing semantic evidence for the target verb's known paradigm makes 'schenkten' non-identifiable.",
+    "This is analogical paradigm learning, not unrestricted German morphology. Irregular alternations need their own repeated evidence or remain UNKNOWN."
+  ],
+  "caveats": [
+    "The dictionary still supplies coarse token categories and lexical entity identity.",
+    "Local noun-phrase association and tokenization remain fixed substrate.",
+    "The paradigm search is character-prefix based and intentionally conservative.",
+    "Plural agreement and full German declension/conjugation are not modeled.",
+    "The synthetic word 'denkenten' is used only as an adversarial regular-looking unseen form."
+  ]
+}

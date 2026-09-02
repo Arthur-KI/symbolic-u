@@ -1,0 +1,47 @@
+{
+  "version": "v7.8b-K8-full-raw-foreign-story-audit",
+  "result": "PASS",
+  "events": [
+    "Event(head='E1', args=('OLD_WOMAN', 'GIRL', 'POT'), evidence='raw-give@223', source_lexeme='schenken')",
+    "Event(head='E11', args=('GIRL',), evidence='raw-home@1055', source_lexeme='kommen_heim')"
+  ],
+  "expected": [
+    [
+      "E1",
+      [
+        "OLD_WOMAN",
+        "GIRL",
+        "POT"
+      ]
+    ],
+    [
+      "E11",
+      [
+        "GIRL"
+      ]
+    ]
+  ],
+  "false_commits": [],
+  "remaining_binder_target_predictions": [
+    [
+      "OLD_WOMAN",
+      "GIRL",
+      "POT"
+    ]
+  ],
+  "checks": {
+    "K8b_full_raw_scan_finds_exactly_two_portable_events": true,
+    "K8b_full_raw_scan_has_no_extra_event_false_commit": true,
+    "K8b_all_remaining_fitting_schenken_binders_agree_on_target": true,
+    "K8b_no_online_learning_occurs": true
+  },
+  "interpretation": [
+    "The entire unchanged Sweet-Porridge text is scanned with the frozen K8 event library; no event rule is learned or revised during the scan.",
+    "Exactly the two concept-overlap events previously missed by the Frau-Holle library are recovered: the old woman gives the pot to the girl, and the girl returns home.",
+    "The remaining syntactically equivalent binder programs all agree on the real 'schenkte ihm ein Töpfchen' target, so the residual program multiplicity does not create a target-level ambiguity in this audit."
+  ],
+  "caveats": [
+    "Reference resolution and relative/shared-subject recovery are frozen substrate in this isolated binder audit.",
+    "Only K8's generalized GIVE and RETURN_HOME event families are scanned; this is not a full Sweet-Porridge semantic parser."
+  ]
+}

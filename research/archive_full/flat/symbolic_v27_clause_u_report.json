@@ -1,0 +1,208 @@
+{
+  "summary": {
+    "V0_RECENCY": {
+      "correct": 4,
+      "n": 9,
+      "false_commits_on_ambiguity": 4,
+      "wrong_entity": 1,
+      "correct_unknowns": 0
+    },
+    "V1_PREV_SUBJECT_COMMIT": {
+      "correct": 0,
+      "n": 9,
+      "false_commits_on_ambiguity": 4,
+      "wrong_entity": 0,
+      "correct_unknowns": 0
+    },
+    "V2_SAFE_CLAUSE_U": {
+      "correct": 9,
+      "n": 9,
+      "false_commits_on_ambiguity": 0,
+      "wrong_entity": 0,
+      "correct_unknowns": 4
+    }
+  },
+  "details": {
+    "V0_RECENCY": [
+      {
+        "probe": "Grimm shared subject: pot stops",
+        "gold": "pot",
+        "got": "pot",
+        "ok": true
+      },
+      {
+        "probe": "Wolf shared across conjunction",
+        "gold": "wolf",
+        "got": "ben",
+        "ok": false
+      },
+      {
+        "probe": "pot cooks",
+        "gold": "pot",
+        "got": "pot",
+        "ok": true
+      },
+      {
+        "probe": "Anna/Mia ambiguous",
+        "gold": "UNKNOWN",
+        "got": "mia",
+        "ok": false
+      },
+      {
+        "probe": "Mia/Anna discourse tempting but ambiguous",
+        "gold": "UNKNOWN",
+        "got": "anna",
+        "ok": false
+      },
+      {
+        "probe": "Ben/Wolf explicit pronoun still ambiguous",
+        "gold": "UNKNOWN",
+        "got": "wolf",
+        "ok": false
+      },
+      {
+        "probe": "recency object trap",
+        "gold": "UNKNOWN",
+        "got": "mia",
+        "ok": false
+      },
+      {
+        "probe": "semantic role overrides previous subject",
+        "gold": "pot",
+        "got": "pot",
+        "ok": true
+      },
+      {
+        "probe": "female unique capability",
+        "gold": "mother",
+        "got": "mother",
+        "ok": true
+      }
+    ],
+    "V1_PREV_SUBJECT_COMMIT": [
+      {
+        "probe": "Grimm shared subject: pot stops",
+        "gold": "pot",
+        "got": "UNKNOWN",
+        "ok": false
+      },
+      {
+        "probe": "Wolf shared across conjunction",
+        "gold": "wolf",
+        "got": "UNKNOWN",
+        "ok": false
+      },
+      {
+        "probe": "pot cooks",
+        "gold": "pot",
+        "got": "UNKNOWN",
+        "ok": false
+      },
+      {
+        "probe": "Anna/Mia ambiguous",
+        "gold": "UNKNOWN",
+        "got": "anna",
+        "ok": false
+      },
+      {
+        "probe": "Mia/Anna discourse tempting but ambiguous",
+        "gold": "UNKNOWN",
+        "got": "mia",
+        "ok": false
+      },
+      {
+        "probe": "Ben/Wolf explicit pronoun still ambiguous",
+        "gold": "UNKNOWN",
+        "got": "ben",
+        "ok": false
+      },
+      {
+        "probe": "recency object trap",
+        "gold": "UNKNOWN",
+        "got": "anna",
+        "ok": false
+      },
+      {
+        "probe": "semantic role overrides previous subject",
+        "gold": "pot",
+        "got": "UNKNOWN",
+        "ok": false
+      },
+      {
+        "probe": "female unique capability",
+        "gold": "mother",
+        "got": "UNKNOWN",
+        "ok": false
+      }
+    ],
+    "V2_SAFE_CLAUSE_U": [
+      {
+        "probe": "Grimm shared subject: pot stops",
+        "gold": "pot",
+        "got": "pot",
+        "ok": true
+      },
+      {
+        "probe": "Wolf shared across conjunction",
+        "gold": "wolf",
+        "got": "wolf",
+        "ok": true
+      },
+      {
+        "probe": "pot cooks",
+        "gold": "pot",
+        "got": "pot",
+        "ok": true
+      },
+      {
+        "probe": "Anna/Mia ambiguous",
+        "gold": "UNKNOWN",
+        "got": "UNKNOWN",
+        "ok": true
+      },
+      {
+        "probe": "Mia/Anna discourse tempting but ambiguous",
+        "gold": "UNKNOWN",
+        "got": "UNKNOWN",
+        "ok": true
+      },
+      {
+        "probe": "Ben/Wolf explicit pronoun still ambiguous",
+        "gold": "UNKNOWN",
+        "got": "UNKNOWN",
+        "ok": true
+      },
+      {
+        "probe": "recency object trap",
+        "gold": "UNKNOWN",
+        "got": "UNKNOWN",
+        "ok": true
+      },
+      {
+        "probe": "semantic role overrides previous subject",
+        "gold": "pot",
+        "got": "pot",
+        "ok": true
+      },
+      {
+        "probe": "female unique capability",
+        "gold": "mother",
+        "got": "mother",
+        "ok": true
+      }
+    ]
+  },
+  "structural_extraction_passed": 2,
+  "structural_extraction_n": 2,
+  "modality_passed": 3,
+  "modality_n": 3,
+  "fill_chain_passed": true,
+  "adversarial_fill_boundary_passed": true,
+  "architecture_rules": [
+    "same-clause structural subject sharing may promote U",
+    "cross-sentence previous-subject salience is ranking only",
+    "semantic role/capability may promote only when independently unique",
+    "ambiguity remains U=0",
+    "hypothetical clauses do not materialize asserted event Keys"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "K23": {
+    "pass": 23,
+    "fail": 0,
+    "returncode": 0
+  },
+  "production_runtime": {
+    "pass": 6,
+    "fail": 0,
+    "returncode": 0
+  },
+  "fresh_regressions": [
+    {
+      "stage": "K23",
+      "returncode": 0,
+      "pass": 23,
+      "fail": 0
+    },
+    {
+      "stage": "K22",
+      "returncode": 0,
+      "pass": 32,
+      "fail": 0
+    },
+    {
+      "stage": "K21",
+      "returncode": 0,
+      "pass": 25,
+      "fail": 0
+    },
+    {
+      "stage": "K18",
+      "returncode": 0,
+      "pass": 19,
+      "fail": 0
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "total": 42,
+  "passed": 36,
+  "failed": 6,
+  "groups": {
+    "LEXICON|REAL_RAW": {
+      "n": 9,
+      "passed": 9,
+      "accuracy": 1.0,
+      "median_us": 0.631,
+      "mean_candidates": 1
+    },
+    "TEXT_U|REAL_RAW": {
+      "n": 4,
+      "passed": 4,
+      "accuracy": 1.0,
+      "median_us": 0.831,
+      "mean_candidates": 2
+    },
+    "REFERENCE|REAL_STRUCTURED": {
+      "n": 6,
+      "passed": 6,
+      "accuracy": 1.0,
+      "median_us": 3.12,
+      "mean_candidates": 1
+    },
+    "REFERENCE|SYNTHETIC": {
+      "n": 3,
+      "passed": 3,
+      "accuracy": 1.0,
+      "median_us": 2.104,
+      "mean_candidates": 1.3333333333333333
+    },
+    "TEXT_U|SYNTHETIC": {
+      "n": 6,
+      "passed": 6,
+      "accuracy": 1.0,
+      "median_us": 2.8995,
+      "mean_candidates": 1.6666666666666667
+    },
+    "TIME|SYNTHETIC": {
+      "n": 5,
+      "passed": 5,
+      "accuracy": 1.0,
+      "median_us": 2.905,
+      "mean_candidates": 1
+    },
+    "REASONING|SYNTHETIC": {
+      "n": 2,
+      "passed": 2,
+      "accuracy": 1.0,
+      "median_us": 3.625,
+      "mean_candidates": 2
+    },
+    "CONTEXT|SYNTHETIC": {
+      "n": 1,
+      "passed": 1,
+      "accuracy": 1.0,
+      "median_us": 3.585,
+      "mean_candidates": 2
+    },
+    "REFERENCE_RAW|REAL_RAW": {
+      "n": 4,
+      "passed": 0,
+      "accuracy": 0.0,
+      "median_us": 0.22550000000000003,
+      "mean_candidates": 0
+    },
+    "TEXT_U_RAW|REAL_RAW": {
+      "n": 2,
+      "passed": 0,
+      "accuracy": 0.0,
+      "median_us": 0.135,
+      "mean_candidates": 0
+    }
+  },
+  "failures": [
+    {
+      "name": "raw 'ihm' antecedent",
+      "category": "REFERENCE_RAW",
+      "source": "REAL_RAW",
+      "expected": "girl",
+      "got": "UNKNOWN",
+      "passed": false,
+      "candidates": 0,
+      "micros": 0.441,
+      "note": "known capability gap; conservative UNKNOWN"
+    },
+    {
+      "name": "raw first plural 'sie' antecedent",
+      "category": "REFERENCE_RAW",
+      "source": "REAL_RAW",
+      "expected": "girl+mother",
+      "got": "UNKNOWN",
+      "passed": false,
+      "candidates": 0,
+      "micros": 0.281,
+      "note": "known capability gap; conservative UNKNOWN"
+    },
+    {
+      "name": "raw cooking 'es' antecedent",
+      "category": "REFERENCE_RAW",
+      "source": "REAL_RAW",
+      "expected": "pot",
+      "got": "UNKNOWN",
+      "passed": false,
+      "candidates": 0,
+      "micros": 0.17,
+      "note": "known capability gap; conservative UNKNOWN"
+    },
+    {
+      "name": "raw mother-scene 'sie' antecedent",
+      "category": "REFERENCE_RAW",
+      "source": "REAL_RAW",
+      "expected": "mother",
+      "got": "UNKNOWN",
+      "passed": false,
+      "candidates": 0,
+      "micros": 0.14,
+      "note": "known capability gap; conservative UNKNOWN"
+    },
+    {
+      "name": "raw Brei reaches Küche/Haus",
+      "category": "TEXT_U_RAW",
+      "source": "REAL_RAW",
+      "expected": "FILLS(brei,kitchen/house)",
+      "got": "UNKNOWN",
+      "passed": false,
+      "candidates": 0,
+      "micros": 0.14,
+      "note": "known capability gap; conservative UNKNOWN"
+    },
+    {
+      "name": "raw Brei reaches Straße",
+      "category": "TEXT_U_RAW",
+      "source": "REAL_RAW",
+      "expected": "FILLS(brei,street)",
+      "got": "UNKNOWN",
+      "passed": false,
+      "candidates": 0,
+      "micros": 0.13,
+      "note": "known capability gap; conservative UNKNOWN"
+    }
+  ]
+}
