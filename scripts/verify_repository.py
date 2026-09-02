@@ -39,8 +39,25 @@ def main() -> int:
     for rel in REQUIRED:
         check((ROOT / rel).exists(), f"required:{rel}", failures)
 
-    pycache = list(ROOT.rglob("__pycache__"))
-    check(not pycache, "no __pycache__ committed", failures)
+    tracked = subprocess.run(
+    ["git", "ls-files"],
+    cwd=ROOT,
+    capture_output=True,
+    text=True,
+    check=True,
+).stdout.splitlines()
+
+tracked_cache = [
+    p for p in tracked
+    if "__pycache__/" in p.replace("\\", "/")
+    or p.endswith((".pyc", ".pyo"))
+]
+
+check(
+    not tracked_cache,
+    "no Python cache artifacts committed",
+    failures,
+)
 
     req = (ROOT / "requirements.txt").read_text(encoding="utf-8").lower()
     check(not any(x in req for x in NEURAL_MARKERS), "no neural runtime dependency", failures)
